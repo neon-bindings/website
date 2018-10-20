@@ -18,8 +18,8 @@ Neon requires Rust for development and supports **all versions of Rust since 1.1
 
 Neon depends on Node's plugin build tools, which have a few additional system requirements. These dependencies have different installation steps on different operating systems.
 
-<div id="windows-installation-instructions" class="toggle toggle-disabled">
 ### Windows
+<div id="windows-installation-instructions" class="toggle toggle-disabled">
 
 The easiest and recommended way to set up a Windows development environment is with the `windows-build-tools` package. In a PowerShell or command prompt run as Administrator, run the following step:
 
@@ -29,8 +29,8 @@ C:\> npm install --global --production windows-build-tools
 
 This installs all the system dependencies unobtrusively, without conflicting with any software already installed on your system.
 
-<div class="toggle toggle-disabled">
 #### Advanced: Manual setup
+<div class="toggle toggle-disabled">
 
 Alternatively, you can set up the Windows development environment manually instead of using `windows-build-tools`. **You do not need to do this if you used the recommended setup process above.**
 
@@ -56,8 +56,8 @@ $(function() {
 })
 </script>
 
-<div id="macos-installation-instructions" class="toggle toggle-disabled">
 ### macOS
+<div id="macos-installation-instructions" class="toggle toggle-disabled">
 
 The development dependencies for macOS are:
 
@@ -73,8 +73,8 @@ $(function() {
 })
 </script>
 
-<div id="generic-installation-instructions" class="toggle toggle-disabled">
 ### Generic
+<div id="generic-installation-instructions" class="toggle toggle-disabled">
 
 The generic Unix development dependencies are:
 

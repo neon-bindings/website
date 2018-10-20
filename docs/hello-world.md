@@ -141,3 +141,11 @@ $ node
 ```
 
 Keep in mind that the result of calling `threadingHint()` will vary based on the machine you run this demo on—by design!
+
+# Building for production
+
+Creating a release build is similar to creating one with cargo:
+
+```shell
+$ neon build --release
+```
