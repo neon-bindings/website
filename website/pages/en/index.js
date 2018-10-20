@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 const React = require('react');
 
 const CompLibrary = require('../../core/CompLibrary.js');
@@ -44,7 +37,7 @@ Button.defaultProps = {
 };
 
 const SplashContainer = props => (
-  <div className="homeContainer">
+  <div className="homeContainer" style={{ background: props.background }}>
     <div className="homeSplashFade">
       <div className="wrapper homeWrapper">{props.children}</div>
     </div>
@@ -59,6 +52,10 @@ const Logo = props => (
 
 const ProjectTitle = () => (
   <h2 className="projectTitle">
+    {/* <div class="neon-logo">
+      <span class="open">Neon</span>
+      <span class="hrs">24 hrs</span>
+    </div> */}
     {siteConfig.title}
     <small>{siteConfig.tagline}</small>
   </h2>
@@ -81,9 +78,9 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
+            <Button href="https://github.com/neon-bindings/neon" target="_blank">Try It Out</Button>
+            <Button href="https://github.com/neon-bindings/neon" target="_blank">Source</Button>
+            <Button href="https://api.neon-bindings.com/neon/index.html" target="_blank">API</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -94,74 +91,52 @@ class HomeSplash extends React.Component {
 const Block = props => (
   <Container
     padding={['bottom', 'top']}
-    id={props.id}
-    background={props.background}>
+    id={props.id}>
     <GridBlock align="center" contents={props.children} layout={props.layout} />
   </Container>
 );
 
-const Features = () => (
-  <Block layout="fourColumn">
-    {[
-      {
-        content: 'This is the content of my feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature One',
-      },
-      {
-        content: 'The content of my second feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature Two',
-      },
-    ]}
-  </Block>
-);
-
 const FeatureCallout = () => (
-  <div
-    className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
-    <h2>Feature Callout</h2>
-    <MarkdownBlock>These are features of this project</MarkdownBlock>
-  </div>
+  <React.Fragment>
+    <div
+      className="productShowcaseSection paddingBottom"
+      style={{textAlign: 'center'}}>
+      <h2>DON’T LET NODE PLUGINS SCARE YOU!</h2>
+      <MarkdownBlock>Neon makes writing native Node.js modules safe and fun, so you can **hack without fear**.</MarkdownBlock>
+    </div>
+    <div
+      className="productShowcaseSection paddingBottom"
+      style={{textAlign: 'center'}}>
+      <h2>CRASH-FREE MEMORY MANAGEMENT</h2>
+      <MarkdownBlock>Neon works together with the JS garbage collector so allocations are always properly managed.</MarkdownBlock>
+    </div>
+    <div
+      className="productShowcaseSection paddingBottom"
+      style={{textAlign: 'center'}}>
+      <h2>EASY PARALLELISM</h2>
+      <MarkdownBlock>Safely run multiple threads, which is easy with convenient Rust APIs like Rayon.</MarkdownBlock>
+    </div>
+  </React.Fragment>
 );
 
-const LearnHow = () => (
-  <Block background="light">
-    {[
-      {
-        content: 'Talk about learning how to use this',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'right',
-        title: 'Learn How',
-      },
-    ]}
-  </Block>
+const foo = <MarkdownBlock>Neon is a work in progress. Watch this talk to learn more about the state of the project:</MarkdownBlock>
+
+const LearnMore = () => (
+  <Container
+    padding={['bottom', 'top']}
+    style={{textAlign: 'center'}}
+    id="learn-more">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jINMIAicaS0" frameborder="0" allow="autoplay; encrypted-media" allowFullScreen />
+  </Container>
 );
 
 const TryOut = () => (
   <Block id="try">
     {[
       {
-        content: 'Talk about trying this out',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Visit GitHub',
         imageAlign: 'left',
         title: 'Try it Out',
-      },
-    ]}
-  </Block>
-);
-
-const Description = () => (
-  <Block background="dark">
-    {[
-      {
-        content: 'This is another description of how this project is useful',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'right',
-        title: 'Description',
       },
     ]}
   </Block>
@@ -200,11 +175,9 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer">
-          <Features />
           <FeatureCallout />
-          <LearnHow />
+          <LearnMore />
           <TryOut />
-          <Description />
           <Showcase language={language} />
         </div>
       </div>
