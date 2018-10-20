@@ -1,7 +1,7 @@
 ---
 id: js-array
-title: JsArray
-sidebar_label: JsArray
+title: Using JsArray
+sidebar_label: Using JsArray
 ---
 
 Here is a simple example of converting a rust `Vec` to a JS `Array` using `JsArray`:

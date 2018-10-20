@@ -1,6 +1,7 @@
 {
   "docs": {
     "Getting Started": ["intro", "getting-started", "hello-world", "electron-apps"],
-    "APIs": ["js-array", "js-object"]
+    "Guides": ["js-array", "js-object"],
+    "Misc": ["example-projects"]
   }
 }
