@@ -1,7 +1,8 @@
 {
   "docs": {
     "Getting Started": ["intro", "getting-started", "hello-world", "electron-apps"],
-    "Guides": ["js-array", "js-object"],
+    "Basics": ["js-array", "js-object", "using-js-class-macros", "using-async-tasks"],
+    "Guides": ["sdl2-example"],
     "Misc": ["example-projects"]
   }
 }
