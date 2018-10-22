@@ -10,22 +10,19 @@ Here is a simple example of converting a rust `Vec` to a JS `Array` using `JsArr
 
 ```rust
 fn convert_vec_to_array(mut cx: FunctionContext) -> JsResult<JsArray> {
-    let vec = Vec::with_capacity(100);
+    let vec: Vec<String> = Vec::with_capacity(100);
 
     // Create the JS array
-    let js_array = JsArray::new(&mut cx, res.len() as u32);
+    let js_array = JsArray::new(&mut cx, vec.len() as u32);
 
     // Iterate over the rust Vec and map each value in the Vec to the JS array
-    for (i, obj) in mapped.iter().enumerate() {
-        let _ = array.set(&mut cx, i as u32, *obj);
+    for (i, obj) in vec.iter().enumerate() {
+        let js_string = cx.string(obj);
+        let _  = js_array.set(&mut cx, i as u32, js_string);
     }
 
-    Ok(array)
+    Ok(js_array)
 }
-
-register_module!(mut cx, {
-    cx.export_function("convert_vec_to_array", convert_vec_to_array)
-});
 ```
 
 ## Returning an empty element
