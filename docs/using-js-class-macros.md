@@ -8,6 +8,77 @@ sidebar_label: Using Macros for JS Classes (WIP)
 
 For now, reference this snippet, taken <a href="https://github.com/neon-bindings/neon/blob/master/test/dynamic/native/src/js/classes.rs" target="_blank">from the tests:</a>
 
+## Simple Example
+
+Let's create a simple struct that our class will use:
+```rust
+pub struct Employee {
+    id: i32,
+    name: String,
+    // etc ...
+}
+```
+
+Now let's defines a custom JS class whose instances contain an Employee record:
+```rust
+declare_types! {
+    /// JS class wrapping Employee records.
+    pub class JsEmployee for Employee {
+
+        init(call) {
+            let scope = call.scope;
+            let id = try!(try!(call.arguments.require(scope, 0)).check::<JsInteger>());
+            let name = try!(try!(call.arguments.require(scope, 1)).to_string());
+            // etc ...
+            Ok(Employee {
+                id: id.value() as i32,
+                name: name.value(),
+                // etc ...
+            })
+        }
+
+        method name(call) {
+            let scope = call.scope;
+            let this: Handle<JsEmployee> = call.arguments.this(scope);
+            let name = try!(vm::lock(this, |employee| {
+                employee.name.clone()
+            });
+            Ok(try!(JsString::new_or_throw(scope, &name[..])).upcast())
+        }
+    }
+};
+```
+
+This code binds `JsEmployee` to a Rust type that can create the class at runtime (i.e., the constructor function and prototype object). The init function defines the behavior for allocating the internals during construction of a new instance. The name method shows an example of how you can use `vm::lock` to borrow a reference to the internal Rust data of an instance.
+
+From there, you can extract the constructor function and expose it to JS, for example by exporting it from a native module:
+```rust
+register_module!(m, {
+    let scope = m.scope;
+    let class = try!(JsEmployee::class(scope));       // get the class
+    let constructor = try!(class.constructor(scope)); // get the constructor
+    try!(m.exports.set("Employee", constructor));     // export the constructor
+});
+```
+
+Then you can use instances of this type in JS just like any other object:
+```js
+const Employee = require('./native').Employee;
+
+const lumbergh = new Employee(9001, "Bill Lumbergh");
+console.log(lumbergh.name()); // Bill Lumbergh
+```
+
+Since the methods on `Employee` expect this to have the right binary layout, they check to make sure that they aren’t being called on an inappropriate object type. This means you can’t segfault Node by doing something like:
+
+```js
+Employee.prototype.name.call({});
+```
+
+This safely throws a `TypeError` exception just like methods from other native classes like `Date` or `Buffer` do.
+
+## Advanced Example
+
 ```rust
 use neon::prelude::*;
 
