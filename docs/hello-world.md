@@ -67,7 +67,7 @@ hello node
 {}
 ```
 
-# Adding a Rust dependency
+# Adding a Rust Dependency
 
 Let's add a Rust dependency on the [num_cpus](https://crates.io/crates/num_cpus) crate. In `native/Cargo.toml`, under the `[dependencies]` section, add the following line:
 

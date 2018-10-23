@@ -26,8 +26,8 @@ First let's add a dependency on a simple Neon module, `neon-hello`, which is alr
 
 Next, we need the `neon-cli` and `electron-build-env` packages in order to build `neon-hello`. Since they're only needed for building, we can add them as development dependencies:
 
-```javascript
-"dev-dependencies": {
+```json
+"devDependencies": {
     "electron-build-env": "^0.2",
     "neon-cli": "^0.1.17"
 }

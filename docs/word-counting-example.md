@@ -35,9 +35,9 @@ Searching an individual line involves splitting the line up into word and matchi
 
 ```js
 function wcLine(line, search) {
-  var words = line.split(' ');
-  var total = 0;
-  for (var i = 0, n = words.length; i < n; i++) {
+  const words = line.split(' ');
+  const total = 0;
+  for (let i = 0, n = words.length; i < n; i++) {
     if (matches(words[i], search)) {
       total++;
     }
