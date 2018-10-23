@@ -130,8 +130,7 @@ Now we should be able to rebuild the project with `neon build` again:
 ```shell
 $ neon build
 ```
-
-Assuming we didn't make any mistakes, we can test out our new Neon module at the Node console:
+This will create a release build for us. Assuming we didn't make any mistakes, we can test out our new Neon module at the Node console:
 
 ```shell
 $ node
@@ -141,11 +140,3 @@ $ node
 ```
 
 Keep in mind that the result of calling `threadingHint()` will vary based on the machine you run this demo on—by design!
-
-# Building for production
-
-Creating a release build is similar to creating one with cargo:
-
-```shell
-$ neon build --release
-```

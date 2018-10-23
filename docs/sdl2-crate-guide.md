@@ -1,7 +1,7 @@
 ---
-id: sdl2-example
-title: SDL2 Binding Example (WIP)
-sidebar_label: SDL2 Binding Example (WIP)
+id: sdl2-guide
+title: SDL2 Binding (WIP)
+sidebar_label: SDL2 Binding (WIP)
 ---
 
 **This doc is currently a work in progress**
