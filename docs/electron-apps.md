@@ -16,21 +16,16 @@ In the meantime, we can use Neon modules in an Electron app with just a few line
 
 First let's add a dependency on a simple Neon module, `neon-hello`, which is already published in npm:
 
-```javascript
-"dependencies": {
-    "neon-hello": "^0.1.1"
-}
+```bash
+npm install neon-hello
 ```
 
 # Adding the Build Dependencies
 
 Next, we need the `neon-cli` and `electron-build-env` packages in order to build `neon-hello`. Since they're only needed for building, we can add them as development dependencies:
 
-```json
-"devDependencies": {
-    "electron-build-env": "^0.2",
-    "neon-cli": "^0.1.17"
-}
+```bash
+npm install electron-build-env neon-cli --save-dev
 ```
 
 # Creating a Build Script
@@ -51,11 +46,11 @@ This step uses the `electron-build-env` tool to configure the environment proper
 After running:
 
 ```shell
-$ npm run build
+npm run build
 ```
 
 we should have a working Electron app. You can try out the [full working demo](https://github.com/neon-bindings/examples/tree/master/guides/electron-apps/simple-app) by building it and running:
 
 ```shell
-$ npm start
+npm start
 ```

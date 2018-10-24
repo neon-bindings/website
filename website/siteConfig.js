@@ -63,6 +63,12 @@ const siteConfig = {
     theme: 'default',
   },
 
+  algolia: {
+    // "Search only api key". Safe to keep this public
+    apiKey: 'bfa6bb4b57d4fa853c0358ee9b195146',
+    indexName: 'amilajack_neon'
+  },
+
   // Add custom scripts here that would be placed in <script> tags.
   scripts: ['https://buttons.github.io/buttons.js'],
 

@@ -15,7 +15,7 @@ But even this simple example already demonstrates some of Neon's usefulness: Rus
 The first thing we have to do is create our new `threading-hint` Neon project:
 
 ```shell
-$ neon new threading-hint
+neon new threading-hint
 ```
 
 This will ask us a series of questions similar to the ones asked by `npm new`. When it completes, the tool will have created a `threading-hint` directory with the following layout:
@@ -44,7 +44,7 @@ The front-end of a Neon package is a pure JavaScript module (`lib/index.js`, by 
 We haven't yet implemented anything, but just to see that `neon new` produced a complete, minimal Neon project, let's try building it:
 
 ```shell
-$ neon build
+neon build
 ```
 
 The build process generates a handful of files that you don't need to work with directly:
@@ -55,13 +55,13 @@ The build process generates a handful of files that you don't need to work with 
 An easy way to clean up build artifacts is to run:
 
 ```shell
-$ neon clean
+neon clean
 ```
 
 Once we've built the project, we can try running it:
 
 ```shell
-$ node
+node
 > require('.')
 hello node
 {}
@@ -128,12 +128,12 @@ module.exports = addon.threading_hint;
 Now we should be able to rebuild the project with `neon build` again:
 
 ```shell
-$ neon build
+neon build
 ```
 This will create a release build for us. Assuming we didn't make any mistakes, we can test out our new Neon module at the Node console:
 
 ```shell
-$ node
+node
 > var threadingHint = require('.')
 > threadingHint()
 4

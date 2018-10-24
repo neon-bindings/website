@@ -97,13 +97,13 @@ $(function() {
 Finally, use `npm` to install the Neon command-line toolchain.
 
 ```shell
-$ npm install --global neon-cli
+npm install --global neon-cli
 ```
 
 You can verify your Neon installation by running
 
 ```shell
-$ neon version
+neon version
 ```
 
 from a shell, which should print out the version of Neon you just installed.
