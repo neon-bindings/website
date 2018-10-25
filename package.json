@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "start": "yarn workspace neon-docs start",
-    "build": "yarn workspace neon-docs build"
+    "build": "yarn workspace neon-docs build",
+    "publish-gh-pages": "yarn workspace neon-docs publish-gh-pages"
   },
   "devDependencies": {
     "yarn": "^1.10.1"
