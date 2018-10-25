@@ -3,6 +3,6 @@
     "Getting Started": ["intro", "getting-started", "hello-world", "electron-apps"],
     "Basics": ["js-array", "js-object", "using-js-class-macros", "using-async-tasks"],
     "Guides": ["word-counting-guide", "sdl2-guide"],
-    "Misc": ["example-projects"]
+    "Misc": ["example-projects", "community-content"]
   }
 }
