@@ -1,7 +1,7 @@
 ---
 id: using-async-tasks
-title: Using Async Tasks (WIP)
-sidebar_label: Using Async Tasks (WIP)
+title: Async
+sidebar_label: Async
 ---
 
 **This doc is currently a work in progress**

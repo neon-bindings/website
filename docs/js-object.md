@@ -1,7 +1,7 @@
 ---
 id: js-object
-title: Using JsObject
-sidebar_label: Using JsObject
+title: Objects
+sidebar_label: Objects
 ---
 
 Here is a simple example of converting a rust `Struct` to a JS `Object` using `JsObject`:

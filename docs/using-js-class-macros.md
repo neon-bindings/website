@@ -1,7 +1,7 @@
 ---
 id: using-js-class-macros
-title: Using Macros for JS Classes (WIP)
-sidebar_label: Using Macros for JS Classes (WIP)
+title: Classes
+sidebar_label: Classes
 ---
 
 **This doc is currently a work in progress**

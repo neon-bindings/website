@@ -1,7 +1,7 @@
 ---
 id: js-array
-title: Using JsArray
-sidebar_label: Using JsArray
+title: Arrays
+sidebar_label: Arrays
 ---
 
 ## Converting from Vec to JsArray

@@ -1,7 +1,7 @@
 ---
 id: js-async
-title: JS Async
-sidebar_label: JS Async
+title: Async
+sidebar_label: Async
 ---
 
 ```rust

@@ -30,28 +30,36 @@
         "sidebar_label": "Introduction"
       },
       "js-array": {
-        "title": "Using JsArray",
-        "sidebar_label": "Using JsArray"
+        "title": "Arrays",
+        "sidebar_label": "Arrays"
       },
       "js-async": {
-        "title": "JS Async",
-        "sidebar_label": "JS Async"
+        "title": "Async",
+        "sidebar_label": "Async"
       },
       "js-object": {
-        "title": "Using JsObject",
-        "sidebar_label": "Using JsObject"
+        "title": "Objects",
+        "sidebar_label": "Objects"
+      },
+      "js-primitives": {
+        "title": "Primitives",
+        "sidebar_label": "Primitives"
+      },
+      "parllelisim": {
+        "title": "Parallelisim",
+        "sidebar_label": "Parallelisim"
       },
       "sdl2-guide": {
         "title": "SDL2 Binding (WIP)",
         "sidebar_label": "SDL2 Binding (WIP)"
       },
       "using-async-tasks": {
-        "title": "Using Async Tasks (WIP)",
-        "sidebar_label": "Using Async Tasks (WIP)"
+        "title": "Async",
+        "sidebar_label": "Async"
       },
       "using-js-class-macros": {
-        "title": "Using Macros for JS Classes (WIP)",
-        "sidebar_label": "Using Macros for JS Classes (WIP)"
+        "title": "Classes",
+        "sidebar_label": "Classes"
       },
       "word-counting-guide": {
         "title": "Word Counting",
