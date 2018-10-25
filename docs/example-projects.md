@@ -12,6 +12,7 @@ Here is a list of projects using Neon
 * [libsodium-neon: Node bindings to libsodium](https://github.com/wireapp/libsodium-neon)
 * [ledb: Lightweight embedded database](https://github.com/katyo/ledb)
 * [node-crypto: rust-crypto bindings for nodejs](https://github.com/Brooooooklyn/node-crypto)
+* [os-type: Bindings to the os_type rust library](https://github.com/amilajack/os-type)
 
 ## Electron Apps
 * [finda: Finda finds things — in under 16 milliseconds.](https://keminglabs.com/finda/)

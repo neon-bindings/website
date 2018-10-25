@@ -1,6 +1,7 @@
 const React = require('react');
 
 const CompLibrary = require('../../core/CompLibrary.js');
+const translate = require("../../server/translate.js").translate;
 
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
