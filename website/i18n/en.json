@@ -21,6 +21,10 @@
         "title": "Example Projects",
         "sidebar_label": "Example Projects"
       },
+      "functions": {
+        "title": "Functions",
+        "sidebar_label": "Functions"
+      },
       "getting-started": {
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
@@ -58,8 +62,8 @@
         "sidebar_label": "Parallelism"
       },
       "sdl2-guide": {
-        "title": "SDL2 Bindings (WIP)",
-        "sidebar_label": "SDL2 Bindings (WIP)"
+        "title": "SDL2 Bindings",
+        "sidebar_label": "SDL2 Bindings"
       },
       "type-checking": {
         "title": "Type Checking",

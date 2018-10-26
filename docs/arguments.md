@@ -29,7 +29,7 @@ fn say_hi(mut cx: FunctionContext) -> JsResult<JsFunction> {
 }
 ```
 
-## Checking Arguments
+## Asserting Argument Types
 
 ```rust
 pub fn foo(mut cx: FunctionContext) -> JsResult<JsUndefined> {
@@ -64,14 +64,42 @@ register_module!(mut cx, {
 
 ## Getting the Number of Arguments
 
-```js
-function foo() {
-    
-}
-```
+This is a simple example of getting the length of `arguments`
 
 ```rust
-// --snip--
-let args_length = cx.len();
-// --snip--
+pub fn get_args_len(mut cx: FunctionContext) -> JsResult<JsNumber> {
+    let args_length = cx.len();
+    println!("{}", args_length);
+    Ok(cx.number(args_length))
+}
+
+register_module!(mut cx, {
+    cx.export_function("getArgsLen", get_args_len)
+});
+```
+
+Now in our `./lib/index.js` we add the following:
+
+```js
+// ./lib/index.js
+const { getArgsLen } = require('../native);
+getArgsLen() // 0
+getArgsLen(1) // 1
+getArgsLen(1, 'foobar') // 2
+```
+
+## Options for Arguments
+
+Produces the `i`th argument, or `None` if `i` is greater than or equal to `self.len()`.
+
+```rust
+pub fn args_opt(mut cx: FunctionContext) -> JsResult<JsNumber> {
+    match cx.argument_opt::<JsString>(10000)? {
+        Some(arg) => {
+            println!"The 10000th argument is {}", arg);
+        },
+        None => panic!("10000th argument does not exist, out of bounds!")
+    }
+    Ok(cx.undefined())
+}
 ```

@@ -8,7 +8,7 @@ sidebar_label: Classes
 
 For now, reference this snippet, taken <a href="https://github.com/neon-bindings/neon/blob/master/test/dynamic/native/src/js/classes.rs" target="_blank">from the tests:</a>
 
-## Simple Example
+## Basics
 
 Let's create a simple struct that our class will use:
 ```rust
@@ -21,19 +21,23 @@ pub struct Employee {
 
 Now let's defines a custom JS class whose instances contain an Employee record. `init` is the constructor for the `JsEmployee` object. The methods that we define are prefixed with `method`. So if we want our JS object to have a method called `alertUser`, our method signature would be `method alertUser(mut cx) {`. All methods need to return types of the `JsValue` so we will need to `upcast` them. Because of this requirement, a method like the following would fail:
 
+❌ This will not work
+
 ```rust
 method talk(mut cx) {
     Ok(cx.string("How are you doing?"))
 }
 ```
-But this will work:
+✅ But this will work:
 ```rust
 method talk(mut cx) {
     Ok(cx.string("How are you doing?").upcast())
 }
 ```
 
-Now let's define our class:
+### Defining the `constructor`
+
+Now let's define our class. `init` will construct the class:
 
 ```rust
 // --snip--
@@ -49,32 +53,6 @@ declare_types! {
                 name: name,
             })
         }
-
-        method name(mut cx) {
-            let this = cx.this();
-            let name = {
-                let guard = cx.lock();
-                this.borrow(&guard).name
-            };
-            println!("{}", &name);
-            Ok(cx.undefined().upcast())
-        }
-
-        method greet(mut cx) {
-            let this = cx.this();
-            let msg = {
-                let guard = cx.lock();
-                let greeter = this.borrow(&guard);
-                format!("Hi {}!", greeter.name)
-            };
-            println!("{}", &msg);
-            Ok(cx.string(&msg).upcast())
-        }
-
-        method askQuestion(mut cx) {
-            println!("{}", "How are you?");
-            Ok(cx.undefined().upcast())
-        }
     }
 }
 
@@ -87,13 +65,56 @@ register_module!(mut cx, {
 });
 ```
 
+### Adding Methods
+
+Now let's add some methods to our class:
+```rust
+// --snip--
+init(mut cx) {
+    let id = cx.argument::<JsNumber>(0)?.value();
+    let name: String = cx.argument::<JsString>(1)?.value();
+
+    Ok(Employee {
+        id: id as i32,
+        name: name,
+    })
+}
+
+method name(mut cx) {
+    let this = cx.this();
+    let name = {
+        let guard = cx.lock();
+        this.borrow(&guard).name
+    };
+    println!("{}", &name);
+    Ok(cx.undefined().upcast())
+}
+
+method greet(mut cx) {
+    let this = cx.this();
+    let msg = {
+        let guard = cx.lock();
+        let greeter = this.borrow(&guard);
+        format!("Hi {}!", greeter.name)
+    };
+    println!("{}", &msg);
+    Ok(cx.string(&msg).upcast())
+}
+
+method askQuestion(mut cx) {
+    println!("{}", "How are you?");
+    Ok(cx.undefined().upcast())
+}
+// --snip--
+```
+
 Then you can use instances of this type in JS just like any other object:
 ```js
 const { Employee } = require('./native');
 
 console.log(new addon.Employee()) // fails: TypeError: not enough arguments
 
-const john = new addon.Employee("John")
+const john = new addon.Employee('John')
 john.name();        // John
 john.greet();       // Hi John!
 john.askQuestion(); // How are you?
@@ -107,7 +128,7 @@ Employee.prototype.name.call({});
 
 This safely throws a `TypeError` exception just like methods from other native classes like `Date` or `Buffer` do.
 
-## Getting and Setting Class Properties
+### Getting and Setting Class Properties
 
 ```rust
 // --snip--
@@ -125,7 +146,9 @@ if is_raining {
 // --snip--
 ```
 
-## Handling Methods That Take Multiple Types
+### Handling Methods That Take Multiple Types
+
+Sometimes you may want your function to handle arguments that can be of multiple types. Here's an example showing just that:
 
 ```rust
 // --snip--
@@ -133,15 +156,32 @@ method introduce(mut cx) {
     let name_or_age = cx.argument::<JsValue>(0)?;
 
     if name_or_age.is_a::<JsString>() {
-        println!("My name is {}", name_or_age.value());
+        let name = name_or_age
+            .downcast::<JsString>()
+            .or_throw(&mut cx)?
+            .value();
+        println!("Hi, this is {}", name);
     } else if name_or_age.is_a::<JsNumber>() {
-        println!("My age is {}", name_or_age.value());
+        let age = name_or_age
+            .downcast::<JsNumber>()
+            .or_throw(&mut cx)?
+            .value();
+        println!("Her birthday is on the {}th", age);
     } else {
         panic!("Name is not a string and age is not a number");
     }
-    // --snip--
+
+    Ok(cx.undefined().upcast())
 }
 // --snip--
+```
+
+```js
+const addon = require('../native');
+
+const john = new addon.Employee(0, "Lisa");
+john.introduce("Mary"); // Hi, this is Mary
+john.introduce(12);     // Her birthday is on the 12th
 ```
 
 ## Advanced Example
