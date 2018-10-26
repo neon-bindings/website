@@ -4,7 +4,7 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-This guide will help you get your system set up for building Neon projects. If you already have everything installed and are looking to write your first Neon code, try the [Hello, World!](../hello-world/) guide.
+This guide will help you get your system set up for building Neon projects. If you already have everything installed and are looking to write your first Neon code, try the [Hello, World!](hello-world.md) guide.
 
 ## Install Node
 
@@ -18,19 +18,25 @@ Neon requires Rust for development and supports **all versions of Rust since 1.1
 
 Neon depends on Node's plugin build tools, which have a few additional system requirements. These dependencies have different installation steps on different operating systems.
 
+### macOS
+
+The development dependencies for macOS are:
+
+  * Python 2.7 (Python 3 is **not** supported)
+  * [Xcode](https://developer.apple.com/xcode/download/)
+  * Install the _Command Line Tools_ via Xcode under the menu _Xcode &rarr; Preferences &rarr; Downloads_.
+
 ### Windows
-<div id="windows-installation-instructions" class="toggle toggle-disabled">
 
 The easiest and recommended way to set up a Windows development environment is with the `windows-build-tools` package. In a PowerShell or command prompt run as Administrator, run the following step:
 
-```shell
+```powershell
 C:\> npm install --global --production windows-build-tools
 ```
 
 This installs all the system dependencies unobtrusively, without conflicting with any software already installed on your system.
 
 #### Advanced: Manual setup
-<div class="toggle toggle-disabled">
 
 Alternatively, you can set up the Windows development environment manually instead of using `windows-build-tools`. **You do not need to do this if you used the recommended setup process above.**
 
@@ -41,41 +47,12 @@ Alternatively, you can set up the Windows development environment manually inste
   * Install [Python 2.7](https://www.python.org/downloads/) (Python 3 is **not** supported).
   * Run the following commands:
 
-```shell
+```powershell
 C:\> npm config set python python2.7
 C:\> npm config set msvs_version 2015
 ```
-</div>
-</div>
-
-<script>
-$(function() {
-  if (navigator.platform.startsWith("Win")) {
-    $('#windows-installation-instructions').toggleClass('toggle-disabled');
-  }
-})
-</script>
-
-### macOS
-<div id="macos-installation-instructions" class="toggle toggle-disabled">
-
-The development dependencies for macOS are:
-
-  * Python 2.7 (Python 3 is **not** supported)
-  * [Xcode](https://developer.apple.com/xcode/download/)
-  * Install the _Command Line Tools_ via Xcode under the menu _Xcode &rarr; Preferences &rarr; Downloads_.
-</div>
-
-<script>
-$(function() {
-  if (navigator.platform.startsWith("Mac"))
-    $('#macos-installation-instructions').toggleClass('toggle-disabled');
-})
-</script>
 
 ### Generic
-<div id="generic-installation-instructions" class="toggle toggle-disabled">
-
 The generic Unix development dependencies are:
 
   * Python 2.7 (Python 3 is **not** supported)
@@ -83,26 +60,20 @@ The generic Unix development dependencies are:
   * A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org/)
 
 Most modern Unix systems, like Linux or FreeBSD, should have the required development dependencies installed already.
-</div>
-
-<script>
-$(function() {
-  if (!navigator.platform.startsWith("Win") && !navigator.platform.startsWith("Mac"))
-    $('#generic-installation-instructions').toggleClass('toggle-disabled');
-})
-</script>
 
 ## Install the Neon CLI
 
 Finally, use `npm` to install the Neon command-line toolchain.
 
-```shell
+```bash
 npm install --global neon-cli
+# OR
+yarn global add neon-cli
 ```
 
 You can verify your Neon installation by running
 
-```shell
+```bash
 neon version
 ```
 

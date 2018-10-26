@@ -13,51 +13,77 @@ For now, reference this snippet, taken <a href="https://github.com/neon-bindings
 Let's create a simple struct that our class will use:
 ```rust
 pub struct Employee {
+    // Rust struct properties map to JS class properties
     id: i32,
-    name: String,
-    // etc ...
+    name: String
 }
 ```
 
-Now let's defines a custom JS class whose instances contain an Employee record:
+Now let's defines a custom JS class whose instances contain an Employee record. `init` is the constructor for the `JsEmployee` object. The methods that we define are prefixed with `method`. So if we want our JS object to have a method called `alertUser`, our method signature would be `method alertUser(mut cx) {`. All methods need to return types of the `JsValue` so we will need to `upcast` them. Because of this requirement, a method like the following would fail:
+
 ```rust
+method talk(mut cx) {
+    Ok(cx.string("How are you doing?"))
+}
+```
+But this will work:
+```rust
+method talk(mut cx) {
+    Ok(cx.string("How are you doing?").upcast())
+}
+```
+
+Now let's define our class:
+
+```rust
+// --snip--
 declare_types! {
     /// JS class wrapping Employee records.
     pub class JsEmployee for Employee {
+        init(mut cx) {
+            let id = cx.argument::<JsNumber>(0)?.value();
+            let name: String = cx.argument::<JsString>(1)?.value();
 
-        init(call) {
-            let scope = call.scope;
-            let id = try!(try!(call.arguments.require(scope, 0)).check::<JsInteger>());
-            let name = try!(try!(call.arguments.require(scope, 1)).to_string());
-            // etc ...
             Ok(Employee {
-                id: id.value() as i32,
-                name: name.value(),
-                // etc ...
+                id: id as i32,
+                name: name,
             })
         }
 
-        method name(call) {
-            let scope = call.scope;
-            let this: Handle<JsEmployee> = call.arguments.this(scope);
-            let name = try!(vm::lock(this, |employee| {
-                employee.name.clone()
-            });
-            Ok(try!(JsString::new_or_throw(scope, &name[..])).upcast())
+        method name(mut cx) {
+            let this = cx.this();
+            let name = {
+                let guard = cx.lock();
+                this.borrow(&guard).name
+            };
+            println!("{}", &name);
+            Ok(cx.undefined().upcast())
+        }
+
+        method greet(mut cx) {
+            let this = cx.this();
+            let msg = {
+                let guard = cx.lock();
+                let greeter = this.borrow(&guard);
+                format!("Hi {}!", greeter.name)
+            };
+            println!("{}", &msg);
+            Ok(cx.string(&msg).upcast())
+        }
+
+        method askQuestion(mut cx) {
+            println!("{}", "How are you?");
+            Ok(cx.undefined().upcast())
         }
     }
-};
-```
+}
 
-This code binds `JsEmployee` to a Rust type that can create the class at runtime (i.e., the constructor function and prototype object). The init function defines the behavior for allocating the internals during construction of a new instance. The name method shows an example of how you can use `vm::lock` to borrow a reference to the internal Rust data of an instance.
-
-From there, you can extract the constructor function and expose it to JS, for example by exporting it from a native module:
-```rust
-register_module!(m, {
-    let scope = m.scope;
-    let class = try!(JsEmployee::class(scope));       // get the class
-    let constructor = try!(class.constructor(scope)); // get the constructor
-    try!(m.exports.set("Employee", constructor));     // export the constructor
+// Export the class
+register_module!(mut cx, {
+    // <JsEmployee> tells neon what class we are exporting
+    // "Employee" is the name of the export that the class is exported as
+    cx.export_class::<JsEmployee>("Employee")?;
+    Ok(())
 });
 ```
 
@@ -65,8 +91,12 @@ Then you can use instances of this type in JS just like any other object:
 ```js
 const { Employee } = require('./native');
 
-const lumbergh = new Employee(9001, "Bill Lumbergh");
-console.log(lumbergh.name()); // Bill Lumbergh
+console.log(new addon.Employee()) // fails: TypeError: not enough arguments
+
+const john = new addon.Employee("John")
+john.name();        // John
+john.greet();       // Hi John!
+john.askQuestion(); // How are you?
 ```
 
 Since the methods on `Employee` expect this to have the right binary layout, they check to make sure that they aren’t being called on an inappropriate object type. This means you can’t segfault Node by doing something like:
@@ -77,41 +107,58 @@ Employee.prototype.name.call({});
 
 This safely throws a `TypeError` exception just like methods from other native classes like `Date` or `Buffer` do.
 
+## Getting and Setting Class Properties
+
+```rust
+// --snip--
+let this = cx.this();
+// Downcast the object so we can call .get and .set
+let this = this.downcast::<JsObject>().or_throw(&mut cx)?;
+let is_raining = this
+  .get(&mut cx, "raining")?
+  .downcast::<JsBoolean>().or_throw(&mut cx)?
+  .value();
+if is_raining {
+  let t = cx.boolean(false);
+  this.set(&mut cx, "shouldGoOutside", t)?;
+}
+// --snip--
+```
+
+## Handling Methods That Take Multiple Types
+
+```rust
+// --snip--
+method introduce(mut cx) {
+    let name_or_age = cx.argument::<JsValue>(0)?;
+
+    if name_or_age.is_a::<JsString>() {
+        println!("My name is {}", name_or_age.value());
+    } else if name_or_age.is_a::<JsNumber>() {
+        println!("My age is {}", name_or_age.value());
+    } else {
+        panic!("Name is not a string and age is not a number");
+    }
+    // --snip--
+}
+// --snip--
+```
+
 ## Advanced Example
 
 ```rust
 use neon::prelude::*;
 
 pub struct User {
-  id: i32,
-  first_name: String,
-  last_name: String,
-  email: String,
+    id: i32,
+    first_name: String,
+    last_name: String,
+    email: String,
 }
 
 type Unit = ();
 
 declare_types! {
-  pub class JsPanickyAllocator for Unit {
-    init(_) {
-      panic!("allocator panicking")
-    }
-  }
-
-  pub class JsPanickyConstructor for Unit {
-    init(_) {
-      Ok(())
-    }
-
-    call(_) {
-      panic!("constructor call panicking")
-    }
-
-    constructor(_) {
-      panic!("constructor panicking")
-    }
-  }
-
   pub class JsUser for User {
     init(mut cx) {
       let id = cx.argument::<JsNumber>(0)?;
@@ -174,4 +221,8 @@ declare_types! {
     }
   }
 }
+register_module!(mut cx, {
+    cx.export_class::<JsUser>("User")
+});
+
 ```

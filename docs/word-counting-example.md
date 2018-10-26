@@ -10,7 +10,7 @@ First start by creating a new project with `neon-cli`:
 ```bash
 neon new hello
 cd hello
-npm install # Or yarn install
+npm install # OR `yarn install`
 node -e 'require("./")'
 ```
 

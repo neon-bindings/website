@@ -1,12 +1,14 @@
 ---
 id: sdl2-guide
-title: SDL2 Bindings (WIP)
-sidebar_label: SDL2 Bindings (WIP)
+title: SDL2 Bindings
+sidebar_label: SDL2 Bindings
 ---
 
 **This doc is currently a work in progress**
 
 For now, reference this snippet, taken <a href="https://github.com/neon-bindings/neon/issues/354#issuecomment-417346932" target="_blank">from this comment:</a>
+
+## Native
 
 ```rust
 // lib.rs
@@ -82,6 +84,8 @@ register_module!(mut cx, {
 	Ok(())
 });
 ```
+
+## Node
 
 ```js
 // index.js

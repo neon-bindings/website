@@ -68,11 +68,13 @@ addon.serialize_something();
 We need to change the `User` trait to be deserializable as well:
 
 ```rust
+// --snip--
 #[derive(Serialize, Deserialize)]
 struct User {
     name: String,
     age: u16,
 }
+// --snip--
 ```
 
 Now we can also deserialize a `JsObject` struct and convert it to a `JsValue` like so:
@@ -88,7 +90,9 @@ fn deserialize_something(mut cx: FunctionContext) -> JsResult<JsValue> {
 }
 
 register_module!(mut cx, {
-    cx.export_function("deserialize_something", deserialize_something)
+    cx.export_function("serialize_something", serialize_something)?;
+    cx.export_function("deserialize_something", deserialize_something)?;
+    Ok(())
 });
 ```
 
@@ -103,6 +107,13 @@ addon.deserialize_something();
 `neon-serde` provides some macros for simplifying some of the type signatures of functions. It also handles exporting our functions so we don't have to use the `register_module!` macro manually.
 
 ```rs
+#[macro_use]
+extern crate neon;
+#[macro_use]
+extern crate neon_serde;
+#[macro_use]
+extern crate serde_derive;
+
 export! {
     fn say_hello(name: String) -> String {
         format!("Hello, {}!", name)
@@ -125,12 +136,14 @@ In our JS we simply import the methods and call the functions. Note that type ch
 ```js
 const addon = require('../native');
 
+// Calling the function with incorrect arguments will fail
 // console.log(addon.say_hello());
 // fails: TypeError: not enough arguments
 
 console.log(addon.say_hello("john"));
 // Hello, john!
 
+// Calling the function with incorrect arguments will fail
 // console.log(addon.greet({ name: "afsd" }));
 // Error(Msg("missing field `age`"), State { next_error: None, backtrace: None })
 

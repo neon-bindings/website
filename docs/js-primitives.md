@@ -6,43 +6,50 @@ sidebar_label: Primitives
 
 ## Numbers
 
+Note that all numbers must be casted to a `f64` since these are the only types of numbers that a JS engine supports
+
 ```rust
 fn js_number(mut cx: FunctionContext) -> JsResult<JsNumber> {
+    // Either use function context to create number
     let number = cx.number(23 as f64);
+    // or use JsNumber struct
+    let number = JsNumber::new(&mut cx, 23);
     Ok(number)
 }
 ```
 
+Other primitives follow a similar pattern:
+
 ## Strings
 
 ```rust
-fn js_string(mut cx: FunctionContext) -> JsResult<JsString> {
-    let string = cx.string("foobar");
-    Ok(string)
-}
+// --snip--
+let string = cx.string("foobar");
+let string = JsString::new(&mut cx, "foobar");
+// --snip--
 ```
 
 ## Booleans
 
 ```rust
-fn js_boolean(mut cx: FunctionContext) -> JsResult<JsBoolean> {
-    let boolean = cx.boolean(true);
-    Ok(boolean)
-}
+// --snip--
+let boolean = cx.boolean(true);
+let boolean = JsBoolean::new(&mut cx, true);
+// --snip--
 ```
 
 ## Undefined
 ```rust
-fn js_undefined(mut cx: FunctionContext) -> JsResult<JsUndefined> {
-    let undefined = cx.undefined();
-    Ok(undefined)
-}
+// --snip--
+let undefined = cx.undefined();
+let undefined = JsUndefined::new(&mut cx);
+// --snip--
 ```
 ## Null
 
 ```rust
-fn js_null(mut cx: FunctionContext) -> JsResult<JsNull> {
-    let null = cx.null();
-    Ok(null)
-}
+// --snip--
+let null = cx.null();
+let null = JsNull::new(&mut cx);
+// --snip--
 ```
