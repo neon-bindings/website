@@ -63,7 +63,7 @@ register_module!(m, {
 
 Then you can use instances of this type in JS just like any other object:
 ```js
-const Employee = require('./native').Employee;
+const { Employee } = require('./native');
 
 const lumbergh = new Employee(9001, "Bill Lumbergh");
 console.log(lumbergh.name()); // Bill Lumbergh

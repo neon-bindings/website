@@ -5,6 +5,10 @@
     "previous": "Previous",
     "tagline": "Rust bindings for writing safe and fast native Node.js modules",
     "docs": {
+      "arguments": {
+        "title": "Arguments",
+        "sidebar_label": "Arguments"
+      },
       "community-content": {
         "title": "Community Content",
         "sidebar_label": "Community Content"
@@ -45,13 +49,21 @@
         "title": "Primitives",
         "sidebar_label": "Primitives"
       },
-      "parllelisim": {
-        "title": "Parallelisim",
-        "sidebar_label": "Parallelisim"
+      "json": {
+        "title": "JSON",
+        "sidebar_label": "JSON"
+      },
+      "parallelism": {
+        "title": "Parallelism",
+        "sidebar_label": "Parallelism"
       },
       "sdl2-guide": {
-        "title": "SDL2 Binding (WIP)",
-        "sidebar_label": "SDL2 Binding (WIP)"
+        "title": "SDL2 Bindings (WIP)",
+        "sidebar_label": "SDL2 Bindings (WIP)"
+      },
+      "type-checking": {
+        "title": "Type Checking",
+        "sidebar_label": "Type Checking"
       },
       "using-async-tasks": {
         "title": "Async",
@@ -75,6 +87,7 @@
       "Getting Started": "Getting Started",
       "Basics": "Basics",
       "Guides": "Guides",
+      "Advanced": "Advanced",
       "Misc": "Misc"
     }
   },

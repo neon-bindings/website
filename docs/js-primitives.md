@@ -30,3 +30,19 @@ fn js_boolean(mut cx: FunctionContext) -> JsResult<JsBoolean> {
     Ok(boolean)
 }
 ```
+
+## Undefined
+```rust
+fn js_undefined(mut cx: FunctionContext) -> JsResult<JsUndefined> {
+    let undefined = cx.undefined();
+    Ok(undefined)
+}
+```
+## Null
+
+```rust
+fn js_null(mut cx: FunctionContext) -> JsResult<JsNull> {
+    let null = cx.null();
+    Ok(null)
+}
+```

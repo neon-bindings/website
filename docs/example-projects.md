@@ -19,4 +19,7 @@ Here is a list of projects using Neon
 
 And <a href="https://www.npmjs.com/browse/depended/neon-cli" target="_blank">many more!</a>
 
+## Rust Libraries
+* [neon-serde: Easily convert between `JsHandle` and `serde` structs](https://github.com/GabrielCastro/neon-serde)
+
 Want to add a project to this list? Submit a PR!

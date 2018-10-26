@@ -1,7 +1,7 @@
 ---
 id: sdl2-guide
-title: SDL2 Binding (WIP)
-sidebar_label: SDL2 Binding (WIP)
+title: SDL2 Bindings (WIP)
+sidebar_label: SDL2 Bindings (WIP)
 ---
 
 **This doc is currently a work in progress**
@@ -79,7 +79,6 @@ declare_types! {
 
 register_module!(mut cx, {
 	cx.export_class::<JsCanvas>("Canvas")?;
-
 	Ok(())
 });
 ```
