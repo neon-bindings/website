@@ -107,14 +107,13 @@ With that simple change, on my two-core MacBook Air, the demo goes from about 85
 I’ve worked on making the integration as seamless as possible. From the Rust side, Neon functions follow a simple protocol, taking a Call object and returning a JavaScript value:
 
 ```rust
-fn search(call: Call) -> JS<Integer> {
-    let scope = call.scope;
+fn search(cx: Call) -> JS<Integer> {
     // ...
-    Ok(Integer::new(scope, total))
+    Ok(cx.number(total))
 }
 ```
 
-The scope object safely tracks handles into V8’s garbage-collected heap. The Neon API uses the Rust type system to guarantee that your native module can’t crash your app by mismanaging object handles.
+`cx`, a `Call` struct, safely tracks handles into V8’s garbage-collected heap. The Neon API uses the Rust type system to guarantee that your native module can’t crash your app by mismanaging object handles.
 
 From the JS side, loading the native module is straightforward:
 

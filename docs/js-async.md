@@ -5,17 +5,14 @@ sidebar_label: Async
 ---
 
 ```rust
-fn async_method(call: Call) -> JsResult<JsUndefined> {
-	let fn_handle = call.arguments.get(call.scope, 1).unwrap();
-	let arg_handle = call.arguments.get(call.scope, 0).unwrap();
+fn async_method(cx: Call) -> JsResult<JsUndefined> {
+	let arg_handle = cx.argument::<JsValue>(cx, 0)?;
+	let fn_handle = cx.argument::<JsFunction>(1)?;
 
-	if let Some(function) = fn_handle.downcast::<JsFunction>() {
+	let args: Vec<Handle<JsValue>> = vec![arg_handle];
+	let _ = function.call(&mut cx, JsNull::new(), args);
 
-		let args: Vec<Handle<JsValue>> = vec![arg_handle];
-		let _ = function.call(call.scope, JsNull::new(), args);
-	}
-
-	Ok(JsUndefined::new())
+	Ok(cx.undefined())
 }
 
 register_module!(m, {
