@@ -12,7 +12,16 @@ For the most part, using a Neon package in Electron is as straightforward as add
 
 In the meantime, we can use Neon modules in an Electron app with just a few lines of configuration in our `package.json`.
 
-# Adding a Neon Dependency
+## Setup Electron
+```bash
+# Clone the Quick Start repository
+git clone https://github.com/electron/electron-quick-start
+
+# Go into the repository
+cd electron-quick-start
+```
+
+## Adding a Neon Dependency
 
 First let's add a dependency on a simple Neon module, `neon-hello`, which is already published in npm:
 
@@ -20,7 +29,7 @@ First let's add a dependency on a simple Neon module, `neon-hello`, which is alr
 npm install neon-hello
 ```
 
-# Adding the Build Dependencies
+## Adding the Build Dependencies
 
 Next, we need the `neon-cli` and `electron-build-env` packages in order to build `neon-hello`. Since they're only needed for building, we can add them as development dependencies:
 
@@ -28,22 +37,23 @@ Next, we need the `neon-cli` and `electron-build-env` packages in order to build
 npm install electron-build-env neon-cli --save-dev
 ```
 
-# Creating a Build Script
+## Creating a Build Script
 
 Finally, we'll add a script to build the Neon dependency:
 
-```javascript
+```json
 "scripts": {
-    "build": "electron-build-env neon build neon-hello",
-    ...
+    // ...
+    "build": "electron-build-env neon build neon-hello"
+    // ...
 }
 ```
 
 This step uses the `electron-build-env` tool to configure the environment properly to build for Electron.
 
-# That's It!
+## That's It!
 
-After running:
+We can then build a production release of the `neon-hello` module:
 
 ```shell
 npm run build
