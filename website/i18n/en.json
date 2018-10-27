@@ -18,8 +18,8 @@
         "sidebar_label": "Electron Apps"
       },
       "example-projects": {
-        "title": "Example Projects",
-        "sidebar_label": "Example Projects"
+        "title": "Who's Using Neon",
+        "sidebar_label": "Who's Using Neon"
       },
       "functions": {
         "title": "Functions",
@@ -70,8 +70,8 @@
         "sidebar_label": "Type Checking"
       },
       "using-async-tasks": {
-        "title": "Async",
-        "sidebar_label": "Async"
+        "title": "Async Tasks",
+        "sidebar_label": "Async Tasks"
       },
       "using-js-class-macros": {
         "title": "Classes",
