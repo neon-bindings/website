@@ -10,7 +10,7 @@ fn async_method(cx: Call) -> JsResult<JsUndefined> {
 	let fn_handle = cx.argument::<JsFunction>(1)?;
 
 	let args: Vec<Handle<JsValue>> = vec![arg_handle];
-	let _ = function.call(&mut cx, JsNull::new(), args);
+	let _ = function.call(&mut cx, cx.null(), args);
 
 	Ok(cx.undefined())
 }

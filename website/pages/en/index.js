@@ -117,8 +117,6 @@ const FeatureCallout = () => (
   </React.Fragment>
 );
 
-const foo = <MarkdownBlock>Neon is a work in progress. Watch this talk to learn more about the state of the project:</MarkdownBlock>
-
 const LearnMore = () => (
   <Container
     padding={['bottom', 'top']}

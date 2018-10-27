@@ -58,7 +58,7 @@ declare_types! {
 
 			cx.borrow_mut(&mut this, |mut canvas| canvas.0.set_draw_color(color));
 
-			Ok(JsUndefined::new().upcast())
+			Ok(cx.undefined().upcast())
 		}
 
 		method present(mut cx) {
@@ -66,7 +66,7 @@ declare_types! {
 
 			cx.borrow_mut(&mut this, |mut canvas| canvas.0.present());
 
-			Ok(JsUndefined::new().upcast())
+			Ok(cx.undefined().upcast())
 		}
 
 		method clear(mut cx) {
@@ -74,7 +74,7 @@ declare_types! {
 
 			cx.borrow_mut(&mut this, |mut canvas| canvas.0.clear());
 
-			Ok(JsUndefined::new().upcast())
+			Ok(cx.undefined().upcast())
 		}
 	}
 }

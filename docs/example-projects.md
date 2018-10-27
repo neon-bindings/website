@@ -1,7 +1,7 @@
 ---
 id: example-projects
-title: Example Projects
-sidebar_label: Example Projects
+title: Who's Using Neon
+sidebar_label: Who's Using Neon
 ---
 
 Here is a list of projects using Neon
@@ -13,6 +13,7 @@ Here is a list of projects using Neon
 * [ledb: Lightweight embedded database](https://github.com/katyo/ledb)
 * [node-crypto: rust-crypto bindings for nodejs](https://github.com/Brooooooklyn/node-crypto)
 * [os-type: Bindings to the os_type rust library](https://github.com/amilajack/os-type)
+* [node-webrender: bindings to webrender](https://github.com/cztomsik/node-webrender)
 
 ## Electron Apps
 * [finda: Finda finds things — in under 16 milliseconds.](https://keminglabs.com/finda/)

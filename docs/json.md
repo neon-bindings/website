@@ -86,7 +86,7 @@ fn deserialize_something(mut cx: FunctionContext) -> JsResult<JsValue> {
     let arg0_value: AnObject = neon_serde::from_value(&mut cx, arg0)?;
     println!("{:?}", arg0_value);
 
-    Ok(JsUndefined::new().upcast())
+    Ok(cx.undefined().upcast())
 }
 
 register_module!(mut cx, {

@@ -4,8 +4,6 @@ title: Classes
 sidebar_label: Classes
 ---
 
-**This doc is currently a work in progress**
-
 For now, reference this snippet, taken <a href="https://github.com/neon-bindings/neon/blob/master/test/dynamic/native/src/js/classes.rs" target="_blank">from the tests:</a>
 
 ## Basics
