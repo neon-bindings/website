@@ -13,6 +13,10 @@
         "title": "Community Content",
         "sidebar_label": "Community Content"
       },
+      "demos": {
+        "title": "Demos",
+        "sidebar_label": "Demos"
+      },
       "electron-apps": {
         "title": "Electron Apps",
         "sidebar_label": "Electron Apps"
@@ -61,6 +65,10 @@
         "title": "Parallelism",
         "sidebar_label": "Parallelism"
       },
+      "roadmap": {
+        "title": "Roadmap",
+        "sidebar_label": "Roadmap"
+      },
       "sdl2-guide": {
         "title": "SDL2 Bindings",
         "sidebar_label": "SDL2 Bindings"
@@ -85,6 +93,9 @@
     "links": {
       "Docs": "Docs",
       "Help": "Help",
+      "Roadmap": "Roadmap",
+      "Resources": "Resources",
+      "Demos": "Demos",
       "Blog": "Blog"
     },
     "categories": {

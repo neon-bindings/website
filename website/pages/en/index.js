@@ -76,8 +76,8 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="https://github.com/neon-bindings/neon" target="_blank">Try It Out</Button>
-            <Button href="https://github.com/neon-bindings/neon" target="_blank">GitHub</Button>
+            <Button href={docUrl('getting-started', 'en')}>Try It Out</Button>
+            <Button href={siteConfig.repoUrl} target="_blank">GitHub</Button>
             <Button href="https://api.neon-bindings.com/neon/index.html" target="_blank">API</Button>
           </PromoSection>
         </div>

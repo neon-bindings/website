@@ -57,3 +57,12 @@ Neon also provides support for the ES6 [ArrayBuffer](https://developer.mozilla.o
 
 ## Node `Buffer`
 The Node Buffer type is also supported by Neon through the [`JsBuffer`](https://api.neon-bindings.com/neon/prelude/struct.jsbuffer) struct. It as the same constructor and methods as `JsArray`
+
+#### Runnable Example
+For a working example of using Node's `Buffer` class with Neon, see [https://github.com/dherman/neon-binary-example](neon-binary-example). You can get started with it by running the following commands:
+
+```bash
+git clone https://github.com/dherman/neon-binary-example
+cd neon-binary-example
+neon build
+```

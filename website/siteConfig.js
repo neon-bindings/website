@@ -8,11 +8,15 @@ const siteConfig = {
 
   projectName: 'neon-docs',
   organizationName: 'amilajack',
+  repoUrl: 'https://github.com/neon-bindings/neon',
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'intro', label: 'Docs'},
     {page: 'help', label: 'Help'},
+    {doc: 'roadmap', label: 'Roadmap'},
+    {doc: 'community-content', label: 'Resources'},
+    {doc: 'demos', label: 'Demos'},
     {blog: true, label: 'Blog'},
   ],
 
