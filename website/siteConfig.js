@@ -2,7 +2,7 @@ const users = [];
 
 const siteConfig = {
   title: 'Neon',
-  tagline: 'Rust bindings for writing safe and fast native Node.js modules',
+  tagline: 'Fast and Safe Native Node.js Modules',
   url: 'https://amilajack.github.io',
   baseUrl: '/neon-docs/',
 
@@ -24,14 +24,15 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  disableHeaderTitle: true,
+  headerIcon: 'logo/text-logo.svg',
+  footerIcon: 'logo/text-logo.svg',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#A00',
-    secondaryColor: '#030c1c',
+    primaryColor: '#030C1C',
+    secondaryColor: '#030C1C',
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
@@ -57,8 +58,8 @@ const siteConfig = {
   cleanUrl: true,
 
   // Open Graph and Twitter card images.
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png'
+  ogImage: 'logo/text-logo.svg',
+  twitterImage: 'logo/text-logo.svg'
 };
 
 module.exports = siteConfig;

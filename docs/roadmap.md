@@ -16,7 +16,6 @@ Currently Neon uses the `v8` API for all JS interaction with the JS runtime. Mig
 
 * ABI stability
 * Remove dependency on `node-gyp`
-* Remove dependency on `node-gyp`
 
 ## And Many More Things!
 

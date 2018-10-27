@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Rust bindings for writing safe and fast native Node.js modules",
+    "tagline": "Fast and Safe Native Node.js Modules",
     "docs": {
       "arguments": {
         "title": "Arguments",

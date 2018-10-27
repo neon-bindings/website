@@ -43,20 +43,12 @@ const SplashContainer = props => (
 );
 
 const Logo = props => (
-  <div className="projectLogo">
-    <img src={props.img_src} alt="Project Logo" />
-  </div>
-);
-
-const ProjectTitle = () => (
-  <h2 className="projectTitle">
-    {/* <div class="neon-logo">
+  <div className="neonProjectLogo">
+    <div class="neon-logo">
       <span class="open">Neon</span>
-      <span class="hrs">24 hrs</span>
-    </div> */}
-    {siteConfig.title}
-    <small>{siteConfig.tagline}</small>
-  </h2>
+      <span class="hrs">{siteConfig.tagline}</span>
+    </div>
+  </div>
 );
 
 const PromoSection = props => (
@@ -72,9 +64,8 @@ class HomeSplash extends React.Component {
     const language = this.props.language || '';
     return (
       <SplashContainer>
-        <Logo img_src={imgUrl('docusaurus.svg')} />
+        <Logo />
         <div className="inner">
-          <ProjectTitle />
           <PromoSection>
             <Button href={docUrl('getting-started', 'en')}>Try It Out</Button>
             <Button href={siteConfig.repoUrl} target="_blank">GitHub</Button>
