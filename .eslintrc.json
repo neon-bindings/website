@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "bliss", "prettier"],
   "rules": {
     "import/no-dynamic-require": 0,
     "import/no-extraneous-dependencies": 0,
