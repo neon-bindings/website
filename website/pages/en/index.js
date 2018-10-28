@@ -61,6 +61,7 @@ const PromoSection = props => (
 );
 
 const jsExample = `
+// JS
 function hello() {
   let result = fibonacci(10000);
   console.log(result);
@@ -69,6 +70,7 @@ function hello() {
 `
 
 const neonExample = `
+// Neon
 fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
   let result = cx.number(fibonacci());
   println!("{}", result);

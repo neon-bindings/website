@@ -9,6 +9,10 @@
         "title": "Arguments",
         "sidebar_label": "Arguments"
       },
+      "cli": {
+        "title": "CLI",
+        "sidebar_label": "CLI"
+      },
       "community-content": {
         "title": "Community Content",
         "sidebar_label": "Community Content"
@@ -44,10 +48,6 @@
       "js-array": {
         "title": "Arrays",
         "sidebar_label": "Arrays"
-      },
-      "js-async": {
-        "title": "Async",
-        "sidebar_label": "Async"
       },
       "js-object": {
         "title": "Objects",

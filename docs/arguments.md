@@ -24,7 +24,7 @@ The following code takes the first argument passed to the `sayHi` function and t
 
 ```rust
 fn say_hi(mut cx: FunctionContext) -> JsResult<JsFunction> {
-    let arg0 = cx.argument::<JsFunction>(0)?;
+    let arg0 = cx.argument::<JsFunction>(0)?.value();
     // --snip--
 }
 ```

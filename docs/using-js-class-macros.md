@@ -108,7 +108,7 @@ method askQuestion(mut cx) {
 
 Then you can use instances of this type in JS just like any other object:
 ```js
-const { Employee } = require('./native');
+const { Employee } = require('../native');
 
 console.log(new addon.Employee()) // fails: TypeError: not enough arguments
 

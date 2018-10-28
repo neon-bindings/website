@@ -1,3 +1,7 @@
+.navListItem.navListItemActive {
+  font-weight: bold;
+}
+
 .homeContainer .post a {
   background-color: rgba(3, 12, 28, 0.35);
   text-decoration: none !important;
