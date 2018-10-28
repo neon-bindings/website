@@ -1,10 +1,10 @@
 const React = require('react');
-const SyntaxHighlighter = require("react-syntax-highlighter/prism").default;
+const SyntaxHighlighter = require('react-syntax-highlighter/prism').default;
 const { atomDark } = require('react-syntax-highlighter/styles/prism');
 const CompLibrary = require('../../core/CompLibrary.js');
-const {translate} = require("../../server/translate.js");
+const { translate } = require('../../server/translate.js');
 
-const {MarkdownBlock, Container, GridBlock} = CompLibrary;
+const { MarkdownBlock, Container, GridBlock } = CompLibrary;
 const siteConfig = require(`${process.cwd()}/siteConfig.js`);
 
 function imgUrl(img) {
@@ -32,7 +32,7 @@ class Button extends React.Component {
 }
 
 Button.defaultProps = {
-  target: '_self',
+  target: '_self'
 };
 
 const SplashContainer = props => (
@@ -45,9 +45,11 @@ const SplashContainer = props => (
 
 const Logo = props => (
   <div className="neonProjectLogo">
-    <div class="neon-logo">
-      <span class="open neon-heading neon-flicker-blink">Neon</span>
-      <span class="hrs neon-subheading neon-flicker-buzz">{siteConfig.tagline}</span>
+    <div className="neon-logo">
+      <span className="open neon-heading neon-flicker-blink">Neon</span>
+      <span className="hrs neon-subheading neon-flicker-buzz">
+        {siteConfig.tagline}
+      </span>
     </div>
   </div>
 );
@@ -67,7 +69,7 @@ function hello() {
   console.log(result);
   return result
 }
-`
+`;
 
 const neonExample = `
 // Neon
@@ -75,7 +77,7 @@ fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
   let result = cx.number(fibonacci());
   println!("{}", result);
   Ok(result)
-}`
+}`;
 
 class HomeSplash extends React.Component {
   render() {
@@ -85,14 +87,32 @@ class HomeSplash extends React.Component {
         <Logo />
         <div className="inner">
           <PromoSection>
-            <SyntaxHighlighter customStyle={{ fontSize: '0.8em' }} language='javascript' style={atomDark}>{jsExample}</SyntaxHighlighter>
-            <SyntaxHighlighter customStyle={{ fontSize: '0.8em' }} language='rust' style={atomDark}>{neonExample}</SyntaxHighlighter>
-
+            <SyntaxHighlighter
+              customStyle={{ fontSize: '0.8em' }}
+              language="javascript"
+              style={atomDark}
+            >
+              {jsExample}
+            </SyntaxHighlighter>
+            <SyntaxHighlighter
+              customStyle={{ fontSize: '0.8em' }}
+              language="rust"
+              style={atomDark}
+            >
+              {neonExample}
+            </SyntaxHighlighter>
           </PromoSection>
           <PromoSection>
             <Button href={docUrl('getting-started', 'en')}>Try It Out</Button>
-            <Button href={siteConfig.repoUrl} target="_blank">GitHub</Button>
-            <Button href="https://api.neon-bindings.com/neon/index.html" target="_blank">API</Button>
+            <Button href={siteConfig.repoUrl} target="_blank">
+              GitHub
+            </Button>
+            <Button
+              href="https://api.neon-bindings.com/neon/index.html"
+              target="_blank"
+            >
+              API
+            </Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -101,9 +121,7 @@ class HomeSplash extends React.Component {
 }
 
 const Block = props => (
-  <Container
-    padding={['bottom', 'top']}
-    id={props.id}>
+  <Container padding={['bottom', 'top']} id={props.id}>
     <GridBlock align="center" contents={props.children} layout={props.layout} />
   </Container>
 );
@@ -112,21 +130,33 @@ const FeatureCallout = () => (
   <React.Fragment>
     <div
       className="productShowcaseSection paddingBottom"
-      style={{textAlign: 'center'}}>
+      style={{ textAlign: 'center' }}
+    >
       <h2 className="neon-heading">Don't Let Native Modules Scare You!</h2>
-      <h3 className="neon-subheading">Neon makes writing native Node.js modules safe and fun, so you can **hack without fear**.</h3>
+      <h3 className="neon-subheading">
+        Neon makes writing native Node.js modules safe and fun, so you can
+        **hack without fear**.
+      </h3>
     </div>
     <div
       className="productShowcaseSection paddingBottom"
-      style={{textAlign: 'center'}}>
+      style={{ textAlign: 'center' }}
+    >
       <h2 className="neon-heading">Crash-Free Memory Managment</h2>
-      <h3 className="neon-subheading">Neon works together with the JS garbage collector so allocations are always properly managed.</h3>
+      <h3 className="neon-subheading">
+        Neon works together with the JS garbage collector so allocations are
+        always properly managed.
+      </h3>
     </div>
     <div
       className="productShowcaseSection paddingBottom"
-      style={{textAlign: 'center'}}>
+      style={{ textAlign: 'center' }}
+    >
       <h2 className="neon-heading">Easy Parallelism</h2>
-      <h3 className="neon-subheading">Safely run multiple threads, which is easy with convenient Rust APIs like Rayon.</h3>
+      <h3 className="neon-subheading">
+        Safely run multiple threads, which is easy with convenient Rust APIs
+        like Rayon.
+      </h3>
     </div>
   </React.Fragment>
 );
@@ -134,17 +164,28 @@ const FeatureCallout = () => (
 const LearnMore = () => (
   <Container
     padding={['bottom', 'top']}
-    style={{textAlign: 'center'}}
-    id="learn-more">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jINMIAicaS0" frameborder="0" allow="autoplay; encrypted-media" allowFullScreen />
+    style={{ textAlign: 'center' }}
+    id="learn-more"
+  >
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/jINMIAicaS0"
+      frameBorder="0"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+    />
   </Container>
 );
 
 const TryOut = () => (
   <div
     className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
-    <a href={docUrl('getting-started', 'en')}><h2 className="neon-heading">Get Started!</h2></a>
+    style={{ textAlign: 'center' }}
+  >
+    <a href={docUrl('getting-started', 'en')}>
+      <h2 className="neon-heading">Get Started!</h2>
+    </a>
   </div>
 );
 

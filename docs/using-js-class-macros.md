@@ -9,6 +9,7 @@ For now, reference this snippet, taken <a href="https://github.com/neon-bindings
 ## Basics
 
 Let's create a simple struct that our class will use:
+
 ```rust
 pub struct Employee {
     // Rust struct properties map to JS class properties
@@ -26,7 +27,9 @@ method talk(mut cx) {
     Ok(cx.string("How are you doing?"))
 }
 ```
+
 ✅ But this will work:
+
 ```rust
 method talk(mut cx) {
     Ok(cx.string("How are you doing?").upcast())
@@ -66,6 +69,7 @@ register_module!(mut cx, {
 ### Adding Methods
 
 Now let's add some methods to our class:
+
 ```rust
 // --snip--
 init(mut cx) {
@@ -107,14 +111,15 @@ method askQuestion(mut cx) {
 ```
 
 Then you can use instances of this type in JS just like any other object:
+
 ```js
 const { Employee } = require('../native');
 
-console.log(new addon.Employee()) // fails: TypeError: not enough arguments
+console.log(new addon.Employee()); // fails: TypeError: not enough arguments
 
-const john = new addon.Employee('John')
-john.name();        // John
-john.greet();       // Hi John!
+const john = new addon.Employee('John');
+john.name(); // John
+john.greet(); // Hi John!
 john.askQuestion(); // How are you?
 ```
 
@@ -177,9 +182,9 @@ method introduce(mut cx) {
 ```js
 const addon = require('../native');
 
-const john = new addon.Employee(0, "Lisa");
-john.introduce("Mary"); // Hi, this is Mary
-john.introduce(12);     // Her birthday is on the 12th
+const john = new addon.Employee(0, 'Lisa');
+john.introduce('Mary'); // Hi, this is Mary
+john.introduce(12); // Her birthday is on the 12th
 ```
 
 ## Advanced Example
@@ -262,5 +267,4 @@ declare_types! {
 register_module!(mut cx, {
     cx.export_class::<JsUser>("User")
 });
-
 ```

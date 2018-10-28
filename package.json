@@ -8,12 +8,46 @@
   "scripts": {
     "start": "yarn workspace neon-docs start",
     "build": "yarn workspace neon-docs build",
-    "publish-gh-pages": "yarn workspace neon-docs publish-gh-pages"
+    "publish-gh-pages": "yarn workspace neon-docs publish-gh-pages",
+    "lint": "eslint .",
+    "lint-fix": "yarn --silent lint --fix; exit 0",
+    "postlint-fix": "prettier --ignore-path .eslintignore --write \"./**/*.{js,json,md,yml,yaml}\""
   },
   "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-bliss": "^3.0.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
     "yarn": "^1.10.1"
   },
   "engines": {
     "yarn": ">=1.10.1"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "eslint --fix",
+        "prettier --ignore-path .eslintignore --write",
+        "git add"
+      ],
+      "*.{json,md,yml,yaml}": [
+        "prettier --ignore-path .eslintignore --write",
+        "git add"
+      ]
+    },
+    "globOptions": {
+      "dot": true
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
