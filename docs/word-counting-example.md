@@ -93,9 +93,9 @@ The vm::lock API lets Neon safely expose the raw bytes of a Node Buffer object (
 To demonstrate how easy this can be, I used Niko Matsakis’s new Rayon crate of beautiful data parallelism abstractions. Changing the demo to use Rayon is as simple as replacing the into_iter/map/fold/ lines above with:
 
 ```diff
-    lines.into_par_iter()
-+       .map(|line| wc_line(line, search))
-        .sum()
++   lines.into_par_iter()
+      .map(|line| wc_line(line, search))
+      .sum()
 ```
 
 Keep in mind, Rayon wasn’t designed with Neon in mind—its generic primitives match the iteration protocols of Rust, so Neon was able to just pull it off the shelf.
