@@ -139,15 +139,11 @@ const LearnMore = () => (
 );
 
 const TryOut = () => (
-  <Block id="try">
-    {[
-      {
-        content: 'Visit GitHub',
-        imageAlign: 'left',
-        title: 'Try it Out',
-      },
-    ]}
-  </Block>
+  <div
+    className="productShowcaseSection paddingBottom"
+    style={{textAlign: 'center'}}>
+    <a href={docUrl('getting-started', 'en')}><h2 className="neon-heading">Get Started!</h2></a>
+  </div>
 );
 
 const Showcase = props => {

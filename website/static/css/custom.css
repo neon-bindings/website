@@ -61,13 +61,11 @@
   display: block;
   position: relative;
   transform: translateZ(0) translate3D(0, 0, 0);
-  transform: translateZ(0) translate3D(0, 0, 0);
   backface-visibility: hidden;
   will-change: opacity;
 }
 
 .neon-logo .open {
-  transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
 
@@ -86,7 +84,7 @@
   animation: buzz 0.01s infinite alternate;
 }
 
-.neon-flicker-buzz {
+.neon-flicker-blink {
   animation: blink 0.01s infinite alternate;
 }
 
