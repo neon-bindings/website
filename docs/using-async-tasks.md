@@ -39,6 +39,7 @@ register_module!(mut cx, {
 ```
 
 ### Output
+
 The task's result type, which is sent back to the main thread to communicate a successful result back to JavaScript.
 
 ### Error
@@ -62,6 +63,7 @@ thread at some point after the background task is completed.
 ### `.schedule(f)`
 
 Schedule a task to be executed on a background thread. `callback` should have the following signature:
+
 ```js
 function callback(err, value) {}
 ```
@@ -75,28 +77,30 @@ const { performAsyncTask } = require('../native');
 
 // Iterate 10,0000 times in background thread
 performAsyncTask((err, value) => {
-    let count = 10;
-    for (let i = 0; i < 100000; i++) {
-        count++;
-    }
-    console.log(count, 'first sum from background thread');
+  let count = 10;
+  for (let i = 0; i < 100000; i++) {
+    count++;
+  }
+  console.log(count, 'first sum from background thread');
 });
 
 // Iterate 10 times
 let count = 10;
 for (let i = 0; i < 10; i++) {
-    count++;
+  count++;
 }
 console.log(count, 'second sum from main thread');
 ```
 
 If you run this code you will get the following results:
+
 ```
 20 'second sum from main thread'
 100010 'first sum from background thread'
 ```
 
 If `performAsyncTask()` were executed syncronously then the background thread would finish running before the main thread finishes and the results would be:
+
 ```
 100010 'first sum from background thread'
 20 'second sum from main thread'
@@ -128,15 +132,15 @@ const { performAsyncTask } = require('../native');
 
 // Iterate 10,0000 times in background thread
 const promisePerformAsyncTask = () => {
-    return new Promise((resolve, reject) => {
-        performAsyncTask((err, res) => {
-            let count = 10;
-            for (let i = 0; i < 100000; i++) {
-                count++;
-            }
-            console.log(count, 'first sum from background thread');
-        });
+  return new Promise((resolve, reject) => {
+    performAsyncTask((err, res) => {
+      let count = 10;
+      for (let i = 0; i < 100000; i++) {
+        count++;
+      }
+      console.log(count, 'first sum from background thread');
     });
+  });
 };
 ```
 

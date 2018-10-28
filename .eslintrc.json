@@ -1,6 +1,8 @@
 {
   "extends": ["airbnb", "bliss", "prettier"],
   "rules": {
+    "class-methods-use-this": "warn",
+
     "import/no-dynamic-require": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": "warn",

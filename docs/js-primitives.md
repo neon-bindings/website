@@ -39,12 +39,14 @@ let boolean = JsBoolean::new(&mut cx, true);
 ```
 
 ## Undefined
+
 ```rust
 // --snip--
 let undefined = cx.undefined();
 let undefined = JsUndefined::new(&mut cx);
 // --snip--
 ```
+
 ## Null
 
 ```rust
