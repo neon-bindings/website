@@ -92,21 +92,21 @@ register_module!(mut cx, {
 const { Canvas } = require('../native');
 
 function sleep(n) {
-	return new Promise(resolve => setTimeout(resolve, n));
+  return new Promise(resolve => setTimeout(resolve, n));
 }
 
 async function run() {
-	const canvas = new Canvas();
+  const canvas = new Canvas();
 
-	for (let i = 0; i < 1000; i++) {
-		const m = i % 255;
+  for (let i = 0; i < 1000; i++) {
+    const m = i % 255;
 
-		canvas.set_draw_color(m, 64, 255 - m);
-		canvas.clear();
-		canvas.present();
+    canvas.set_draw_color(m, 64, 255 - m);
+    canvas.clear();
+    canvas.present();
 
-		await sleep(10);
-	}
+    await sleep(10);
+  }
 }
 
 run();

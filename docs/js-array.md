@@ -26,6 +26,7 @@ fn convert_vec_to_array(mut cx: FunctionContext) -> JsResult<JsArray> {
 ```
 
 ## Returning an empty element
+
 ```rust
 pub fn return_js_array(mut cx: FunctionContext) -> JsResult<JsArray> {
     Ok(cx.empty_array())
@@ -33,7 +34,9 @@ pub fn return_js_array(mut cx: FunctionContext) -> JsResult<JsArray> {
 ```
 
 ## Adding elements to an array
+
 This is an example of adding a number to a `JsArray`
+
 ```rust
 pub fn return_js_array_with_number(mut cx: FunctionContext) -> JsResult<JsArray> {
     let array: Handle<JsArray> = JsArray::new(&mut cx, 1);
@@ -42,7 +45,9 @@ pub fn return_js_array_with_number(mut cx: FunctionContext) -> JsResult<JsArray>
     Ok(array)
 }
 ```
+
 And this is an example of adding a string to a `JsArray`
+
 ```rust
 pub fn return_js_array_with_string(mut cx: FunctionContext) -> JsResult<JsArray> {
     let array: Handle<JsArray> = JsArray::new(&mut cx, 1);
@@ -53,12 +58,15 @@ pub fn return_js_array_with_string(mut cx: FunctionContext) -> JsResult<JsArray>
 ```
 
 ## `ArrayBuffer`
+
 Neon also provides support for the ES6 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) as through the [`JsArrayBuffer`](https://api.neon-bindings.com/neon/prelude/struct.jsarraybuffer) struct. It has the exact same constructor and methods as `JsArray`
 
 ## Node `Buffer`
+
 The Node Buffer type is also supported by Neon through the [`JsBuffer`](https://api.neon-bindings.com/neon/prelude/struct.jsbuffer) struct. It as the same constructor and methods as `JsArray`
 
 #### Runnable Example
+
 For a working example of using Node's `Buffer` class with Neon, see [https://github.com/dherman/neon-binary-example](neon-binary-example). You can get started with it by running the following commands:
 
 ```bash

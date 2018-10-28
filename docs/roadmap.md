@@ -14,8 +14,7 @@ See [N-NAPI](https://nodejs.org/api/n-api.html) for more details
 
 Currently Neon uses the `v8` API for all JS interaction with the JS runtime. Migrating to N-API would give us the following:
 
-* ABI stability
-* Remove dependency on `node-gyp`
+- ABI stability
+- Remove dependency on `node-gyp`
 
 ## And Many More Things!
-

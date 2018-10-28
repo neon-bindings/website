@@ -1,10 +1,9 @@
 const React = require('react');
-const SyntaxHighlighter = require("react-syntax-highlighter/prism").default;
-const { atomDark } = require('react-syntax-highlighter/styles/prism');
-const CompLibrary = require('../../core/CompLibrary.js');
-const {translate} = require("../../server/translate.js");
 
-const {MarkdownBlock, Container, GridBlock} = CompLibrary;
+const CompLibrary = require('../../core/CompLibrary.js');
+const { translate } = require('../../server/translate.js');
+
+const { MarkdownBlock, Container, GridBlock } = CompLibrary;
 const siteConfig = require(`${process.cwd()}/siteConfig.js`);
 
 function imgUrl(img) {
@@ -32,7 +31,7 @@ class Button extends React.Component {
 }
 
 Button.defaultProps = {
-  target: '_self',
+  target: '_self'
 };
 
 const SplashContainer = props => (
@@ -44,12 +43,20 @@ const SplashContainer = props => (
 );
 
 const Logo = props => (
-  <div className="neonProjectLogo">
-    <div class="neon-logo">
-      <span class="open neon-heading neon-flicker-blink">Neon</span>
-      <span class="hrs neon-subheading neon-flicker-buzz">{siteConfig.tagline}</span>
-    </div>
+  <div className="projectLogo">
+    <img src={props.img_src} alt="Project Logo" />
   </div>
+);
+
+const ProjectTitle = () => (
+  <h2 className="projectTitle">
+    {/* <div class="neon-logo">
+      <span class="open">Neon</span>
+      <span class="hrs">24 hrs</span>
+    </div> */}
+    {siteConfig.title}
+    <small>{siteConfig.tagline}</small>
+  </h2>
 );
 
 const PromoSection = props => (
@@ -60,39 +67,33 @@ const PromoSection = props => (
   </div>
 );
 
-const jsExample = `
-// JS
-function hello() {
-  let result = fibonacci(10000);
-  console.log(result);
-  return result
-}
-`
-
-const neonExample = `
-// Neon
-fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
-  let result = cx.number(fibonacci());
-  println!("{}", result);
-  Ok(result)
-}`
-
 class HomeSplash extends React.Component {
   render() {
     const language = this.props.language || '';
     return (
       <SplashContainer>
-        <Logo />
+        <Logo img_src={imgUrl('docusaurus.svg')} />
         <div className="inner">
+          <ProjectTitle />
           <PromoSection>
-            <SyntaxHighlighter customStyle={{ fontSize: '0.8em' }} language='javascript' style={atomDark}>{jsExample}</SyntaxHighlighter>
-            <SyntaxHighlighter customStyle={{ fontSize: '0.8em' }} language='rust' style={atomDark}>{neonExample}</SyntaxHighlighter>
-
-          </PromoSection>
-          <PromoSection>
-            <Button href={docUrl('getting-started', 'en')}>Try It Out</Button>
-            <Button href={siteConfig.repoUrl} target="_blank">GitHub</Button>
-            <Button href="https://api.neon-bindings.com/neon/index.html" target="_blank">API</Button>
+            <Button
+              href="https://github.com/neon-bindings/neon"
+              target="_blank"
+            >
+              Try It Out
+            </Button>
+            <Button
+              href="https://github.com/neon-bindings/neon"
+              target="_blank"
+            >
+              GitHub
+            </Button>
+            <Button
+              href="https://api.neon-bindings.com/neon/index.html"
+              target="_blank"
+            >
+              API
+            </Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -101,9 +102,7 @@ class HomeSplash extends React.Component {
 }
 
 const Block = props => (
-  <Container
-    padding={['bottom', 'top']}
-    id={props.id}>
+  <Container padding={['bottom', 'top']} id={props.id}>
     <GridBlock align="center" contents={props.children} layout={props.layout} />
   </Container>
 );
@@ -112,21 +111,33 @@ const FeatureCallout = () => (
   <React.Fragment>
     <div
       className="productShowcaseSection paddingBottom"
-      style={{textAlign: 'center'}}>
-      <h2 className="neon-heading">Don't Let Native Modules Scare You!</h2>
-      <h3 className="neon-subheading">Neon makes writing native Node.js modules safe and fun, so you can **hack without fear**.</h3>
+      style={{ textAlign: 'center' }}
+    >
+      <h2>DON’T LET NODE PLUGINS SCARE YOU!</h2>
+      <MarkdownBlock>
+        Neon makes writing native Node.js modules safe and fun, so you can
+        **hack without fear**.
+      </MarkdownBlock>
     </div>
     <div
       className="productShowcaseSection paddingBottom"
-      style={{textAlign: 'center'}}>
-      <h2 className="neon-heading">Crash-Free Memory Managment</h2>
-      <h3 className="neon-subheading">Neon works together with the JS garbage collector so allocations are always properly managed.</h3>
+      style={{ textAlign: 'center' }}
+    >
+      <h2>CRASH-FREE MEMORY MANAGEMENT</h2>
+      <MarkdownBlock>
+        {'Neon works together with the JS garbage collector' +
+          'so allocations are always properly managed.'}
+      </MarkdownBlock>
     </div>
     <div
       className="productShowcaseSection paddingBottom"
-      style={{textAlign: 'center'}}>
-      <h2 className="neon-heading">Easy Parallelism</h2>
-      <h3 className="neon-subheading">Safely run multiple threads, which is easy with convenient Rust APIs like Rayon.</h3>
+      style={{ textAlign: 'center' }}
+    >
+      <h2>EASY PARALLELISM</h2>
+      <MarkdownBlock>
+        Safely run multiple threads, which is easy with convenient Rust APIs
+        like Rayon.
+      </MarkdownBlock>
     </div>
   </React.Fragment>
 );
@@ -134,18 +145,30 @@ const FeatureCallout = () => (
 const LearnMore = () => (
   <Container
     padding={['bottom', 'top']}
-    style={{textAlign: 'center'}}
-    id="learn-more">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jINMIAicaS0" frameborder="0" allow="autoplay; encrypted-media" allowFullScreen />
+    style={{ textAlign: 'center' }}
+    id="learn-more"
+  >
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/jINMIAicaS0"
+      frameBorder="0"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+    />
   </Container>
 );
 
 const TryOut = () => (
-  <div
-    className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
-    <a href={docUrl('getting-started', 'en')}><h2 className="neon-heading">Get Started!</h2></a>
-  </div>
+  <Block id="try">
+    {[
+      {
+        content: 'Visit GitHub',
+        imageAlign: 'left',
+        title: 'Try it Out'
+      }
+    ]}
+  </Block>
 );
 
 const Showcase = props => {
@@ -180,7 +203,7 @@ class Index extends React.Component {
     return (
       <div>
         <HomeSplash language={language} />
-        <div className="homeContainer">
+        <div className="mainContainer">
           <FeatureCallout />
           <LearnMore />
           <TryOut />

@@ -7,6 +7,7 @@ sidebar_label: Word Counting
 In this guide we're going to recreate the [word counting demo Dave Herman gave in his talk about neon](https://youtu.be/jINMIAicaS0?t=789).
 
 First start by creating a new project with `neon-cli`:
+
 ```bash
 neon new hello
 cd hello
@@ -128,4 +129,5 @@ Hopefully this demo is enough to get people interested. Beyond the sheer fun of 
 There are lots of possibilities, but I need help! If you want to get involved, I’ve created a community slack (grab an invite from the Slackin app) and a #neon IRC channel on Mozilla IRC (irc.mozilla.org).
 
 ## Source
+
 Here is the [source code](https://github.com/amilajack/wc-demo) for this guide.

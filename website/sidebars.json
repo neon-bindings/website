@@ -1,7 +1,22 @@
 {
   "docs": {
-    "Getting Started": ["intro", "getting-started", "hello-world", "electron-apps", "cli"],
-    "Basics": ["js-primitives", "js-array", "js-object", "arguments", "using-js-class-macros", "functions", "json", "using-async-tasks", "parallelism"],
+    "Getting Started": [
+      "intro",
+      "getting-started",
+      "hello-world",
+      "electron-apps"
+    ],
+    "Basics": [
+      "js-primitives",
+      "js-array",
+      "js-object",
+      "arguments",
+      "using-js-class-macros",
+      "functions",
+      "json",
+      "using-async-tasks",
+      "parallelism"
+    ],
     "Guides": ["word-counting-guide", "sdl2-guide"],
     "Advanced": [],
     "Misc": ["roadmap", "example-projects", "community-content"]

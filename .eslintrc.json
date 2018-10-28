@@ -1,0 +1,19 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": "warn",
+
+    "jsx-a11y/iframe-has-title": "warn",
+
+    "no-unused-vars": "warn",
+
+    "react/destructuring-assignment": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/no-multi-comp": 0,
+    "react/prefer-stateless-function": 0,
+    "react/prop-types": 0
+  }
+}

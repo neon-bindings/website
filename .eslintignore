@@ -1,0 +1,4 @@
+# allow dotfiles to be linted
+!.*
+
+package.json
