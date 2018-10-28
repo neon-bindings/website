@@ -10,7 +10,7 @@
     "build": "yarn workspace neon-docs build",
     "publish-gh-pages": "yarn workspace neon-docs publish-gh-pages",
     "lint": "eslint .",
-    "lint-fix": "yarn lint --fix",
+    "lint-fix": "yarn --silent lint --fix; exit 0",
     "postlint-fix": "prettier --ignore-path .eslintignore --write \"./**/*.{js,json,md,yml,yaml}\""
   },
   "devDependencies": {
