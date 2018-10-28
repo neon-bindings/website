@@ -3,6 +3,10 @@
   text-decoration: none !important;
 }
 
+.mainContainer .wrapper {
+  text-align: center;
+}
+
 .neonProjectLogo {
   justify-content: center;
   font-size: 5em;
@@ -42,17 +46,21 @@
   src: url('/neon-docs/fonts/neon-tube-wide.ttf');
 }
 
+.mainContainer {
+  background: #030C1C;
+}
+
 .neon-logo {
   font-family: 'neon-tube-wide';
   text-align: center;
 }
 
-.neon-logo span {
+.neon-logo span, .neon-heading {
+  font-family: 'neon-tube-wide';
   display: block;
   position: relative;
   transform: translateZ(0) translate3D(0, 0, 0);
   transform: translateZ(0) translate3D(0, 0, 0);
-  backface-visibility: hidden;
   backface-visibility: hidden;
   will-change: opacity;
 }
@@ -60,20 +68,34 @@
 .neon-logo .open {
   transform: rotate(-2deg);
   transform: rotate(-2deg);
-  color: #ffd9e2;
+}
+
+.neon-logo .open, .neon-heading {
+  color: #ffd9e2 !important;
   text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
-  animation: blink 4s infinite alternate;
-  animation: blink 4s infinite alternate;
 }
 
 .neon-logo .hrs {
-  transform: rotate(1deg);
-  transform: rotate(1deg);
   font-size: 0.3em;
+  font-family: 'neon-tube-wide';
+  transform: rotate(1deg);
+}
+
+.neon-flicker-buzz {
+  animation: buzz 0.01s infinite alternate;
+}
+
+.neon-flicker-buzz {
+  animation: blink 0.01s infinite alternate;
+}
+
+.neon-subheading {
+  font-family: 'neon-tube-wide';
   color: #d4eaff;
-  text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff;
-  animation: buzz 0.01s infinite alternate;
-  animation: buzz 0.01s infinite alternate;
+  letter-spacing: 2px;
+  /* font-family: 'Courier New', Courier, monospace; */
+  /* text-shadow: 0 0 0 transparent, 0 #2695ff; */
+  text-shadow: 0px 0px 15px rgba(38, 149, 255, 0.8);
 }
 
 @keyframes buzz {

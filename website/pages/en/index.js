@@ -1,5 +1,6 @@
 const React = require('react');
-
+const SyntaxHighlighter = require("react-syntax-highlighter/prism").default;
+const { atomDark } = require('react-syntax-highlighter/styles/prism');
 const CompLibrary = require('../../core/CompLibrary.js');
 const {translate} = require("../../server/translate.js");
 
@@ -45,8 +46,8 @@ const SplashContainer = props => (
 const Logo = props => (
   <div className="neonProjectLogo">
     <div class="neon-logo">
-      <span class="open">Neon</span>
-      <span class="hrs">{siteConfig.tagline}</span>
+      <span class="open neon-heading neon-flicker-blink">Neon</span>
+      <span class="hrs neon-subheading neon-flicker-buzz">{siteConfig.tagline}</span>
     </div>
   </div>
 );
@@ -59,6 +60,21 @@ const PromoSection = props => (
   </div>
 );
 
+const jsExample = `
+function hello() {
+  let result = fibonacci(10000);
+  console.log(result);
+  return result
+}
+`
+
+const neonExample = `
+fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
+  let result = cx.number(fibonacci());
+  println!("{}", result);
+  Ok(result)
+}`
+
 class HomeSplash extends React.Component {
   render() {
     const language = this.props.language || '';
@@ -66,6 +82,11 @@ class HomeSplash extends React.Component {
       <SplashContainer>
         <Logo />
         <div className="inner">
+          <PromoSection>
+            <SyntaxHighlighter customStyle={{ fontSize: '0.8em' }} language='javascript' style={atomDark}>{jsExample}</SyntaxHighlighter>
+            <SyntaxHighlighter customStyle={{ fontSize: '0.8em' }} language='rust' style={atomDark}>{neonExample}</SyntaxHighlighter>
+
+          </PromoSection>
           <PromoSection>
             <Button href={docUrl('getting-started', 'en')}>Try It Out</Button>
             <Button href={siteConfig.repoUrl} target="_blank">GitHub</Button>
@@ -90,20 +111,20 @@ const FeatureCallout = () => (
     <div
       className="productShowcaseSection paddingBottom"
       style={{textAlign: 'center'}}>
-      <h2>DON’T LET NODE PLUGINS SCARE YOU!</h2>
-      <MarkdownBlock>Neon makes writing native Node.js modules safe and fun, so you can **hack without fear**.</MarkdownBlock>
+      <h2 className="neon-heading">Don't Let Native Modules Scare You!</h2>
+      <h3 className="neon-subheading">Neon makes writing native Node.js modules safe and fun, so you can **hack without fear**.</h3>
     </div>
     <div
       className="productShowcaseSection paddingBottom"
       style={{textAlign: 'center'}}>
-      <h2>CRASH-FREE MEMORY MANAGEMENT</h2>
-      <MarkdownBlock>Neon works together with the JS garbage collector so allocations are always properly managed.</MarkdownBlock>
+      <h2 className="neon-heading">Crash-Free Memory Managment</h2>
+      <h3 className="neon-subheading">Neon works together with the JS garbage collector so allocations are always properly managed.</h3>
     </div>
     <div
       className="productShowcaseSection paddingBottom"
       style={{textAlign: 'center'}}>
-      <h2>EASY PARALLELISM</h2>
-      <MarkdownBlock>Safely run multiple threads, which is easy with convenient Rust APIs like Rayon.</MarkdownBlock>
+      <h2 className="neon-heading">Easy Parallelism</h2>
+      <h3 className="neon-subheading">Safely run multiple threads, which is easy with convenient Rust APIs like Rayon.</h3>
     </div>
   </React.Fragment>
 );
