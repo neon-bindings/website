@@ -1,9 +1,9 @@
-.mainContainer .post a {
+.homeContainer .post a {
   background-color: rgba(3, 12, 28, 0.35);
   text-decoration: none !important;
 }
 
-.mainContainer .wrapper {
+.homeContainer .wrapper {
   text-align: center;
 }
 
@@ -46,8 +46,9 @@
   src: url('/neon-docs/fonts/neon-tube-wide.ttf');
 }
 
-.mainContainer {
+.homeContainer {
   background: #030C1C;
+  padding: 20px 0;
 }
 
 .neon-logo {
@@ -93,8 +94,6 @@
   font-family: 'neon-tube-wide';
   color: #d4eaff;
   letter-spacing: 2px;
-  /* font-family: 'Courier New', Courier, monospace; */
-  /* text-shadow: 0 0 0 transparent, 0 #2695ff; */
   text-shadow: 0px 0px 15px rgba(38, 149, 255, 0.8);
 }
 
