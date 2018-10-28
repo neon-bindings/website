@@ -49,12 +49,12 @@ The task's error type, which is sent back to the main thread to communicate a ta
 
 The type of JavaScript value that gets produced to the asynchronous callback on the main thread after the task is completed.
 
-### Perform
+### `.perform()`
 
 Perform the task, producing either a successful `Output` or an unsuccessful `Error`. This method is executed in a background
 thread as part of libuv's built-in thread pool.
 
-### Complete
+### `.complete()`
 
 Convert the result of the task to a JavaScript value to be passed to the asynchronous callback. This method is executed on the main
 thread at some point after the background task is completed.
