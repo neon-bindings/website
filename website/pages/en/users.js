@@ -1,9 +1,8 @@
 const React = require('react');
 const CompLibrary = require('../../core/CompLibrary.js');
-
 const siteConfig = require(`${process.cwd()}/siteConfig.js`);
 
-const { Container } = CompLibrary;
+const {Container} = CompLibrary;
 
 class Users extends React.Component {
   render() {

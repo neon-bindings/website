@@ -9,7 +9,6 @@ Sometimes you just want to convert a struct in Rust to a `JsObject` and back. Th
 For more docs on the `neon-serde` crate, please see its [repo](https://github.com/GabrielCastro/neon-serde) and [docs](https://docs.rs/crate/neon-serde/0.0.3)
 
 First we install the following crates:
-
 ```toml
 # Cargo.toml
 # --snip--
@@ -40,7 +39,6 @@ struct User {
 ## Serializing
 
 We can serialize a Rust struct and convert it to a `JsValue` like so:
-
 ```rust
 // --snip--
 fn serialize_something(mut cx: FunctionContext) -> JsResult<JsValue> {
@@ -60,7 +58,6 @@ register_module!(mut cx, {
 ```
 
 In your `./lib/index.js` you can call your function like so:
-
 ```js
 const addon = require('../native');
 addon.serialize_something();
@@ -81,7 +78,6 @@ struct User {
 ```
 
 Now we can also deserialize a `JsObject` struct and convert it to a `JsValue` like so:
-
 ```rust
 // --snip--
 fn deserialize_something(mut cx: FunctionContext) -> JsResult<JsValue> {
@@ -101,7 +97,6 @@ register_module!(mut cx, {
 ```
 
 In your `./lib/index.js` you can call your function like so:
-
 ```js
 const addon = require('../native');
 addon.deserialize_something();
@@ -138,7 +133,6 @@ export! {
 ```
 
 In our JS we simply import the methods and call the functions. Note that type checks are written for us by the macro:
-
 ```js
 const addon = require('../native');
 
@@ -146,7 +140,7 @@ const addon = require('../native');
 // console.log(addon.say_hello());
 // fails: TypeError: not enough arguments
 
-console.log(addon.say_hello('john'));
+console.log(addon.say_hello("john"));
 // Hello, john!
 
 // Calling the function with incorrect arguments will fail
@@ -157,5 +151,4 @@ console.log(addon.fibonacci(32));
 ```
 
 ## Example
-
 See the [neon-serde-example](https://github.com/amilajack/neon-serde-example) for a runnable example

@@ -2,32 +2,37 @@ const users = [];
 
 const siteConfig = {
   title: 'Neon',
-  tagline: 'Rust bindings for writing safe and fast native Node.js modules',
+  tagline: 'Fast and Safe Native Node.js Modules',
   url: 'https://amilajack.github.io',
   baseUrl: '/neon-docs/',
 
   projectName: 'neon-docs',
   organizationName: 'amilajack',
+  repoUrl: 'https://github.com/neon-bindings/neon',
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: 'intro', label: 'Docs' },
-    { page: 'help', label: 'Help' },
-    { blog: true, label: 'Blog' }
+    {doc: 'intro', label: 'Docs'},
+    {doc: 'roadmap', label: 'Roadmap'},
+    {doc: 'community-content', label: 'Resources'},
+    {doc: 'demos', label: 'Demos'},
+    {blog: true, label: 'Blog'},
+    {page: 'help', label: 'Help'}
   ],
 
   // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
-  favicon: 'img/favicon.png',
+  disableHeaderTitle: true,
+  headerIcon: 'logo/text-logo.svg',
+  footerIcon: 'logo/text-logo.svg',
+  favicon: 'logo/letter-logo.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#A00',
-    secondaryColor: '#030c1c'
+    primaryColor: '#030C1C',
+    secondaryColor: '#030C1C',
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
@@ -35,7 +40,7 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'tomorrow'
+    theme: "tomorrow"
   },
 
   algolia: {
@@ -53,8 +58,8 @@ const siteConfig = {
   cleanUrl: true,
 
   // Open Graph and Twitter card images.
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png'
+  ogImage: 'logo/text-logo.svg',
+  twitterImage: 'logo/text-logo.svg'
 };
 
 module.exports = siteConfig;

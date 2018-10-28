@@ -22,9 +22,9 @@ Neon depends on Node's plugin build tools, which have a few additional system re
 
 The development dependencies for macOS are:
 
-- Python 2.7 (Python 3 is **not** supported)
-- [Xcode](https://developer.apple.com/xcode/download/)
-- Install the _Command Line Tools_ via Xcode under the menu _Xcode &rarr; Preferences &rarr; Downloads_.
+  * Python 2.7 (Python 3 is **not** supported)
+  * [Xcode](https://developer.apple.com/xcode/download/)
+  * Install the _Command Line Tools_ via Xcode under the menu _Xcode &rarr; Preferences &rarr; Downloads_.
 
 ### Windows
 
@@ -40,12 +40,12 @@ This installs all the system dependencies unobtrusively, without conflicting wit
 
 Alternatively, you can set up the Windows development environment manually instead of using `windows-build-tools`. **You do not need to do this if you used the recommended setup process above.**
 
-- On Windows Vista or Windows 7, install the [.NET Framework 4.5.1](http://www.microsoft.com/en-us/download/details.aspx?id=40773).
-- Install the Visual C++ Build Environment with one of the following options:
-  1. Install the [Visual C++ Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools) using the _Default Install_ option.
-  1. Install [Visual Studio](https://www.visualstudio.com/products/visual-studio-community-vs) (or modify an existing installation) and select _Common Tools for Visual C++_ during setup.
-- Install [Python 2.7](https://www.python.org/downloads/) (Python 3 is **not** supported).
-- Run the following commands:
+  * On Windows Vista or Windows 7, install the [.NET Framework 4.5.1](http://www.microsoft.com/en-us/download/details.aspx?id=40773).
+  * Install the Visual C++ Build Environment with one of the following options:
+    1. Install the [Visual C++ Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools) using the _Default Install_ option.
+    1. Install [Visual Studio](https://www.visualstudio.com/products/visual-studio-community-vs) (or modify an existing installation) and select _Common Tools for Visual C++_ during setup.
+  * Install [Python 2.7](https://www.python.org/downloads/) (Python 3 is **not** supported).
+  * Run the following commands:
 
 ```powershell
 C:\> npm config set python python2.7
@@ -53,12 +53,11 @@ C:\> npm config set msvs_version 2015
 ```
 
 ### Generic
-
 The generic Unix development dependencies are:
 
-- Python 2.7 (Python 3 is **not** supported)
-- `make`
-- A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org/)
+  * Python 2.7 (Python 3 is **not** supported)
+  * `make`
+  * A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org/)
 
 Most modern Unix systems, like Linux or FreeBSD, should have the required development dependencies installed already.
 

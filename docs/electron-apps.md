@@ -13,7 +13,6 @@ For the most part, using a Neon package in Electron is as straightforward as add
 In the meantime, we can use Neon modules in an Electron app with just a few lines of configuration in our `package.json`.
 
 ## Setup Electron
-
 ```bash
 # Clone the Quick Start repository
 git clone https://github.com/electron/electron-quick-start
