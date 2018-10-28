@@ -42,7 +42,7 @@ pub fn foo(mut cx: FunctionContext) -> JsResult<JsUndefined> {
 Now in our `./lib/index.js`:
 
 ```js
-const { foo } = require('../native);
+const { foo } = require('../native');
 foo();             // fails
 foo(12);           // fails
 foo('foobar');     // fails
@@ -84,7 +84,7 @@ Now in our `./lib/index.js` we add the following:
 
 ```js
 // ./lib/index.js
-const { getArgsLen } = require('../native);
+const { getArgsLen } = require('../native');
 getArgsLen() // 0
 getArgsLen(1) // 1
 getArgsLen(1, 'foobar') // 2
