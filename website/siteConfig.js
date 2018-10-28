@@ -13,11 +13,11 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'intro', label: 'Docs'},
-    {page: 'help', label: 'Help'},
     {doc: 'roadmap', label: 'Roadmap'},
     {doc: 'community-content', label: 'Resources'},
     {doc: 'demos', label: 'Demos'},
     {blog: true, label: 'Blog'},
+    {page: 'help', label: 'Help'}
   ],
 
   // If you have users set above, you add it here:
@@ -27,7 +27,7 @@ const siteConfig = {
   disableHeaderTitle: true,
   headerIcon: 'logo/text-logo.svg',
   footerIcon: 'logo/text-logo.svg',
-  favicon: 'img/favicon.png',
+  favicon: 'logo/letter-logo.png',
 
   /* Colors for website */
   colors: {
