@@ -67,14 +67,14 @@ const jsExample = `
 function hello() {
   let result = fibonacci(10000);
   console.log(result);
-  return result
+  return result;
 }
 `;
 
 const neonExample = `
 // Neon
 fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
-  let result = cx.number(fibonacci());
+  let result = cx.number(fibonacci(10000));
   println!("{}", result);
   Ok(result)
 }`;

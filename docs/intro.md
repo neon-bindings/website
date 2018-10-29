@@ -23,4 +23,4 @@ Neon also works hard to make creating native modules easy, with a convenient com
 
 ## Where Do I Start?
 
-The best place to go next is the [Getting Started guide](intro.md), which will help you get Neon installed on your system. From there, try out the [Hello, World! guide](hello-world.md) to write your first native Node module with Neon!
+The best place to go next is the [Getting Started guide](getting-started.md), which will help you get Neon installed on your system. From there, try out the [Hello, World! guide](hello-world.md) to write your first native Node module with Neon!
