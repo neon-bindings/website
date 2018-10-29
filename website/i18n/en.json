@@ -88,6 +88,90 @@
       "word-counting-guide": {
         "title": "Word Counting",
         "sidebar_label": "Word Counting"
+      },
+      "version-0.2.0-arguments": {
+        "title": "Arguments",
+        "sidebar_label": "Arguments"
+      },
+      "version-0.2.0-cli": {
+        "title": "CLI",
+        "sidebar_label": "CLI"
+      },
+      "version-0.2.0-community-content": {
+        "title": "Community Content",
+        "sidebar_label": "Community Content"
+      },
+      "version-0.2.0-demos": {
+        "title": "Demos",
+        "sidebar_label": "Demos"
+      },
+      "version-0.2.0-electron-apps": {
+        "title": "Electron Apps",
+        "sidebar_label": "Electron Apps"
+      },
+      "version-0.2.0-example-projects": {
+        "title": "Who's Using Neon",
+        "sidebar_label": "Who's Using Neon"
+      },
+      "version-0.2.0-functions": {
+        "title": "Functions",
+        "sidebar_label": "Functions"
+      },
+      "version-0.2.0-getting-started": {
+        "title": "Getting Started",
+        "sidebar_label": "Getting Started"
+      },
+      "version-0.2.0-hello-world": {
+        "title": "Hello World!",
+        "sidebar_label": "Hello World!"
+      },
+      "version-0.2.0-intro": {
+        "title": "Introduction",
+        "sidebar_label": "Introduction"
+      },
+      "version-0.2.0-js-array": {
+        "title": "Arrays",
+        "sidebar_label": "Arrays"
+      },
+      "version-0.2.0-js-object": {
+        "title": "Objects",
+        "sidebar_label": "Objects"
+      },
+      "version-0.2.0-js-primitives": {
+        "title": "Primitives",
+        "sidebar_label": "Primitives"
+      },
+      "version-0.2.0-json": {
+        "title": "JSON",
+        "sidebar_label": "JSON"
+      },
+      "version-0.2.0-parallelism": {
+        "title": "Parallelism",
+        "sidebar_label": "Parallelism"
+      },
+      "version-0.2.0-roadmap": {
+        "title": "Roadmap",
+        "sidebar_label": "Roadmap"
+      },
+      "version-0.2.0-sdl2-guide": {
+        "title": "SDL2 Bindings",
+        "sidebar_label": "SDL2 Bindings"
+      },
+      "version-0.2.0-type-checking": {
+        "title": "Type Checking",
+        "sidebar_label": "Type Checking"
+      },
+      "version-0.2.0-using-async-tasks": {
+        "title": "Async Tasks",
+        "sidebar_label": "Async Tasks"
+      },
+      "version-0.2.0-using-js-class-macros": {
+        "title": "Classes",
+        "sidebar_label": "Classes"
+      },
+      "version-0.2.0-word-counting-guide": {
+        "title": "Word Counting",
+        "sidebar_label": "Word Counting"
       }
     },
     "links": {

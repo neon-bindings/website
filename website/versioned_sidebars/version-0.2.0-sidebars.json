@@ -1,0 +1,32 @@
+{
+  "version-0.2.0-docs": {
+    "Getting Started": [
+      "version-0.2.0-intro",
+      "version-0.2.0-getting-started",
+      "version-0.2.0-hello-world",
+      "version-0.2.0-electron-apps",
+      "version-0.2.0-cli"
+    ],
+    "Basics": [
+      "version-0.2.0-js-primitives",
+      "version-0.2.0-js-array",
+      "version-0.2.0-js-object",
+      "version-0.2.0-arguments",
+      "version-0.2.0-using-js-class-macros",
+      "version-0.2.0-functions",
+      "version-0.2.0-json",
+      "version-0.2.0-using-async-tasks",
+      "version-0.2.0-parallelism"
+    ],
+    "Guides": [
+      "version-0.2.0-word-counting-guide",
+      "version-0.2.0-sdl2-guide"
+    ],
+    "Advanced": [],
+    "Misc": [
+      "version-0.2.0-roadmap",
+      "version-0.2.0-example-projects",
+      "version-0.2.0-community-content"
+    ]
+  }
+}
