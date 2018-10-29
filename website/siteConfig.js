@@ -46,7 +46,10 @@ const siteConfig = {
   algolia: {
     // "Search only api key". Safe to keep this public
     apiKey: 'bfa6bb4b57d4fa853c0358ee9b195146',
-    indexName: 'amilajack_neon'
+    indexName: 'amilajack_neon',
+    algoliaOptions: {
+      facetFilters: ['language:LANGUAGE', 'version:VERSION'],
+    }
   },
 
   // Add custom scripts here that would be placed in <script> tags.
