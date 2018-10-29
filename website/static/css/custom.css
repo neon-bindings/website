@@ -7,6 +7,12 @@
   text-decoration: none !important;
 }
 
+.mainContainer .post a:not(.anchor) {
+  background-color: #ffd9e2;
+  border-bottom: 1px dotted gray;
+  text-decoration: none !important;
+}
+
 .homeContainer .wrapper {
   text-align: center;
 }
