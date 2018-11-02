@@ -90,18 +90,57 @@ getArgsLen(1) // 1
 getArgsLen(1, 'foobar') // 2
 ```
 
-## Options for Arguments
+## Optional Arguments
 
 Produces the `i`th argument, or `None` if `i` is greater than or equal to `self.len()`.
 
 ```rust
 pub fn args_opt(mut cx: FunctionContext) -> JsResult<JsNumber> {
-    match cx.argument_opt::<JsString>(10000)? {
+    match cx.argument_opt(0) {
         Some(arg) => {
-            println!"The 10000th argument is {}", arg);
+            // Throw if the argument exist and it cannot be downcasted
+            // to a number
+            let num = arg.downcast::<JsNumber>().or_throw(&mut cx)?.value();
+            println!"The 0th argument is {}", num);
         },
-        None => panic!("10000th argument does not exist, out of bounds!")
+        None => panic!("0th argument does not exist, out of bounds!")
     }
     Ok(cx.undefined())
 }
+```
+
+## Default Values
+
+Handling default values is similar to handling **Optional Arguments**:
+
+```rust
+// --snip--
+
+pub fn default_args(mut cx: FunctionContext) -> JsResult<JsUndefined> {
+    let age = match cx.argument_opt(0) {
+        Some(arg) => arg.downcast::<JsNumber>().or_throw(&mut cx)?.value(),
+        // Default to 12 if no value is given
+        None => 12 as f64
+    };
+
+    let name = match cx.argument_opt(1) {
+        Some(arg) => arg.downcast::<JsString>().or_throw(&mut cx)?.value(),
+        // Default to 12 if no value is given
+        None => "John Doe".to_string()
+    };
+
+    println!("i am {} years old and my name is {}", age, name);
+
+    Ok(cx.undefined())
+}
+
+// --snip--
+```
+
+```js
+const { defaultArgs } = require('../native');
+
+defaultArgs(); // i am 12 years old and my name is John Doe
+defaultArgs(22); // i am 22 years old and my name is John Doe
+defaultArgs(22, "Jane Doe"); // i am 22 years old and my name is Jane Doe
 ```
