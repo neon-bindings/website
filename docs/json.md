@@ -15,7 +15,7 @@ First we install the following crates:
 # --snip--
 [dependencies]
 neon = "0.2.0"
-neon-serde = { git = "https://github.com/GabrielCastro/neon-serde" }
+neon-serde = "0.1.1"
 serde_derive = "1.0.80"
 serde = "1.0.80"
 ```
@@ -158,4 +158,4 @@ console.log(addon.fibonacci(32));
 
 ## Example
 
-See the [runnable json example](https://github.com/amilajack/neon-examples/tree/master/6_json)
+See the [runnable json example](https://github.com/amilajack/neon-examples/tree/master/json)
