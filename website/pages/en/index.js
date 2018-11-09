@@ -1,6 +1,7 @@
 const React = require('react');
-const SyntaxHighlighter = require('react-syntax-highlighter/prism').default;
-const { atomDark } = require('react-syntax-highlighter/styles/prism');
+const SyntaxHighlighter = require('react-syntax-highlighter/dist/prism')
+  .default;
+const { atomDark } = require('react-syntax-highlighter/dist/styles/prism');
 const CompLibrary = require('../../core/CompLibrary.js');
 const { translate } = require('../../server/translate.js');
 
@@ -194,11 +195,13 @@ const Showcase = props => {
     return null;
   }
 
-  const showcase = siteConfig.users.filter(user => user.pinned).map(user => (
-    <a href={user.infoLink} key={user.infoLink}>
-      <img src={user.image} alt={user.caption} title={user.caption} />
-    </a>
-  ));
+  const showcase = siteConfig.users
+    .filter(user => user.pinned)
+    .map(user => (
+      <a href={user.infoLink} key={user.infoLink}>
+        <img src={user.image} alt={user.caption} title={user.caption} />
+      </a>
+    ));
 
   return (
     <div className="productShowcaseSection paddingBottom">
