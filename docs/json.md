@@ -158,4 +158,4 @@ console.log(addon.fibonacci(32));
 
 ## Example
 
-See the [neon-serde-example](https://github.com/amilajack/neon-serde-example) for a runnable example
+See the [runnable json example](https://github.com/amilajack/neon-examples/tree/master/6_json)
