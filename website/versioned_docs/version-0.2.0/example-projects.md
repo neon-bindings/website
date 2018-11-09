@@ -9,6 +9,7 @@ Here is a list of projects using Neon
 
 ## Node Libraries
 
+- [disk-utility: Disk utility methods for Node using Neon](https://github.com/amilajack/disk-utility)
 - [snips-nlu-js: Quick and dirty NodeJS bindings for snips-nlu-rs](https://github.com/ballwood/snips-nlu-js)
 - [reconfix: (Re)Configuration toolkit](https://github.com/resin-io/reconfix)
 - [libsodium-neon: Node bindings to libsodium](https://github.com/wireapp/libsodium-neon)

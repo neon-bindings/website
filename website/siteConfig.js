@@ -14,7 +14,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'intro', label: 'Docs' },
     { doc: 'demos', label: 'Demos' },
-    // { doc: 'guides', label: 'Guides' },
+    { doc: 'guides', label: 'Guides' },
     { doc: 'community-content', label: 'Resources' },
     { doc: 'roadmap', label: 'Roadmap' },
     { page: 'help', label: 'Help' },

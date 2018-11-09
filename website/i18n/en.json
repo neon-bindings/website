@@ -125,6 +125,10 @@
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
       },
+      "version-0.2.0-guides": {
+        "title": "Guides",
+        "sidebar_label": "Guides"
+      },
       "version-0.2.0-hello-world": {
         "title": "Hello World!",
         "sidebar_label": "Hello World!"
@@ -181,6 +185,7 @@
     "links": {
       "Docs": "Docs",
       "Demos": "Demos",
+      "Guides": "Guides",
       "Resources": "Resources",
       "Roadmap": "Roadmap",
       "Help": "Help",

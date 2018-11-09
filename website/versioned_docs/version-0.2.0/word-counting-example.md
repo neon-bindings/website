@@ -81,16 +81,13 @@ On my machine, the simple Rust translation runs in about 80 – 85ms. Not bad—
 We’re not done yet, though! Rust enables something even cooler for Node: we can easily and safely parallelize this code—and I mean without the night-sweats and palpitations usually associated with multithreading. Here’s a quick look at the top level logic in the Rust implementation of the demo:
 
 ```rust
-let total = vm::lock(buffer, |data| {
-    let corpus = data.as_str().unwrap();
-    let lines = lines(corpus);
-    lines.into_iter()
-         .map(|line| wc_line(line, search))
-         .fold(0, |sum, line| sum + line)
+let total = cx.borrow(&buffer, |data| {
+    let corpus = str::from_utf8(data.as_slice()).ok().unwrap();
+    wc_parallel(&lines(corpus), search)
 });
 ```
 
-The vm::lock API lets Neon safely expose the raw bytes of a Node Buffer object (i.e., a typed array) to Rust threads, by preventing JS from running in the meantime. And Rust’s concurrency model makes programming with threads actually fun.
+The `cx.borrow` API lets Neon safely expose the raw bytes of a Node Buffer object (i.e., a typed array) to Rust threads, by preventing JS from running in the meantime. And Rust’s concurrency model makes programming with threads actually fun.
 
 To demonstrate how easy this can be, I used Niko Matsakis’s new Rayon crate of beautiful data parallelism abstractions. Changing the demo to use Rayon is as simple as replacing the into_iter/map/fold/ lines above with:
 
@@ -109,13 +106,13 @@ With that simple change, on my two-core MacBook Air, the demo goes from about 85
 I’ve worked on making the integration as seamless as possible. From the Rust side, Neon functions follow a simple protocol, taking a Call object and returning a JavaScript value:
 
 ```rust
-fn search(cx: Call) -> JS<Integer> {
+fn search(mut cx: FunctionContext) -> JsResult<JsNumber> {
     // ...
     Ok(cx.number(total))
 }
 ```
 
-`cx`, a `Call` struct, safely tracks handles into V8’s garbage-collected heap. The Neon API uses the Rust type system to guarantee that your native module can’t crash your app by mismanaging object handles.
+`cx`, a `FunctionContext` struct, safely tracks handles into V8’s garbage-collected heap. The Neon API uses the Rust type system to guarantee that your native module can’t crash your app by mismanaging object handles.
 
 From the JS side, loading the native module is straightforward:
 
@@ -131,4 +128,4 @@ There are lots of possibilities, but I need help! If you want to get involved, I
 
 ## Source
 
-Here is the [source code](https://github.com/amilajack/wc-demo) for this guide.
+Here is the [source code](https://github.com/amilajack/neon-examples/tree/master/word-counting) for this guide.

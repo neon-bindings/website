@@ -191,6 +191,9 @@ john.introduce(12); // Her birthday is on the 12th
 ## Advanced Example
 
 ```rust
+#[macro_use]
+extern crate neon;
+
 use neon::prelude::*;
 
 pub struct User {

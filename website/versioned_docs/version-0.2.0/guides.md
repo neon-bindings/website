@@ -1,7 +1,8 @@
 ---
-id: guides
+id: version-0.2.0-guides
 title: Guides
 sidebar_label: Guides
+original_id: guides
 ---
 
 ## Word Counting
