@@ -13,11 +13,12 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'intro', label: 'Docs' },
-    { doc: 'roadmap', label: 'Roadmap' },
-    { doc: 'community-content', label: 'Resources' },
     { doc: 'demos', label: 'Demos' },
-    { blog: true, label: 'Blog' },
-    { page: 'help', label: 'Help' }
+    // { doc: 'guides', label: 'Guides' },
+    { doc: 'community-content', label: 'Resources' },
+    { doc: 'roadmap', label: 'Roadmap' },
+    { page: 'help', label: 'Help' },
+    { blog: true, label: 'Blog' }
   ],
 
   // If you have users set above, you add it here:
@@ -48,7 +49,7 @@ const siteConfig = {
     apiKey: 'bfa6bb4b57d4fa853c0358ee9b195146',
     indexName: 'amilajack_neon',
     algoliaOptions: {
-      facetFilters: ['language:LANGUAGE', 'version:VERSION'],
+      facetFilters: ['language:LANGUAGE', 'version:VERSION']
     }
   },
 

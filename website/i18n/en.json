@@ -37,6 +37,10 @@
         "title": "Getting Started",
         "sidebar_label": "Getting Started"
       },
+      "guides": {
+        "title": "Guides",
+        "sidebar_label": "Guides"
+      },
       "hello-world": {
         "title": "Hello World!",
         "sidebar_label": "Hello World!"
@@ -176,11 +180,11 @@
     },
     "links": {
       "Docs": "Docs",
-      "Roadmap": "Roadmap",
-      "Resources": "Resources",
       "Demos": "Demos",
-      "Blog": "Blog",
-      "Help": "Help"
+      "Resources": "Resources",
+      "Roadmap": "Roadmap",
+      "Help": "Help",
+      "Blog": "Blog"
     },
     "categories": {
       "Getting Started": "Getting Started",

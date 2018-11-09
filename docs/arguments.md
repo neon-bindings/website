@@ -43,9 +43,9 @@ Now in our `./lib/index.js`:
 
 ```js
 const { foo } = require('../native');
-foo();             // fails
-foo(12);           // fails
-foo('foobar');     // fails
+foo(); // fails
+foo(12); // fails
+foo('foobar'); // fails
 foo('foobar', 12); // passes!
 ```
 
@@ -85,9 +85,9 @@ Now in our `./lib/index.js` we add the following:
 ```js
 // ./lib/index.js
 const { getArgsLen } = require('../native');
-getArgsLen() // 0
-getArgsLen(1) // 1
-getArgsLen(1, 'foobar') // 2
+getArgsLen(); // 0
+getArgsLen(1); // 1
+getArgsLen(1, 'foobar'); // 2
 ```
 
 ## Optional Arguments
@@ -142,5 +142,5 @@ const { defaultArgs } = require('../native');
 
 defaultArgs(); // i am 12 years old and my name is John Doe
 defaultArgs(22); // i am 22 years old and my name is John Doe
-defaultArgs(22, "Jane Doe"); // i am 22 years old and my name is Jane Doe
+defaultArgs(22, 'Jane Doe'); // i am 22 years old and my name is Jane Doe
 ```

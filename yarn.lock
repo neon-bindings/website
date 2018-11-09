@@ -6246,7 +6246,7 @@ react-error-overlay@^4.0.1:
 
 react-syntax-highlighter@^10.0.0:
   version "10.0.0"
-  resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-10.0.0.tgz#0908ae3d8436ff54a1322073105141d79f37edb4"
+  resolved "https://registry.npmjs.org/react-syntax-highlighter/-/react-syntax-highlighter-10.0.0.tgz#0908ae3d8436ff54a1322073105141d79f37edb4"
   integrity sha512-S6oNKt+m8ZcdDM61YmU7Iv5C5vepyZEDjCKvJIJZk7g4+9X4zlMIHuXbbPijXar1jroIy3bWK08UYrqQ1pP+EQ==
   dependencies:
     babel-runtime "^6.18.0"
