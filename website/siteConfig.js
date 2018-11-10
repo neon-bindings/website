@@ -13,7 +13,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'intro', label: 'Docs' },
-    { doc: 'demos', label: 'Demos' },
+    { href: 'https://github.com/amilajack/neon-examples#table-of-contents', label: 'Demos' },
     { doc: 'guides', label: 'Guides' },
     { doc: 'community-content', label: 'Resources' },
     { doc: 'roadmap', label: 'Roadmap' },
