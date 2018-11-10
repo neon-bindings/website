@@ -102,7 +102,7 @@ pub fn args_opt(mut cx: FunctionContext) -> JsResult<JsNumber> {
             // Throw if the argument exist and it cannot be downcasted
             // to a number
             let num = arg.downcast::<JsNumber>().or_throw(&mut cx)?.value();
-            println!"The 0th argument is {}", num);
+            println!("The 0th argument is {}", num);
         },
         None => panic!("0th argument does not exist, out of bounds!")
     }

@@ -43,7 +43,7 @@ let boolean = JsBoolean::new(&mut cx, true);
 ```rust
 // --snip--
 let undefined = cx.undefined();
-let undefined = JsUndefined::new(&mut cx);
+let undefined = JsUndefined::new();
 // --snip--
 ```
 
@@ -52,6 +52,6 @@ let undefined = JsUndefined::new(&mut cx);
 ```rust
 // --snip--
 let null = cx.null();
-let null = JsNull::new(&mut cx);
+let null = JsNull::new();
 // --snip--
 ```
