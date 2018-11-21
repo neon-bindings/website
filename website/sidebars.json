@@ -12,6 +12,7 @@
       "js-array",
       "js-object",
       "arguments",
+      "type-checking",
       "using-js-class-macros",
       "functions",
       "json",

@@ -80,8 +80,8 @@ declare_types! {
 	}
 }
 
-register_module!(mut cx, {
-	cx.export_class::<JsCanvas>("Canvas")?;
+register_module!(mut m, {
+	m.export_class::<JsCanvas>("Canvas")?;
 	Ok(())
 });
 ```

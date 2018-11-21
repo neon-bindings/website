@@ -54,8 +54,8 @@ fn serialize_something(mut cx: FunctionContext) -> JsResult<JsValue> {
     Ok(js_value)
 }
 
-register_module!(mut cx, {
-    cx.export_function("serialize_something", serialize_something)
+register_module!(mut m, {
+    m.export_function("serialize_something", serialize_something)
 });
 ```
 
@@ -93,9 +93,9 @@ fn deserialize_something(mut cx: FunctionContext) -> JsResult<JsValue> {
     Ok(cx.undefined().upcast())
 }
 
-register_module!(mut cx, {
-    cx.export_function("serialize_something", serialize_something)?;
-    cx.export_function("deserialize_something", deserialize_something)?;
+register_module!(mut m, {
+    m.export_function("serialize_something", serialize_something)?;
+    m.export_function("deserialize_something", deserialize_something)?;
     Ok(())
 });
 ```

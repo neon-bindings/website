@@ -33,8 +33,8 @@ pub fn perform_async_task(mut cx: FunctionContext) -> JsResult<JsUndefined> {
     Ok(cx.undefined())
 }
 
-register_module!(mut cx, {
-    cx.export_function("performAsyncTask", perform_async_task)
+register_module!(mut m, {
+    m.export_function("performAsyncTask", perform_async_task)
 });
 ```
 

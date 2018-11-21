@@ -15,8 +15,8 @@ We first start by defining a function and exporting it by the name of `sayHi`:
 ```rust
 fn say_hi(mut cx: FunctionContext) {}
 
-register_module!(mut cx, {
-    cx.export_function("sayHi", say_hi)
+register_module!(mut m, {
+    m.export_function("sayHi", say_hi)
 });
 ```
 
@@ -59,8 +59,8 @@ fn add1(mut cx: FunctionContext) -> JsResult<JsNumber> {
     Ok(cx.number(x + 1.0))
 }
 
-register_module!(mut cx, {
-    cx.export_function("add1", add1)
+register_module!(mut m, {
+    m.export_function("add1", add1)
 });
 ```
 
@@ -75,8 +75,8 @@ pub fn get_args_len(mut cx: FunctionContext) -> JsResult<JsNumber> {
     Ok(cx.number(args_length))
 }
 
-register_module!(mut cx, {
-    cx.export_function("getArgsLen", get_args_len)
+register_module!(mut m, {
+    m.export_function("getArgsLen", get_args_len)
 });
 ```
 

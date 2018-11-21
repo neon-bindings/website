@@ -59,7 +59,7 @@ fn convert_struct_to_js_object(mut cx: FunctionContext) -> JsResult<JsObject> {
     Ok(object)
 }
 
-register_module!(mut cx, {
-    cx.export_function("convert_struct_to_js_object", convert_struct_to_js_object)
+register_module!(mut m, {
+    m.export_function("convert_struct_to_js_object", convert_struct_to_js_object)
 });
 ```

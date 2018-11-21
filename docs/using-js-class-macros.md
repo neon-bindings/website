@@ -58,10 +58,10 @@ declare_types! {
 }
 
 // Export the class
-register_module!(mut cx, {
+register_module!(mut m, {
     // <JsEmployee> tells neon what class we are exporting
     // "Employee" is the name of the export that the class is exported as
-    cx.export_class::<JsEmployee>("Employee")?;
+    m.export_class::<JsEmployee>("Employee")?;
     Ok(())
 });
 ```
@@ -267,7 +267,7 @@ declare_types! {
     }
   }
 }
-register_module!(mut cx, {
-    cx.export_class::<JsUser>("User")
+register_module!(mut m, {
+    m.export_class::<JsUser>("User")
 });
 ```
