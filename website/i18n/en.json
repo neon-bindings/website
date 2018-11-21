@@ -17,10 +17,6 @@
         "title": "Community Content",
         "sidebar_label": "Community Content"
       },
-      "demos": {
-        "title": "Demos",
-        "sidebar_label": "Demos"
-      },
       "electron-apps": {
         "title": "Electron Apps",
         "sidebar_label": "Electron Apps"
@@ -104,10 +100,6 @@
       "version-0.2.0-community-content": {
         "title": "Community Content",
         "sidebar_label": "Community Content"
-      },
-      "version-0.2.0-demos": {
-        "title": "Demos",
-        "sidebar_label": "Demos"
       },
       "version-0.2.0-electron-apps": {
         "title": "Electron Apps",

@@ -45,7 +45,7 @@ The front-end of a Neon package is a pure JavaScript module (`lib/index.js`, by 
 We haven't yet implemented anything, but just to see that `neon new` produced a complete, minimal Neon project, let's try building it:
 
 ```shell
-neon build
+neon build --release
 ```
 
 The build process generates a handful of files that you don't need to work with directly:
@@ -126,10 +126,10 @@ module.exports = addon.threading_hint;
 
 # Try it Out!
 
-Now we should be able to rebuild the project with `neon build` again:
+Now we should be able to rebuild the project with `neon build --release` again:
 
 ```shell
-neon build
+neon build --release
 ```
 
 This will create a release build for us. Assuming we didn't make any mistakes, we can test out our new Neon module at the Node console from the root of our project directory:

@@ -46,7 +46,7 @@ Finally, we'll add a script to build the Neon dependency:
 ```json
 "scripts": {
     // ...
-    "build": "electron-build-env neon build neon-hello"
+    "build": "electron-build-env neon build neon-hello --release"
     // ...
 }
 ```

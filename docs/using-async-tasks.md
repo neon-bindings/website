@@ -151,7 +151,7 @@ For another example of tasks, you can clone and run [neon-bigint-task](https://g
 ```bash
 git clone https://github.com/dherman/neon-bigint-task.git
 cd neon-bigint-task
-neon build
+neon build --release
 ```
 
 This example computes the `100000`th fibonacci number on a background thread while keeping the main thread free

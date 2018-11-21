@@ -10,6 +10,10 @@ Initialize a new Neon project in a new directory. For example, running `neon new
 
 ## `neon build`
 
+Create a dev (unoptimized) build with neon. Similar to `cargo build`.
+
+## `neon build --release`
+
 Create a release build with neon. Similar to `cargo build --release`.
 
 ## `neon clean`

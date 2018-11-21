@@ -16,7 +16,7 @@ npm install # OR `yarn install`
 node -e 'require("./")'
 ```
 
-When installing the dependencies, npm will automatically run `neon build` and build a release build of our code in `./native`.
+When installing the dependencies, npm will run `neon build --release` and build a release build of our code in `./native`.
 
 ## I Take Thee at thy Word
 

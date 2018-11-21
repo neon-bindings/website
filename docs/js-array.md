@@ -72,5 +72,5 @@ For a working example of using Node's `Buffer` class with Neon, see [https://git
 ```bash
 git clone https://github.com/dherman/neon-binary-example
 cd neon-binary-example
-neon build
+neon build --release
 ```
