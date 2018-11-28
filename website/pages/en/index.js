@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/no-unresolved
-const React = require("react");
-const SyntaxHighlighter = require("react-syntax-highlighter/dist/cjs/index.js")
+const React = require('react');
+const SyntaxHighlighter = require('react-syntax-highlighter/dist/cjs/index.js')
   .default;
-const { atomDark } = require("react-syntax-highlighter/dist/cjs/styles/prism");
-const CompLibrary = require("../../core/CompLibrary.js");
-const { translate } = require("../../server/translate.js");
+const { atomDark } = require('react-syntax-highlighter/dist/cjs/styles/prism');
+const CompLibrary = require('../../core/CompLibrary.js');
+const { translate } = require('../../server/translate.js');
 
 const { MarkdownBlock, Container, GridBlock } = CompLibrary;
 const siteConfig = require(`${process.cwd()}/siteConfig.js`);
@@ -14,11 +14,11 @@ function imgUrl(img) {
 }
 
 function docUrl(doc, language) {
-  return `${siteConfig.baseUrl}docs/${language ? `${language}/` : ""}${doc}`;
+  return `${siteConfig.baseUrl}docs/${language ? `${language}/` : ''}${doc}`;
 }
 
 function pageUrl(page, language) {
-  return siteConfig.baseUrl + (language ? `${language}/` : "") + page;
+  return siteConfig.baseUrl + (language ? `${language}/` : '') + page;
 }
 
 class Button extends React.Component {
@@ -34,7 +34,7 @@ class Button extends React.Component {
 }
 
 Button.defaultProps = {
-  target: "_self"
+  target: '_self'
 };
 
 const SplashContainer = props => (
@@ -83,21 +83,21 @@ fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
 
 class HomeSplash extends React.Component {
   render() {
-    const language = this.props.language || "";
+    const language = this.props.language || '';
     return (
       <SplashContainer>
         <Logo />
         <div className="inner">
           <PromoSection>
             <SyntaxHighlighter
-              customStyle={{ fontSize: "0.8em" }}
+              customStyle={{ fontSize: '0.8em' }}
               language="javascript"
               style={atomDark}
             >
               {jsExample}
             </SyntaxHighlighter>
             <SyntaxHighlighter
-              customStyle={{ fontSize: "0.8em" }}
+              customStyle={{ fontSize: '0.8em' }}
               language="rust"
               style={atomDark}
             >
@@ -105,7 +105,7 @@ class HomeSplash extends React.Component {
             </SyntaxHighlighter>
           </PromoSection>
           <PromoSection>
-            <Button href={docUrl("getting-started", "en")}>Try It Out</Button>
+            <Button href={docUrl('getting-started', 'en')}>Try It Out</Button>
             <Button href={siteConfig.repoUrl} target="_blank">
               GitHub
             </Button>
@@ -123,7 +123,7 @@ class HomeSplash extends React.Component {
 }
 
 const Block = props => (
-  <Container padding={["bottom", "top"]} id={props.id}>
+  <Container padding={['bottom', 'top']} id={props.id}>
     <GridBlock align="center" contents={props.children} layout={props.layout} />
   </Container>
 );
@@ -132,7 +132,7 @@ const FeatureCallout = () => (
   <React.Fragment>
     <div
       className="productShowcaseSection paddingBottom"
-      style={{ textAlign: "center" }}
+      style={{ textAlign: 'center' }}
     >
       <h2 className="neon-heading">Don't Let Native Modules Scare You!</h2>
       <h3 className="neon-subheading">
@@ -142,7 +142,7 @@ const FeatureCallout = () => (
     </div>
     <div
       className="productShowcaseSection paddingBottom"
-      style={{ textAlign: "center" }}
+      style={{ textAlign: 'center' }}
     >
       <h2 className="neon-heading">Crash-Free Memory Managment</h2>
       <h3 className="neon-subheading">
@@ -152,7 +152,7 @@ const FeatureCallout = () => (
     </div>
     <div
       className="productShowcaseSection paddingBottom"
-      style={{ textAlign: "center" }}
+      style={{ textAlign: 'center' }}
     >
       <h2 className="neon-heading">Easy Parallelism</h2>
       <h3 className="neon-subheading">
@@ -165,8 +165,8 @@ const FeatureCallout = () => (
 
 const LearnMore = () => (
   <Container
-    padding={["bottom", "top"]}
-    style={{ textAlign: "center" }}
+    padding={['bottom', 'top']}
+    style={{ textAlign: 'center' }}
     id="learn-more"
   >
     <iframe
@@ -183,9 +183,9 @@ const LearnMore = () => (
 const TryOut = () => (
   <div
     className="productShowcaseSection paddingBottom"
-    style={{ textAlign: "center" }}
+    style={{ textAlign: 'center' }}
   >
-    <a href={docUrl("getting-started", "en")}>
+    <a href={docUrl('getting-started', 'en')}>
       <h2 className="neon-heading">Get Started!</h2>
     </a>
   </div>
@@ -210,7 +210,7 @@ const Showcase = props => {
       <p>This project is used by all these people</p>
       <div className="logos">{showcase}</div>
       <div className="more-users">
-        <a className="button" href={pageUrl("users.html", props.language)}>
+        <a className="button" href={pageUrl('users.html', props.language)}>
           More {siteConfig.title} Users
         </a>
       </div>
@@ -220,7 +220,7 @@ const Showcase = props => {
 
 class Index extends React.Component {
   render() {
-    const language = this.props.language || "";
+    const language = this.props.language || '';
 
     return (
       <div>

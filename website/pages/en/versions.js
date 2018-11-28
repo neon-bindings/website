@@ -1,5 +1,5 @@
-const React = require("react");
-const CompLibrary = require("../../core/CompLibrary");
+const React = require('react');
+const CompLibrary = require('../../core/CompLibrary');
 
 const { Container } = CompLibrary;
 
@@ -74,7 +74,7 @@ function Versions() {
             </tbody>
           </table>
           <p>
-            You can find past versions of this project on{" "}
+            You can find past versions of this project on{' '}
             <a href={repoUrl}>GitHub</a>.
           </p>
         </div>

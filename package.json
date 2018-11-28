@@ -11,21 +11,17 @@
     "publish-gh-pages": "yarn workspace neon-docs publish-gh-pages",
     "lint": "eslint .",
     "lint-fix": "yarn --silent lint --fix; exit 0",
-    "postlint-fix": "prettier --ignore-path .eslintignore --write \"./**/*.{js,json,md,yml,yaml}\"",
-    "test": "yarn test",
+    "test": "yarn lint",
     "version": "yarn workspace neon-docs/site version"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-bliss": "^3.1.1",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
-    "prettier": "^1.15.2",
     "yarn": "^1.12.3"
   },
   "engines": {
@@ -35,16 +31,8 @@
     "linters": {
       "*.js": [
         "eslint --fix",
-        "prettier --ignore-path .eslintignore --write",
-        "git add"
-      ],
-      "*.{json,md,yml,yaml}": [
-        "prettier --ignore-path .eslintignore --write",
         "git add"
       ]
-    },
-    "globOptions": {
-      "dot": true
     }
   },
   "husky": {
@@ -53,7 +41,10 @@
     }
   },
   "eslintConfig": {
-    "extends": ["airbnb", "bliss"],
+    "extends": [
+      "airbnb",
+      "bliss"
+    ],
     "rules": {
       "class-methods-use-this": "off",
       "import/no-dynamic-require": "off",
