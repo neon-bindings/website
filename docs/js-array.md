@@ -18,7 +18,7 @@ fn convert_vec_to_array(mut cx: FunctionContext) -> JsResult<JsArray> {
     // Iterate over the rust Vec and map each value in the Vec to the JS array
     for (i, obj) in vec.iter().enumerate() {
         let js_string = cx.string(obj);
-        let _  = js_array.set(&mut cx, i as u32, js_string);
+        js_array.set(&mut cx, i as u32, js_string).unwrap();
     }
 
     Ok(js_array)
@@ -67,10 +67,10 @@ The Node Buffer type is also supported by Neon through the [`JsBuffer`](https://
 
 #### Runnable Example
 
-For a working example of using Node's `Buffer` class with Neon, see [https://github.com/dherman/neon-binary-example](neon-binary-example). You can get started with it by running the following commands:
+For a working example of using Node's `Buffer` class with Neon, see the [`sharing-binary-data` example](https://github.com/amilajack/neon-examples/tree/master/sharing-binary-data). You can get started with it by running the following commands:
 
 ```bash
-git clone https://github.com/dherman/neon-binary-example
-cd neon-binary-example
-neon build --release
+git clone https://github.com/amilajack/neon-examples
+cd sharing-binary-data
+npm install
 ```
