@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/no-unresolved
 const React = require("react");
-const SyntaxHighlighter = require("react-syntax-highlighter/dist/prism")
+const SyntaxHighlighter = require("react-syntax-highlighter/dist/cjs/index.js")
   .default;
-const { atomDark } = require("react-syntax-highlighter/dist/styles/prism");
+const { atomDark } = require("react-syntax-highlighter/dist/cjs/styles/prism");
 const CompLibrary = require("../../core/CompLibrary.js");
 const { translate } = require("../../server/translate.js");
 
