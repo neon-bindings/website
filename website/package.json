@@ -19,6 +19,6 @@
     "docusaurus": "1.5.0"
   },
   "dependencies": {
-    "react-syntax-highlighter": "^10.0.0"
+    "react-syntax-highlighter": "^10.1.1"
   }
 }
