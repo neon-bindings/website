@@ -74,7 +74,7 @@ function callback(err, value) {}
 Now lets look at how we would schudle async task using the `BackgroundTask` struct we created:
 
 ```js
-const { performAsyncTask } = require('../native');
+const { performAsyncTask } = require("../native");
 
 // Iterate 10,0000 times in background thread
 performAsyncTask((err, value) => {
@@ -82,7 +82,7 @@ performAsyncTask((err, value) => {
   for (let i = 0; i < 100000; i++) {
     count++;
   }
-  console.log(count, 'first sum from background thread');
+  console.log(count, "first sum from background thread");
 });
 
 // Iterate 10 times
@@ -90,7 +90,7 @@ let count = 10;
 for (let i = 0; i < 10; i++) {
   count++;
 }
-console.log(count, 'second sum from main thread');
+console.log(count, "second sum from main thread");
 ```
 
 If you run this code you will get the following results:
@@ -129,7 +129,7 @@ If we wanted to wrap our task around a promise, we could do that like so:
 
 ```js
 // ./lib/index.js
-const { performAsyncTask } = require('../native');
+const { performAsyncTask } = require("../native");
 
 // Iterate 10,0000 times in background thread
 const promisePerformAsyncTask = () => {
@@ -139,7 +139,7 @@ const promisePerformAsyncTask = () => {
       for (let i = 0; i < 100000; i++) {
         count++;
       }
-      console.log(count, 'first sum from background thread');
+      console.log(count, "first sum from background thread");
     });
   });
 };
@@ -147,12 +147,12 @@ const promisePerformAsyncTask = () => {
 
 ## Runnable Example
 
-For another example of tasks, you can clone and run [neon-bigint-task](https://github.com/dherman/neon-bigint-task):
+For another example of tasks, you can clone and run [fibonacci-task](https://github.com/amilajack/neon-examples/tree/master/fibonacci-task):
 
 ```bash
-git clone https://github.com/dherman/neon-bigint-task.git
-cd neon-bigint-task
-neon build --release
+git clone https://github.com/amilajack/neon-examples
+cd fibonacci-task
+npm install
 ```
 
 This example computes the `100000`th fibonacci number on a background thread while keeping the main thread free
