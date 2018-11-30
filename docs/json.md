@@ -158,4 +158,4 @@ console.log(addon.fibonacci(32));
 
 ## Example
 
-See the [runnable json example](https://github.com/amilajack/neon-examples/tree/master/json)
+See the [runnable json example](https://github.com/neon-bindings/examples/tree/master/json)

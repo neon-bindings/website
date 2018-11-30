@@ -3,18 +3,18 @@ const users = [];
 const siteConfig = {
   title: 'Neon',
   tagline: 'Fast and Safe Native Node.js Modules',
-  url: 'https://amilajack.github.io',
-  baseUrl: '/neon-docs/',
+  url: 'https://www.neon-bindings.com',
+  baseUrl: '/website/',
 
-  projectName: 'neon-docs',
-  organizationName: 'amilajack',
+  projectName: 'website',
+  organizationName: 'neon-bindings',
   repoUrl: 'https://github.com/neon-bindings/neon',
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'intro', label: 'Docs' },
     {
-      href: 'https://github.com/amilajack/neon-examples#table-of-contents',
+      href: 'https://github.com/neon-bindings/examples#table-of-contents',
       label: 'Examples'
     },
     {

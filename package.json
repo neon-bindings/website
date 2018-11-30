@@ -1,5 +1,5 @@
 {
-  "repository": "https://github.com/amilajack/neon-docs.git",
+  "repository": "https://github.com/neon-bindings/website.git",
   "license": "MIT",
   "private": true,
   "workspaces": [

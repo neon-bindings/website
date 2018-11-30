@@ -82,10 +82,10 @@ The Node Buffer type is also supported by Neon through the [`JsBuffer`](https://
 
 #### Runnable Example
 
-For a working example of using Node's `Buffer` class with Neon, see the [`sharing-binary-data` example](https://github.com/amilajack/neon-examples/tree/master/sharing-binary-data). You can get started with it by running the following commands:
+For a working example of using Node's `Buffer` class with Neon, see the [`sharing-binary-data` example](https://github.com/neon-bindings/examples/tree/master/sharing-binary-data). You can get started with it by running the following commands:
 
 ```bash
-git clone https://github.com/amilajack/neon-examples
+git clone https://github.com/neon-bindings/examples
 cd sharing-binary-data
 npm install
 ```
