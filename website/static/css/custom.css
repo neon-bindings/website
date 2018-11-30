@@ -52,12 +52,12 @@
 
 @font-face {
   font-family: 'neon-tube-thin';
-  src: url('/neon-docs/fonts/neon-tube-thin.eot');
+  src: url('/fonts/neon-tube-thin.eot');
 }
 
 @font-face {
   font-family: 'neon-tube-wide';
-  src: url('/neon-docs/fonts/neon-tube-wide.ttf');
+  src: url('/fonts/neon-tube-wide.ttf');
 }
 
 .homeContainer {

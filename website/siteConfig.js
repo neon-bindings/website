@@ -3,8 +3,8 @@ const users = [];
 const siteConfig = {
   title: 'Neon',
   tagline: 'Fast and Safe Native Node.js Modules',
-  url: 'https://www.neon-bindings.com',
-  baseUrl: '/website/',
+  url: 'https://neon-bindings.com',
+  baseUrl: '/',
 
   projectName: 'website',
   organizationName: 'neon-bindings',

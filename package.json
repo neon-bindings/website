@@ -6,13 +6,13 @@
     "website"
   ],
   "scripts": {
-    "start": "yarn workspace neon-docs start",
-    "build": "yarn workspace neon-docs build",
-    "publish-gh-pages": "yarn workspace neon-docs publish-gh-pages",
+    "start": "yarn workspace website start",
+    "build": "yarn workspace website build",
+    "publish-gh-pages": "yarn workspace website publish-gh-pages",
     "lint": "eslint .",
     "lint-fix": "yarn --silent lint --fix; exit 0",
     "test": "yarn lint",
-    "version": "yarn workspace neon-docs/site version"
+    "version": "yarn workspace website/site version"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
