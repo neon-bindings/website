@@ -15,7 +15,7 @@ const siteConfig = {
     { doc: 'intro', label: 'Docs' },
     {
       href: 'https://github.com/amilajack/neon-examples#table-of-contents',
-      label: 'Demos'
+      label: 'Examples'
     },
     { doc: 'guides', label: 'Guides' },
     { doc: 'community-content', label: 'Resources' },

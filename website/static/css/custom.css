@@ -13,6 +13,10 @@
   text-decoration: none !important;
 }
 
+.productShowcaseSection h2, .productShowcaseSection h3 {
+  color: white;
+}
+
 .homeContainer .wrapper {
   text-align: center;
 }

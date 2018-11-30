@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 const React = require('react');
 const SyntaxHighlighter = require('react-syntax-highlighter/dist/cjs/index.js')
   .default;
@@ -134,30 +133,30 @@ const FeatureCallout = () => (
       className="productShowcaseSection paddingBottom"
       style={{ textAlign: 'center' }}
     >
-      <h2 className="neon-heading">Don't Let Native Modules Scare You!</h2>
-      <h3 className="neon-subheading">
-        Neon makes writing native Node.js modules safe and fun, so you can
-        **hack without fear**.
+      <h2>Don't Let Native Modules Scare You!</h2>
+      <h3>
+        Neon makes writing native Node.js modules safe and fun, so you
+        can hack without fear.
       </h3>
     </div>
     <div
       className="productShowcaseSection paddingBottom"
       style={{ textAlign: 'center' }}
     >
-      <h2 className="neon-heading">Crash-Free Memory Managment</h2>
-      <h3 className="neon-subheading">
-        Neon works together with the JS garbage collector so allocations are
-        always properly managed.
+      <h2>Crash-Free Memory Managment</h2>
+      <h3>
+        Neon works together with the JS garbage collector so allocations
+        are always properly managed.
       </h3>
     </div>
     <div
       className="productShowcaseSection paddingBottom"
       style={{ textAlign: 'center' }}
     >
-      <h2 className="neon-heading">Easy Parallelism</h2>
-      <h3 className="neon-subheading">
-        Safely run multiple threads, which is easy with convenient Rust APIs
-        like Rayon.
+      <h2>Easy Parallelism</h2>
+      <h3>
+        Safely run multiple threads, which is easy with convenient Rust
+        APIs like Rayon.
       </h3>
     </div>
   </React.Fragment>
@@ -191,33 +190,6 @@ const TryOut = () => (
   </div>
 );
 
-const Showcase = props => {
-  if ((siteConfig.users || []).length === 0) {
-    return null;
-  }
-
-  const showcase = siteConfig.users
-    .filter(user => user.pinned)
-    .map(user => (
-      <a href={user.infoLink} key={user.infoLink}>
-        <img src={user.image} alt={user.caption} title={user.caption} />
-      </a>
-    ));
-
-  return (
-    <div className="productShowcaseSection paddingBottom">
-      <h2>Who is Using This?</h2>
-      <p>This project is used by all these people</p>
-      <div className="logos">{showcase}</div>
-      <div className="more-users">
-        <a className="button" href={pageUrl('users.html', props.language)}>
-          More {siteConfig.title} Users
-        </a>
-      </div>
-    </div>
-  );
-};
-
 class Index extends React.Component {
   render() {
     const language = this.props.language || '';
@@ -229,7 +201,6 @@ class Index extends React.Component {
           <FeatureCallout />
           <LearnMore />
           <TryOut />
-          <Showcase language={language} />
         </div>
       </div>
     );
