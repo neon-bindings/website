@@ -17,7 +17,10 @@ const siteConfig = {
       href: 'https://github.com/amilajack/neon-examples#table-of-contents',
       label: 'Examples'
     },
-    { doc: 'guides', label: 'Guides' },
+    {
+      href: 'https://api.neon-bindings.com/neon/index.html',
+      label: 'API'
+    },
     { doc: 'community-content', label: 'Resources' },
     { doc: 'roadmap', label: 'Roadmap' },
     { page: 'help', label: 'Help' },
