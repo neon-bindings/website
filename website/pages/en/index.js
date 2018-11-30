@@ -135,8 +135,8 @@ const FeatureCallout = () => (
     >
       <h2>Don't Let Native Modules Scare You!</h2>
       <h3>
-        Neon makes writing native Node.js modules safe and fun, so you
-        can hack without fear.
+        Neon makes writing native Node.js modules safe and fun, so you can hack
+        without fear.
       </h3>
     </div>
     <div
@@ -145,8 +145,8 @@ const FeatureCallout = () => (
     >
       <h2>Crash-Free Memory Managment</h2>
       <h3>
-        Neon works together with the JS garbage collector so allocations
-        are always properly managed.
+        Neon works together with the JS garbage collector so allocations are
+        always properly managed.
       </h3>
     </div>
     <div
@@ -155,8 +155,8 @@ const FeatureCallout = () => (
     >
       <h2>Easy Parallelism</h2>
       <h3>
-        Safely run multiple threads, which is easy with convenient Rust
-        APIs like Rayon.
+        Safely run multiple threads, which is easy with convenient Rust APIs
+        like Rayon.
       </h3>
     </div>
   </React.Fragment>
