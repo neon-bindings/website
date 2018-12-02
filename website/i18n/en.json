@@ -13,10 +13,6 @@
         "title": "CLI",
         "sidebar_label": "CLI"
       },
-      "community-content": {
-        "title": "Community Content",
-        "sidebar_label": "Community Content"
-      },
       "electron-apps": {
         "title": "Electron Apps",
         "sidebar_label": "Electron Apps"
@@ -61,6 +57,10 @@
         "title": "JSON",
         "sidebar_label": "JSON"
       },
+      "learning-resources": {
+        "title": "Learning Resources",
+        "sidebar_label": "Learning Resources"
+      },
       "parallelism": {
         "title": "Parallelism",
         "sidebar_label": "Parallelism"
@@ -96,10 +96,6 @@
       "version-0.2.0-cli": {
         "title": "CLI",
         "sidebar_label": "CLI"
-      },
-      "version-0.2.0-community-content": {
-        "title": "Community Content",
-        "sidebar_label": "Community Content"
       },
       "version-0.2.0-electron-apps": {
         "title": "Electron Apps",
@@ -145,6 +141,10 @@
         "title": "JSON",
         "sidebar_label": "JSON"
       },
+      "version-0.2.0-learning-resources": {
+        "title": "Learning Resources",
+        "sidebar_label": "Learning Resources"
+      },
       "version-0.2.0-parallelism": {
         "title": "Parallelism",
         "sidebar_label": "Parallelism"
@@ -189,6 +189,7 @@
       "Basics": "Basics",
       "Guides": "Guides",
       "Advanced": "Advanced",
+      "Other": "Other",
       "Misc": "Misc"
     }
   },

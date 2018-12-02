@@ -21,6 +21,6 @@
     ],
     "Guides": ["word-counting-guide", "sdl2-guide"],
     "Advanced": [],
-    "Misc": ["roadmap", "example-projects", "community-content"]
+    "Other": ["roadmap", "example-projects", "learning-resources"]
   }
 }

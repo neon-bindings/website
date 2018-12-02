@@ -1,7 +1,7 @@
 ---
-id: community-content
-title: Community Content
-sidebar_label: Community Content
+id: learning-resources
+title: Learning Resources
+sidebar_label: Learning Resources
 ---
 
 ## Blog Posts

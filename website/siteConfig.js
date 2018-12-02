@@ -21,7 +21,7 @@ const siteConfig = {
       href: '/api/neon/',
       label: 'API'
     },
-    { doc: 'community-content', label: 'Resources' },
+    { doc: 'learning-resources', label: 'Resources' },
     { doc: 'roadmap', label: 'Roadmap' },
     { page: 'help', label: 'Help' },
     { blog: true, label: 'Blog' },
