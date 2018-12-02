@@ -39,7 +39,7 @@ class Footer extends React.Component {
               Guides
             </a>
             <a
-              href="https://api.neon-bindings.com/neon/index.html"
+              href="https://neon-bindings.com/api/neon/index.html"
               target="_blank"
             >
               API Reference

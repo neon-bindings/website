@@ -109,7 +109,7 @@ class HomeSplash extends React.Component {
               GitHub
             </Button>
             <Button
-              href="https://api.neon-bindings.com/neon/index.html"
+              href="https://neon-bindings.com/api/neon/index.html"
               target="_blank"
             >
               API
