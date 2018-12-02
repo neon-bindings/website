@@ -1,5 +1,5 @@
 ---
-title: Hello World!
+title: New Docs and Website! 🎉🎉🎉
 author: Amila Welihinda
 ---
 
