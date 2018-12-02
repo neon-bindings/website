@@ -18,13 +18,17 @@ const siteConfig = {
       label: 'Examples'
     },
     {
-      href: 'https://api.neon-bindings.com/neon/index.html',
+      href: '/api/neon/',
       label: 'API'
     },
     { doc: 'community-content', label: 'Resources' },
     { doc: 'roadmap', label: 'Roadmap' },
     { page: 'help', label: 'Help' },
-    { blog: true, label: 'Blog' }
+    { blog: true, label: 'Blog' },
+    {
+      href: 'https://github.com/neon-bindings/neon',
+      label: 'GitHub'
+    }
   ],
 
   // If you have users set above, you add it here:
@@ -69,7 +73,9 @@ const siteConfig = {
 
   // Open Graph and Twitter card images.
   ogImage: 'logo/text-logo.svg',
-  twitterImage: 'logo/text-logo.svg'
+  twitterImage: 'logo/text-logo.svg',
+
+  separateCss: ['static/api']
 };
 
 module.exports = siteConfig;
