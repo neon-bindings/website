@@ -1,8 +1,8 @@
 ---
-id: version-0.2.0-community-content
-title: Community Content
-sidebar_label: Community Content
-original_id: community-content
+id: version-0.2.0-learning-resources
+title: Learning Resources
+sidebar_label: Learning Resources
+original_id: learning-resources
 ---
 
 ## Blog Posts

@@ -22,7 +22,8 @@ class Help extends React.Component {
         title: 'Browse Docs'
       },
       {
-        content: 'Ask questions about the documentation and project',
+        content:
+          '[Ask questions](https://rust-bindings-slackin.herokuapp.com) about the documentation and project',
         title: 'Join the community'
       },
       {
