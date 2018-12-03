@@ -5,6 +5,8 @@ sidebar_label: Learning Resources
 original_id: learning-resources
 ---
 
+⚠️ Content in these posts and videos are using outdated versions of Neon ⚠️
+
 ## Blog Posts
 
 - [Building a fast Electron app with Rust
@@ -18,7 +20,7 @@ original_id: learning-resources
 
 ## Videos
 
-- [Péter Czibik - Fast & Safe Native node.js Modules with Rust (Rust Hungary #3, 2017-11-23)
-  ](https://youtu.be/zz1Gie9FkbI)
+- [Dave Herman: Rust + Node = Neon](https://youtu.be/jINMIAicaS0?t=765)
+- [Péter Czibik - Fast & Safe Native node.js Modules with Rust](https://youtu.be/zz1Gie9FkbI)
 - [Pumping up Node js modules with Rust!](https://youtu.be/Zqzwkiii2NE)
 - [Writing Node.js Modules in Rust An introduction to Neon](https://youtu.be/yj2nD9hB3D0)

@@ -2141,10 +2141,10 @@ doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
-docusaurus@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.npmjs.org/docusaurus/-/docusaurus-1.5.0.tgz#40e22e65a90d00d73e3d27a5db65a7a7374720ef"
-  integrity sha512-QHLoUahb0EJVV4Klwctfd9aRR6oehda7qbQP4avar9usrbG1O4BLek8NohshwywnWaa9d+d7dBq+6dZ28CmJqA==
+docusaurus@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/docusaurus/-/docusaurus-1.6.0.tgz#c3d824ddd44c4f7acbe16281a5e73b923bfa8784"
+  integrity sha512-XyceBmweyFJ5Ugv6LW2cOXOBkc1BKlNIXFZpAa4ppj462Bcx15JLe3CDZRZ7CMOUoOnF7BA5W5kSh8Yw7WmFTg==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
@@ -6092,7 +6092,7 @@ react-error-overlay@^4.0.1:
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
   integrity sha512-xXUbDAZkU08aAkjtUvldqbvI04ogv+a1XdHxvYuHPYKIVk/42BIOD0zSKTHAWV4+gDy3yGm283z2072rA2gdtw==
 
-react-syntax-highlighter@^10.0.0:
+react-syntax-highlighter@^10.1.1:
   version "10.1.1"
   resolved "https://registry.npmjs.org/react-syntax-highlighter/-/react-syntax-highlighter-10.1.1.tgz#1bf7ad4f2f16d2978b04594407b670671b4d3316"
   integrity sha512-2EzDjKuU51BuL9CZ5qfGJ9+6m9BKGm+IJODyeR7ANC3g3wQY1LPxEzo6vDPsdV1EzDbYUAAai3AYtSBaKVusuw==

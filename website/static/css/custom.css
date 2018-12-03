@@ -110,35 +110,23 @@
 }
 
 @keyframes buzz {
-  70% {
-    opacity: 0.80;
-  }
-}
-
-@keyframes buzz {
-  70% {
-    opacity: 0.80;
-  }
-}
-
-@keyframes blink {
-  40% {
+  30% {
     opacity: 1;
   }
 
-  42% {
+  34% {
     opacity: 0.8;
   }
 
-  43% {
+  35% {
     opacity: 1;
   }
 
-  45% {
+  36% {
     opacity: 0.2;
   }
 
-  46% {
+  37% {
     opacity: 1;
   }
 }
