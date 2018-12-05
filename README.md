@@ -1,6 +1,6 @@
 # website
 
-[![Build Status](https://travis-ci.com/neon-bindings/website.svg?branch=master)](https://travis-ci.com/neon-bindings/website)
+[![Build Status](https://travis-ci.org/neon-bindings/website.svg?branch=master)](https://travis-ci.org/neon-bindings/website)
 
 A work-in-progress website for [neon](https://github.com/neon-bindings/neon)
 
