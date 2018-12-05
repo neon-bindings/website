@@ -59,7 +59,7 @@ const siteConfig = {
     apiKey: 'bfa6bb4b57d4fa853c0358ee9b195146',
     indexName: 'amilajack_neon',
     algoliaOptions: {
-      facetFilters: ['language:LANGUAGE', 'version:VERSION']
+      facetFilters: ['version:VERSION']
     }
   },
 

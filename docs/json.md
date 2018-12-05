@@ -4,6 +4,8 @@ title: JSON
 sidebar_label: JSON
 ---
 
+[Examples](https://github.com/neon-bindings/examples/tree/master/json)
+
 Sometimes you just want to convert a struct in Rust to a `JsObject` and back. This can be done with [neon-serde](https://github.com/GabrielCastro/neon-serde). You will need to install the `neon-serde` and `serde_derive` crates.
 
 For more docs on the `neon-serde` crate, please see its [repo](https://github.com/GabrielCastro/neon-serde) and [docs](https://docs.rs/crate/neon-serde/0.0.3)
@@ -155,7 +157,3 @@ console.log(addon.say_hello('john'));
 
 console.log(addon.fibonacci(32));
 ```
-
-## Example
-
-See the [runnable json example](https://github.com/neon-bindings/examples/tree/master/json)

@@ -1,9 +1,10 @@
 ---
-id: version-0.2.0-js-primitives
+id: primitives
 title: Primitives
 sidebar_label: Primitives
-original_id: js-primitives
 ---
+
+[Examples](https://github.com/neon-bindings/examples/tree/master/primitives)
 
 ## Numbers
 

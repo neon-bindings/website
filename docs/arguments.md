@@ -4,6 +4,8 @@ title: Arguments
 sidebar_label: Arguments
 ---
 
+[Examples](https://github.com/neon-bindings/examples/tree/master/arguments)
+
 Neon provides built-in mechanisims for accessing the `arguments` object.
 
 Arguments can be passed from JS to Rust and be of any type. It is useful to assert that certain values are certain types.

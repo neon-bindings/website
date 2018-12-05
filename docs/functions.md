@@ -4,6 +4,8 @@ title: Functions
 sidebar_label: Functions
 ---
 
+[Examples](https://github.com/neon-bindings/examples/tree/master/functions)
+
 ## This
 
 In order to call methods on `cx.this`, it must be downcasted to a `JsObject`. For more on [type checking section](type-checking.md#downcasting) for more details

@@ -1,8 +1,10 @@
 ---
-id: js-array
+id: arrays
 title: Arrays
 sidebar_label: Arrays
 ---
+
+[Examples](https://github.com/neon-bindings/examples/tree/master/arrays)
 
 ## Converting from `Vec` to `JsArray`
 

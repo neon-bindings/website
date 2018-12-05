@@ -4,20 +4,21 @@
       "intro",
       "getting-started",
       "hello-world",
-      "electron-apps",
       "cli"
     ],
     "Basics": [
-      "js-primitives",
-      "js-array",
-      "js-object",
+      "primitives",
+      "arrays",
+      "objects",
       "arguments",
       "type-checking",
-      "using-js-class-macros",
       "functions",
+      "classes",
+      "modules",
       "json",
-      "using-async-tasks",
-      "parallelism"
+      "errors",
+      "async",
+      "electron-apps"
     ],
     "Guides": ["word-counting-guide", "sdl2-guide"],
     "Advanced": [],
