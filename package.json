@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "lint-fix": "yarn --silent lint --fix; exit 0",
     "test": "yarn lint",
-    "version": "yarn workspace website/site version"
+    "version": "yarn workspace website version"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
@@ -62,5 +62,6 @@
       "react/prefer-stateless-function": "off",
       "react/prop-types": "off"
     }
-  }
+  },
+  "version": "0.2.0"
 }

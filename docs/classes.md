@@ -1,9 +1,10 @@
 ---
-id: version-0.2.0-using-js-class-macros
+id: classes
 title: Classes
 sidebar_label: Classes
-original_id: using-js-class-macros
 ---
+
+[Examples](https://github.com/neon-bindings/examples/tree/master/classes)
 
 For now, reference this snippet, taken <a href="https://github.com/neon-bindings/neon/blob/master/test/dynamic/native/src/js/classes.rs" target="_blank">from the tests:</a>
 
