@@ -8,9 +8,9 @@ sidebar_label: Objects
 
 `JsObject`'s are used to create objects on the JS heap. `JsObject` structs have two methods: `get` and `set`:
 
-### `.get()`
+## Getting Properties
 
-`get` is used to get a property of a JS object at runtime:
+`.get()` is used to get a property of a JS object at runtime:
 
 ```rust
 // --snip--
@@ -22,9 +22,9 @@ js_object
 // --snip--
 ```
 
-`.downcast` will attempt to cast the proerty to a `JsFunction`. `.or_throw()` will error if downcasting the propety is not possible.
+`.downcast()` will attempt to cast the proerty to a `JsFunction`. `.or_throw()` will error if downcasting the propety is not possible.
 
-### `.set()`
+## Setting Properties
 
 `.set()` requres a `FunctionContext`, the name of the property you want to set, and the value you want to set the property to:
 
@@ -39,14 +39,16 @@ js_object.set(&mut cx, "myProperty", js_string)?;
 
 ## Mapping a `struct` to a `JsObject`
 
-Here is a simple example of converting a rust `Struct` to a JS `Object` using `JsObject`:
+Here is a simple example of converting a Rust `struct` to a JS `Object` using `JsObject`. We first start by defining the `struct`:
 
 ```rust
 struct Foo {
     pub bar: u64,
     pub baz: String
 }
-
+```
+And then define a function which creates an instance of the `Foo` struct
+```rust
 fn convert_struct_to_js_object(mut cx: FunctionContext) -> JsResult<JsObject> {
     let foo = Foo {
         bar: 1234,
@@ -61,6 +63,6 @@ fn convert_struct_to_js_object(mut cx: FunctionContext) -> JsResult<JsObject> {
 }
 
 register_module!(mut m, {
-    m.export_function("convert_struct_to_js_object", convert_struct_to_js_object)
+    m.export_function("convertStructToJsObject", convert_struct_to_js_object)
 });
 ```
