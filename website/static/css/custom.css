@@ -1,3 +1,7 @@
+body {
+  color: white;
+}
+
 .navListItem.navListItemActive {
   font-weight: bold;
 }

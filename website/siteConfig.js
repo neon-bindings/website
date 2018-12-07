@@ -72,7 +72,9 @@ const siteConfig = {
   ogImage: 'logo/text-logo.svg',
   twitterImage: 'logo/text-logo.svg',
 
-  separateCss: ['static/api']
+  separateCss: ['static/api'],
+
+  gaTrackingId: 'UA-130626950-1'
 };
 
 module.exports = siteConfig;
