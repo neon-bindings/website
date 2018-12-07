@@ -4,6 +4,8 @@ title: Electron Apps
 sidebar_label: Electron Apps
 ---
 
+[Examples](https://github.com/neon-bindings/examples/tree/master/electron-app)
+
 Neon can be great for adding native functionality to Electron apps. This guide will walk you through a simple example of adding a Neon dependency to an Electron app. To see the whole example you can look at the [full demo](https://github.com/neon-bindings/examples/tree/master/guides/electron-apps/simple-app).
 
 For the most part, using a Neon package in Electron is as straightforward as adding it to the `package.json` dependencies. However, Electron does bring its own requirements with it for building native modules.
