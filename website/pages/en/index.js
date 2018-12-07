@@ -7,13 +7,14 @@ const { translate } = require('../../server/translate.js');
 
 const { MarkdownBlock, Container, GridBlock } = CompLibrary;
 const siteConfig = require(`${process.cwd()}/siteConfig.js`);
+const { baseUrl } = siteConfig;
 
 function imgUrl(img) {
-  return `${siteConfig.baseUrl}img/${img}`;
+  return `${baseUrl}img/${img}`;
 }
 
 function docUrl(doc, language) {
-  return `${siteConfig.baseUrl}docs/${language ? `${language}/` : ''}${doc}`;
+  return `${baseUrl}docs/${language ? `${language}/` : ''}${doc}`;
 }
 
 function pageUrl(page, language) {
@@ -127,55 +128,82 @@ const Block = props => (
   </Container>
 );
 
-const FeatureCallout = () => (
-  <React.Fragment>
-    <div
-      className="productShowcaseSection paddingBottom"
-      style={{ textAlign: 'center' }}
-    >
-      <h2>Don't Let Native Modules Scare You!</h2>
-      <h3>
-        Neon makes writing native Node.js modules safe and fun, so you can hack
-        without fear.
-      </h3>
-    </div>
-    <div
-      className="productShowcaseSection paddingBottom"
-      style={{ textAlign: 'center' }}
-    >
-      <h2>Crash-Free Memory Managment</h2>
-      <h3>
-        Neon works together with the JS garbage collector so allocations are
-        always properly managed.
-      </h3>
-    </div>
-    <div
-      className="productShowcaseSection paddingBottom"
-      style={{ textAlign: 'center' }}
-    >
-      <h2>Easy Parallelism</h2>
-      <h3>
-        Safely run multiple threads, which is easy with convenient Rust APIs
-        like Rayon.
-      </h3>
-    </div>
-  </React.Fragment>
+const Features = () => (
+  <Block layout="fourColumn" className="features">
+    {[
+      {
+        title: 'Simple Tooling',
+        content:
+          'No makefiles. No fancy global build requirements. Just Node and Rust',
+        image: `${baseUrl}img/hammer.svg`,
+        imageAlign: 'top'
+      },
+      {
+        title: 'Guaranteed Safety',
+        content:
+          'If a neon module compiles, it is guaranteed to be memory safe by the rust compiler',
+        image: `${baseUrl}img/checkmark.svg`,
+        imageAlign: 'top'
+      },
+      {
+        title: 'Easy Parallelism',
+        content: 'Safely run multiple threads without data races',
+        image: `${baseUrl}img/fork.svg`,
+        imageAlign: 'top'
+      }
+    ]}
+  </Block>
 );
 
-const LearnMore = () => (
+const exampleCode = `
+fn make_an_array(mut cx: FunctionContext) -> JsResult<JsArray> {
+  // Create some values:
+  let n = cx.number(9000);
+  let s = cx.string("hello");
+  let b = cx.boolean(true);
+
+  // Create a new array:
+  let array: Handle<JsArray> = cx.empty_array();
+
+  // Push the values into the array:
+  array.set(&mut cx, 0, n)?;
+  array.set(&mut cx, 1, s)?;
+  array.set(&mut cx, 2, b)?;
+
+  // Return the array:
+  Ok(array)
+}
+
+register_module!(mut cx, {
+  // Export the Rust function as a JS function
+  cx.export_function("makeAnArray", make_an_array)
+})
+`;
+const Examples = () => (
+  <div
+    className="productShowcaseSection paddingBottom"
+    style={{ textAlign: 'center' }}
+  >
+    <h2>A Taste</h2>
+    <SyntaxHighlighter language="rust" style={atomDark}>
+      {exampleCode}
+    </SyntaxHighlighter>
+  </div>
+);
+
+const Demo = () => (
   <Container
     padding={['bottom', 'top']}
     style={{ textAlign: 'center' }}
     id="learn-more"
   >
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/jINMIAicaS0"
-      frameBorder="0"
-      allow="autoplay; encrypted-media"
-      allowFullScreen
-    />
+    <h2>A Demo</h2>
+    <a href="https://asciinema.org/a/ZXrZmY5ofORmdlKKrm8ev0QC7" target="_blank">
+      <img
+        alt="demo"
+        src="https://asciinema.org/a/ZXrZmY5ofORmdlKKrm8ev0QC7.svg"
+      />
+    </a>
   </Container>
 );
 
@@ -198,8 +226,9 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="homeContainer">
-          <FeatureCallout />
-          <LearnMore />
+          <Features />
+          <Examples />
+          <Demo />
           <TryOut />
         </div>
       </div>
