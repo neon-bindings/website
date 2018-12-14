@@ -24,7 +24,9 @@ class Users extends React.Component {
           <div className="showcaseSection">
             <div className="prose">
               <h1>Who is Using This?</h1>
-              <p>This project is used by many folks</p>
+              {siteConfig.users.length >= 10 ? (
+                <p>This project is used by many folks</p>
+              ) : null}
             </div>
             <div className="logos">{showcase}</div>
             <p>Are you using this project?</p>

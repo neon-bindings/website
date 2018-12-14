@@ -1,8 +1,8 @@
 const users = [
   {
     caption: 'Mapbox',
-    image: '/img/mapbox-icon.png',
-    infoLink: 'https://www.mapbox.com',
+    image: '/img/mapbox-logo.svg',
+    infoLink: 'https://github.com/mapbox/node-fuzzy-phrase',
     pinned: true
   }
 ];
