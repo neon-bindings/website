@@ -1,4 +1,11 @@
-const users = [];
+const users = [
+  {
+    caption: 'Mapbox',
+    image: '/img/mapbox-icon.png',
+    infoLink: 'https://www.mapbox.com',
+    pinned: true
+  }
+];
 
 const siteConfig = {
   title: 'Neon',
@@ -9,6 +16,7 @@ const siteConfig = {
   projectName: 'website',
   organizationName: 'neon-bindings',
   repoUrl: 'https://github.com/neon-bindings/neon',
+  docsUrl: 'https://github.com/neon-bindings/website',
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
