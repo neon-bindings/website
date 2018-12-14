@@ -1,4 +1,11 @@
-const users = [];
+const users = [
+  {
+    caption: 'Mapbox',
+    image: '/img/mapbox-logo.svg',
+    infoLink: 'https://github.com/mapbox/node-fuzzy-phrase',
+    pinned: true
+  }
+];
 
 const siteConfig = {
   title: 'Neon',
