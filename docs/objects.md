@@ -22,7 +22,7 @@ js_object
 // --snip--
 ```
 
-`.downcast()` will attempt to cast the proerty to a `JsFunction`. `.or_throw()` will error if downcasting the propety is not possible.
+`.downcast()` will attempt to cast the property to a `JsFunction`. `.or_throw()` will error if downcasting the propety is not possible.
 
 ## Setting Properties
 

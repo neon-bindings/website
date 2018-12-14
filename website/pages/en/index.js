@@ -105,7 +105,7 @@ class HomeSplash extends React.Component {
             </SyntaxHighlighter>
           </PromoSection>
           <PromoSection>
-            <Button href={docUrl('getting-started', 'en')}>Try It Out</Button>
+            <Button href={docUrl('getting-started')}>Try It Out</Button>
             <Button href={siteConfig.repoUrl} target="_blank">
               GitHub
             </Button>
@@ -212,7 +212,7 @@ const TryOut = () => (
     className="productShowcaseSection paddingBottom"
     style={{ textAlign: 'center' }}
   >
-    <a href={docUrl('getting-started', 'en')}>
+    <a href={docUrl('getting-started')}>
       <h2 className="neon-heading">Get Started!</h2>
     </a>
   </div>
