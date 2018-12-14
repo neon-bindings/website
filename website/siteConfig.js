@@ -16,7 +16,6 @@ const siteConfig = {
   projectName: 'website',
   organizationName: 'neon-bindings',
   repoUrl: 'https://github.com/neon-bindings/neon',
-  docsUrl: 'https://github.com/neon-bindings/website',
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
