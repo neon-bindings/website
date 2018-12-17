@@ -17,11 +17,11 @@ Here is a list of projects using Neon
 - [os-type: Bindings to the os_type rust library](https://github.com/amilajack/os-type)
 - [node-webrender: bindings to webrender](https://github.com/cztomsik/node-webrender)
 
+And <a href="https://www.npmjs.com/browse/depended/neon-cli" target="_blank">many more!</a>
+
 ## Electron Apps
 
 - [finda: Finda finds things — in under 16 milliseconds.](https://keminglabs.com/finda/)
-
-And <a href="https://www.npmjs.com/browse/depended/neon-cli" target="_blank">many more!</a>
 
 ## Rust Libraries
 
