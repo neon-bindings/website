@@ -76,7 +76,7 @@ pub fn return_js_array_with_string(mut cx: FunctionContext) -> JsResult<JsArray>
 
 ## `ArrayBuffer`
 
-Neon also provides support for the ES6 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) as through the [`JsArrayBuffer`](https://neon-bindings.com/api/neon/prelude/struct.jsarraybuffer) struct. It has the exact same constructor and methods as `JsArray`
+Neon also provides support for the ES6 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) as through the [`JsArrayBuffer`](https://neon-bindings.com/api/neon/prelude/struct.jsarraybuffer) struct. It has the same constructor and methods as `JsArray`
 
 ## Node `Buffer`
 

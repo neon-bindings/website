@@ -8,7 +8,7 @@ sidebar_label: Async Tasks
 
 Tasks let you execute asynchronous background tasks that run in the Node thread pool. Behind the scenes, Neon is using N-API's microtasks API. Microtasks are the backing implementation of Promises and Callbacks in a JS Engine. For more on microtasks, see ["Tasks, microtasks, queues and schedules"](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 
-Let's look at a very minimal implementation of an async task:
+Let's look at a minimal implementation of an async task:
 
 ```rust
 use neon::prelude::*;

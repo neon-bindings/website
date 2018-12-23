@@ -49,7 +49,7 @@ fn get_foo_bar(scope: &mut impl Scope, obj: Handle<JsObject>) -> Handle<JsValue>
 }
 ```
 
-# Make cargo more extensible
+# Make cargo more extendable
 
 Like `xargo` and `wargo`, Neon comes with a command-line tool that wraps cargo's behavior in order to abstract away a bunch of build configuration details. I'm proud of this abstraction, because it makes building native modules in Node far easier than they are with C++. But I would much rather Neon programmers could use cargo directly, calling all their usual familiar commands like `cargo build` and `cargo run`.
 

@@ -10,6 +10,7 @@
     "build": "yarn workspace website build",
     "publish-gh-pages": "yarn workspace website publish-gh-pages",
     "lint": "eslint .",
+    "lint-prose": "cp .proselintrc ~/ && proselint docs website/blog website/pages",
     "lint-fix": "yarn --silent lint --fix; exit 0",
     "test": "yarn lint",
     "version": "yarn workspace website version"
