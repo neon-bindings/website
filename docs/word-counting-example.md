@@ -73,7 +73,7 @@ line.split(' ')
 
 In my quick experiments, that even seems to shave a few milliseconds off the total running time. I think this is a nice demonstration of the power of Rust’s zero-cost abstractions, where idiomatic and high-level abstractions produce the same or sometimes even better performance (by making additional optimizations possible, like eliminating bounds checks) than lower-level, more obscure code.
 
-On my machine, the simple Rust translation runs in about 80 – 85ms. Not bad—about 3x as fast just from using Rust, and in roughly the same number of lines of code (60 in JS, 70 in Rust). BTW, I’m being approximate here with the numbers, because this isn’t a remotely scientific benchmark. My goal is just to demonstrate that you can get significant performance improvements from using Rust; in any given situation, the particular details will of course matter.
+On my machine, the simple Rust translation runs in about 80 – 85ms. Not bad—about 3x as fast just from using Rust, and in roughly the same number of lines of code (60 in JS, 70 in Rust). By the way, I’m being approximate here with the numbers, because this isn’t a remotely scientific benchmark. My goal is just to demonstrate that you can get significant performance improvements from using Rust; in any given situation, the particular details will of course matter.
 
 ## Their Thread of Life is Spun
 
@@ -121,7 +121,7 @@ const myNeonModule = require('neon-bridge').load();
 
 ## Wherefore’s this Noise?
 
-Hopefully this demo is enough to get people interested. Beyond the sheer fun of it, I think the strongest reasons for using Rust in Node are performance and parallelism. As the Rust ecosystem grows, it’ll also be a way to give Node access to cool Rust libraries. Beyond that, I’m hoping that Neon can make a nice abstraction layer that just makes writing native Node modules less painful. With projects like node-uwp it might even be worth exploring evolving Neon towards a JS-engine-agnostic abstraction layer.
+I hope this demo is enough to get people interested. Beyond the sheer fun of it, I think the strongest reasons for using Rust in Node are performance and parallelism. As the Rust ecosystem grows, it’ll also be a way to give Node access to cool Rust libraries. Beyond that, I’m hoping that Neon can make a nice abstraction layer that just makes writing native Node modules less painful. With projects like node-uwp it might even be worth exploring evolving Neon towards a JS-engine-agnostic abstraction layer.
 
 There are lots of possibilities, but I need help! If you want to get involved, I’ve created a community slack (grab an invite from the Slackin app) and a #neon IRC channel on Mozilla IRC (irc.mozilla.org).
 
