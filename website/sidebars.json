@@ -18,7 +18,8 @@
       "json",
       "errors",
       "async",
-      "electron-apps"
+      "electron-apps",
+      "publishing"
     ],
     "Guides": ["word-counting-guide", "sdl2-guide"],
     "Advanced": [],

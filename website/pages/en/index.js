@@ -49,9 +49,7 @@ const Logo = props => (
   <div className="neonProjectLogo">
     <div className="neon-logo">
       <span className="open neon-heading neon-flicker-blink">Neon</span>
-      <span className="hrs neon-subheading neon-flicker-buzz">
-        {siteConfig.tagline}
-      </span>
+      <span className="hrs neon-subheading">{siteConfig.tagline}</span>
     </div>
   </div>
 );
