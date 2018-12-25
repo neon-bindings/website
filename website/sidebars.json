@@ -19,7 +19,8 @@
       "errors",
       "async",
       "electron-apps",
-      "publishing"
+      "publishing",
+      "configuration"
     ],
     "Guides": ["word-counting-guide", "sdl2-guide"],
     "Advanced": [],
