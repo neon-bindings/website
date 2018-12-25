@@ -1,7 +1,7 @@
 ---
-id: configuration
-title: Configuration
-sidebar_label: Configuration
+id: tooling
+title: Tooling
+sidebar_label: Tooling
 ---
 
 Here is a list of tooling configuration for Neon projects
