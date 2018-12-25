@@ -9,11 +9,12 @@ Here is a list of projects using Neon
 ## Node Libraries
 
 - [disk-utility: Disk utility methods for Node using Neon](https://github.com/amilajack/disk-utility)
-- [snips-nlu-js: Quick and dirty NodeJS bindings for snips-nlu-rs](https://github.com/ballwood/snips-nlu-js)
+- [node-fuzzy-phrase: Fast fuzzy phrase matching for Node](https://github.com/mapbox/node-fuzzy-phrase)
+- [snips-nlu-js: Quick and dirty Node bindings for snips-nlu-rs](https://github.com/ballwood/snips-nlu-js)
 - [reconfix: (Re)Configuration toolkit](https://github.com/resin-io/reconfix)
 - [libsodium-neon: Node bindings to libsodium](https://github.com/wireapp/libsodium-neon)
 - [ledb: Lightweight embedded database](https://github.com/katyo/ledb)
-- [node-crypto: rust-crypto bindings for nodejs](https://github.com/Brooooooklyn/node-crypto)
+- [node-crypto: rust-crypto bindings for Node](https://github.com/Brooooooklyn/node-crypto)
 - [os-type: Bindings to the os_type rust library](https://github.com/amilajack/os-type)
 - [node-webrender: bindings to webrender](https://github.com/cztomsik/node-webrender)
 
