@@ -93,6 +93,25 @@ And finally add the following to the root of your `package.json`:
   },
 ```
 
+Note: DO NOT replace `{version}` with actual version.
+
+GitHub needs permission to publish
+
+
+1. Go to [Developer Settings](https://github.com/settings/developers)
+2. Click `Personal access tokens`
+3. Click `Generate new token`
+4. Select `"public_repo"` and `"repo_deployment"`
+5. Generate Token
+6. Copy the key that's generated and set NODE_PRE_GYP_GITHUB_TOKEN environment variable to it. Within your command prompt:
+
+Then add the key to the Travis CI settings of your repo.
+
+1. Open your project on Travis CI
+2. Click `More options` dropdown
+3. Click `Settings`
+4. Go to `Environment Variables` and add `NODE_PRE_GYP_GITHUB_TOKEN` as `Name` and your generated token as the `Value` of your ENV variables
+
 For an **example of a Neon project with publishing capabilities**, see [amilajack/disk-utility](https://github.com/amilajack/disk-utility)
 For more details on [`node-pre-gyp-github`'s `README`](https://github.com/bchr02/node-pre-gyp-github) for more details on publishing options
 
