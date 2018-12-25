@@ -27,9 +27,7 @@ node_js:
   - 9
   - 8
 
-cache:
-  - yarn: true
-  - cargo: true
+cache: cargo
 
 before_install:
   # Install Rust and Cargo
@@ -37,15 +35,16 @@ before_install:
   - sh /tmp/rustup.sh -y
   - export PATH="$HOME/.cargo/bin:$PATH"
   - source "$HOME/.cargo/env"
-  # Install global NPM packages
+  # Install NPM packages
   - node -v
   - npm -v
-  - npm i -g yarn@latest neon-cli@latest lerna@latest
-  - yarn
+  - npm install
 
 script:
-  - yarn test
-  - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then yarn run publish; fi
+  - npm test
+  # Publish when using '[publish binary]' keywords
+  - COMMIT_MESSAGE=$(git log --format=%B --no-merges -n 1 | tr -d '\n')
+  - if [[ ${COMMIT_MESSAGE} =~ "[publish binary]" ]]; then yarn upload-binary || exit 0; fi;
 ```
 
 Then add the following lines to your `package.json` to tell NPM to only publish the `lib` directory and the `native/index.node` file. Make sure to change the `type` and `url` properties in the `repository` object:
@@ -77,7 +76,7 @@ Then make the following changes to the `scripts` section of your `package.json`:
 - "install": "neon build --release",
 + "install": "node-pre-gyp install --fallback-to-build=false || neon build --release",
 + "package": "node-pre-gyp package",
-+ "publish": "node-pre-gyp package && node-pre-gyp-github publish",
++ "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish",
 ```
 
 And finally add the following to the root of your `package.json`:
@@ -95,8 +94,7 @@ And finally add the following to the root of your `package.json`:
 
 Note: DO NOT replace `{version}` with actual version.
 
-GitHub needs permission to publish
-
+GitHub needs permission to publish releases on your behalf so you'll need to create a Personal Access Token:
 
 1. Go to [Developer Settings](https://github.com/settings/developers)
 2. Click `Personal access tokens`
@@ -114,6 +112,25 @@ Then add the key to the Travis CI settings of your repo.
 
 For an **example of a Neon project with publishing capabilities**, see [amilajack/disk-utility](https://github.com/amilajack/disk-utility)
 For more details on [`node-pre-gyp-github`'s `README`](https://github.com/bchr02/node-pre-gyp-github) for more details on publishing options
+
+Now you can publish binaries only on a specific commit. To do this you could borrow from the Travis CI idea of commit keywords and add special handling for commit messages with [publish binary]:
+
+```bash
+git commit -a -m "[publish binary]"
+```
+
+Or, if you don't have any changes to make simply run:
+
+```bash
+git commit --allow-empty -m "[publish binary]"
+```
+
+Note that these will run the `upload-binary` script, which will package and upload binaries for the current version of the package. A typical workflow of publishing a Neon module would include the following the following:
+
+```bash
+git commit -a -m "[publish binary]"
+npm publish
+```
 
 ### 2. Shipping compiling native modules
 
