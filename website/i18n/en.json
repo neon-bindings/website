@@ -93,6 +93,10 @@
         "title": "SDL2 Bindings",
         "sidebar_label": "SDL2 Bindings"
       },
+      "tooling": {
+        "title": "Tooling",
+        "sidebar_label": "Tooling"
+      },
       "type-checking": {
         "title": "Type Checking",
         "sidebar_label": "Type Checking"

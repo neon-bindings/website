@@ -21,8 +21,8 @@
       "electron-apps",
       "publishing"
     ],
-    "Guides": ["word-counting-guide", "sdl2-guide"],
-    "Advanced": [],
+    "Guides": ["word-counting-guide"],
+    "Advanced": ["tooling"],
     "Other": ["roadmap", "example-projects", "learning-resources"]
   }
 }
