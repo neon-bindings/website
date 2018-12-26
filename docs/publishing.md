@@ -8,6 +8,8 @@ Publishing native modules is a critical part of native modules. The user of a na
 
 ### 1. Upload and downloading native compiled modules 
 
+> This method requires you to have a Travis CI account. If you do not have one, [please create one](https://travis-ci.com).
+
 [Example](https://github.com/amilajack/disk-utility)
 
 Library authors can compile the native module to all multiple targets (windows, macOS, linux) and then upload those targets. Users of the module will then download these targets.
@@ -79,7 +81,9 @@ Then make the following changes to the `scripts` section of your `package.json`:
 + "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish",
 ```
 
-And finally add the following to the root of your `package.json`:
+`node-pre-gyp install --fallback-to-build=false` will attempt to download a binary and not fallback to a building the project with `node-pre-gyp`. The following part, ` || neon build --release`, builds a production relase using Neon if the previous script throws an error.
+
+Finally, add the following to the root of your `package.json`:
 
 ```json
   "binary": {
@@ -91,6 +95,8 @@ And finally add the following to the root of your `package.json`:
     "pkg_path": "."
   },
 ```
+
+This configures `node-pre-gyp` by telling it where our `native/index.node` lives and where to upload the binaries to. Make sure to replace `your-username-here` and `your-repo-here` with the actual values.
 
 Note: DO NOT replace `{version}` with actual version.
 
