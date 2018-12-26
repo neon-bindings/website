@@ -37,6 +37,10 @@
         "title": "Who's Using Neon",
         "sidebar_label": "Who's Using Neon"
       },
+      "faq": {
+        "title": "FAQ",
+        "sidebar_label": "FAQ"
+      },
       "functions": {
         "title": "Functions",
         "sidebar_label": "Functions"
@@ -101,7 +105,7 @@
         "title": "Type Checking",
         "sidebar_label": "Type Checking"
       },
-      "word-counting-guide": {
+      "word-counting-example": {
         "title": "Word Counting",
         "sidebar_label": "Word Counting"
       }
