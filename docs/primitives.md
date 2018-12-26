@@ -15,7 +15,6 @@ fn js_number(mut cx: FunctionContext) -> JsResult<JsNumber> {
     // Either use function context to create number
     let number = cx.number(23 as f64);
     // or use JsNumber struct
-    let number = JsNumber::new(&mut cx, 23);
     Ok(number)
 }
 ```
@@ -27,7 +26,6 @@ Other primitives follow a similar pattern:
 ```rust
 // --snip--
 let string = cx.string("foobar");
-let string = JsString::new(&mut cx, "foobar");
 // --snip--
 ```
 
@@ -36,7 +34,6 @@ let string = JsString::new(&mut cx, "foobar");
 ```rust
 // --snip--
 let boolean = cx.boolean(true);
-let boolean = JsBoolean::new(&mut cx, true);
 // --snip--
 ```
 
@@ -45,7 +42,6 @@ let boolean = JsBoolean::new(&mut cx, true);
 ```rust
 // --snip--
 let undefined = cx.undefined();
-let undefined = JsUndefined::new(&mut cx);
 // --snip--
 ```
 
@@ -54,6 +50,5 @@ let undefined = JsUndefined::new(&mut cx);
 ```rust
 // --snip--
 let null = cx.null();
-let null = JsNull::new(&mut cx);
 // --snip--
 ```

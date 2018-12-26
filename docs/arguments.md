@@ -135,11 +135,12 @@ pub fn default_args(mut cx: FunctionContext) -> JsResult<JsUndefined> {
 
     Ok(cx.undefined())
 }
-
-// --snip--
 ```
 
+Here's how we'd call those functions:
+
 ```js
+// ./lib/index.js
 const { defaultArgs } = require('../native');
 
 defaultArgs(); // i am 12 years old and my name is John Doe
