@@ -27,16 +27,11 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('getting-started.html', this.props.language)}>
+            <a href={this.docUrl('getting-started.html')}>
               Getting Started
             </a>
-            <a
-              href={this.docUrl(
-                'word-counting-guide.html',
-                this.props.language
-              )}
-            >
-              Guides
+            <a href="https://github.com/neon-bindings/examples">
+              Examples
             </a>
             <a
               href="https://neon-bindings.com/api/neon/index.html"
@@ -48,7 +43,7 @@ class Footer extends React.Component {
           <div>
             <h5>Community</h5>
             {this.props.config.users.length ? (
-              <a href={this.pageUrl('users.html', this.props.language)}>
+              <a href={this.pageUrl('users.html')}>
                 User Showcase
               </a>
             ) : null}
