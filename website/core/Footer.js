@@ -27,12 +27,8 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('getting-started.html')}>
-              Getting Started
-            </a>
-            <a href="https://github.com/neon-bindings/examples">
-              Examples
-            </a>
+            <a href={this.docUrl('getting-started.html')}>Getting Started</a>
+            <a href="https://github.com/neon-bindings/examples">Examples</a>
             <a
               href="https://neon-bindings.com/api/neon/index.html"
               target="_blank"
@@ -43,9 +39,7 @@ class Footer extends React.Component {
           <div>
             <h5>Community</h5>
             {this.props.config.users.length ? (
-              <a href={this.pageUrl('users.html')}>
-                User Showcase
-              </a>
+              <a href={this.pageUrl('users.html')}>User Showcase</a>
             ) : null}
             <a href="https://rust-bindings-slackin.herokuapp.com/">
               Project Chat
