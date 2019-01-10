@@ -99,7 +99,7 @@ fn thread_count(mut cx: FunctionContext) -> JsResult<JsNumber> {
 
 A few more things to note about this code:
 
-- The `call` argument to `thread_count`: this contains information about the function call, such as the arguments and the value of `this`.
+- The `cx` argument to `thread_count`: this contains information about the function call, such as the arguments and the value of `this`.
 - The [`JsResult`](https://neon-bindings.com/api/neon/result/type.jsresult) output type: this is a Rust [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html) type that indicates whether the function returned (`Ok`) or threw a JavaScript exception (`Err`). You can learn more in the [Handling Errors](../handling-errors) guide. It also tracks the lifetime of the returned _handle_. You can read more about handles in the [Handles and Memory](../handles-and-memory/) guide.
 - The `cx.number()` function tells the JavaScript garbage collector that we need to keep the value we allocate alive long enough to return it to the caller of `thread_count`. You can learn more about memory management in the [Handles and Memory](../handles-and-memory/) guide.
 

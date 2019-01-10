@@ -54,7 +54,7 @@ const siteConfig = {
   },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Amila Welihinda`,
+  copyright: `Copyright © ${new Date().getFullYear()} Neon Bindings`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
