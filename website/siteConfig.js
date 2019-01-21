@@ -12,6 +12,7 @@ const siteConfig = {
   tagline: 'Fast and Safe Native Node.js Modules',
   url: 'https://neon-bindings.com',
   baseUrl: '/',
+  editUrl: 'https://github.com/neon-bindings/website/blob/master/docs/',
 
   projectName: 'website',
   organizationName: 'neon-bindings',
