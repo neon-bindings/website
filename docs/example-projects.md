@@ -8,6 +8,7 @@ Here is a list of projects using Neon
 
 ## Node Libraries
 
+- [swc: Super-fast Babel alternative written in Rust](https://github.com/swc-project/swc)
 - [disk-utility: Disk utility methods for Node using Neon](https://github.com/amilajack/disk-utility)
 - [node-fuzzy-phrase: Fast fuzzy phrase matching for Node](https://github.com/mapbox/node-fuzzy-phrase)
 - [snips-nlu-js: Quick and dirty Node bindings for snips-nlu-rs](https://github.com/ballwood/snips-nlu-js)
