@@ -8,7 +8,7 @@ If we can declare functions with Rust that can be called from JS then we need to
 
 ## Upcasting
 
-Every method of a JS class implicity returns a `JsValue` function returns a `JsValue`. No type more or less specific than a `JsValue` can be returned:
+Every method of a JS class implicity returns a `JsValue`. No type more or less specific than a `JsValue` can be returned.
 
 For example, the following class method would fail to compile:
 
