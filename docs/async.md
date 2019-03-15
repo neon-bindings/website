@@ -148,11 +148,11 @@ const promisePerformAsyncTask = () => {
 
 ## Runnable Example
 
-For another example of tasks, you can clone and run [fibonacci-task](https://github.com/neon-bindings/examples/tree/master/fibonacci-task):
+For another example of tasks, you can clone and run [fibonacci-async-task](https://github.com/neon-bindings/examples/tree/master/fibonacci-async-task):
 
 ```bash
 git clone https://github.com/neon-bindings/examples
-cd fibonacci-task
+cd fibonacci-async-task
 npm install
 ```
 
