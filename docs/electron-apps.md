@@ -44,7 +44,7 @@ npm install electron-build-env neon-cli --save-dev
 
 Finally, we'll add a script to build the Neon dependency:
 
-```json
+```jsonc
 "scripts": {
     // ...
     "build": "electron-build-env neon build neon-hello --release"
