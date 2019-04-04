@@ -62,7 +62,7 @@ We can then build a production release of the `neon-hello` module:
 npm run build
 ```
 
-we should have a working Electron app. You can try out the [full working demo](https://github.com/neon-bindings/examples/tree/master/guides/electron-apps/simple-app) by building it and running:
+we should have a working Electron app. You can try out the [full working demo](https://github.com/neon-bindings/examples/tree/master/electron-app) by building it and running:
 
 ```shell
 npm start
