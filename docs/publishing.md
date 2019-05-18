@@ -4,7 +4,7 @@ title: Publishing
 sidebar_label: Publishing
 ---
 
-Publishing native modules is a critical part of native modules. The user of a native node module that is compatible with the architecture of their machine. Tthe Node community has devised two solutions for this:
+Publishing native modules is a critical part of native modules. The user of a native node module that is compatible with the architecture of their machine. The Node community has devised two solutions for this:
 
 ### 1. Upload and downloading native compiled modules 
 
