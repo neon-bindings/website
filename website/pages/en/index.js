@@ -1,3 +1,4 @@
+/* eslint max-classes-per-file: off */
 const React = require('react');
 const SyntaxHighlighter = require('react-syntax-highlighter/dist/cjs/index.js')
   .default;
