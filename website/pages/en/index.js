@@ -197,10 +197,10 @@ const Demo = () => (
     id="learn-more"
   >
     <h2>A Demo</h2>
-    <a href="https://asciinema.org/a/ZXrZmY5ofORmdlKKrm8ev0QC7" target="_blank">
+    <a href="https://asciinema.org/a/SkInoIU6BrKz7g10HSWppDATM" target="_blank">
       <img
         alt="demo"
-        src="https://asciinema.org/a/ZXrZmY5ofORmdlKKrm8ev0QC7.svg"
+        src="https://asciinema.org/a/SkInoIU6BrKz7g10HSWppDATM.svg"
       />
     </a>
   </Container>
