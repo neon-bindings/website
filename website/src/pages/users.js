@@ -1,9 +1,10 @@
-const React = require('react');
-const CompLibrary = require('../../core/CompLibrary.js');
+import React from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import withBaseUrl from '@docusaurus/withBaseUrl';
 
 const siteConfig = require(`${process.cwd()}/siteConfig.js`);
-
-const { Container } = CompLibrary;
 
 class Users extends React.Component {
   render() {
