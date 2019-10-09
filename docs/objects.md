@@ -35,7 +35,7 @@ let js_string = cx.string("foobar");
 js_object.set(&mut cx, "myProperty", js_string)?;
 ```
 
-`.` will attempt to cast the proerty to a `JsFunction`. `.or_throw()` will error if downcasting the propety is not possible.
+`.` will attempt to cast the property to a `JsFunction`. `.or_throw()` will error if downcasting the property is not possible.
 
 ## Mapping a `struct` to a `JsObject`
 
