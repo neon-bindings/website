@@ -9421,5 +9421,20 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.btn.btn-primary {
+  color: #071733;
+}
+
+.btn.btn-primary, .btn.btn-secondary {
+  font-weight: bold;
+}
+
+.btn.btn-secondary {
+  color: #FF6A8E;
+}
+
+.btn.btn-secondary {
+  color: #FF6A8E;
+}
 
 /*# sourceMappingURL=bootstrap.css.map */

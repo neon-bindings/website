@@ -13,3 +13,19 @@ $enable-rounded: false;
 $enable-shadows: false;
 
 @import "../../../node_modules/bootstrap/scss/bootstrap";
+
+.btn.btn-primary {
+  color: $secondary-color;
+}
+
+.btn.btn-primary, .btn.btn-secondary {
+  font-weight: bold;
+}
+
+.btn.btn-secondary {
+  color: $primary-color;
+}
+
+.btn.btn-secondary {
+  color: $primary-color;
+}

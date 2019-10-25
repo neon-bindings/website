@@ -31,15 +31,15 @@
   color: white;
 }
 
+.featureHeader {
+  color: #B3DAFF;
+}
+
 .containerOdd {
   background: #030C1C;
 }
 
 .containerEven {
-  background: #08162E;
-}
-
-.container--secondary {
   background: #08162E;
 }
 
@@ -49,11 +49,16 @@
   justify-content: center;
 }
 
+.buttons button {
+  margin: 0 10px;
+}
+
 .features {
   padding: 2rem 0;
 }
 
 .featureImage {
-  height: 50px;
-  width: 50px;
+  margin-right: 20px;
+  height: 40px;
+  width: 40px;
 }

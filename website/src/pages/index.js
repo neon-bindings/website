@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import dark from 'react-syntax-highlighter/dist/esm/styles/hljs/tomorrow-night-blue';
 import { Button, ButtonGroup, Row, Col, Container } from 'reactstrap';
 import styles from './styles.module.css';
 import '../css/custom.css';
@@ -152,13 +153,27 @@ class Carousel extends React.Component {
             </Button>
           ))}
         </ButtonGroup>
-        <SyntaxHighlighter language="rust">
+        <CustomSyntaxHighligher language="rust">
           {this.state.currentCode}
-        </SyntaxHighlighter>
+        </CustomSyntaxHighligher>
       </>
     );
   }
 }
+
+const CustomSyntaxHighligher = props => (
+  <SyntaxHighlighter
+    {...props}
+    customStyle={{ background: '#08162E', margin: '30px 0', textAlign: 'left' }}
+    styleFoo={dark}
+  >
+    {props.children}
+  </SyntaxHighlighter>
+);
+
+CustomSyntaxHighligher.defaultProps = {
+  language: 'javascript'
+};
 
 // Concatenate a given array of styles
 const cStyles = _styles => _styles.join(' ');
@@ -177,23 +192,21 @@ function Home() {
           <Col xs="12" className="text-center">
             <Logo title={siteConfig.title} subtitle={siteConfig.tagline} />
             <Row>
-              <Col xs={6} className="text-left">
-                <SyntaxHighlighter
-                  customStyle={{ fontSize: '0.8em' }}
+              <Col xs={6}>
+                <CustomSyntaxHighligher
+                  customStyle={{ background: '#08162E', fontSize: '0.8em' }}
                   language="javascript"
-                  useInlineStyles
                 >
                   {jsExample}
-                </SyntaxHighlighter>
+                </CustomSyntaxHighligher>
               </Col>
-              <Col xs={6} className="text-left">
-                <SyntaxHighlighter
+              <Col xs={6}>
+                <CustomSyntaxHighligher
                   customStyle={{ fontSize: '0.8em' }}
                   language="rust"
-                  useInlineStyles
                 >
                   {neonExample}
-                </SyntaxHighlighter>
+                </CustomSyntaxHighligher>
               </Col>
             </Row>
             <Row className={styles.buttons}>
@@ -223,25 +236,28 @@ function Home() {
         </Col>
         {features && features.length && (
           <section className={styles.features}>
-            <div className="container container-home">
-              <div className="row">
+            <Container>
+              <Row>
                 {features.map(({ imageUrl, title, description }, idx) => (
                   <div
                     key={styles.feature}
                     className={classnames('col col--4', styles.feature)}
                   >
-                    <img
-                      className={styles.featureImage}
-                      src={useBaseUrl(imageUrl)}
-                      alt={title}
-                    />
-                    <h3>{title}</h3>
-
+                    <h5 className={styles.featureHeader}>
+                      <span>
+                        <img
+                          className={styles.featureImage}
+                          src={useBaseUrl(imageUrl)}
+                          alt={title}
+                        />
+                      </span>
+                      {title}
+                    </h5>
                     <p className={styles.featureDescription}>{description}</p>
                   </div>
                 ))}
-              </div>
-            </div>
+              </Row>
+            </Container>
           </section>
         )}
 
@@ -250,7 +266,7 @@ function Home() {
             <Col xs="12" className="text-center">
               <h3>Examples</h3>
             </Col>
-            <Col xs="12">
+            <Col xs="12" className="text-center">
               <Carousel />
             </Col>
           </Container>
@@ -262,13 +278,11 @@ function Home() {
               <h3>Demo</h3>
             </Col>
             <Col xs="12">
-              <div className="container container-home">
-                <iframe
-                  src="https://asciinema.org/a/269799/iframe"
-                  width="100%"
-                  height="300px"
-                />
-              </div>
+              <iframe
+                src="https://asciinema.org/a/269799/iframe"
+                width="100%"
+                height="300px"
+              />
             </Col>
           </Container>
         </section>
