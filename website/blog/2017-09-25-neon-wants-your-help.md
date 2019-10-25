@@ -14,7 +14,7 @@ My history with Rust goes back a long way. But it was when I really started to u
 
 I decided that the best way I could help widen the on-ramp to Rust was to create [Neon](https://www.neon-bindings.com): a library for conveniently implementing native Node.js modules with Rust instead of C/C++. With Neon, JavaScript programmers can get access to all the power that Rust offers: high-performance native code, convenient multithreading, freedom from memory faults and data races, and access to native libraries and the [Cargo](https://crates.io) ecosystem. And they can do this without throwing away their working apps or existing expertise. In short, my goal with Neon is to make it easy for JavaScript programmers to "dip their toe" into Rust without diving straight into the deep end.
 
-<img class="right" style="width: 200px; height: 150px;" src="/assets/help-wanted.jpg" /> We've made some great progress recently, with some cool new features including [Electron support](https://guides.neon-bindings.com/electron-apps/) and a new [Task API](https://neon-bindings.com/api/neon/task/) for asynchronously spawning Rust computations to run in a background thread. **But Neon is still a young project, and could use your help to take it to the next level!** Neon is still primarily built by me and a small set of contributors, so **I'm looking for contributors with a wide range of skills and interests** who can join us to take Neon to the next level and eventually **grow into a project leadership team.** I think we're onto something exciting here: a chance to build bridges between the JavaScript and Rust worlds and to create opportunities for aspiring new systems programmers. And I hope you'll consider being a part of it!
+<img className="right" style={{width: '200px', height: '150px'}} src="/assets/help-wanted.jpg" /> We've made some great progress recently, with some cool new features including [Electron support](https://guides.neon-bindings.com/electron-apps/) and a new [Task API](https://neon-bindings.com/api/neon/task/) for asynchronously spawning Rust computations to run in a background thread. **But Neon is still a young project, and could use your help to take it to the next level!** Neon is still primarily built by me and a small set of contributors, so **I'm looking for contributors with a wide range of skills and interests** who can join us to take Neon to the next level and eventually **grow into a project leadership team.** I think we're onto something exciting here: a chance to build bridges between the JavaScript and Rust worlds and to create opportunities for aspiring new systems programmers. And I hope you'll consider being a part of it!
 
 <!--more-->
 
@@ -59,7 +59,7 @@ Just to give you a sense of the many varied kinds of contributions we could use,
 
 Does any of these sound like something you'd be interested in? Or maybe you have other ideas! If you want to help, come talk to me (**@dherman**) in the [`#neon` community Slack channel](https://rust-bindings.slack.com/messages/neon) (make sure to get an [automatic invite](https://rust-bindings-slackin.herokuapp.com/) first).
 
-## <img class="right" style="width: 184px; height: 128px;" src="/assets/come-in.png" /> A Note About Community
+## A Note About Community
 
 As the original creator of this project, I'm responsible not only for the software but for the community I foster. I _deeply love_ this part of open source, and I don't take the responsibility lightly.
 

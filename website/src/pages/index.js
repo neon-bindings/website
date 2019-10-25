@@ -165,7 +165,7 @@ const CustomSyntaxHighligher = props => (
   <SyntaxHighlighter
     {...props}
     customStyle={{ background: '#08162E', margin: '30px 0', textAlign: 'left' }}
-    styleFoo={dark}
+    style={dark}
   >
     {props.children}
   </SyntaxHighlighter>
