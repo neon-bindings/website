@@ -35,7 +35,51 @@ module.exports = {
     },
     footer: {
       style: 'dark',
-      links: [],
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Getting Started',
+              to: 'getting-started'
+            },
+            {
+              label: 'Examples',
+              url: 'https://github.com/neon-bindings/examples'
+            },
+            {
+              label: 'API Reference',
+              to: 'https://neon-bindings.com/api/neon/index.html'
+            }
+          ]
+        },
+        {
+          title: 'Community',
+          items: [
+            // {
+            //   label: 'User Showcase',
+            //   to: 'user-showcase'
+            // },
+            {
+              label: 'Community Chat',
+              url: 'https://rust-bindings-slackin.herokuapp.com'
+            },
+            {
+              label: 'Twitter',
+              to: 'https://twitter.com/rustneon'
+            }
+          ]
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'GitHub',
+              to: 'https://github.com/neon-bindings/neon'
+            }
+          ]
+        }
+      ],
       logo: {
         alt: 'Neon Logo',
         src: 'logo/text-logo.svg'
