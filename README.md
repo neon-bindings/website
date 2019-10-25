@@ -12,3 +12,14 @@ cd website
 yarn
 yarn start
 ```
+
+## Updating the Docs
+
+```bash
+git clone https://github.com/neon-bindings/neon
+cd neon
+cargo doc
+cp -r target/doc ../website/static
+mv ../website/static/docs ../website/static/api
+rm -rf neon
+```
