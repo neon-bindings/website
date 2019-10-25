@@ -8,7 +8,6 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { Button, ButtonGroup } from 'reactstrap';
 import styles from './styles.module.css';
 import '../css/custom.css';
-import siteConfig from '../../docusaurus.config';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const jsExample = `
