@@ -10,6 +10,10 @@
  * and scoped locally.
  */
 
+.header {
+  padding: 40px 0;
+}
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
@@ -23,8 +27,16 @@
   }
 }
 
-.header, .home {
-  background: #030C1C !important;
+.featureDescription {
+  color: white;
+}
+
+.containerOdd {
+  background: #030C1C;
+}
+
+.containerEven {
+  background: #08162E;
 }
 
 .container--secondary {
@@ -38,13 +50,10 @@
 }
 
 .features {
-  display: flex;
-  align-items: center;
   padding: 2rem 0;
-  width: 100%;
 }
 
 .featureImage {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
 }

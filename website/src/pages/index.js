@@ -5,10 +5,10 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { Button, ButtonGroup } from 'reactstrap';
+import { Button, ButtonGroup, Row, Col, Container } from 'reactstrap';
 import styles from './styles.module.css';
 import '../css/custom.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/bootstrap.css';
 
 const jsExample = `
 // JS
@@ -124,12 +124,14 @@ class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentExampleIdx: 0,
       currentCode: codeExamples[0].code
     };
   }
 
   onButtonClick(index) {
     this.setState({
+      currentExampleIdx: index,
       currentCode: codeExamples[index].code
     });
   }
@@ -139,7 +141,13 @@ class Carousel extends React.Component {
       <>
         <ButtonGroup>
           {codeExamples.map((example, idx) => (
-            <Button key={example.name} onClick={() => this.onButtonClick(idx)}>
+            <Button
+              color={
+                this.state.currentExampleIdx === idx ? 'primary' : 'secondary'
+              }
+              key={example.name}
+              onClick={() => this.onButtonClick(idx)}
+            >
               {example.name}
             </Button>
           ))}
@@ -152,51 +160,67 @@ class Carousel extends React.Component {
   }
 }
 
+// Concatenate a given array of styles
+const cStyles = _styles => _styles.join(' ');
+
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
 
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title={`${siteConfig.title} - ${siteConfig.tagline}`}
+      description={siteConfig.tagline}
     >
-      <header className={styles.header}>
-        <div className="container container-home">
-          <Logo title={siteConfig.title} subtitle={siteConfig.tagline} />
-          <div className="row" style={{ textAlign: 'left' }}>
-            <SyntaxHighlighter
-              customStyle={{ fontSize: '0.8em' }}
-              language="javascript"
-              useInlineStyles
-            >
-              {jsExample}
-            </SyntaxHighlighter>
-            <SyntaxHighlighter
-              customStyle={{ fontSize: '0.8em' }}
-              language="rust"
-              useInlineStyles
-            >
-              {neonExample}
-            </SyntaxHighlighter>
-          </div>
-          <div className={styles.buttons}>
-            <ButtonGroup>
-              <a href={useBaseUrl('docs/getting-started')}>
-                <Button>Try It Out</Button>
-              </a>
-              <a href={siteConfig.repoUrl}>
-                <Button target="_blank">GitHub</Button>
-              </a>
-              <a href="https://neon-bindings.com/api/neon/index.html">
-                <Button target="_blank">API</Button>
-              </a>
-            </ButtonGroup>
-          </div>
-        </div>
+      <header className={cStyles([styles.header, styles.containerOdd])}>
+        <Container>
+          <Col xs="12" className="text-center">
+            <Logo title={siteConfig.title} subtitle={siteConfig.tagline} />
+            <Row>
+              <Col xs={6} className="text-left">
+                <SyntaxHighlighter
+                  customStyle={{ fontSize: '0.8em' }}
+                  language="javascript"
+                  useInlineStyles
+                >
+                  {jsExample}
+                </SyntaxHighlighter>
+              </Col>
+              <Col xs={6} className="text-left">
+                <SyntaxHighlighter
+                  customStyle={{ fontSize: '0.8em' }}
+                  language="rust"
+                  useInlineStyles
+                >
+                  {neonExample}
+                </SyntaxHighlighter>
+              </Col>
+            </Row>
+            <Row className={styles.buttons}>
+              <ButtonGroup>
+                <a href={useBaseUrl('docs/getting-started')}>
+                  <Button color="primary">Try It Out</Button>
+                </a>
+                <a href={siteConfig.repoUrl}>
+                  <Button color="primary" target="_blank">
+                    GitHub
+                  </Button>
+                </a>
+                <a href="https://neon-bindings.com/api/neon/index.html">
+                  <Button color="primary" target="_blank">
+                    API
+                  </Button>
+                </a>
+              </ButtonGroup>
+            </Row>
+          </Col>
+        </Container>
       </header>
 
-      <main className={styles.home}>
+      <main className={cStyles([styles.features, styles.containerEven])}>
+        <Col xs="12" className="text-center">
+          <h3>Features</h3>
+        </Col>
         {features && features.length && (
           <section className={styles.features}>
             <div className="container container-home">
@@ -206,17 +230,14 @@ function Home() {
                     key={styles.feature}
                     className={classnames('col col--4', styles.feature)}
                   >
-                    {imageUrl && (
-                      <div className="text--center">
-                        <img
-                          className={styles.featureImage}
-                          src={useBaseUrl(imageUrl)}
-                          alt={title}
-                        />
-                      </div>
-                    )}
+                    <img
+                      className={styles.featureImage}
+                      src={useBaseUrl(imageUrl)}
+                      alt={title}
+                    />
                     <h3>{title}</h3>
-                    <p>{description}</p>
+
+                    <p className={styles.featureDescription}>{description}</p>
                   </div>
                 ))}
               </div>
@@ -224,20 +245,32 @@ function Home() {
           </section>
         )}
 
-        <section className={styles.features}>
-          <div className="container container-home">
-            <Carousel />
-          </div>
+        <section className={cStyles([styles.features, styles.containerOdd])}>
+          <Container>
+            <Col xs="12" className="text-center">
+              <h3>Examples</h3>
+            </Col>
+            <Col xs="12">
+              <Carousel />
+            </Col>
+          </Container>
         </section>
 
-        <section className={styles.features}>
-          <div className="container container-home">
-            <iframe
-              src="https://asciinema.org/a/269799/iframe"
-              width="100%"
-              height="300px"
-            />
-          </div>
+        <section className={cStyles([styles.features, styles.containerEven])}>
+          <Container>
+            <Col xs="12" className="text-center">
+              <h3>Demo</h3>
+            </Col>
+            <Col xs="12">
+              <div className="container container-home">
+                <iframe
+                  src="https://asciinema.org/a/269799/iframe"
+                  width="100%"
+                  height="300px"
+                />
+              </div>
+            </Col>
+          </Container>
         </section>
       </main>
     </Layout>

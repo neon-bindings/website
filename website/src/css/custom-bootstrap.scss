@@ -1,0 +1,15 @@
+$primary-color: #FF6A8E;
+$secondary-color: #071733;
+$theme-colors: (
+  primary: $primary-color,
+  secondary: $secondary-color
+);
+
+$headings-color: $primary-color;
+$headings-small-color:  white;
+$text-color: white;
+
+$enable-rounded: false;
+$enable-shadows: false;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";

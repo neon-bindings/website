@@ -8,6 +8,7 @@
   "scripts": {
     "start": "yarn workspace website start",
     "build": "yarn workspace website build",
+    "style": "yarn workspace website style",
     "publish-gh-pages": "yarn workspace website publish-gh-pages",
     "lint": "eslint .",
     "lint-prose": "cp .proselintrc ~/ && proselint docs website/blog website/pages",
@@ -73,6 +74,7 @@
     ]
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "reactstrap": "^8.1.1"
   }
 }
