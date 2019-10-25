@@ -16,14 +16,14 @@
     "version": "yarn workspace website version"
   },
   "devDependencies": {
-    "eslint": "^6.3.0",
+    "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-bliss": "^4.3.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "husky": "^3.0.5",
-    "lint-staged": "^9.2.5",
-    "yarn": "^1.17.3"
+    "eslint-plugin-react": "^7.16.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "yarn": "^1.19.1"
   },
   "engines": {
     "yarn": ">=1.10.1"
@@ -40,6 +40,9 @@
     ]
   },
   "eslintConfig": {
+    "env": {
+      "browser": true
+    },
     "extends": [
       "airbnb",
       "bliss"
@@ -70,6 +73,6 @@
     ]
   },
   "dependencies": {
-    "reactstrap": "^8.0.1"
+    "reactstrap": "^8.1.1"
   }
 }

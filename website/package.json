@@ -14,8 +14,8 @@
     "deploy": "docusaurus deploy"
   },
   "devDependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.24",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.24",
+    "@docusaurus/core": "^2.0.0-alpha.30",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.30",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-syntax-highlighter": "^11.0.2"
@@ -34,9 +34,10 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "prismjs": "^1.17.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
     "react-syntax-highlighter": "^11.0.2",
-    "reactstrap": "^8.0.1"
+    "reactstrap": "^8.1.1"
   }
 }

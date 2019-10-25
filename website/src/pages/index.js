@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import withBaseUrl from '@docusaurus/withBaseUrl';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { Button, ButtonGroup } from 'reactstrap';
 import styles from './styles.module.css';
@@ -183,7 +183,7 @@ function Home() {
           </div>
           <div className={styles.buttons}>
             <ButtonGroup>
-              <a href={withBaseUrl('docs/getting-started')}>
+              <a href={useBaseUrl('docs/getting-started')}>
                 <Button>Try It Out</Button>
               </a>
               <a href={siteConfig.repoUrl}>
@@ -211,7 +211,7 @@ function Home() {
                       <div className="text--center">
                         <img
                           className={styles.featureImage}
-                          src={withBaseUrl(imageUrl)}
+                          src={useBaseUrl(imageUrl)}
                           alt={title}
                         />
                       </div>
