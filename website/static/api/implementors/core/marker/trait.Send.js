@@ -10,5 +10,4 @@ implementors["semver_parser"] = [{text:"impl <a class=\"trait\" href=\"https://d
             } else {
                 window.pending_implementors = implementors;
             }
-        
-})()
+        })()

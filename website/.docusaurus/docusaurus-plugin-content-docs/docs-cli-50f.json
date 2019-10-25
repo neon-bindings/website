@@ -1,0 +1,14 @@
+{
+  "id": "cli",
+  "title": "CLI",
+  "sidebar_label": "CLI",
+  "description": "## `neon new`",
+  "source": "@site/docs/cli.md",
+  "permalink": "/docs/cli",
+  "sidebar": "docs",
+  "category": "Getting Started",
+  "next": "primitives",
+  "previous": "hello-world",
+  "previous_title": "Hello World!",
+  "next_title": "Primitives"
+}

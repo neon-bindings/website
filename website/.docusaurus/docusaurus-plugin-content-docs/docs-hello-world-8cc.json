@@ -1,0 +1,14 @@
+{
+  "id": "hello-world",
+  "title": "Hello World!",
+  "sidebar_label": "Hello World!",
+  "description": "[Examples](https://github.com/neon-bindings/examples/tree/master/thread-count)",
+  "source": "@site/docs/hello-world.md",
+  "permalink": "/docs/hello-world",
+  "sidebar": "docs",
+  "category": "Getting Started",
+  "next": "cli",
+  "previous": "getting-started",
+  "previous_title": "Getting Started",
+  "next_title": "CLI"
+}

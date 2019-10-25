@@ -6,5 +6,4 @@ implementors["cslice"] = [];
             } else {
                 window.pending_implementors = implementors;
             }
-        
-})()
+        })()

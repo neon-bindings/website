@@ -1,0 +1,12 @@
+{
+  "id": "learning-resources",
+  "title": "Learning Resources",
+  "sidebar_label": "Learning Resources",
+  "description": "⚠️ Content in these posts and videos are using outdated versions of Neon ⚠️",
+  "source": "@site/docs/learning-resources.md",
+  "permalink": "/docs/learning-resources",
+  "sidebar": "docs",
+  "category": "Other",
+  "previous": "example-projects",
+  "previous_title": "Who's Using Neon"
+}

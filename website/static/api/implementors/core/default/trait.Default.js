@@ -6,5 +6,4 @@ implementors["neon_runtime"] = [{text:"impl <a class=\"trait\" href=\"https://do
             } else {
                 window.pending_implementors = implementors;
             }
-        
-})()
+        })()

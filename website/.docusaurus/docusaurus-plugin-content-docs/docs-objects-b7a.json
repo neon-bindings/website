@@ -1,0 +1,14 @@
+{
+  "id": "objects",
+  "title": "Objects",
+  "sidebar_label": "Objects",
+  "description": "[Examples](https://github.com/neon-bindings/examples/tree/master/objects)",
+  "source": "@site/docs/objects.md",
+  "permalink": "/docs/objects",
+  "sidebar": "docs",
+  "category": "Basics",
+  "next": "arguments",
+  "previous": "arrays",
+  "previous_title": "Arrays",
+  "next_title": "Arguments"
+}

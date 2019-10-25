@@ -1,0 +1,14 @@
+{
+  "id": "functions",
+  "title": "Functions",
+  "sidebar_label": "Functions",
+  "description": "[Examples](https://github.com/neon-bindings/examples/tree/master/functions)",
+  "source": "@site/docs/functions.md",
+  "permalink": "/docs/functions",
+  "sidebar": "docs",
+  "category": "Basics",
+  "next": "classes",
+  "previous": "type-checking",
+  "previous_title": "Type Checking",
+  "next_title": "Classes"
+}

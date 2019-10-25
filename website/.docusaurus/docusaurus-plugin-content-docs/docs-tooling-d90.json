@@ -1,0 +1,14 @@
+{
+  "id": "tooling",
+  "title": "Tooling",
+  "sidebar_label": "Tooling",
+  "description": "Here is a list of tooling configuration for Neon projects",
+  "source": "@site/docs/tooling.md",
+  "permalink": "/docs/tooling",
+  "sidebar": "docs",
+  "category": "Advanced",
+  "next": "roadmap",
+  "previous": "word-counting-example",
+  "previous_title": "Word Counting",
+  "next_title": "Roadmap"
+}

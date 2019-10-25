@@ -6,5 +6,4 @@ implementors["neon"] = [{text:"impl&lt;'a, T:&nbsp;Pointer&gt; <a class=\"trait\
             } else {
                 window.pending_implementors = implementors;
             }
-        
-})()
+        })()

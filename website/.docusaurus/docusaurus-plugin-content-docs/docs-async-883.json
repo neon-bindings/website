@@ -1,0 +1,14 @@
+{
+  "id": "async",
+  "title": "Async Tasks",
+  "sidebar_label": "Async Tasks",
+  "description": "[Examples](https://github.com/neon-bindings/examples/tree/master/async)",
+  "source": "@site/docs/async.md",
+  "permalink": "/docs/async",
+  "sidebar": "docs",
+  "category": "Basics",
+  "next": "electron-apps",
+  "previous": "errors",
+  "previous_title": "Errors",
+  "next_title": "Electron Apps"
+}

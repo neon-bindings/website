@@ -1,0 +1,12 @@
+{
+  "id": "intro",
+  "title": "Introduction",
+  "sidebar_label": "Introduction",
+  "description": "Welcome to the Neon guides! This documentation should help you get up and running quickly, as well as learn useful techniques for making the most of Neon. If you’re looking for reference material, you might want to try the API documentation.",
+  "source": "@site/docs/intro.md",
+  "permalink": "/docs/intro",
+  "sidebar": "docs",
+  "category": "Getting Started",
+  "next": "getting-started",
+  "next_title": "Getting Started"
+}

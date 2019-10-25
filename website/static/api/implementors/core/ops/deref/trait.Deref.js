@@ -6,5 +6,4 @@ implementors["neon"] = [{text:"impl&lt;'a, T:&nbsp;<a class=\"trait\" href=\"neo
             } else {
                 window.pending_implementors = implementors;
             }
-        
-})()
+        })()

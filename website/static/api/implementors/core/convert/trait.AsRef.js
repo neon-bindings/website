@@ -6,5 +6,4 @@ implementors["cslice"] = [{text:"impl&lt;'a, T&gt; <a class=\"trait\" href=\"htt
             } else {
                 window.pending_implementors = implementors;
             }
-        
-})()
+        })()

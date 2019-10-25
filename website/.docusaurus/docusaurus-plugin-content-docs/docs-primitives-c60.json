@@ -1,0 +1,14 @@
+{
+  "id": "primitives",
+  "title": "Primitives",
+  "sidebar_label": "Primitives",
+  "description": "[Examples](https://github.com/neon-bindings/examples/tree/master/primitives)",
+  "source": "@site/docs/primitives.md",
+  "permalink": "/docs/primitives",
+  "sidebar": "docs",
+  "category": "Basics",
+  "next": "arrays",
+  "previous": "cli",
+  "previous_title": "CLI",
+  "next_title": "Arrays"
+}

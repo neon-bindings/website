@@ -6,5 +6,4 @@ implementors["neon_runtime"] = [];
             } else {
                 window.pending_implementors = implementors;
             }
-        
-})()
+        })()

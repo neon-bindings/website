@@ -1,0 +1,14 @@
+{
+  "id": "json",
+  "title": "JSON",
+  "sidebar_label": "JSON",
+  "description": "[Examples](https://github.com/neon-bindings/examples/tree/master/json)",
+  "source": "@site/docs/json.md",
+  "permalink": "/docs/json",
+  "sidebar": "docs",
+  "category": "Basics",
+  "next": "errors",
+  "previous": "modules",
+  "previous_title": "Modules",
+  "next_title": "Errors"
+}
