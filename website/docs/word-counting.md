@@ -1,5 +1,5 @@
 ---
-id: word-counting-example
+id: word-counting
 title: Word Counting
 sidebar_label: Word Counting
 ---

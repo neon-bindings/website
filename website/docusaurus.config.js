@@ -11,7 +11,7 @@ module.exports = {
       title: 'Neon',
       logo: {
         alt: 'Neon Logo',
-        src: 'logo/text-logo.svg'
+        src: 'logo/letter-logo.png'
       },
       links: [
         { to: 'docs/intro', label: 'Docs' },

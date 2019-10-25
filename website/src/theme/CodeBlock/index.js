@@ -15,8 +15,9 @@ import Prism from 'prism-react-renderer/prism';
 import styles from './styles.module.css';
 
 (typeof global !== 'undefined' ? global : window).Prism = Prism;
-// Add support for rust syntax highlighting
+// Add support for rust and toml syntax highlighting
 require('prismjs/components/prism-rust');
+require('prismjs/components/prism-toml');
 
 export default ({ children, className: languageClassName }) => {
   const {

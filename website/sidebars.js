@@ -16,7 +16,7 @@ module.exports = {
       'electron-apps',
       'publishing'
     ],
-    Guides: ['word-counting-example'],
+    Guides: ['word-counting'],
     Advanced: ['tooling'],
     Other: ['roadmap', 'example-projects', 'learning-resources']
   }

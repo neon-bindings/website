@@ -113,7 +113,7 @@ addon.deserialize_something();
 
 `neon-serde` provides some macros for simplifying some of the type signatures of functions. It also handles exporting our functions so we don't have to use the `register_module!` macro manually.
 
-```rs
+```rust
 #[macro_use]
 extern crate neon;
 #[macro_use]

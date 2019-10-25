@@ -16,4 +16,4 @@ sidebar_label: Parallelism
 
 ```
 
-For another example with [Rayon](https://github.com/rayon-rs/rayon), see the [Word Counting guide](word-counting-example.md)
+For another example with [Rayon](https://github.com/rayon-rs/rayon), see the [Word Counting guide](word-counting.md)

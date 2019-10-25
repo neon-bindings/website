@@ -162,7 +162,7 @@ function Home() {
       description="Description will go into a meta tag in <head />"
     >
       <header className={styles.header}>
-        <div className="container">
+        <div className="container container-home">
           <Logo title={siteConfig.title} subtitle={siteConfig.tagline} />
           <div className="row" style={{ textAlign: 'left' }}>
             <SyntaxHighlighter
@@ -196,10 +196,10 @@ function Home() {
         </div>
       </header>
 
-      <main>
+      <main className={styles.home}>
         {features && features.length && (
           <section className={styles.features}>
-            <div className="container">
+            <div className="container container-home">
               <div className="row">
                 {features.map(({ imageUrl, title, description }, idx) => (
                   <div
@@ -225,13 +225,13 @@ function Home() {
         )}
 
         <section className={styles.features}>
-          <div className="container">
+          <div className="container container-home">
             <Carousel />
           </div>
         </section>
 
         <section className={styles.features}>
-          <div className="container">
+          <div className="container container-home">
             <iframe
               src="https://asciinema.org/a/269799/iframe"
               width="100%"
