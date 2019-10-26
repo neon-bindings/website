@@ -9,7 +9,7 @@
     "start": "yarn workspace website start",
     "build": "yarn workspace website build",
     "style": "yarn workspace website style",
-    "publish-gh-pages": "yarn workspace website publish-gh-pages",
+    "deploy": "yarn workspace website deploy",
     "lint": "eslint .",
     "lint-prose": "cp .proselintrc ~/ && proselint docs website/blog website/pages",
     "lint-fix": "yarn --silent lint --fix; exit 0",

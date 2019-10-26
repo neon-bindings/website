@@ -5,14 +5,14 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "build": "docusaurus build",
     "crowdin-upload": "crowdin --config ../crowdin.yaml upload sources --auto-update -b master",
     "crowdin-download": "crowdin --config ../crowdin.yaml download -b master",
+    "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "style": "sass src/css/custom-bootstrap.scss src/css/bootstrap.css",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy"
+    "swizzle": "docusaurus swizzle"
   },
   "devDependencies": {
     "@docusaurus/core": "^2.0.0-alpha.30",
