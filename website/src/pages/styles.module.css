@@ -43,18 +43,18 @@
   background: #08162E;
 }
 
-.buttons {
+.actionButtons {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.buttons button {
+.actionButtons button {
   margin: 0 10px;
 }
 
-.features {
-  padding: 2rem 0;
+.featuresContainer {
+  padding: 4rem 0;
 }
 
 .featureImage {
@@ -65,4 +65,8 @@
 
 code {
   color: white;
+}
+
+.Carousel {
+  margin: 1rem 0;
 }

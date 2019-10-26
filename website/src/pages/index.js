@@ -138,7 +138,7 @@ class Carousel extends React.Component {
   render() {
     return (
       <>
-        <ButtonGroup>
+        <ButtonGroup className={styles.Carousel}>
           {codeExamples.map((example, idx) => (
             <Button
               color={
@@ -204,7 +204,7 @@ function Home() {
                 </CustomSyntaxHighligher>
               </Col>
             </Row>
-            <Row className={styles.buttons}>
+            <Row className={styles.actionButtons}>
               <ButtonGroup>
                 <a href={useBaseUrl('docs/getting-started')}>
                   <Button color="primary">Try It Out</Button>
@@ -225,38 +225,44 @@ function Home() {
         </Container>
       </header>
 
-      <main className={cStyles([styles.features, styles.containerEven])}>
-        <Col xs="12" className="text-center">
-          <h3>Features</h3>
-        </Col>
-        {features && features.length && (
-          <section className={styles.features}>
-            <Container>
-              <Row>
-                {features.map(({ imageUrl, title, description }, idx) => (
-                  <div
-                    key={styles.feature}
-                    className={classnames('col col--4', styles.feature)}
-                  >
-                    <h4 className={styles.featureHeader}>
-                      <span>
-                        <img
-                          className={styles.featureImage}
-                          src={useBaseUrl(imageUrl)}
-                          alt={title}
-                        />
-                      </span>
-                      {title}
-                    </h4>
-                    <p className={styles.featureDescription}>{description}</p>
-                  </div>
-                ))}
-              </Row>
-            </Container>
-          </section>
-        )}
+      <main>
+        <section
+          className={cStyles([styles.featuresContainer, styles.containerEven])}
+        >
+          <Col xs="12" className="text-center">
+            <h3>Features</h3>
+          </Col>
+          {features && features.length && (
+            <section>
+              <Container>
+                <Row>
+                  {features.map(({ imageUrl, title, description }, idx) => (
+                    <div
+                      key={styles.featuresContainer}
+                      className={classnames('col col--4', styles.feature)}
+                    >
+                      <h4 className={styles.featureHeader}>
+                        <span>
+                          <img
+                            className={styles.featureImage}
+                            src={useBaseUrl(imageUrl)}
+                            alt={title}
+                          />
+                        </span>
+                        {title}
+                      </h4>
+                      <p className={styles.featureDescription}>{description}</p>
+                    </div>
+                  ))}
+                </Row>
+              </Container>
+            </section>
+          )}
+        </section>
 
-        <section className={cStyles([styles.features, styles.containerOdd])}>
+        <section
+          className={cStyles([styles.featuresContainer, styles.containerOdd])}
+        >
           <Container>
             <Col xs="12" className="text-center">
               <h3>Examples</h3>
@@ -267,7 +273,9 @@ function Home() {
           </Container>
         </section>
 
-        <section className={cStyles([styles.features, styles.containerEven])}>
+        <section
+          className={cStyles([styles.featuresContainer, styles.containerEven])}
+        >
           <Container>
             <Col xs="12" className="text-center">
               <h3>Demo</h3>
