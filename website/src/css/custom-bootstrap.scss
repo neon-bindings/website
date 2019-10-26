@@ -12,6 +12,8 @@ $text-color: white;
 $enable-rounded: false;
 $enable-shadows: false;
 
+$headings-font-family: 'Roboto', sans-serif;
+
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";

@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto&display=swap';
+
 .navListItem.navListItemActive {
   font-weight: bold;
 }
@@ -81,11 +83,11 @@
 }
 
 .neon-flicker-buzz {
-  animation: buzz 0.01s infinite alternate;
+  animation: buzz 0.01s 500 alternate;
 }
 
 .neon-flicker-blink {
-  animation: blink 0.01s infinite alternate;
+  animation: blink 0.01s 500 alternate;
 }
 
 .neon-subheading {
