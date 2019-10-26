@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "lint-prose": "cp .proselintrc ~/ && proselint docs website/blog website/pages",
     "lint-fix": "yarn --silent lint --fix; exit 0",
-    "test": "yarn lint",
+    "test": "yarn lint && yarn build",
     "version": "yarn workspace website version"
   },
   "devDependencies": {
