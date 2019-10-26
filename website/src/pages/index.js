@@ -28,7 +28,8 @@ fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
   Ok(result)
 }`;
 
-const exampleCode = `
+const makeAnArray = `
+// Create an array and add some values to it
 fn make_an_array(mut cx: FunctionContext) -> JsResult<JsArray> {
   // Create some values:
   let n = cx.number(9000);
@@ -43,13 +44,10 @@ fn make_an_array(mut cx: FunctionContext) -> JsResult<JsArray> {
   // Return the array:
   Ok(array)
 }
-register_module!(mut cx, {
-  // Export the Rust function as a JS function
-  cx.export_function("makeAnArray", make_an_array)
-})
 `;
 
 const asyncExample = `
+// Asynchronously compute fibonacci on another thread
 fn fibonacci_async(mut cx: FunctionContext) -> JsResult<JsUndefined> {
   let n = cx.argument::<JsNumber>(0)?.value() as usize;
   let cb = cx.argument::<JsFunction>(1)?;
@@ -72,16 +70,16 @@ fn get_args_len(mut cx: FunctionContext) -> JsResult<JsNumber> {
 
 const codeExamples = [
   {
-    name: 'Async Fibonacci',
-    code: asyncExample
-  },
-  {
     name: 'Make Array',
-    code: neonExample
+    code: makeAnArray
   },
   {
     name: 'Print Function Arguments',
     code: printArgsExample
+  },
+  {
+    name: 'Async Fibonacci',
+    code: asyncExample
   }
 ];
 
@@ -240,7 +238,7 @@ function Home() {
                     key={styles.feature}
                     className={classnames('col col--4', styles.feature)}
                   >
-                    <h3 className={styles.featureHeader}>
+                    <h4 className={styles.featureHeader}>
                       <span>
                         <img
                           className={styles.featureImage}
@@ -249,7 +247,7 @@ function Home() {
                         />
                       </span>
                       {title}
-                    </h3>
+                    </h4>
                     <p className={styles.featureDescription}>{description}</p>
                   </div>
                 ))}

@@ -148,3 +148,7 @@
   --ifm-color-primary-lighter: #FF6A8E;
   --ifm-color-primary-lightest: #FF6A8E;
 }
+
+iframe {
+  border: none;
+}
