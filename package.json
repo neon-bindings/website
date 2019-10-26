@@ -63,6 +63,7 @@
       "react/jsx-no-target-blank": "off",
       "react/no-multi-comp": "off",
       "react/no-unescaped-entities": "off",
+      "react/jsx-props-no-spreading": "off",
       "react/prefer-stateless-function": "off",
       "react/prop-types": "off"
     }

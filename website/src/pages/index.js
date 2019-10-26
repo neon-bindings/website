@@ -164,7 +164,12 @@ class Carousel extends React.Component {
 const CustomSyntaxHighligher = props => (
   <SyntaxHighlighter
     {...props}
-    customStyle={{ background: '#08162E', margin: '30px 0', textAlign: 'left' }}
+    customStyle={{
+      background: '#08162E',
+      margin: '30px 0',
+      textAlign: 'left',
+      color: 'white !important'
+    }}
     style={dark}
   >
     {props.children}
@@ -193,18 +198,10 @@ function Home() {
             <Logo title={siteConfig.title} subtitle={siteConfig.tagline} />
             <Row>
               <Col xs={6}>
-                <CustomSyntaxHighligher
-                  customStyle={{ background: '#08162E', fontSize: '0.8em' }}
-                  language="javascript"
-                >
-                  {jsExample}
-                </CustomSyntaxHighligher>
+                <CustomSyntaxHighligher>{jsExample}</CustomSyntaxHighligher>
               </Col>
               <Col xs={6}>
-                <CustomSyntaxHighligher
-                  customStyle={{ fontSize: '0.8em' }}
-                  language="rust"
-                >
+                <CustomSyntaxHighligher language="rust">
                   {neonExample}
                 </CustomSyntaxHighligher>
               </Col>
@@ -243,7 +240,7 @@ function Home() {
                     key={styles.feature}
                     className={classnames('col col--4', styles.feature)}
                   >
-                    <h5 className={styles.featureHeader}>
+                    <h3 className={styles.featureHeader}>
                       <span>
                         <img
                           className={styles.featureImage}
@@ -252,7 +249,7 @@ function Home() {
                         />
                       </span>
                       {title}
-                    </h5>
+                    </h3>
                     <p className={styles.featureDescription}>{description}</p>
                   </div>
                 ))}
