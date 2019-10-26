@@ -138,3 +138,13 @@
     opacity: 1;
   }
 }
+
+:root {
+  --ifm-color-primary: #FF6A8E;
+  --ifm-color-primary-dark: #FF6A8E;
+  --ifm-color-primary-darker: #FF6A8E;
+  --ifm-color-primary-darkest: #FF6A8E;
+  --ifm-color-primary-light: #FF6A8E;
+  --ifm-color-primary-lighter: #FF6A8E;
+  --ifm-color-primary-lightest: #FF6A8E;
+}

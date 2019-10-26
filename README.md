@@ -11,6 +11,10 @@ git clone https://github.com/neon-bindings/website
 cd website
 yarn
 yarn start
+
+# Styles
+yarn styles
+yarn styles --watch
 ```
 
 ## Updating the Docs
