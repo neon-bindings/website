@@ -1,0 +1,72 @@
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.header {
+  padding: 40px 0;
+}
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.featureDescription {
+  color: white;
+}
+
+.featureHeader {
+  color: #B3DAFF;
+}
+
+.containerOdd {
+  background: #030C1C;
+}
+
+.containerEven {
+  background: #08162E;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionButtons button {
+  margin: 0 10px;
+}
+
+.featuresContainer {
+  padding: 4rem 0;
+}
+
+.featureImage {
+  margin-right: 20px;
+  height: 40px;
+  width: 40px;
+}
+
+pre code {
+  color: white;
+}
+
+.Carousel {
+  margin: 1rem 0;
+}

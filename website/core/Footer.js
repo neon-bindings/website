@@ -75,4 +75,4 @@ class Footer extends React.Component {
   }
 }
 
-module.exports = Footer;
+export default Footer;

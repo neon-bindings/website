@@ -8,22 +8,23 @@
   "scripts": {
     "start": "yarn workspace website start",
     "build": "yarn workspace website build",
+    "style": "yarn workspace website style",
     "publish-gh-pages": "yarn workspace website publish-gh-pages",
     "lint": "eslint .",
     "lint-prose": "cp .proselintrc ~/ && proselint docs website/blog website/pages",
     "lint-fix": "yarn --silent lint --fix; exit 0",
-    "test": "yarn lint",
+    "test": "yarn lint && yarn build",
     "version": "yarn workspace website version"
   },
   "devDependencies": {
-    "eslint": "^6.3.0",
+    "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-bliss": "^4.3.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "husky": "^3.0.5",
-    "lint-staged": "^9.2.5",
-    "yarn": "^1.17.3"
+    "eslint-plugin-react": "^7.16.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "yarn": "^1.19.1"
   },
   "engines": {
     "yarn": ">=1.10.1"
@@ -40,6 +41,9 @@
     ]
   },
   "eslintConfig": {
+    "env": {
+      "browser": true
+    },
     "extends": [
       "airbnb",
       "bliss"
@@ -59,9 +63,19 @@
       "react/jsx-no-target-blank": "off",
       "react/no-multi-comp": "off",
       "react/no-unescaped-entities": "off",
+      "react/jsx-props-no-spreading": "off",
       "react/prefer-stateless-function": "off",
       "react/prop-types": "off"
     }
   },
-  "version": "0.2.0"
+  "version": "0.2.0",
+  "renovate": {
+    "extends": [
+      "bliss"
+    ]
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "reactstrap": "^8.1.1"
+  }
 }

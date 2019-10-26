@@ -7,18 +7,39 @@
   "scripts": {
     "crowdin-upload": "crowdin --config ../crowdin.yaml upload sources --auto-update -b master",
     "crowdin-download": "crowdin --config ../crowdin.yaml download -b master",
-    "examples": "docusaurus-examples",
-    "start": "docusaurus-start",
-    "build": "docusaurus-build",
-    "publish-gh-pages": "docusaurus-publish",
-    "write-translations": "docusaurus-write-translations",
-    "version": "docusaurus-version",
-    "rename-version": "docusaurus-rename-version"
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "style": "sass src/css/custom-bootstrap.scss src/css/bootstrap.css",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy"
   },
   "devDependencies": {
-    "docusaurus": "1.12.0"
+    "@docusaurus/core": "^2.0.0-alpha.30",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.30",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-syntax-highlighter": "^11.0.2",
+    "sass": "^1.23.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "dependencies": {
-    "react-syntax-highlighter": "^11.0.2"
+    "bootstrap": "^4.3.1",
+    "prismjs": "^1.17.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-syntax-highlighter": "^11.0.2",
+    "reactstrap": "^8.1.1"
   }
 }

@@ -1,8 +1,0 @@
-{
-  "id": "parallelism",
-  "title": "Parallelism",
-  "sidebar_label": "Parallelism",
-  "description": "## Simple Example",
-  "source": "@site/docs/parallisim.md",
-  "permalink": "/docs/parallelism"
-}
