@@ -72,7 +72,7 @@ function callback(err, value) {}
 
 ## Calling Async Tasks
 
-Now lets look at how we would schudle async task using the `BackgroundTask` struct we created:
+Now let's look at how we would schedule async task using the `BackgroundTask` struct we created:
 
 ```js
 const { performAsyncTask } = require("../native");
@@ -101,7 +101,7 @@ If you run this code you will get the following results:
 100010 'first sum from background thread'
 ```
 
-If `performAsyncTask()` were executed syncronously then the background thread would finish running before the main thread finishes and the results would be:
+If `performAsyncTask()` were executed synchronously then the background thread would finish running before the main thread finishes and the results would be:
 
 ```
 100010 'first sum from background thread'
