@@ -15,12 +15,12 @@
     "swizzle": "docusaurus swizzle"
   },
   "devDependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.30",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.30",
+    "@docusaurus/core": "^2.0.0-alpha.31",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.31",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-syntax-highlighter": "^11.0.2",
-    "sass": "^1.23.1"
+    "sass": "^1.23.2"
   },
   "browserslist": {
     "production": [
