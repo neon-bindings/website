@@ -230,7 +230,7 @@ function Home() {
           className={cStyles([styles.featuresContainer, styles.containerEven])}
         >
           <Col xs="12" className="text-center">
-            <h3>Features</h3>
+            <h3 className={styles.featureHeader}>Features</h3>
           </Col>
           {features && features.length && (
             <section>
@@ -241,7 +241,7 @@ function Home() {
                       key={styles.featuresContainer}
                       className={classnames('col col--4', styles.feature)}
                     >
-                      <h4 className={styles.featureHeader}>
+                      <h4 className={styles.featureSubHeader}>
                         <span>
                           <img
                             className={styles.featureImage}
@@ -265,7 +265,7 @@ function Home() {
         >
           <Container>
             <Col xs="12" className="text-center">
-              <h3>Examples</h3>
+              <h3 className={styles.featureHeader}>Examples</h3>
             </Col>
             <Col xs="12" className="text-center">
               <Carousel />
@@ -278,7 +278,7 @@ function Home() {
         >
           <Container>
             <Col xs="12" className="text-center">
-              <h3>Demo</h3>
+              <h3 className={styles.featureHeader}>Demo</h3>
             </Col>
             <Col xs="12">
               <iframe

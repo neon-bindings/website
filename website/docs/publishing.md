@@ -86,14 +86,14 @@ Then make the following changes to the `scripts` section of your `package.json`:
 Finally, add the following to the root of your `package.json`:
 
 ```json
-  "binary": {
-    "module_name": "index",
-    "host": "https://github.com/your-username-here/your-repo-here/releases/download/",
-    "remote_path": "{version}",
-    "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
-    "module_path": "./native",
-    "pkg_path": "."
-  },
+"binary": {
+  "module_name": "index",
+  "host": "https://github.com/your-username-here/your-repo-here/releases/download/",
+  "remote_path": "{version}",
+  "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
+  "module_path": "./native",
+  "pkg_path": "."
+},
 ```
 
 This configures `node-pre-gyp` by telling it where our `native/index.node` lives and where to upload the binaries to. Make sure to replace `your-username-here` and `your-repo-here` with the actual values.
