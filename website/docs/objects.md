@@ -26,7 +26,7 @@ js_object
 
 ## Setting Properties
 
-`.set()` requres a `FunctionContext`, the name of the property you want to set, and the value you want to set the property to:
+`.set()` requires a `FunctionContext`, the name of the property you want to set, and the value you want to set the property to:
 
 ```rust
 let js_object = JsObject::new(&mut cx);
