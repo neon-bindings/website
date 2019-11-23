@@ -10,9 +10,12 @@
     "crowdin-download": "crowdin --config ../crowdin.yaml download -b master",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
+    "lint": "eslint .",
+    "lint-prose": "cp .proselintrc ~/ && proselint docs blog pages",
     "start": "yarn styles && docusaurus start",
     "styles": "sass src/css/custom-bootstrap.scss src/css/bootstrap.css",
-    "swizzle": "docusaurus swizzle"
+    "swizzle": "docusaurus swizzle",
+    "test": "yarn lint && yarn lint-prose && yarn build"
   },
   "browserslist": {
     "production": [
