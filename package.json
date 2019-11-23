@@ -11,7 +11,7 @@
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "lint": "eslint .",
-    "lint-prose": "cp .proselintrc ~/ && proselint docs blog pages",
+    "lint-prose": "cp .proselintrc ~/ && proselint docs blog",
     "start": "yarn styles && docusaurus start",
     "styles": "sass src/css/custom-bootstrap.scss src/css/bootstrap.css",
     "swizzle": "docusaurus swizzle",
