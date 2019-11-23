@@ -1,22 +1,49 @@
 {
+  "name": "website",
+  "version": "0.2.0",
   "repository": "https://github.com/neon-bindings/website.git",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "website"
-  ],
   "scripts": {
-    "start": "yarn workspace website start",
-    "build": "yarn workspace website build",
-    "styles": "yarn workspace website styles",
-    "deploy": "yarn workspace website deploy",
+    "build": "yarn styles && docusaurus build",
+    "crowdin-upload": "crowdin --config ../crowdin.yaml upload sources --auto-update -b master",
+    "crowdin-download": "crowdin --config ../crowdin.yaml download -b master",
+    "deploy": "docusaurus deploy",
+    "docusaurus": "docusaurus",
     "lint": "eslint .",
-    "lint-prose": "cp .proselintrc ~/ && proselint docs website/blog website/pages",
-    "lint-fix": "yarn --silent lint --fix; exit 0",
-    "test": "yarn lint && yarn build",
-    "version": "yarn workspace website version"
+    "lint-prose": "cp .proselintrc ~/ && proselint docs blog pages",
+    "start": "yarn styles && docusaurus start",
+    "styles": "sass src/css/custom-bootstrap.scss src/css/bootstrap.css",
+    "swizzle": "docusaurus swizzle",
+    "test": "yarn lint && yarn lint-prose && yarn build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "prismjs": "^1.17.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-syntax-highlighter": "^11.0.2",
+    "reactstrap": "^8.1.1"
   },
   "devDependencies": {
+    "@docusaurus/core": "^2.0.0-alpha.31",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.31",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-syntax-highlighter": "^11.0.2",
+    "sass": "^1.23.2",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-bliss": "^4.3.0",
@@ -68,14 +95,9 @@
       "react/prop-types": "off"
     }
   },
-  "version": "0.2.0",
   "renovate": {
     "extends": [
       "bliss"
     ]
-  },
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "reactstrap": "^8.1.1"
   }
 }
