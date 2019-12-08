@@ -45,7 +45,7 @@ module.exports = {
             },
             {
               label: 'Examples',
-              url: 'https://github.com/neon-bindings/examples'
+              to: 'https://github.com/neon-bindings/examples'
             },
             {
               label: 'API Reference',
@@ -63,7 +63,7 @@ module.exports = {
             // },
             {
               label: 'Community Chat',
-              url: 'https://rust-bindings-slackin.herokuapp.com'
+              to: 'https://rust-bindings-slackin.herokuapp.com'
             },
             {
               label: 'Twitter',
