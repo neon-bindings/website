@@ -94,10 +94,5 @@
       "react/prefer-stateless-function": "off",
       "react/prop-types": "off"
     }
-  },
-  "renovate": {
-    "extends": [
-      "bliss"
-    ]
   }
 }
