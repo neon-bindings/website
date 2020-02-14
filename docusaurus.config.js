@@ -20,7 +20,7 @@ module.exports = {
           label: 'Examples'
         },
         {
-          href: '/api/neon/',
+          href: 'https://docs.rs/neon',
           label: 'API'
         },
         { to: 'docs/learning-resources', label: 'Resources' },
@@ -49,7 +49,7 @@ module.exports = {
             },
             {
               label: 'API Reference',
-              to: 'https://neon-bindings.com/api/neon/index.html'
+              to: 'https://docs.rs/neon'
             }
           ]
         },
