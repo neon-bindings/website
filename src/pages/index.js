@@ -214,7 +214,7 @@ function Home() {
                     GitHub
                   </Button>
                 </a>
-                <a href="https://neon-bindings.com/api/neon/index.html">
+                <a href="https://docs.rs/neon">
                   <Button color="primary" target="_blank">
                     API
                   </Button>

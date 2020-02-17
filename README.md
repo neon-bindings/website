@@ -20,14 +20,3 @@ yarn styles --watch
 ## Contributing
 
 For details, see [the docusarus docs](https://v2.docusaurus.io)
-
-## Updating the Docs
-
-```bash
-git clone https://github.com/neon-bindings/neon
-cd neon
-cargo doc
-cp -r target/doc ../static
-mv ../static/docs ../static/api
-rm -rf neon
-```
