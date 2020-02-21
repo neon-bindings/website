@@ -30,28 +30,29 @@
     ]
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "prismjs": "^1.17.1",
+    "bootstrap": "^4.4.1",
+    "prismjs": "^1.19.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-syntax-highlighter": "^11.0.2",
-    "reactstrap": "^8.1.1"
+    "react-syntax-highlighter": "^12.2.1",
+    "reactstrap": "^8.4.1"
   },
   "devDependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.31",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.31",
+    "@docusaurus/core": "^2.0.0-alpha.40",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.40",
+    "@docusaurus/utils": "^2.0.0-alpha.37",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-bliss": "^4.7.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-syntax-highlighter": "^11.0.2",
-    "sass": "^1.23.2",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-bliss": "^4.3.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.16.0",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
-    "yarn": "^1.19.1"
+    "sass": "^1.25.0",
+    "yarn": "^1.22.0"
   },
   "engines": {
     "yarn": ">=1.10.1"
