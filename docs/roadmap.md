@@ -34,7 +34,7 @@ See the [issue ticket](https://github.com/neon-bindings/rfcs/issues/16)
 
 ## JS Standard Library Integration
 
-This includes supporting more erganomic Neon APIs for JS APIs. One of these API's, for example, is the `Date` API. While it is possible to use the JS `Date` object in Neon, the methods for using it low level. We plan to add a higher level API for the `Date` object and other basic standard library objects in JS including the following: `RegEx`, `TypedArray`, `Promise`, and other objects.
+This includes supporting more ergonomic Neon APIs for JS APIs. One of these API's, for example, is the `Date` API. While it is possible to use the JS `Date` object in Neon, the methods for using it low level. We plan to add a higher level API for the `Date` object and other basic standard library objects in JS including the following: `RegEx`, `TypedArray`, `Promise`, and other objects.
 
 Here's an example of how you could instantiate a JS `Date` object in Neon with the higher level API:
 
