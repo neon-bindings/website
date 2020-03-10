@@ -33,9 +33,8 @@ module.exports = {
           href: 'https://docs.rs/neon',
           label: 'API'
         },
-        { to: 'docs/learning-resources', label: 'Resources' },
         { to: 'docs/roadmap', label: 'Roadmap' },
-        // { page: 'help', label: 'Help' }
+        { href: 'https://rust-bindings-slackin.herokuapp.com/', label: 'Help' },
         { to: 'blog', label: 'Blog' },
         {
           href: 'https://github.com/neon-bindings/neon',

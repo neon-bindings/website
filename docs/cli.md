@@ -4,17 +4,13 @@ title: CLI
 sidebar_label: CLI
 ---
 
-## `neon new`
+## `neon new <project-name>`
 
 Initialize a new Neon project in a new directory. For example, running `neon new foobar` will create a new directory called `foobar` and will add all the necessary neon boilerplate inside the directory.
 
-## `neon build`
+## `neon build [--release]`
 
-Create a dev (unoptimized) build with neon. Similar to `cargo build`.
-
-## `neon build --release`
-
-Create a release build with neon. Similar to `cargo build --release`.
+Create a dev (unoptimized) build with neon. Similar to `cargo build`. Passing `--release` flag will create a production build.
 
 ## `neon clean`
 
