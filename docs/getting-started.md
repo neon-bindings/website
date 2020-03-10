@@ -18,7 +18,18 @@ Neon requires Rust for development and supports **all versions of Rust since 1.1
 
 Neon depends on Node's plugin build tools, which have a few additional system requirements. These dependencies have different installation steps on different operating systems.
 
-### macOS
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="macos"
+  values={[
+    { label: 'macOS', value: 'macos', },
+    { label: 'Windows', value: 'windows', },
+    { label: 'Generic', value: 'generic', },
+  ]
+}>
+<TabItem value="macos">
 
 The development dependencies for macOS are:
 
@@ -26,7 +37,8 @@ The development dependencies for macOS are:
 - [Xcode](https://developer.apple.com/xcode/download/)
 - Install the _Command Line Tools_ via Xcode under the menu _Xcode &rarr; Preferences &rarr; Downloads_.
 
-### Windows
+</TabItem>
+<TabItem value="windows">
 
 The easiest and recommended way to set up a Windows development environment is with the `windows-build-tools` package. In a PowerShell or command prompt run as Administrator, run the following step:
 
@@ -52,7 +64,8 @@ C:\> npm config set python python2.7
 C:\> npm config set msvs_version 2015
 ```
 
-### Generic
+</TabItem>
+<TabItem value="generic">
 
 The generic Unix development dependencies are:
 
@@ -61,6 +74,9 @@ The generic Unix development dependencies are:
 - A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org/)
 
 Most modern Unix systems, like Linux or FreeBSD, should have the required development dependencies installed already.
+
+</TabItem>
+</Tabs>
 
 ## Install the Neon CLI
 
