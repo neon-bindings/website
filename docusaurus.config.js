@@ -4,8 +4,18 @@ module.exports = {
   url: 'https://neon-bindings.com',
   baseUrl: '/',
   favicon: 'logo/letter-logo.png',
-  organizationName: 'neon-bindings', // Usually your GitHub org/user name.
-  projectName: 'website', // Usually your repo name.
+  organizationName: 'neon-bindings',
+  projectName: 'website',
+  plugins: [
+    '@docusaurus/plugin-google-analytics',
+    '@docusaurus/plugin-google-gtag',
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        cacheTime: 600 * 1000
+      }
+    ]
+  ],
   themeConfig: {
     navbar: {
       title: 'Neon',
@@ -91,6 +101,12 @@ module.exports = {
       // "Search only api key". Safe to keep this public
       apiKey: 'bfa6bb4b57d4fa853c0358ee9b195146',
       indexName: 'amilajack_neon'
+    },
+    googleAnalytics: {
+      trackingID: 'UA-130626950-1'
+    },
+    gtag: {
+      trackingID: 'UA-130626950-1'
     }
   },
   presets: [
@@ -99,9 +115,6 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js')
-        },
-        googleAnalytics: {
-          trackingID: 'UA-130626950-1'
         }
       }
     ]

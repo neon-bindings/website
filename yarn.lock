@@ -910,15 +910,33 @@
     "@docusaurus/utils" "^2.0.0-alpha.43"
     globby "^10.0.1"
 
+"@docusaurus/plugin-google-analytics@^2.0.0-alpha.37":
+  version "2.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.37.tgz#e546bf61b35d4abd7e65bb9c4f6c02ba5c2297e3"
+  integrity sha512-RCR2UHL6OyYSupRxVn0x4PBJf4VJ1Xob/5Ps0ang915KfrUjLh51aXtvtx3SlRqsMJQt0aS/K5RFsPrpyfP38g==
+
 "@docusaurus/plugin-google-analytics@^2.0.0-alpha.43":
   version "2.0.0-alpha.43"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.43.tgz#1a28f2e084355c999872071f9c0305a6a599fa08"
   integrity sha512-5QvIhjqsAroxa5bPAsaI0j500MMRUWNqRZZ3g/1nrUCFTmvUS445NEqr+oG0g+IK17kRcTwBOzzfOqAkT5OUuQ==
 
+"@docusaurus/plugin-google-gtag@^2.0.0-alpha.37":
+  version "2.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.0.0-alpha.37.tgz#3bf992e2722fcd71afac5bb7df49824eb191d186"
+  integrity sha512-TyAtMSpFstDFQ/O95wsHfoZ8T4x0plsCCFDRk3NK0soXz7qtAbk+Rnxu6TCcfruvL/MPW4197NQxR69u3ivTsA==
+
 "@docusaurus/plugin-google-gtag@^2.0.0-alpha.43":
   version "2.0.0-alpha.43"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.0.0-alpha.43.tgz#13aa8d5009eea46ae366216d32095d1e348e8cda"
   integrity sha512-9BDZTjn7GvIn8VoYGrN3XIiL4WJ7FryovTmHcft64oj/fCFt/buR+IFUhRzGCr1Pss+2LeBQtYB6rM+W1joNuA==
+
+"@docusaurus/plugin-sitemap@^2.0.0-alpha.37":
+  version "2.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.0.0-alpha.37.tgz#174fa03e7184db2971a491849b27e33f577a26b4"
+  integrity sha512-IF4uk2dcm1TFm9Lu9OOOk1QaLEeoUb6LXvvweKP+Usuw4OFfUcEd7KBJi2/mDSm+Ud3EenoQOENywNbKiLSzvg==
+  dependencies:
+    "@docusaurus/types" "^2.0.0-alpha.37"
+    sitemap "^3.2.2"
 
 "@docusaurus/plugin-sitemap@^2.0.0-alpha.43":
   version "2.0.0-alpha.43"
@@ -966,6 +984,15 @@
   dependencies:
     classnames "^2.2.6"
     docsearch.js "^2.6.3"
+
+"@docusaurus/types@^2.0.0-alpha.37":
+  version "2.0.0-alpha.37"
+  resolved "https://registry.yarnpkg.com/@docusaurus/types/-/types-2.0.0-alpha.37.tgz#e14b8758cfefab5235c5ec190c489dd32cb7a8b8"
+  integrity sha512-t0bwfUQLEY6FGZX1OGhB29y7OQFAzqmNfP/UewUWOb/OiG5HBZ/r7OfwOH1dfmbjRJD99eHA3r4br8jwuvQfPg==
+  dependencies:
+    "@types/webpack" "^4.41.0"
+    commander "^4.0.1"
+    querystring "0.2.0"
 
 "@docusaurus/types@^2.0.0-alpha.43":
   version "2.0.0-alpha.43"
