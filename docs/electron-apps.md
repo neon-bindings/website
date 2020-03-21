@@ -29,8 +29,13 @@ cd electron-quick-start
 First let's add a dependency on a simple Neon module, `neon-hello`, which is already published in npm:
 
 ```bash
-npm install neon-hello
+npm install @amilajack/neon-hello
 ```
+
+Note: The original [`neon-hello`][] is outdated. [`@amilajack/neon-hello`][] will be maintained now.
+
+[`neon-hello`](https://www.npmjs.com/package/neon-hello)
+[`@amilajack/neon-hello`](https://www.npmjs.com/package/@amilajack/neon-hello)
 
 ## Adding the Build Dependencies
 
