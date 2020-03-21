@@ -32,11 +32,6 @@ First let's add a dependency on a simple Neon module, `neon-hello`, which is alr
 npm install @amilajack/neon-hello
 ```
 
-Note: The original [`neon-hello`][] is outdated. [`@amilajack/neon-hello`][] will be maintained now.
-
-[`neon-hello`](https://www.npmjs.com/package/neon-hello)
-[`@amilajack/neon-hello`](https://www.npmjs.com/package/@amilajack/neon-hello)
-
 ## Adding the Build Dependencies
 
 Next, we need the `neon-cli` and `electron-build-env` packages in order to build `neon-hello`. Since they're only needed for building, we can add them as development dependencies:
