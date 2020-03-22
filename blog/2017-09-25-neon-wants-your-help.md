@@ -33,7 +33,7 @@ Just to give you a sense of the many varied kinds of contributions we could use,
 
 **Project management.** We should keep on top of issues and PRs. I would love to set up a regular meeting with anyone who's willing to help out with this! I could also use help setting up a simple RFC process similar to [Rust RFCs](https://github.com/rust-lang/rfcs), especially for having community discussions around API and workflow design.
 
-**Technical writing.** The [guides](https://github.com/neon-bindings/guides) are shaping up, but they're incomplete and one of the most important tools for on-boarding new users. The [API docs](https://neon-bindings.com/api) are pretty rudimentary and would benefit from many more examples---we should strive for a high-quality, illustrative example for every single API.
+**Technical writing.** The [guides](https://github.com/neon-bindings/guides) are shaping up, but they're incomplete and one of the most important tools for on-boarding new users. The [API docs](https://docs.rs/neon) are pretty rudimentary and would benefit from many more examples---we should strive for a high-quality, illustrative example for every single API.
 
 **Testing.** The [test suite](https://github.com/neon-bindings/neon/tree/master/test) has a decent structure but is not at all complete. We should aim for complete test coverage of the API!
 
