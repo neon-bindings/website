@@ -72,7 +72,7 @@ On my laptop, running the algorithm across all the plays of Shakespeare usually 
 
 ## Fall Into our Rustic Revelry
 
-One of the amazing things about Rust is that highly efficient code can still be remarkably compact and readable. In the [Rust version of the algorithm](https://github.com/dherman/wc-demo/blob/master/src/lib.rs), the code for summing up the counts for all the lines looks pretty similar to the JS code:
+One of the amazing things about Rust is that highly efficient code can still be remarkably compact and readable. In the [Rust version of the algorithm](https://github.com/neon-bindings/examples/blob/master/word-counting/native/src/lib.rs), the code for summing up the counts for all the lines looks pretty similar to the JS code:
 
 ```rust
 let mut total = 0;
@@ -146,12 +146,12 @@ var myNeonModule = require('neon-bridge').load();
 
 ## Wherefore's this Noise?
 
-I hope this demo is enough to get people interested. Beyond the sheer fun of it, I think the strongest reasons for using Rust in Node are performance and parallelism. As the Rust ecosystem grows, it'll also be a way to give Node access to cool Rust libraries. Beyond that, I'm hoping that Neon can make a nice abstraction layer that just makes writing native Node modules less painful. With projects like [node-uwp](https://blogs.windows.com/buildingapps/2015/05/12/bringing-node-js-to-windows-10-iot-core/) it might even be worth exploring evolving Neon towards a JS-engine-agnostic abstraction layer.
+I hope this demo is enough to get people interested. Beyond the sheer fun of it, I think the strongest reasons for using Rust in Node are performance and parallelism. As the Rust ecosystem grows, it'll also be a way to give Node access to cool Rust libraries. Beyond that, I'm hoping that Neon can make a nice abstraction layer that just makes writing native Node modules less painful. With projects like [node-uwp](https://github.com/microsoft/node-uwp) it might even be worth exploring evolving Neon towards a JS-engine-agnostic abstraction layer.
 
-There are lots of possibilities, but [I need help!](https://github.com/dherman/neon) If you want to get involved, I've created a [community slack](http://rustbridge.slack.com) (grab an invite from [the Slackin app](http://rustbridge-community-slackin.herokuapp.com)) and a `#neon` IRC channel on [Mozilla IRC](https://wiki.mozilla.org/IRC) (`irc.mozilla.org`).
+There are lots of possibilities, but [I need help!](https://github.com/dherman/neon) If you want to get involved, I've created a [community slack](http://rustbridge.slack.com) (grab an invite from [the Slackin app](https://rust-bindings-slackin.herokuapp.com)) and a `#neon` IRC channel on [Mozilla IRC](https://wiki.mozilla.org/IRC) (`irc.mozilla.org`).
 
 ## A Quick Thanks
 
-There's a ton of fun exploration and work left to do but I couldn't have gotten this far without huge amounts of help already: [Andrew Oppenlander's blog post](http://oppenlander.me/articles/rust-ffi) got me off the ground, Ben Noordhuis and Marcin Cieślak helped me wrestle with V8's tooling, I picked up a few tricks from Nathan Rajlich's [evil genius code](https://github.com/TooTallNate/node-bindings/blob/master/bindings.js), Adam Klein and Fedor Indutny helped me understand the V8 API, Alex Crichton helped me with compiler and linker arcana, Niko Matsakis helped me with designing the safe memory management API, and Yehuda Katz helped me with the overall design.
+There's a ton of fun exploration and work left to do but I couldn't have gotten this far without huge amounts of help already: [Andrew Oppenlander's blog post](https://github.com/oppenlander/oppenlanderme/blob/master/public/articles/rust-ffi.md) got me off the ground, Ben Noordhuis and Marcin Cieślak helped me wrestle with V8's tooling, I picked up a few tricks from Nathan Rajlich's [evil genius code](https://github.com/TooTallNate/node-bindings/blob/master/bindings.js), Adam Klein and Fedor Indutny helped me understand the V8 API, Alex Crichton helped me with compiler and linker arcana, Niko Matsakis helped me with designing the safe memory management API, and Yehuda Katz helped me with the overall design.
 
 You know what this means? [**Maybe you can help too!**](https://github.com/dherman/neon)
