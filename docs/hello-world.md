@@ -46,6 +46,7 @@ The front-end of a Neon package is a pure JavaScript module (`lib/index.js`, by 
 We haven't yet implemented anything, but just to see that `neon new` produced a complete, minimal Neon project, let's try building it:
 
 ```shell
+cd thread-count
 neon build --release
 ```
 
