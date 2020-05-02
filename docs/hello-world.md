@@ -10,7 +10,7 @@ This guide will walk you through writing, building, and running your first Neon 
 
 Our first project will be a tiny module that returns a number indicating how much hardware multithreading the current machine supports. If you're not familiar with multithreading, don't panic! We'll be using [Sean McArthur](https://seanmonstar.com/)'s [num_cpus](https://crates.io/crates/num_cpus) library to do all the heavy lifting for us, and we'll just return the number it gives us.
 
-But even this simple example already demonstrates some of Neon's usefulness: Rust's [crate ecosystem](https://crates.io/) is younger than npm but growing quickly and already full of useful and unique libraries. A library like `num_cpus` could be useful, for example, as a hint for tuning the size of a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) pool in an [Electron app](../electron-apps/).
+But even this simple example already demonstrates some of Neon's usefulness: Rust's [crate ecosystem](https://crates.io/) is younger than npm but growing quickly and already full of useful and unique libraries. A library like `num_cpus` could be useful, for example, as a hint for tuning the size of a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) pool in an [Electron app](./electron-apps/).
 
 # Creating a New Project
 
