@@ -51,4 +51,6 @@ register_module!(mut m, {
 
 ## Default Exports
 
-Work in Progress
+:::caution
+This section is a work in progress.
+:::

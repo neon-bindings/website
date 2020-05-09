@@ -5,25 +5,25 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useEffect, useState, useRef } from 'react';
-import classnames from 'classnames';
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import defaultTheme from 'prism-react-renderer/themes/palenight';
-import Clipboard from 'clipboard';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Prism from 'prism-react-renderer/prism';
-import styles from './styles.module.css';
+import React, { useEffect, useState, useRef } from "react";
+import classnames from "classnames";
+import Highlight, { defaultProps } from "prism-react-renderer";
+import defaultTheme from "prism-react-renderer/themes/palenight";
+import Clipboard from "clipboard";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Prism from "prism-react-renderer/prism";
+import styles from "./styles.module.css";
 
-(typeof global !== 'undefined' ? global : window).Prism = Prism;
+(typeof global !== "undefined" ? global : window).Prism = Prism;
 // Add support for rust and toml syntax highlighting
-require('prismjs/components/prism-rust');
-require('prismjs/components/prism-toml');
+require("prismjs/components/prism-rust");
+require("prismjs/components/prism-toml");
 
 export default ({ children, className: languageClassName }) => {
   const {
     siteConfig: {
-      themeConfig: { prismTheme }
-    }
+      themeConfig: { prismTheme },
+    },
   } = useDocusaurusContext();
   const [showCopied, setShowCopied] = useState(false);
   const target = useRef(null);
@@ -34,7 +34,7 @@ export default ({ children, className: languageClassName }) => {
 
     if (button.current) {
       clipboard = new Clipboard(button.current, {
-        target: () => target.current
+        target: () => target.current,
       });
     }
 
@@ -46,7 +46,7 @@ export default ({ children, className: languageClassName }) => {
   }, [button.current, target.current]);
 
   const language =
-    languageClassName && languageClassName.replace(/language-/, '');
+    languageClassName && languageClassName.replace(/language-/, "");
 
   const handleCopyCode = () => {
     window.getSelection().empty();
@@ -84,7 +84,7 @@ export default ({ children, className: languageClassName }) => {
             className={styles.copyButton}
             onClick={handleCopyCode}
           >
-            {showCopied ? 'Copied' : 'Copy'}
+            {showCopied ? "Copied" : "Copy"}
           </button>
         </div>
       )}

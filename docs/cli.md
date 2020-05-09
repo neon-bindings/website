@@ -1,7 +1,7 @@
 ---
 id: cli
-title: CLI
-sidebar_label: CLI
+title: Command Line Interface (CLI)
+sidebar_label: Command Line Interface (CLI)
 ---
 
 ## `neon new <project-name>`

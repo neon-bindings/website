@@ -1,15 +1,15 @@
-import React from 'react';
-import classnames from 'classnames';
-import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import dark from 'react-syntax-highlighter/dist/esm/styles/hljs/tomorrow-night-blue';
-import { Button, ButtonGroup, Row, Col, Container } from 'reactstrap';
-import styles from './styles.module.css';
-import '../css/custom.css';
-import '../css/bootstrap.css';
+import React from "react";
+import classnames from "classnames";
+import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import dark from "react-syntax-highlighter/dist/esm/styles/hljs/tomorrow-night-blue";
+import { Button, ButtonGroup, Row, Col, Container } from "reactstrap";
+import styles from "./styles.module.css";
+import "../css/custom.css";
+import "../css/bootstrap.css";
 
 const jsExample = `
 // JS
@@ -70,20 +70,20 @@ fn get_args_len(mut cx: FunctionContext) -> JsResult<JsNumber> {
 
 const codeExamples = [
   {
-    name: 'Make Array',
-    code: makeAnArray
+    name: "Make Array",
+    code: makeAnArray,
   },
   {
-    name: 'Print Function Arguments',
-    code: printArgsExample
+    name: "Print Function Arguments",
+    code: printArgsExample,
   },
   {
-    name: 'Async Fibonacci',
-    code: asyncExample
-  }
+    name: "Async Fibonacci",
+    code: asyncExample,
+  },
 ];
 
-const Logo = props => (
+const Logo = (props) => (
   <div className="neonProjectLogo">
     <div className="neon-logo">
       <span className="open neon-heading neon-flicker-blink">
@@ -97,10 +97,10 @@ const Logo = props => (
 const features = [
   {
     title: <>Simple Tooling</>,
-    imageUrl: 'img/hammer.svg',
+    imageUrl: "img/hammer.svg",
     description: (
       <>No makefiles. No fancy global build requirements. Just Node and Rust</>
-    )
+    ),
   },
   {
     title: <>Guaranteed Safety</>,
@@ -110,13 +110,13 @@ const features = [
         rust compiler
       </>
     ),
-    imageUrl: 'img/checkmark.svg'
+    imageUrl: "img/checkmark.svg",
   },
   {
     title: <>Easy Parallelism</>,
     description: <>Safely run multiple threads without data races</>,
-    imageUrl: 'img/fork.svg'
-  }
+    imageUrl: "img/fork.svg",
+  },
 ];
 
 class Carousel extends React.Component {
@@ -124,14 +124,14 @@ class Carousel extends React.Component {
     super(props);
     this.state = {
       currentExampleIdx: 0,
-      currentCode: codeExamples[0].code
+      currentCode: codeExamples[0].code,
     };
   }
 
   onButtonClick(index) {
     this.setState({
       currentExampleIdx: index,
-      currentCode: codeExamples[index].code
+      currentCode: codeExamples[index].code,
     });
   }
 
@@ -142,7 +142,7 @@ class Carousel extends React.Component {
           {codeExamples.map((example, idx) => (
             <Button
               color={
-                this.state.currentExampleIdx === idx ? 'primary' : 'secondary'
+                this.state.currentExampleIdx === idx ? "primary" : "secondary"
               }
               key={example.name}
               onClick={() => this.onButtonClick(idx)}
@@ -159,14 +159,14 @@ class Carousel extends React.Component {
   }
 }
 
-const CustomSyntaxHighligher = props => (
+const CustomSyntaxHighligher = (props) => (
   <SyntaxHighlighter
     {...props}
     customStyle={{
-      background: '#08162E',
-      margin: '30px 0',
-      textAlign: 'left',
-      color: 'white !important'
+      background: "#08162E",
+      margin: "30px 0",
+      textAlign: "left",
+      color: "white !important",
     }}
     style={dark}
   >
@@ -175,11 +175,11 @@ const CustomSyntaxHighligher = props => (
 );
 
 CustomSyntaxHighligher.defaultProps = {
-  language: 'javascript'
+  language: "javascript",
 };
 
 // Concatenate a given array of styles
-const cStyles = _styles => _styles.join(' ');
+const cStyles = (_styles) => _styles.join(" ");
 
 function Home() {
   const context = useDocusaurusContext();
@@ -206,7 +206,7 @@ function Home() {
             </Row>
             <Row className={styles.actionButtons}>
               <ButtonGroup>
-                <a href={useBaseUrl('docs/getting-started')}>
+                <a href={useBaseUrl("docs/getting-started")}>
                   <Button color="primary">Try It Out</Button>
                 </a>
                 <a href={siteConfig.repoUrl}>
@@ -239,7 +239,7 @@ function Home() {
                   {features.map(({ imageUrl, title, description }, idx) => (
                     <div
                       key={styles.featuresContainer}
-                      className={classnames('col col--4', styles.feature)}
+                      className={classnames("col col--4", styles.feature)}
                     >
                       <h3 className={styles.featureSubHeader}>
                         <span>

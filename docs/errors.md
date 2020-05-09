@@ -14,4 +14,6 @@ The `FunctionContext` trait is used to create and throw Errors.
 
 ## Catching Errors
 
-Work in Progress
+:::caution
+This section is a work in progress.
+:::

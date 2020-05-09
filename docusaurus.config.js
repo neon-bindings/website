@@ -1,69 +1,74 @@
 module.exports = {
-  title: 'Neon',
-  tagline: 'Fast and Safe Native Node.js Modules',
-  url: 'https://neon-bindings.com',
-  baseUrl: '/',
-  favicon: 'logo/letter-logo.png',
-  organizationName: 'neon-bindings',
-  projectName: 'website',
+  title: "Neon",
+  tagline: "Fast and Safe Native Node.js Modules",
+  url: "https://neon-bindings.com",
+  baseUrl: "/",
+  favicon: "logo/letter-logo.png",
+  organizationName: "neon-bindings",
+  projectName: "website",
   plugins: [
-    '@docusaurus/plugin-google-analytics',
-    '@docusaurus/plugin-google-gtag',
+    "@docusaurus/plugin-google-analytics",
+    "@docusaurus/plugin-google-gtag",
     [
-      '@docusaurus/plugin-sitemap',
+      "@docusaurus/plugin-sitemap",
       {
-        cacheTime: 600 * 1000
-      }
-    ]
+        cacheTime: 600 * 1000,
+      },
+    ],
   ],
   themeConfig: {
+    hideOnScroll: true,
+    disableDarkMode: true,
     navbar: {
-      title: 'Neon',
+      title: "Neon",
       logo: {
-        alt: 'Neon Logo',
-        src: 'logo/letter-logo.png'
+        alt: "Neon Logo",
+        src: "logo/letter-logo.png",
       },
       links: [
-        { to: 'docs/intro', label: 'Docs' },
+        { position: "left", to: "docs/intro", label: "Docs" },
         {
-          href: 'https://github.com/neon-bindings/examples#table-of-contents',
-          label: 'Examples'
+          position: "left",
+          href: "https://github.com/neon-bindings/examples#table-of-contents",
+          label: "Examples",
         },
+        { position: "left", href: "https://docs.rs/neon", label: "API" },
+        { position: "left", to: "docs/roadmap", label: "Roadmap" },
         {
-          href: 'https://docs.rs/neon',
-          label: 'API'
+          position: "left",
+          href: "https://rust-bindings-slackin.herokuapp.com/",
+          label: "Help",
         },
-        { to: 'docs/roadmap', label: 'Roadmap' },
-        { href: 'https://rust-bindings-slackin.herokuapp.com/', label: 'Help' },
-        { to: 'blog', label: 'Blog' },
+        { position: "left", to: "blog", label: "Blog" },
         {
-          href: 'https://github.com/neon-bindings/neon',
-          label: 'GitHub'
-        }
-      ]
+          position: "left",
+          href: "https://github.com/neon-bindings/neon",
+          label: "GitHub",
+        },
+      ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Getting Started',
-              to: 'docs/getting-started'
+              label: "Getting Started",
+              to: "docs/getting-started",
             },
             {
-              label: 'Examples',
-              to: 'https://github.com/neon-bindings/examples'
+              label: "Examples",
+              to: "https://github.com/neon-bindings/examples",
             },
             {
-              label: 'API Reference',
-              to: 'https://docs.rs/neon'
-            }
-          ]
+              label: "API Reference",
+              to: "https://docs.rs/neon",
+            },
+          ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             // @TODO
             // {
@@ -71,51 +76,51 @@ module.exports = {
             //   to: 'user-showcase'
             // },
             {
-              label: 'Community Chat',
-              to: 'https://rust-bindings-slackin.herokuapp.com'
+              label: "Community Chat",
+              to: "https://rust-bindings-slackin.herokuapp.com",
             },
             {
-              label: 'Twitter',
-              to: 'https://twitter.com/rustneon'
-            }
-          ]
+              label: "Twitter",
+              to: "https://twitter.com/rustneon",
+            },
+          ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'GitHub',
-              to: 'https://github.com/neon-bindings/neon'
-            }
-          ]
-        }
+              label: "GitHub",
+              to: "https://github.com/neon-bindings/neon",
+            },
+          ],
+        },
       ],
       logo: {
-        alt: 'Neon Logo',
-        src: 'logo/text-logo.svg'
+        alt: "Neon Logo",
+        src: "logo/text-logo.svg",
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Neon Bindings`
+      copyright: `Copyright © ${new Date().getFullYear()} Neon Bindings`,
     },
     algolia: {
       // "Search only api key". Safe to keep this public
-      apiKey: 'bfa6bb4b57d4fa853c0358ee9b195146',
-      indexName: 'amilajack_neon'
+      apiKey: "bfa6bb4b57d4fa853c0358ee9b195146",
+      indexName: "amilajack_neon",
     },
     googleAnalytics: {
-      trackingID: 'UA-130626950-1'
+      trackingID: "UA-130626950-1",
     },
     gtag: {
-      trackingID: 'UA-130626950-1'
-    }
+      trackingID: "UA-130626950-1",
+    },
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js')
-        }
-      }
-    ]
-  ]
+          sidebarPath: require.resolve("./sidebars.js"),
+        },
+      },
+    ],
+  ],
 };
