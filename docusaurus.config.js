@@ -1,4 +1,9 @@
+const CORE_REPO_URL = "https://github.com/neon-bindings/neon";
+
 module.exports = {
+  customFields: {
+    coreRepoUrl: CORE_REPO_URL,
+  },
   title: "Neon",
   tagline: "Fast and Safe Native Node.js Modules",
   url: "https://neon-bindings.com",
@@ -42,7 +47,7 @@ module.exports = {
         { position: "left", to: "blog", label: "Blog" },
         {
           position: "left",
-          href: "https://github.com/neon-bindings/neon",
+          href: CORE_REPO_URL,
           label: "GitHub",
         },
       ],
@@ -90,7 +95,7 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              to: "https://github.com/neon-bindings/neon",
+              to: CORE_REPO_URL,
             },
           ],
         },

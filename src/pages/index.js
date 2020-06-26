@@ -209,7 +209,7 @@ function Home() {
                 <a href={useBaseUrl("docs/getting-started")}>
                   <Button color="primary">Try It Out</Button>
                 </a>
-                <a href={siteConfig.repoUrl}>
+                <a href={siteConfig.customFields.coreRepoUrl}>
                   <Button color="primary" target="_blank">
                     GitHub
                   </Button>
