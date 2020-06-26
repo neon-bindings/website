@@ -184,7 +184,6 @@ const cStyles = (_styles) => _styles.join(" ");
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
-  const repoUrl = "https://github.com/neon-bindings/neon";
 
   return (
     <Layout
@@ -210,7 +209,7 @@ function Home() {
                 <a href={useBaseUrl("docs/getting-started")}>
                   <Button color="primary">Try It Out</Button>
                 </a>
-                <a href={repoUrl}>
+                <a href={siteConfig.customFields.coreRepoUrl}>
                   <Button color="primary" target="_blank">
                     GitHub
                   </Button>
