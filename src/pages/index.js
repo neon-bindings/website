@@ -107,7 +107,7 @@ const features = [
     description: (
       <>
         If a neon module compiles, it is guaranteed to be memory safe by the
-        rust compiler
+        Rust compiler
       </>
     ),
     imageUrl: "img/checkmark.svg",

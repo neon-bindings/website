@@ -16,7 +16,7 @@ Here is a list of projects using Neon
 - [libsodium-neon: Node bindings to libsodium](https://github.com/wireapp/libsodium-neon)
 - [ledb: Lightweight embedded database](https://github.com/katyo/ledb)
 - [node-crypto: rust-crypto bindings for Node](https://github.com/Brooooooklyn/node-crypto)
-- [os-type: Bindings to the os_type rust library](https://github.com/amilajack/os-type)
+- [os-type: Bindings to the os_type Rust library](https://github.com/amilajack/os-type)
 - [node-webrender: bindings to webrender](https://github.com/cztomsik/node-webrender)
 
 And <a href="https://www.npmjs.com/browse/depended/neon-cli" target="_blank">many more!</a>
