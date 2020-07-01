@@ -8,7 +8,7 @@ sidebar_label: Arrays
 
 ## Converting from `Vec` to `JsArray`
 
-Here is a simple example of converting a rust `Vec` to a JS `Array` using `JsArray`:
+Here is a simple example of converting a Rust `Vec` to a JS `Array` using `JsArray`:
 
 ```rust
 fn convert_vec_to_array(mut cx: FunctionContext) -> JsResult<JsArray> {
@@ -17,7 +17,7 @@ fn convert_vec_to_array(mut cx: FunctionContext) -> JsResult<JsArray> {
     // Create the JS array
     let js_array = JsArray::new(&mut cx, vec.len() as u32);
 
-    // Iterate over the rust Vec and map each value in the Vec to the JS array
+    // Iterate over the Rust Vec and map each value in the Vec to the JS array
     for (i, obj) in vec.iter().enumerate() {
         let js_string = cx.string(obj);
         js_array.set(&mut cx, i as u32, js_string).unwrap();
