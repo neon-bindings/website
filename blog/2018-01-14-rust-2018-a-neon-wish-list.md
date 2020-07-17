@@ -3,7 +3,9 @@ title: "#Rust2018: A Neon Wish List"
 author: Dave Herman
 ---
 
-⚠️ This article contains references to an outdated version of neon ⚠️
+:::caution
+This article contains references to an outdated version of neon
+:::
 
 While I've been thoroughly enjoying the Rust community's spirited [#Rust2018 blog-fest](https://blog.rust-lang.org/2018/01/03/new-years-rust-a-call-for-community-blogposts.html), I wasn't really thinking of participating myself until [Julia Evans](http://jvns.ca) pointed out [the leadership wants to hear from everyone](https://twitter.com/b0rk/status/952370352759418880)---even if I might not have anything especially new to add. So here's my little wish list for Rust in 2018.
 

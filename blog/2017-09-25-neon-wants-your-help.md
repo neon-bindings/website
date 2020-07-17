@@ -8,7 +8,9 @@ categories:
   - Contributors
 ---
 
-⚠️ This article contains references to an outdated version of neon ⚠️
+:::caution
+This article contains references to an outdated version of neon
+:::
 
 My history with Rust goes back a long way. But it was when I really started to understand its [enabling potential](https://www.youtube.com/watch?v=ySW6Yk_DerY), its capacity to empower whole groups of people to do things they couldn't do before, that I just had to find a more direct way to get involved with making that promise a reality.
 

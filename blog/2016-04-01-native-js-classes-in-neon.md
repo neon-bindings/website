@@ -8,7 +8,9 @@ categories:
   - Classes
 ---
 
-⚠️ This article contains references to an outdated version of neon ⚠️
+:::caution
+This article contains references to an outdated version of neon
+:::
 
 Last weekend I [landed a PR](https://github.com/neon-bindings/neon/pull/58) that adds support for defining custom native classes in Neon. This means you can create JavaScript objects that internally wrap---and [own](https://doc.rust-lang.org/book/ownership.html)---a Rust data structure, along with methods that can safely access the internal Rust data.
 

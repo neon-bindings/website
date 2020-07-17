@@ -4,7 +4,9 @@ title: Learning Resources
 sidebar_label: Learning Resources
 ---
 
-⚠️ Content in these posts and videos are using outdated versions of Neon ⚠️
+:::caution
+Content in these posts and videos are using outdated versions of Neon
+::: 
 
 ## Blog Posts
 
