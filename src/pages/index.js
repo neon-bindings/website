@@ -18,7 +18,7 @@ function hello() {
   console.log(result);
   return result;
 }
-`;
+`.trim();
 
 const neonExample = `
 // Neon
@@ -26,7 +26,7 @@ fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
   let result = cx.number(fibonacci(10000));
   println!("{}", result);
   Ok(result)
-}`;
+}`.trim();
 
 const makeAnArray = `
 // Create an array and add some values to it
@@ -44,7 +44,7 @@ fn make_an_array(mut cx: FunctionContext) -> JsResult<JsArray> {
   // Return the array:
   Ok(array)
 }
-`;
+`.trim();
 
 const asyncExample = `
 // Asynchronously compute fibonacci on another thread
@@ -57,7 +57,7 @@ fn fibonacci_async(mut cx: FunctionContext) -> JsResult<JsUndefined> {
 
   Ok(cx.undefined())
 }
-`;
+`.trim();
 
 const printArgsExample = `
 // Create a function that gets the number of arguments passed to it
@@ -66,7 +66,7 @@ fn get_args_len(mut cx: FunctionContext) -> JsResult<JsNumber> {
     println!("{}", args_length);
     Ok(cx.number(args_length))
 }
-`;
+`.trim();
 
 const codeExamples = [
   {
@@ -165,6 +165,7 @@ const CustomSyntaxHighligher = (props) => (
     customStyle={{
       background: "#08162E",
       margin: "30px 0",
+      padding: "1em",
       textAlign: "left",
       color: "white !important",
     }}
