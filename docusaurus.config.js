@@ -27,15 +27,20 @@ module.exports = {
     "./asciinema/asciinema-theme.css",
   ],
   themeConfig: {
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     hideOnScroll: true,
-    disableDarkMode: true,
     navbar: {
       title: "Neon",
       logo: {
         alt: "Neon Logo",
         src: "logo/letter-logo-alpha.png",
       },
-      links: [
+      items: [
+        { position: "left", to: "docs/intro", label: "Docs" },
         {
           position: "left",
           items: [
