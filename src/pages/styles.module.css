@@ -35,16 +35,28 @@
   color: #FF6A8E;
 }
 
+.featureSubHeader0 {
+  color: #49d8d6;
+}
+
+.featureSubHeader1 {
+  color: #ffff66;
+}
+
+.featureSubHeader2 {
+  color: #ff66ff;
+}
+
 .featureSubHeader {
-  color: #B3DAFF;
+  font-family: Comfortaa, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 .containerOdd {
-  background: #030C1C;
+  background: #050505;
 }
 
 .containerEven {
-  background: #08162E;
+  background: #121314;
 }
 
 .actionButtons {
@@ -65,6 +77,8 @@
   margin-right: 20px;
   height: 40px;
   width: 40px;
+  position: relative;
+  top: 12px;
 }
 
 pre code {

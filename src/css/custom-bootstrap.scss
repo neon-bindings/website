@@ -23,17 +23,34 @@ $headings-font-family: 'Roboto', sans-serif;
 @import "../../node_modules/bootstrap/scss/utilities";
 
 .btn.btn-primary {
-  color: $secondary-color;
+  color: #071733;
+  border-radius: 8px;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-size: 18px;
+}
+
+.btn.btn-primary:hover {
+  background-color: darken($primary-color, 5%);
+  border-color: darken($primary-color, 5%);
 }
 
 .btn.btn-primary, .btn.btn-secondary {
-  font-weight: bold;
+  font-weight: 600;
 }
 
-.btn.btn-secondary {
-  color: $primary-color;
+.navbar .navbar__toggle {
+  color: var(--ifm-navbar-link-color);
 }
 
-.btn.btn-secondary {
-  color: $primary-color;
+$sidebar-logo-background: #121314; // Same as section 2 background on home page.
+
+.navbar-sidebar .navbar__logo {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: $sidebar-logo-background;
+}
+
+.navbar-sidebar .navbar__title {
+  color: $sidebar-logo-background;
 }

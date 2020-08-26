@@ -1,4 +1,8 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto&display=swap';
+@import 'https://fonts.googleapis.com/css?family=Comfortaa:wght@500&display=swap';
+
+.navbar {
+  background: #050505; /* Same as home hero unit. */
+}
 
 .navListItem.navListItemActive {
   font-weight: bold;
@@ -25,7 +29,8 @@
 
 .neonProjectLogo {
   justify-content: center;
-  font-size: 5em;
+  font-size: 8em;
+  padding-bottom: 2rem;
 }
 
 .homeSplashFade {
@@ -68,7 +73,7 @@
 }
 
 .neon-logo .open {
-  transform: rotate(-2deg);
+  transform: rotate(-4deg);
 }
 
 .neon-logo .open, .neon-heading {
@@ -77,9 +82,8 @@
 }
 
 .neon-logo .hrs {
-  font-size: 0.3em;
-  font-family: 'neon-tube-wide';
-  transform: rotate(1deg);
+  font-size: 1.5rem;
+  font-family: 'Comfortaa';
 }
 
 .neon-flicker-buzz {
@@ -91,8 +95,8 @@
 }
 
 .neon-subheading {
-  font-family: 'neon-tube-wide';
-  color: #d4eaff;
+  font-family: 'Comfortaa';
+  color: #FFC0C8;
   letter-spacing: 2px;
   text-shadow: 0px 0px 15px rgba(38, 149, 255, 0.8);
 }
@@ -149,6 +153,15 @@
   --ifm-color-primary-light: #FF6A8E;
   --ifm-color-primary-lighter: #FF6A8E;
   --ifm-color-primary-lightest: #FF6A8E;
+
+  --ifm-navbar-link-color: #ddd;
+}
+
+.footer.footer--dark {
+  --ifm-footer-background-color: #DDDDDD;
+  --ifm-footer-color: #121314;
+  --ifm-footer-link-color: #121314;
+  --ifm-footer-title-color: #121314;
 }
 
 iframe {

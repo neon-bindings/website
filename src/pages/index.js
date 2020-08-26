@@ -1,87 +1,12 @@
 import React from "react";
 import classnames from "classnames";
 import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import dark from "react-syntax-highlighter/dist/esm/styles/hljs/tomorrow-night-blue";
 import { Button, ButtonGroup, Row, Col, Container } from "reactstrap";
 import styles from "./styles.module.css";
 import "../css/custom.css";
 import "../css/bootstrap.css";
-
-const jsExample = `
-// JS
-function hello() {
-  let result = fibonacci(10000);
-  console.log(result);
-  return result;
-}
-`.trim();
-
-const neonExample = `
-// Neon
-fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
-  let result = cx.number(fibonacci(10000));
-  println!("{}", result);
-  Ok(result)
-}`.trim();
-
-const makeAnArray = `
-// Create an array and add some values to it
-fn make_an_array(mut cx: FunctionContext) -> JsResult<JsArray> {
-  // Create some values:
-  let n = cx.number(9000);
-  let s = cx.string("hello");
-  let b = cx.boolean(true);
-  // Create a new array:
-  let array: Handle<JsArray> = cx.empty_array();
-  // Push the values into the array:
-  array.set(&mut cx, 0, n)?;
-  array.set(&mut cx, 1, s)?;
-  array.set(&mut cx, 2, b)?;
-  // Return the array:
-  Ok(array)
-}
-`.trim();
-
-const asyncExample = `
-// Asynchronously compute fibonacci on another thread
-fn fibonacci_async(mut cx: FunctionContext) -> JsResult<JsUndefined> {
-  let n = cx.argument::<JsNumber>(0)?.value() as usize;
-  let cb = cx.argument::<JsFunction>(1)?;
-
-  let task = FibonacciTask { argument: n };
-  task.schedule(cb);
-
-  Ok(cx.undefined())
-}
-`.trim();
-
-const printArgsExample = `
-// Create a function that gets the number of arguments passed to it
-fn get_args_len(mut cx: FunctionContext) -> JsResult<JsNumber> {
-    let args_length = cx.len();
-    println!("{}", args_length);
-    Ok(cx.number(args_length))
-}
-`.trim();
-
-const codeExamples = [
-  {
-    name: "Make Array",
-    code: makeAnArray,
-  },
-  {
-    name: "Print Function Arguments",
-    code: printArgsExample,
-  },
-  {
-    name: "Async Fibonacci",
-    code: asyncExample,
-  },
-];
 
 const Logo = (props) => (
   <div className="neonProjectLogo">
@@ -96,88 +21,28 @@ const Logo = (props) => (
 
 const features = [
   {
-    title: <>Simple Tooling</>,
+    title: <>Simple tooling</>,
     imageUrl: "img/hammer.svg",
     description: (
-      <>No makefiles. No fancy global build requirements. Just Node and Rust</>
+      <>No build scripts. No finicky system dependencies. Just Node and Rust.</>
     ),
   },
   {
-    title: <>Guaranteed Safety</>,
+    title: <>Guaranteed safety</>,
     description: (
       <>
-        If a neon module compiles, it is guaranteed to be memory safe by the
-        Rust compiler
+        If a Neon module compiles, it is guaranteed by the Rust compiler to be
+        memory-safe.
       </>
     ),
     imageUrl: "img/checkmark.svg",
   },
   {
-    title: <>Easy Parallelism</>,
-    description: <>Safely run multiple threads without data races</>,
+    title: <>Easy parallelism</>,
+    description: <>Safely run multiple threads—without data races.</>,
     imageUrl: "img/fork.svg",
   },
 ];
-
-class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentExampleIdx: 0,
-      currentCode: codeExamples[0].code,
-    };
-  }
-
-  onButtonClick(index) {
-    this.setState({
-      currentExampleIdx: index,
-      currentCode: codeExamples[index].code,
-    });
-  }
-
-  render() {
-    return (
-      <>
-        <ButtonGroup className={styles.Carousel}>
-          {codeExamples.map((example, idx) => (
-            <Button
-              color={
-                this.state.currentExampleIdx === idx ? "primary" : "secondary"
-              }
-              key={example.name}
-              onClick={() => this.onButtonClick(idx)}
-            >
-              {example.name}
-            </Button>
-          ))}
-        </ButtonGroup>
-        <CustomSyntaxHighligher language="rust">
-          {this.state.currentCode}
-        </CustomSyntaxHighligher>
-      </>
-    );
-  }
-}
-
-const CustomSyntaxHighligher = (props) => (
-  <SyntaxHighlighter
-    {...props}
-    customStyle={{
-      background: "#08162E",
-      margin: "30px 0",
-      padding: "1em",
-      textAlign: "left",
-      color: "white !important",
-    }}
-    style={dark}
-  >
-    {props.children}
-  </SyntaxHighlighter>
-);
-
-CustomSyntaxHighligher.defaultProps = {
-  language: "javascript",
-};
 
 // Concatenate a given array of styles
 const cStyles = (_styles) => _styles.join(" ");
@@ -195,30 +60,10 @@ function Home() {
         <Container>
           <Col xs="12" className="text-center">
             <Logo title={siteConfig.title} subtitle={siteConfig.tagline} />
-            <Row>
-              <Col xs={6}>
-                <CustomSyntaxHighligher>{jsExample}</CustomSyntaxHighligher>
-              </Col>
-              <Col xs={6}>
-                <CustomSyntaxHighligher language="rust">
-                  {neonExample}
-                </CustomSyntaxHighligher>
-              </Col>
-            </Row>
             <Row className={styles.actionButtons}>
               <ButtonGroup>
                 <a href={useBaseUrl("docs/getting-started")}>
-                  <Button color="primary">Try It Out</Button>
-                </a>
-                <a href={siteConfig.customFields.coreRepoUrl}>
-                  <Button color="primary" target="_blank">
-                    GitHub
-                  </Button>
-                </a>
-                <a href="https://docs.rs/neon">
-                  <Button color="primary" target="_blank">
-                    API
-                  </Button>
+                  <Button color="primary">GET STARTED</Button>
                 </a>
               </ButtonGroup>
             </Row>
@@ -230,9 +75,6 @@ function Home() {
         <section
           className={cStyles([styles.featuresContainer, styles.containerEven])}
         >
-          <Col xs="12" className="text-center">
-            <h2 className={styles.featureHeader}>Features</h2>
-          </Col>
           {features && features.length && (
             <section>
               <Container>
@@ -242,7 +84,12 @@ function Home() {
                       key={styles.featuresContainer}
                       className={classnames("col col--4", styles.feature)}
                     >
-                      <h3 className={styles.featureSubHeader}>
+                      <h3
+                        className={classnames(
+                          styles.featureSubHeader,
+                          styles[`featureSubHeader${idx}`]
+                        )}
+                      >
                         <span>
                           <img
                             className={styles.featureImage}
@@ -265,22 +112,6 @@ function Home() {
           className={cStyles([styles.featuresContainer, styles.containerOdd])}
         >
           <Container>
-            <Col xs="12" className="text-center">
-              <h2 className={styles.featureHeader}>Examples</h2>
-            </Col>
-            <Col xs="12" className="text-center">
-              <Carousel />
-            </Col>
-          </Container>
-        </section>
-
-        <section
-          className={cStyles([styles.featuresContainer, styles.containerEven])}
-        >
-          <Container>
-            <Col xs="12" className="text-center">
-              <h2 className={styles.featureHeader}>Demo</h2>
-            </Col>
             <Col xs="12">
               <iframe
                 src="https://asciinema.org/a/269799/iframe"

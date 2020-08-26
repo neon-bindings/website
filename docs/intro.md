@@ -4,7 +4,7 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-Welcome to the Neon guides! This documentation should help you get up and running quickly, as well as learn useful techniques for making the most of Neon. If you’re looking for reference material, you might want to try the API documentation.
+Welcome to Neon! This documentation should help you get up and running quickly, as well as learn useful techniques for making the most of Neon. If you’re looking for reference material, you might want to try the [API documentation](https://docs.rs/neon).
 
 ## What is Neon?
 
