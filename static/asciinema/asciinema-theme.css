@@ -3,7 +3,7 @@
   background-color: #001018;
 }
 
-.asciinema-player-wrapper:fullscreen .asciinema-player {
+.asciinema-player-wrapper:fullscreen .asciinema-player, .asciinema-player-wrapper:-webkit-full-screen .asciinema-player {
   max-width: 60%;
 }
 
