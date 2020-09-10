@@ -4,6 +4,10 @@
   background: #050505; /* Same as home hero unit. */
 }
 
+.navbar a:hover, .navbar .dropdown--hoverable:hover a.navbar__link {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
 .navListItem.navListItemActive {
   font-weight: bold;
 }
@@ -155,15 +159,13 @@
   --ifm-color-primary-lightest: #FF6A8E;
 
   --ifm-navbar-link-color: #ddd;
+  --ifm-navbar-link-hover-color: #FFC0C8;
 }
 
 .footer.footer--dark {
-  --ifm-footer-background-color: #DDDDDD;
-  --ifm-footer-color: #121314;
-  --ifm-footer-link-color: #121314;
-  --ifm-footer-title-color: #121314;
-}
-
-iframe {
-  border: none;
+  --ifm-footer-background-color: #002030;
+  --ifm-footer-color: #8F9BA1;
+  --ifm-footer-link-color: #8F9BA1;
+  --ifm-footer-link-hover-color: #FFC0C8;
+  --ifm-footer-title-color: #FF6A8E;
 }

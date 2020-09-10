@@ -21,6 +21,11 @@ module.exports = {
       },
     ],
   ],
+  scripts: ["./asciinema/asciinema-player.js"],
+  stylesheets: [
+    "./asciinema/asciinema-player.css",
+    "./asciinema/asciinema-theme.css",
+  ],
   themeConfig: {
     hideOnScroll: true,
     disableDarkMode: true,

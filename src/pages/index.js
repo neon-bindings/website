@@ -5,6 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { Button, ButtonGroup, Row, Col, Container } from "reactstrap";
 import styles from "./styles.module.css";
+import Asciinema from "./asciinema";
 import "../css/custom.css";
 import "../css/bootstrap.css";
 
@@ -21,14 +22,14 @@ const Logo = (props) => (
 
 const features = [
   {
-    title: <>Simple tooling</>,
+    title: <>Simple tooling.</>,
     imageUrl: "img/hammer.svg",
     description: (
       <>No build scripts. No finicky system dependencies. Just Node and Rust.</>
     ),
   },
   {
-    title: <>Guaranteed safety</>,
+    title: <>Guaranteed safety.</>,
     description: (
       <>
         If a Neon module compiles, it is guaranteed by the Rust compiler to be
@@ -38,7 +39,7 @@ const features = [
     imageUrl: "img/checkmark.svg",
   },
   {
-    title: <>Easy parallelism</>,
+    title: <>Easy parallelism.</>,
     description: <>Safely run multiple threads—without data races.</>,
     imageUrl: "img/fork.svg",
   },
@@ -113,11 +114,9 @@ function Home() {
         >
           <Container>
             <Col xs="12">
-              <iframe
-                src="https://asciinema.org/a/269799/iframe"
-                width="100%"
-                height="300px"
-              />
+              <div style={{ width: "100%", display: "block" }}>
+                <Asciinema src="./asciinema/demo.cast" preload theme="neon" />
+              </div>
             </Col>
           </Container>
         </section>

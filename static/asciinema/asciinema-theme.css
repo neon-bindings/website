@@ -1,0 +1,126 @@
+.asciinema-player {
+  width: 100%;
+  background-color: #001018;
+}
+
+.asciinema-player-wrapper:fullscreen .asciinema-player {
+  max-width: 60%;
+}
+
+.asciinema-theme-neon .asciinema-terminal {
+  color: #cccccc;
+  background-color: #001018;
+  border-color: #001018;
+}
+.asciinema-theme-neon .fg-bg {
+  color: #001018;
+}
+.asciinema-theme-neon .bg-fg {
+  background-color: #cccccc;
+}
+.asciinema-theme-neon .fg-0 {
+  color: #000000;
+}
+.asciinema-theme-neon .bg-0 {
+  background-color: #000000;
+}
+.asciinema-theme-neon .fg-1 {
+  color: #dd3c69;
+}
+.asciinema-theme-neon .bg-1 {
+  background-color: #dd3c69;
+}
+.asciinema-theme-neon .fg-2 {
+  color: #4ebf22;
+}
+.asciinema-theme-neon .bg-2 {
+  background-color: #4ebf22;
+}
+.asciinema-theme-neon .fg-3 {
+  color: #ddaf3c;
+}
+.asciinema-theme-neon .bg-3 {
+  background-color: #ddaf3c;
+}
+.asciinema-theme-neon .fg-4 {
+  color: #8DE1FC;
+}
+.asciinema-theme-neon .bg-4 {
+  background-color: #8DE1FC;
+}
+.asciinema-theme-neon .fg-5 {
+  color: #b954e1;
+}
+.asciinema-theme-neon .bg-5 {
+  background-color: #b954e1;
+}
+.asciinema-theme-neon .fg-6 {
+  color: #8DE1FC;
+}
+.asciinema-theme-neon .bg-6 {
+  background-color: #8DE1FC;
+}
+.asciinema-theme-neon .fg-7 {
+  color: #d9d9d9;
+}
+.asciinema-theme-neon .bg-7 {
+  background-color: #d9d9d9;
+}
+.asciinema-theme-neon .fg-8 {
+  color: #4d4d4d;
+}
+.asciinema-theme-neon .bg-8 {
+  background-color: #4d4d4d;
+}
+.asciinema-theme-neon .fg-9 {
+  color: #dd3c69;
+}
+.asciinema-theme-neon .bg-9 {
+  background-color: #dd3c69;
+}
+.asciinema-theme-neon .fg-10 {
+  color: #4ebf22;
+}
+.asciinema-theme-neon .bg-10 {
+  background-color: #4ebf22;
+}
+.asciinema-theme-neon .fg-11 {
+  color: #ddaf3c;
+}
+.asciinema-theme-neon .bg-11 {
+  background-color: #ddaf3c;
+}
+.asciinema-theme-neon .fg-12 {
+  color: #8DE1FC;
+}
+.asciinema-theme-neon .bg-12 {
+  background-color: #8DE1FC;
+}
+.asciinema-theme-neon .fg-13 {
+  color: #b954e1;
+}
+.asciinema-theme-neon .bg-13 {
+  background-color: #b954e1;
+}
+.asciinema-theme-neon .fg-14 {
+  color: #8DE1FC;
+}
+.asciinema-theme-neon .bg-14 {
+  background-color: #8DE1FC;
+}
+.asciinema-theme-neon .fg-15 {
+  color: #ffffff;
+}
+.asciinema-theme-neon .bg-15 {
+  background-color: #ffffff;
+}
+.asciinema-theme-neon .fg-8,
+.asciinema-theme-neon .fg-9,
+.asciinema-theme-neon .fg-10,
+.asciinema-theme-neon .fg-11,
+.asciinema-theme-neon .fg-12,
+.asciinema-theme-neon .fg-13,
+.asciinema-theme-neon .fg-14,
+.asciinema-theme-neon .fg-15 {
+  font-weight: bold;
+}
