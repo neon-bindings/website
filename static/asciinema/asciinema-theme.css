@@ -1,6 +1,6 @@
 .asciinema-player {
   width: 100%;
-  background-color: #001018;
+  background-color: #001624;
 }
 
 .asciinema-player-wrapper:fullscreen .asciinema-player {
@@ -16,15 +16,15 @@
   }
     
 .asciinema-theme-neon .asciinema-terminal {
-  color: #cccccc;
-  background-color: #001018;
-  border-color: #001018;
+  color: #f0f0f0;
+  background-color: #001624;
+  border-color: #001624;
 }
 .asciinema-theme-neon .fg-bg {
-  color: #001018;
+  color: #001624;
 }
 .asciinema-theme-neon .bg-fg {
-  background-color: #cccccc;
+  background-color: #f0f0f0;
 }
 .asciinema-theme-neon .fg-0 {
   color: #000000;
@@ -75,10 +75,10 @@
   background-color: #d9d9d9;
 }
 .asciinema-theme-neon .fg-8 {
-  color: #4d4d4d;
+  color: #888888;
 }
 .asciinema-theme-neon .bg-8 {
-  background-color: #4d4d4d;
+  background-color: #888888;
 }
 .asciinema-theme-neon .fg-9 {
   color: #dd3c69;
