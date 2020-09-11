@@ -39,7 +39,7 @@ module.exports = {
         {
           position: "left",
           items: [
-            { label: "About", to: "docs/intro" },
+            { label: "Introduction", to: "docs/intro" },
             {
               label: "Examples",
               href:
@@ -75,7 +75,7 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "About",
+              label: "Introduction",
               to: "docs/intro",
             },
             {

@@ -1,6 +1,6 @@
 module.exports = {
   docs: {
-    About: ["intro", "getting-started", "hello-world", "cli"],
+    Introduction: ["intro", "getting-started", "hello-world", "cli"],
     Guides: [
       "primitives",
       "arrays",
