@@ -35,8 +35,6 @@ let js_string = cx.string("foobar");
 js_object.set(&mut cx, "myProperty", js_string)?;
 ```
 
-`.` will attempt to cast the property to a `JsFunction`. `.or_throw()` will error if downcasting the property is not possible.
-
 ## Mapping a `struct` to a `JsObject`
 
 Here is a simple example of converting a Rust `struct` to a JS `Object` using `JsObject`. We first start by defining the `struct`:
