@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Comfortaa:wght@500&display=swap';
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Source+Code+Pro&display=swap');
 
 .navbar {
   background: #050505; /* Same as home hero unit. */
@@ -34,7 +34,6 @@
 .neonProjectLogo {
   justify-content: center;
   font-size: 8em;
-  padding-bottom: 2rem;
 }
 
 .homeSplashFade {
@@ -105,6 +104,15 @@
   text-shadow: 0px 0px 15px rgba(38, 149, 255, 0.8);
 }
 
+.js-example {
+  border: solid 1px #002452;
+}
+
+.rust-example {
+  border: solid 1px #362436;
+  box-shadow: 0 0 40px #4b0a1a;
+}
+
 @keyframes buzz {
   30% {
     opacity: 1;
@@ -160,6 +168,7 @@
 
   --ifm-navbar-link-color: #ddd;
   --ifm-navbar-link-hover-color: #FFC0C8;
+  --ifm-font-family-monospace: "Source Code Pro", monospace;
 }
 
 .footer.footer--dark {

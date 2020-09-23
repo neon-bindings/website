@@ -3,11 +3,31 @@ import classnames from "classnames";
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import SyntaxHighlighter from "react-syntax-highlighter";
 import { Button, ButtonGroup, Row, Col, Container } from "reactstrap";
+import jsSyntax from "./js-syntax";
+import neonSyntax from "./neon-syntax";
 import styles from "./styles.module.css";
 import Asciinema from "./asciinema";
 import "../css/custom.css";
 import "../css/bootstrap.css";
+
+const jsExample = `
+// JavaScript
+function hello() {
+  let result = fibonacci(10000);
+  console.log(result);
+  return result;
+}
+`.trim();
+
+const neonExample = `
+// Neon
+fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
+  let result = cx.number(fibonacci(10000));
+  println!("{}", result);
+  Ok(result)
+}`.trim();
 
 const Logo = (props) => (
   <div className="neonProjectLogo">
@@ -45,6 +65,26 @@ const features = [
   },
 ];
 
+const CustomSyntaxHighlighter = (props) => (
+  <SyntaxHighlighter
+    {...props}
+    customStyle={{
+      background: "#08162E",
+      margin: "30px 0",
+      padding: "1em",
+      textAlign: "left",
+      fontSize: "90%",
+      color: "white !important",
+    }}
+  >
+    {props.children}
+  </SyntaxHighlighter>
+);
+
+CustomSyntaxHighlighter.defaultProps = {
+  language: "javascript",
+};
+
 // Concatenate a given array of styles
 const cStyles = (_styles) => _styles.join(" ");
 
@@ -61,10 +101,29 @@ function Home() {
         <Container>
           <Col xs="12" className="text-center">
             <Logo title={siteConfig.title} subtitle={siteConfig.tagline} />
+            <Row>
+              <Col xs={6}>
+                <CustomSyntaxHighlighter
+                  style={jsSyntax}
+                  className="js-example"
+                >
+                  {jsExample}
+                </CustomSyntaxHighlighter>
+              </Col>
+              <Col xs={6}>
+                <CustomSyntaxHighlighter
+                  language="rust"
+                  style={neonSyntax}
+                  className="rust-example"
+                >
+                  {neonExample}
+                </CustomSyntaxHighlighter>
+              </Col>
+            </Row>
             <Row className={styles.actionButtons}>
               <ButtonGroup>
                 <a href={useBaseUrl("docs/getting-started")}>
-                  <Button color="primary">GET STARTED</Button>
+                  <Button color="primary">Get Started</Button>
                 </a>
               </ButtonGroup>
             </Row>
