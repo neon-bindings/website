@@ -30,10 +30,10 @@ export default {
     color: "#ff9da4",
   },
   "hljs-number": {
-    color: "#c1e8c1",
+    color: "#d0f0d0",
   },
   "hljs-built_in": {
-    color: "#ffc58f",
+    color: "#f0f0b0",
   },
   "hljs-builtin-name": {
     color: "#ffc58f",
@@ -69,13 +69,13 @@ export default {
     color: "#d1f1a9",
   },
   "hljs-title": {
-    color: "#bbdaff",
+    color: "#b0d0f0",
   },
   "hljs-section": {
     color: "#bbdaff",
   },
   "hljs-keyword": {
-    color: "#ebbbff",
+    color: "#f0d0f0",
   },
   "hljs-selector-tag": {
     color: "#ebbbff",
