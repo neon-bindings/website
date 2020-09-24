@@ -5,7 +5,7 @@ module.exports = {
     coreRepoUrl: CORE_REPO_URL,
   },
   title: "Neon",
-  tagline: "Fast and Safe Native Node.js Modules",
+  tagline: "Electrify your Node with the power of Rust!",
   url: "https://neon-bindings.com",
   baseUrl: "/",
   favicon: "logo/letter-logo.png",
@@ -21,6 +21,11 @@ module.exports = {
       },
     ],
   ],
+  scripts: ["./asciinema/asciinema-player.js"],
+  stylesheets: [
+    "./asciinema/asciinema-player.css",
+    "./asciinema/asciinema-theme.css",
+  ],
   themeConfig: {
     hideOnScroll: true,
     disableDarkMode: true,
@@ -28,28 +33,39 @@ module.exports = {
       title: "Neon",
       logo: {
         alt: "Neon Logo",
-        src: "logo/letter-logo.png",
+        src: "logo/letter-logo-alpha.png",
       },
       links: [
-        { position: "left", to: "docs/intro", label: "Docs" },
         {
           position: "left",
-          href: "https://github.com/neon-bindings/examples#table-of-contents",
-          label: "Examples",
+          items: [
+            { label: "Introduction", to: "docs/intro" },
+            {
+              label: "Examples",
+              href:
+                "https://github.com/neon-bindings/examples#table-of-contents",
+            },
+            { label: "API Reference", href: "https://docs.rs/neon" },
+          ],
+          label: "Docs",
         },
-        { position: "left", href: "https://docs.rs/neon", label: "API" },
-        { position: "left", to: "docs/roadmap", label: "Roadmap" },
         {
           position: "left",
-          href: "https://rust-bindings-slackin.herokuapp.com/",
-          label: "Help",
+          items: [
+            { label: "GitHub", href: CORE_REPO_URL },
+            {
+              label: "Help",
+              href: "https://rust-bindings-slackin.herokuapp.com",
+            },
+            {
+              label: "Twitter",
+              to: "https://twitter.com/rustneon",
+            },
+            { label: "Roadmap", to: "docs/roadmap" },
+          ],
+          label: "Community",
         },
         { position: "left", to: "blog", label: "Blog" },
-        {
-          position: "left",
-          href: CORE_REPO_URL,
-          label: "GitHub",
-        },
       ],
     },
     footer: {
@@ -59,12 +75,12 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Getting Started",
-              to: "docs/getting-started",
+              label: "Introduction",
+              to: "docs/intro",
             },
             {
               label: "Examples",
-              to: "https://github.com/neon-bindings/examples",
+              to: "https://github.com/neon-bindings/examples#table-of-contents",
             },
             {
               label: "API Reference",
@@ -81,7 +97,11 @@ module.exports = {
             //   to: 'user-showcase'
             // },
             {
-              label: "Community Chat",
+              label: "GitHub",
+              to: CORE_REPO_URL,
+            },
+            {
+              label: "Help",
               to: "https://rust-bindings-slackin.herokuapp.com",
             },
             {
@@ -94,8 +114,8 @@ module.exports = {
           title: "More",
           items: [
             {
-              label: "GitHub",
-              to: CORE_REPO_URL,
+              label: "Blog",
+              to: "blog",
             },
           ],
         },
@@ -104,7 +124,7 @@ module.exports = {
         alt: "Neon Logo",
         src: "logo/text-logo.svg",
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Neon Bindings`,
+      copyright: `Copyright © ${new Date().getFullYear()} The Neon Contributors`,
     },
     algolia: {
       // "Search only api key". Safe to keep this public

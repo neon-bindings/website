@@ -1,7 +1,7 @@
 module.exports = {
   docs: {
-    "Getting Started": ["intro", "getting-started", "hello-world", "cli"],
-    Basics: [
+    Introduction: ["intro", "getting-started", "hello-world", "cli"],
+    Guides: [
       "primitives",
       "arrays",
       "objects",
@@ -16,7 +16,7 @@ module.exports = {
       "electron-apps",
       "publishing",
     ],
-    Guides: ["word-counting"],
+    Tutorials: ["word-counting"],
     Other: ["roadmap", "tooling", "example-projects", "learning-resources"],
   },
 };

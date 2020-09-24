@@ -4,7 +4,7 @@ title: Word Counting
 sidebar_label: Word Counting
 ---
 
-In this guide we're going to recreate the [word counting demo Dave Herman gave in his talk about neon](https://youtu.be/jINMIAicaS0?t=789).
+In this tutorial, we're going to recreate the [word counting demo Dave Herman gave in his talk about neon](https://youtu.be/jINMIAicaS0?t=789).
 
 First start by creating a new project with `neon-cli`:
 
