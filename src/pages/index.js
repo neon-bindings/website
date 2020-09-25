@@ -102,7 +102,7 @@ function Home() {
           <Col xs="12" className="text-center">
             <Logo title={siteConfig.title} subtitle={siteConfig.tagline} />
             <Row>
-              <Col xs={6}>
+              <Col xs={12} md={6}>
                 <CustomSyntaxHighlighter
                   style={jsSyntax}
                   className="js-example"
@@ -110,7 +110,7 @@ function Home() {
                   {jsExample}
                 </CustomSyntaxHighlighter>
               </Col>
-              <Col xs={6}>
+              <Col xs={12} md={6}>
                 <CustomSyntaxHighlighter
                   language="rust"
                   style={neonSyntax}

@@ -11,31 +11,26 @@ module.exports = {
   favicon: "logo/letter-logo.png",
   organizationName: "neon-bindings",
   projectName: "website",
-  plugins: [
-    "@docusaurus/plugin-google-analytics",
-    "@docusaurus/plugin-google-gtag",
-    [
-      "@docusaurus/plugin-sitemap",
-      {
-        cacheTime: 600 * 1000,
-      },
-    ],
-  ],
-  scripts: ["./asciinema/asciinema-player.js"],
+  scripts: ["/asciinema/asciinema-player.js"],
   stylesheets: [
-    "./asciinema/asciinema-player.css",
-    "./asciinema/asciinema-theme.css",
+    "/asciinema/asciinema-player.css",
+    "/asciinema/asciinema-theme.css",
   ],
   themeConfig: {
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: true,
+    },
     hideOnScroll: true,
-    disableDarkMode: true,
     navbar: {
       title: "Neon",
       logo: {
         alt: "Neon Logo",
         src: "logo/letter-logo-alpha.png",
       },
-      links: [
+      items: [
+        { position: "left", to: "docs/intro", label: "Docs" },
         {
           position: "left",
           items: [
