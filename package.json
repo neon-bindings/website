@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "@neon/website",
   "version": "0.2.0",
   "repository": "https://github.com/neon-bindings/website.git",
   "license": "MIT",
@@ -38,11 +38,8 @@
     "reactstrap": "^8.5.1"
   },
   "devDependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.61",
-    "@docusaurus/plugin-google-analytics": "^2.0.0-alpha.61",
-    "@docusaurus/plugin-google-gtag": "^2.0.0-alpha.61",
-    "@docusaurus/plugin-sitemap": "^2.0.0-alpha.61",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.61",
+    "@docusaurus/core": "^2.0.0-alpha.64",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.64",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-bliss": "^5.0.0",
@@ -66,8 +63,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "eslintConfig": {
