@@ -1,5 +1,5 @@
 # website
-
+Just Node and Rust.
 [![Build Status](https://travis-ci.org/neon-bindings/website.svg?branch=master)](https://travis-ci.org/neon-bindings/website)
 
 The website and docs for [neon](https://github.com/neon-bindings/neon)
