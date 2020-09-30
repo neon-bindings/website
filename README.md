@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/neon-bindings/website.svg?branch=master)](https://travis-ci.org/neon-bindings/website)
 
 The website and docs for [neon](https://github.com/neon-bindings/neon)
-
+ font-family: Arial, Helvetica, sans-serif
 ## Setup
 
 ```bash
