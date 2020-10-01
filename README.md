@@ -15,7 +15,6 @@ yarn start
 # Styles
 yarn styles
 yarn styles --watch
-```
 
 ## Contributing
 
