@@ -6,7 +6,7 @@ sidebar_label: Arguments
 
 [Examples](https://github.com/neon-bindings/examples/tree/master/arguments)
 
-Neon provides built-in mechanisims for accessing the `arguments` object.
+Neon provides built-in mechanism for accessing the `arguments` object.
 
 Arguments can be passed from JS to Rust and be of any type. It is useful to assert that certain values are certain types.
 
@@ -22,7 +22,7 @@ register_module!(mut m, {
 });
 ```
 
-The following code takes the first argument passed to the `sayHi` function and throws if it cannot be cast to a function
+The following code takes the first argument passed to the `Say Hi` function and throws if it cannot be cast to a function
 
 ```rust
 fn say_hi(mut cx: FunctionContext) -> JsResult<JsFunction> {
@@ -137,7 +137,7 @@ pub fn default_args(mut cx: FunctionContext) -> JsResult<JsUndefined> {
 }
 ```
 
-Here's how we'd call those functions:
+Here how we had call those functions:
 
 ```js
 // ./lib/index.js
