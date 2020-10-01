@@ -1,4 +1,4 @@
-# website
+# Link & Website
 
 [![Build Status](https://travis-ci.org/neon-bindings/website.svg?branch=master)](https://travis-ci.org/neon-bindings/website)
 
@@ -17,6 +17,6 @@ yarn styles
 yarn styles --watch
 ```
 
-## Contributing
+## Help & Contributing
 
 For details, see [the docusarus docs](https://v2.docusaurus.io)
