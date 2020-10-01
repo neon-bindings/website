@@ -1,4 +1,4 @@
-# website
+# An amazing website and docs for [Neon](https://github.com/neon-bindings/neon)
 
 [![Build Status](https://travis-ci.org/neon-bindings/website.svg?branch=master)](https://travis-ci.org/neon-bindings/website)
 
