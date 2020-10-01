@@ -1,4 +1,4 @@
-# website
+# An amazing website
 
 [![Build Status](https://travis-ci.org/neon-bindings/website.svg?branch=master)](https://travis-ci.org/neon-bindings/website)
 
