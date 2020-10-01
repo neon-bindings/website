@@ -18,5 +18,5 @@ yarn styles --watch
 ```
 
 ## Contributing
-
+Fork this repo and pull req.
 For details, see [the docusarus docs](https://v2.docusaurus.io)
