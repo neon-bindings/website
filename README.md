@@ -20,3 +20,4 @@ yarn styles --watch
 ## Contributing
 
 For details, see [the docusarus docs](https://v2.docusaurus.io)
+please contribute to us for our hardwork
