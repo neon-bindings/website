@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/neon-bindings/website.svg?branch=master)](https://travis-ci.org/neon-bindings/website)
 
-The website and docs for [neon](https://github.com/neon-bindings/neon)
+The website and docs for sparkle neon ://github.com/neon-bindings/neon)
 
 ## Setup
 
