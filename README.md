@@ -17,6 +17,6 @@ yarn styles
 yarn styles --watch
 ```
 
-## Contributing
+## Want to Contribute 
 
 For details, see [the docusarus docs](https://v2.docusaurus.io)
