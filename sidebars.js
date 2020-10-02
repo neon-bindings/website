@@ -8,6 +8,7 @@ module.exports = {
       "arguments",
       "type-checking",
       "functions",
+      "loops",
       "classes",
       "modules",
       "json",
