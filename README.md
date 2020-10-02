@@ -19,4 +19,4 @@ yarn styles --watch
 
 ## Contributing
 
-For details, see [the docusarus docs](https://v2.docusaurus.io)
+For more details, see [the docusarus docs](https://v2.docusaurus.io)
