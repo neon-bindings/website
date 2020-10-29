@@ -33,16 +33,13 @@ module.exports = {
         { position: "left", to: "docs/intro", label: "Docs" },
         {
           position: "left",
-          items: [
-            { label: "Introduction", to: "docs/intro" },
-            {
-              label: "Examples",
-              href:
-                "https://github.com/neon-bindings/examples#table-of-contents",
-            },
-            { label: "API Reference", href: "https://docs.rs/neon" },
-          ],
-          label: "Docs",
+          label: "Examples",
+          href: "https://github.com/neon-bindings/examples#table-of-contents",
+        },
+        {
+          position: "left",
+          label: "API Reference",
+          href: "https://docs.rs/neon",
         },
         {
           position: "left",
