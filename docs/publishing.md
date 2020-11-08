@@ -66,11 +66,11 @@ Then install [`node-pre-gyp`](https://github.com/mapbox/node-pre-gyp) and [`node
 
 ```bash
 # NPM
-npm install node-pre-gyp@amilajack/node-pre-gyp#neon-compat
-npm install node-pre-gyp-github
+npm install node-pre-gyp
+npm install node-pre-gyp-github --save-dev
 # Yarn
-yarn add node-pre-gyp@amilajack/node-pre-gyp#neon-compat
-yarn add node-pre-gyp-github
+yarn add node-pre-gyp
+yarn add node-pre-gyp-github --dev
 ```
 
 Then make the following changes to the `scripts` section of your `package.json`:
