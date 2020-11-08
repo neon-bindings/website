@@ -49,7 +49,7 @@ script:
   - if [[ ${COMMIT_MESSAGE} =~ "[publish binary]" ]]; then yarn upload-binary || exit 0; fi;
 ```
 
-Then add the following lines to your `package.json` to tell NPM to only publish the `lib` directory and the `native/index.node` file. Make sure to change the `type` and `url` properties in the `repository` object:
+Then add the following lines to your `package.json` to tell NPM to only publish the `lib` directory. Make sure to change the `type` and `url` properties in the `repository` object:
 
 ```json
   "repository": {
@@ -57,7 +57,6 @@ Then add the following lines to your `package.json` to tell NPM to only publish 
     "url": "git+https://github.com/your-username-here/your-project-here.git"
   },
   "files": [
-    "native/index.node",
     "lib"
   ],
 ```
