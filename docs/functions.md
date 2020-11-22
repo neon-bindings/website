@@ -24,7 +24,7 @@ pub fn require_object_this(mut cx: FunctionContext) -> JsResult<JsUndefined> {
 
 ## Calling JS Functions
 
-Here we define a JS function that takes a function as the `0`th argument and call's that function. `f.call` takes a `FunctionContext`, the context to call the function from (in this case `null`), and `arguments`
+Here we define a JS function that takes a function as the `0`th argument and calls that function. `f.call` takes a `FunctionContext`, the context to call the function from (in this case `null`), and `arguments`
 
 ```rust
 pub fn call_js_function(mut cx: FunctionContext) -> JsResult<JsNumber> {
