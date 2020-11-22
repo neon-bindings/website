@@ -4,7 +4,7 @@ title: Type Checking
 sidebar_label: Type Checking
 ---
 
-If we can declare functions with Rust that can be called from JS then we need to know the type of the argument that was passed to the argument in order to work with in Rust. This is where casting comes into play. **Upcasting** makes a type less specific while **Downcasting** makes a type more specific. A `JsValue`, which represents an arbitrary JS value that we do not know the type of. We can cast this value to something more specific like a `JsNumber` so that we can use it in Rust as if it were a number. Downcasting use useful when we want to pass values back to the JS engine. See the [classes section](classes.md) for more on this.
+If we can declare functions with Rust that can be called from JS then we need to know the type of the argument that was passed to the argument in order to work with in Rust. This is where casting comes into play. **Upcasting** makes a type less specific while **Downcasting** makes a type more specific. A `JsValue`, which represents an arbitrary JS value that we do not know the type of. We can cast this value to something more specific like a `JsNumber` so that we can use it in Rust as if it were a number. Downcasting is useful when we want to pass values back to the JS engine. See the [classes section](classes.md) for more on this.
 
 ## Upcasting
 
