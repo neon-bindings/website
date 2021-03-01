@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.23.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-syntax-highlighter": "^12.2.1",
