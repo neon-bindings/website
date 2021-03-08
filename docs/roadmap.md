@@ -8,7 +8,7 @@ To see what's in progress, see [our RFC's](https://github.com/neon-bindings/rfcs
 
 ## N-API
 
-#### What is [N-NAPI](https://nodejs.org/api/n-api.html)?
+#### What is [N-API](https://nodejs.org/api/n-api.html)?
 
 > It is independent from the underlying JavaScript runtime (ex V8) and is maintained as part of Node.js itself. This API will be Application Binary Interface (ABI) stable across versions of Node.js. It is intended to insulate Addons from changes in the underlying JavaScript engine and allow modules compiled for one major version to run on later major versions of Node.js without recompilation
 
