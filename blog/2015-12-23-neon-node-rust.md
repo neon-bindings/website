@@ -74,7 +74,7 @@ On my laptop, running the algorithm across all the plays of Shakespeare usually 
 
 ## Fall Into our Rustic Revelry
 
-One of the amazing things about Rust is that highly efficient code can still be remarkably compact and readable. In the [Rust version of the algorithm](https://github.com/neon-bindings/examples/blob/master/word-counting/native/src/lib.rs), the code for summing up the counts for all the lines looks pretty similar to the JS code:
+One of the amazing things about Rust is that highly efficient code can still be remarkably compact and readable. In the [Rust version of the algorithm](https://github.com/neon-bindings/examples/blob/legacy/word-counting/native/src/lib.rs), the code for summing up the counts for all the lines looks pretty similar to the JS code:
 
 ```rust
 let mut total = 0;

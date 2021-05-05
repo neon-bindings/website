@@ -4,7 +4,7 @@ title: Errors
 sidebar_label: Errors
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/errors)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/errors)
 
 Neon supports creating and throwing all Error objects in JS. These objects include `Error`, `TypeError`, and `RangeError`. Calling `panic!()` in Neon will throw an `Error` in Node. So `panic!("program errored!")` is equivalent to `throw new Error('program errored!')`. 
 

@@ -4,7 +4,7 @@ title: Async Tasks
 sidebar_label: Async Tasks
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/async)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/async)
 
 Tasks let you execute asynchronous background tasks that run in the Node thread pool. Behind the scenes, Neon is using N-API's microtasks API. Microtasks are the backing implementation of Promises and Callbacks in a JS Engine. For more on microtasks, see ["Tasks, microtasks, queues and schedules"](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 
@@ -148,10 +148,11 @@ const promisePerformAsyncTask = () => {
 
 ## Runnable Example
 
-For another example of tasks, you can clone and run [fibonacci-async-task](https://github.com/neon-bindings/examples/tree/master/fibonacci-async-task):
+For another example of tasks, you can clone and run [fibonacci-async-task](https://github.com/neon-bindings/examples/tree/legacy/fibonacci-async-task):
 
 ```bash
 git clone https://github.com/neon-bindings/examples
+git checkout legacy
 cd fibonacci-async-task
 npm install
 ```

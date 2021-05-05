@@ -4,7 +4,7 @@ title: Primitives
 sidebar_label: Primitives
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/primitives)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/primitives)
 
 ## Numbers
 

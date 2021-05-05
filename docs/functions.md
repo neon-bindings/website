@@ -4,7 +4,7 @@ title: Functions
 sidebar_label: Functions
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/functions)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/functions)
 
 ## This
 

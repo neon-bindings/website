@@ -4,7 +4,7 @@ title: Modules
 sidebar_label: Modules
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/modules)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/modules)
 
 In Node, it is common to export values, functions and classes. These data structures can also be exported from Neon modules as well with a few extra steps.
 
