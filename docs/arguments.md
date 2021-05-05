@@ -4,7 +4,7 @@ title: Arguments
 sidebar_label: Arguments
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/arguments)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/arguments)
 
 Neon provides built-in mechanisims for accessing the `arguments` object.
 

@@ -127,4 +127,4 @@ There are lots of possibilities, but I need help! If you want to get involved, I
 
 ## Source
 
-Here is the [source code](https://github.com/neon-bindings/examples/tree/master/word-counting) for this guide.
+Here is the [source code](https://github.com/neon-bindings/examples/tree/legacy/word-counting) for this guide.

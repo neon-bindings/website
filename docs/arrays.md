@@ -4,7 +4,7 @@ title: Arrays
 sidebar_label: Arrays
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/arrays)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/arrays)
 
 ## Converting from `Vec` to `JsArray`
 
@@ -84,10 +84,11 @@ The Node Buffer type is also supported by Neon through the [`JsBuffer`](https://
 
 #### Runnable Example
 
-For a working example of using Node's `Buffer` class with Neon, see the [`sharing-binary-data` example](https://github.com/neon-bindings/examples/tree/master/sharing-binary-data). You can get started with it by running the following commands:
+For a working example of using Node's `Buffer` class with Neon, see the [`sharing-binary-data` example](https://github.com/neon-bindings/examples/tree/legacy/sharing-binary-data). You can get started with it by running the following commands:
 
 ```bash
 git clone https://github.com/neon-bindings/examples
+git checkout legacy
 cd sharing-binary-data
 npm install
 ```

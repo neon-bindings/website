@@ -4,7 +4,7 @@ title: Objects
 sidebar_label: Objects
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/objects)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/objects)
 
 `JsObject`'s are used to create objects on the JS heap. `JsObject` structs have two methods: `get` and `set`:
 

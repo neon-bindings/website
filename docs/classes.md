@@ -4,9 +4,9 @@ title: Classes
 sidebar_label: Classes
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/classes)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/classes)
 
-For now, reference this snippet, taken <a href="https://github.com/neon-bindings/neon/blob/master/test/dynamic/native/src/js/classes.rs" target="_blank">from the tests:</a>
+For now, reference this snippet, taken <a href="https://github.com/neon-bindings/neon/blob/main/test/dynamic/native/src/js/classes.rs" target="_blank">from the tests:</a>
 
 ## Basics
 

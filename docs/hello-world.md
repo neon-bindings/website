@@ -4,9 +4,9 @@ title: Hello World!
 sidebar_label: Hello World!
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/master/thread-count)
+[Examples](https://github.com/neon-bindings/examples/tree/legacy/thread-count)
 
-This guide will walk you through writing, building, and running your first Neon project. We'll try to walk you through each step carefully, but if you want to skip ahead, you can always go straight to the [full demo](https://github.com/neon-bindings/examples/tree/master/thread-count) in the examples repository.
+This guide will walk you through writing, building, and running your first Neon project. We'll try to walk you through each step carefully, but if you want to skip ahead, you can always go straight to the [full demo](https://github.com/neon-bindings/examples/tree/legacy/thread-count) in the examples repository.
 
 Our first project will be a tiny module that returns a number indicating how much hardware multithreading the current machine supports. If you're not familiar with multithreading, don't panic! We'll be using [Sean McArthur](https://seanmonstar.com/)'s [num_cpus](https://crates.io/crates/num_cpus) library to do all the heavy lifting for us, and we'll just return the number it gives us.
 
@@ -109,7 +109,7 @@ register_module!(mut m, {
 
 This tells Neon to initialize the module when it's first loaded by creating a JavaScript function implemented with the `thread_count` function we defined above and exporting it as a module property named `"threadCount"`.
 
-You can see the full [`lib.rs`](https://github.com/neon-bindings/examples/blob/master/thread-count/native/src/lib.rs) file in the examples repository.
+You can see the full [`lib.rs`](https://github.com/neon-bindings/examples/blob/legacy/thread-count/native/src/lib.rs) file in the examples repository.
 
 # Exporting our Function
 
