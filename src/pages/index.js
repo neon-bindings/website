@@ -24,9 +24,9 @@ function hello() {
 const neonExample = `
 // Neon
 fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
-  let result = cx.number(fibonacci(10000));
+  let result = fibonacci(10000);
   println!("{}", result);
-  Ok(result)
+  Ok(cx.number(result))
 }`.trim();
 
 const Logo = (props) => (
