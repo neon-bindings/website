@@ -4,138 +4,132 @@ title: Hello World!
 sidebar_label: Hello World!
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/legacy/thread-count)
+[Examples](https://github.com/neon-bindings/examples)
 
-This guide will walk you through writing, building, and running your first Neon project. We'll try to walk you through each step carefully, but if you want to skip ahead, you can always go straight to the [full demo](https://github.com/neon-bindings/examples/tree/legacy/thread-count) in the examples repository.
+This guide will walk you through writing, building, and running your first Neon project. We'll try to walk you through each step carefully, but if you want to skip ahead, you can always go straight to the [full demo](https://github.com/neon-bindings/examples/tree/main/examples/cpu-count) in the examples repository.
 
-Our first project will be a tiny module that returns a number indicating how much hardware multithreading the current machine supports. If you're not familiar with multithreading, don't panic! We'll be using [Sean McArthur](https://seanmonstar.com/)'s [num_cpus](https://crates.io/crates/num_cpus) library to do all the heavy lifting for us, and we'll just return the number it gives us.
+Our first project will be a tiny module that returns a number indicating the number of CPUs in the current machine. If you're not familiar with systems programming, don't panic! We'll be using [Sean McArthur](https://seanmonstar.com/)'s [num_cpus](https://crates.io/crates/num_cpus) crate to do all the heavy lifting for us, and we'll just return the number it gives us.
 
-But even this simple example already demonstrates some of Neon's usefulness: Rust's [crate ecosystem](https://crates.io/) is younger than npm but growing quickly and already full of useful and unique libraries. A library like `num_cpus` could be useful, for example, as a hint for tuning the size of a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) pool in an [Electron app](./electron-apps/).
+Even this simple example already demonstrates some of Neon's usefulness: Rust's [crate ecosystem](https://crates.io/) is younger than npm but, growing quickly and is already full of useful and unique libraries. A library like `num_cpus` could be useful, for example, as a hint for tuning the size of a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) pool in an [Electron app](./electron-apps/).
 
 # Creating a New Project
 
-The first thing we have to do is create our new `thread-count` Neon project:
+The first thing we have to do is create our new `cpu-count` Neon project:
 
 ```shell
-neon new thread-count
+npm init neon cpu-count
 ```
 
-This will ask us a series of questions similar to the ones asked by `npm new`. When it completes, the tool will have created a `thread-count` directory with the following layout:
+This will ask us a series of questions similar to the ones asked by `npm init`. When it completes, the tool will have created a `cpu-count` directory with the following layout:
 
 ```text
-thread-count/
-├── .gitignore
+cpu-count/
+├── Cargo.toml
 ├── README.md
-├── lib/
-│   └── index.js
-├── native/
-│   ├── Cargo.toml
-│   └── src/
-│       └── lib.rs
-└── package.json
+├── package.json
+└── src
+    └── lib.rs
 ```
 
-The first thing to notice about this layout is that **a Neon project is a Node package**. In other words, the way to think of a Neon project is:
+The first thing to notice about this layout is that **a Neon project is both a Node package, and a Rust crate**.
 
-> Node on the outside, Rust on the inside.
+The Rust source lives in `src/`, but JavaScript that augments Rust can live side-by-side.
 
-The front-end of a Neon package is a pure JavaScript module (`lib/index.js`, by default), and the back-end is a native library implemented as a Rust crate. The Rust crate lives in the `native/` subdirectory of the project.
+Similar to how [Babel](https://babeljs.io/) can be adjusted to target a minimum JavaScript version, Neon can target a Node version by adjusting the `napi` feature in the `Cargo.toml`. By default, `npm init neon` will use the currently installed Node version.
+
+```toml
+[dependencies.neon]
+features = ["napi-6"]
+```
+
+See the [Node-API version matrix](https://nodejs.org/api/n-api.html#n_api_node_api_version_matrix) for more details.
 
 # Building and Running
 
-We haven't yet implemented anything, but just to see that `neon new` produced a complete, minimal Neon project, let's try building it:
+We haven't yet implemented anything, but just to see that `npm init neon` produced a complete, minimal Neon project, let's try building it:
 
 ```shell
-cd thread-count
-neon build --release
+cd cpu-count
+npm install
 ```
 
-The build process generates a handful of files that you don't need to work with directly:
+The build process generates a handful of files:
 
-- `native/index.node`: the native module itself, which is loaded by `lib/index.js`.
-- `native/target` and `native/artifacts.json`: cached build results, which makes rebuilds faster.
+- `target/`: The build directory used by Rust
+- `index.node`: The compiled Neon module
 
 An easy way to clean up build artifacts is to run:
 
 ```shell
-neon clean
+cargo clean
 ```
 
 Once we've built the project, we can try running it:
 
 ```shell
 node
-> require('.')
+> require('.').hello()
 hello node
-{}
 ```
 
 # Adding a Rust Dependency
 
-Let's add a Rust dependency on the [num_cpus](https://crates.io/crates/num_cpus) crate. In `native/Cargo.toml`, under the `[dependencies]` section, add the following line:
+Let's add a Rust dependency on the [num_cpus](https://crates.io/crates/num_cpus) crate. In `Cargo.toml`, add the following lines:
 
 ```toml
-num_cpus = "1.4.0"
+[dependencies]
+num_cpus = "1"
 ```
 
-This tells Cargo, Rust's build tool, to fetch a version of the `num_cpus` crate that is semver-compatible with `1.4.0`. (The `package.json` equivalent would be `"num_cpus": "^1.4.0"`.)
+This tells Cargo, Rust's build tool, to fetch a version of the `num_cpus` crate that is semver-compatible with `1`. (The `package.json` equivalent would be `"num_cpus": "^1"`.)
 
 # Implementing our Function
 
-Next we can replace the sample `hello` function that was generated by `neon new` with the function we actually want. Instead of returning a string, our function should return a JavaScript number. So we'll use [`cx.number()`](https://docs.rs/neon/*/neon/types/struct.JsNumber.html) helper. Since `cx.number()` expects a Rust [`f64`](https://doc.rust-lang.org/std/primitive.f64.html) (i.e., a 64-bit floating-point number), and [`num_cpus::get()`](https://docs.rs/num_cpus/1.4.0/num_cpus/fn.get.html) returns a [`usize`](https://doc.rust-lang.org/std/primitive.usize.html) (i.e., a pointer-sized integer), we'll use Rust's`as` operator to cast to convert the integer to floating-point:
+Next we can replace the sample `hello` function that was generated by `npm init neon` with the function we actually want. Instead of returning a string, our function should return a JavaScript number. So we'll use [`cx.number()`](https://docs.rs/neon/*/neon/types/struct.JsNumber.html) helper. Since `cx.number()` expects a Rust [`f64`](https://doc.rust-lang.org/std/primitive.f64.html) (i.e., a 64-bit floating-point number), and [`num_cpus::get()`](https://docs.rs/num_cpus/1.4.0/num_cpus/fn.get.html) returns a [`usize`](https://doc.rust-lang.org/std/primitive.usize.html) (i.e., a pointer-sized integer), we'll use Rust's`as` operator to cast to convert the integer to floating-point:
 
 ```rust
-use num_cpus;
 use neon::prelude::*;
 
-fn thread_count(mut cx: FunctionContext) -> JsResult<JsNumber> {
+fn get_num_cpus(mut cx: FunctionContext) -> JsResult<JsNumber> {
     Ok(cx.number(num_cpus::get() as f64))
 }
 ```
 
 A few more things to note about this code:
 
-- The `cx` argument to `thread_count`: this contains information about the function call, such as the arguments and the value of `this`.
+- The `cx` argument to `get_num_cpus`: this contains information about the function call, such as the arguments and the value of `this`.
 - The [`JsResult`](https://docs.rs/neon/*/neon/result/type.JsResult.html) output type: this is a Rust [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html) type that indicates whether the function returned (`Ok`) or threw a JavaScript exception (`Err`). You can learn more in the [Errors](errors) docs. It also tracks the lifetime of the returned _handle_. 
-- The `cx.number()` function tells the JavaScript garbage collector that we need to keep the value we allocate alive long enough to return it to the caller of `thread_count`.
+- The `cx.number()` function tells the JavaScript garbage collector that we need to keep the value we allocate alive long enough to return it to the caller of `get_num_cpus`.
 
-Finally, we'll modify the code that `neon new` created for us to set up the module exports with this function instead of the initial "hello world" function it created for us:
+Finally, we'll modify the code that `npm init neon` created for us to set up the module exports with this function instead of the initial "hello world" function it created for us:
 
 ```rust
-register_module!(mut m, {
-    m.export_function("threadCount", thread_count)
-});
+#[neon::main]
+fn main(mut cx: ModuleContext) -> NeonResult<()> {
+    cx.export_function("get", get_num_cpus)?;
+    Ok(())
+}
 ```
 
-This tells Neon to initialize the module when it's first loaded by creating a JavaScript function implemented with the `thread_count` function we defined above and exporting it as a module property named `"threadCount"`.
+This tells Neon to initialize the module when it's first loaded by creating a JavaScript function implemented with the `get_num_cpus` function we defined above and exporting it as a module property named `"get"`.
 
-You can see the full [`lib.rs`](https://github.com/neon-bindings/examples/blob/legacy/thread-count/native/src/lib.rs) file in the examples repository.
-
-# Exporting our Function
-
-Now that the Rust code is implemented, all we have left to do is export it from the project's public module in `lib/index.js`. The native module exported a `threadCount` property, so we'll just make that function our entire public module:
-
-```js
-const addon = require('../native');
-
-module.exports = addon.threadCount;
-```
+You can see the full [`lib.rs`](https://github.com/neon-bindings/examples/blob/main/examples/cpu-count/src/lib.rs) file in the examples repository.
 
 # Try it Out!
 
-Now we should be able to rebuild the project with `neon build --release` again:
+Now we should be able to rebuild the project:
 
 ```shell
-neon build --release
+npm run build -- --release
 ```
 
-This will create a release build for us. Assuming we didn't make any mistakes, we can test out our new Neon module at the Node console from the root of our project directory:
+This will create a release build for us. Release builds take longer to compile, but the final library executes more quickly. Assuming we didn't make any mistakes, we can test out our new Neon module at the Node console from the root of our project directory:
 
 ```shell
 node
-> var threadCount = require('.')
-> threadCount()
+> const cpuCount = require('.')
+> cpuCount.get()
 4
 ```
 
-Keep in mind that the result of calling `threadCount()` will vary based on the machine you run this demo on—by design!
+Keep in mind that the result of calling `cpuCount.get()` will vary based on the machine you run this demo on—by design!
