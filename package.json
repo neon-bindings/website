@@ -12,10 +12,11 @@
     "docusaurus": "docusaurus",
     "lint": "eslint .",
     "lint-prose": "cp .proselintrc ~/ && proselint docs blog",
+    "prepare": "husky install",
     "start": "yarn styles && docusaurus start",
     "styles": "sass src/css/custom-bootstrap.scss src/css/bootstrap.css",
     "swizzle": "docusaurus swizzle",
-    "test": "yarn lint && yarn lint-prose && yarn build"
+    "test": "yarn lint && yarn build"
   },
   "browserslist": {
     "production": [
@@ -45,7 +46,7 @@
     "eslint-config-bliss": "^5.0.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
-    "husky": "5",
+    "husky": "^7",
     "lint-staged": "^10.5.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

@@ -34,8 +34,7 @@ module.exports = {
         {
           position: "left",
           label: "Examples",
-          href:
-            "https://github.com/neon-bindings/examples/tree/legacy#table-of-contents",
+          href: "https://github.com/neon-bindings/examples/tree/legacy#table-of-contents",
         },
         {
           position: "left",
@@ -73,8 +72,7 @@ module.exports = {
             },
             {
               label: "Examples",
-              to:
-                "https://github.com/neon-bindings/examples/tree/legacy#table-of-contents",
+              to: "https://github.com/neon-bindings/examples/tree/legacy#table-of-contents",
             },
             {
               label: "API Reference",
@@ -121,7 +119,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} The Neon Contributors`,
     },
     prism: {
-      additionalLanguages: ['rust', 'toml']
+      additionalLanguages: ["rust", "toml"],
     },
     algolia: {
       // "Search only api key". Safe to keep this public
