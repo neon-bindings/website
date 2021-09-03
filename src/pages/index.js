@@ -121,11 +121,13 @@ function Home() {
               </Col>
             </Row>
             <Row className={styles.actionButtons}>
-              <ButtonGroup>
-                <a href={useBaseUrl("docs/getting-started")}>
-                  <Button color="primary">Get Started</Button>
-                </a>
-              </ButtonGroup>
+              <Col sm="12" md={{ size: 6, offset: 3 }}>
+                <ButtonGroup>
+                  <a href={useBaseUrl("docs/getting-started")}>
+                    <Button color="primary">Get Started</Button>
+                  </a>
+                </ButtonGroup>
+              </Col>
             </Row>
           </Col>
         </Container>
