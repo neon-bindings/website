@@ -121,7 +121,10 @@ function Home() {
               </Col>
             </Row>
             <Row className={styles.actionButtons}>
-              <Col xs={{ size: 9, offset: 3 }} sm={{ size: 6, offset: 2 }} md={{ size: 6, offset: 3 }}>
+              <Col xs={{ size: 9, offset: 3 }}
+                   sm={{ size: 6, offset: 2 }}
+                   md={{ size: 6, offset: 3 }}
+                   lg={{ size: 6, offset: 4 }}>
                 <ButtonGroup>
                   <a href={useBaseUrl("docs/getting-started")}>
                     <Button color="primary">Get Started</Button>
