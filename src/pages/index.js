@@ -121,11 +121,17 @@ function Home() {
               </Col>
             </Row>
             <Row className={styles.actionButtons}>
-              <ButtonGroup>
-                <a href={useBaseUrl("docs/getting-started")}>
-                  <Button color="primary">Get Started</Button>
-                </a>
-              </ButtonGroup>
+              <Col xs={{ size: 1 }}
+                   sm={{ size: 3 }}></Col>
+              <Col xs={{ size: "auto" }}>
+                <ButtonGroup>
+                  <a href={useBaseUrl("docs/getting-started")}>
+                    <Button color="primary">Get Started</Button>
+                  </a>
+                </ButtonGroup>
+              </Col>
+              <Col xs={{ size: 1 }}
+                   sm={{ size: 3 }}></Col>
             </Row>
           </Col>
         </Container>

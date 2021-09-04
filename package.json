@@ -15,7 +15,7 @@
     "start": "yarn styles && docusaurus start",
     "styles": "sass src/css/custom-bootstrap.scss src/css/bootstrap.css",
     "swizzle": "docusaurus swizzle",
-    "test": "yarn lint && yarn lint-prose && yarn build"
+    "test": "yarn lint && yarn build"
   },
   "browserslist": {
     "production": [
@@ -29,15 +29,8 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {
-    "bootstrap": "^4.6.0",
-    "prismjs": "^1.23.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-syntax-highlighter": "^15.4.3",
-    "reactstrap": "^8.9.0"
-  },
   "devDependencies": {
+    "bootstrap": "^5.1.0",
     "@docusaurus/core": "^2.0.0-alpha.72",
     "@docusaurus/preset-classic": "^2.0.0-alpha.72",
     "eslint": "^7.23.0",
@@ -45,21 +38,17 @@
     "eslint-config-bliss": "^5.0.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
-    "husky": "5",
     "lint-staged": "^10.5.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-syntax-highlighter": "^13.5.1",
+    "prismjs": "^1.23.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-syntax-highlighter": "^15.4.3",
+    "reactstrap": "^8.9.0",
     "sass": "^1.32.8",
     "yarn": "^1.22.10"
   },
   "engines": {
     "yarn": ">=1.10.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.js": [

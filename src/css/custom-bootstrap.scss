@@ -57,3 +57,7 @@ $sidebar-logo-background: #001624; // Same as section 2 background on home page.
 .navbar-sidebar .navbar__title {
   color: $sidebar-logo-background;
 }
+
+.navbar .navbar__item {
+  --ifm-navbar-item-padding-horizontal: 1rem;
+}

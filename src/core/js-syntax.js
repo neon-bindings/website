@@ -86,6 +86,8 @@ export default {
     background: "#002451",
     color: "white",
     padding: "0.5em",
+    wordWrap: "normal",
+    whiteSpace: "pre",
   },
   "hljs-emphasis": {
     fontStyle: "italic",
