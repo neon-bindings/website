@@ -3,8 +3,8 @@ module.exports = {
     "Get Started": ["introduction", "quick-start", "hello-world"],
     "How To": [
       "primitive-types",
-      "arrays",
       "objects",
+      "arrays",
       "functions",
     ],
     Community: ["example-projects"],
