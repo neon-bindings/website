@@ -6,7 +6,7 @@ sidebar_label: Functions
 
 ## This
 
-In order to call methods on `cx.this`, it must be downcasted to a `JsObject`. For more on [type checking section](type-checking.md#downcasting) for more details
+In order to call methods on `cx.this`, it must be downcasted to a `JsObject`. 
 
 ```rust
 pub fn require_object_this(mut cx: FunctionContext) -> JsResult<JsUndefined> {

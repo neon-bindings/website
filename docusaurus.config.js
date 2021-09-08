@@ -30,7 +30,7 @@ module.exports = {
         src: "logo/letter-logo-alpha.png",
       },
       items: [
-        { position: "left", to: "docs/intro", label: "Docs" },
+        { position: "left", to: "docs/introduction", label: "Docs" },
         {
           position: "left",
           label: "API Reference",
@@ -62,7 +62,7 @@ module.exports = {
           items: [
             {
               label: "Introduction",
-              to: "docs/intro",
+              to: "docs/introduction",
             },
             {
               label: "Examples",
