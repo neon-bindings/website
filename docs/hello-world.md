@@ -4,13 +4,11 @@ title: Hello World!
 sidebar_label: Hello World!
 ---
 
-[Examples](https://github.com/neon-bindings/examples)
+**Full source code:** [examples/cpu-count](https://github.com/neon-bindings/examples/tree/main/examples/cpu-count)
 
-This guide will walk you through writing, building, and running your first Neon project. We'll try to walk you through each step carefully, but if you want to skip ahead, you can always go straight to the [full demo](https://github.com/neon-bindings/examples/tree/main/examples/cpu-count) in the examples repository.
+This simple example project will be a tiny module that returns the number of processors in the current device. If you're not familiar with fancy systems concepts like processors and CPUs, don't panic! We'll be using the [`num_cpus`](https://crates.io/crates/num_cpus) crate to do all the heavy lifting for us, and we'll just return the number it gives us.
 
-Our first project will be a tiny module that returns a number indicating the number of CPUs in the current machine. If you're not familiar with systems programming, don't panic! We'll be using [Sean McArthur](https://seanmonstar.com/)'s [num_cpus](https://crates.io/crates/num_cpus) crate to do all the heavy lifting for us, and we'll just return the number it gives us.
-
-Even this simple example already demonstrates some of Neon's usefulness: Rust's [crate ecosystem](https://crates.io/) is younger than npm but, growing quickly and is already full of useful and unique libraries. A library like `num_cpus` could be useful, for example, as a hint for tuning the size of a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) pool in an [Electron app](./electron-apps/).
+Even this simple project demonstrates some of Neon's power: Rust's [crate ecosystem](https://crates.io/) is younger than npm but growing quickly and full of many useful and unique libraries. A library like `num_cpus` could be useful, for example, as a hint for tuning the size of a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) pool in an [Electron app](./electron-apps/).
 
 # Creating a New Project
 

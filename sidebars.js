@@ -1,22 +1,12 @@
 module.exports = {
   docs: {
-    Introduction: ["intro", "getting-started", "hello-world"],
-    Guides: [
-      "primitives",
+    "Get Started": ["introduction", "quick-start", "hello-world"],
+    "How To": [
+      "primitive-types",
       "arrays",
       "objects",
-      "arguments",
-      "type-checking",
       "functions",
-      "classes",
-      "modules",
-      "json",
-      "errors",
-      "async",
-      "electron-apps",
-      "publishing",
     ],
-    Tutorials: ["word-counting"],
-    Other: ["roadmap", "tooling", "example-projects", "learning-resources"],
+    Community: ["example-projects"],
   },
 };

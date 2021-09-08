@@ -4,8 +4,6 @@ title: Arrays
 sidebar_label: Arrays
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/legacy/arrays)
-
 ## Converting from `Vec` to `JsArray`
 
 Here is a simple example of converting a Rust `Vec` to a JS `Array` using `JsArray`:
