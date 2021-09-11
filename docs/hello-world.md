@@ -6,9 +6,9 @@ sidebar_label: Hello World!
 
 **Full source code:** [examples/cpu-count](https://github.com/neon-bindings/examples/tree/main/examples/cpu-count)
 
-This simple example project will be a tiny module that returns the number of processors in the current device. If you're not familiar with fancy systems concepts like processors and CPUs, don't panic! We'll be using the [`num_cpus`](https://crates.io/crates/num_cpus) crate to do all the heavy lifting for us, and we'll just return the number it gives us.
+This small example project will be a module that returns the number of processors in the current device. If you're not familiar with fancy systems concepts like processors and CPUs, don't panic! We'll be using the [`num_cpus`](https://crates.io/crates/num_cpus) crate to do all the heavy lifting for us, and we'll just return the number it gives us.
 
-Even this simple project demonstrates some of Neon's power: Rust's [crate ecosystem](https://crates.io/) is younger than npm but growing quickly and full of many useful and unique libraries. A library like `num_cpus` could be useful, for example, as a hint for tuning the size of a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) pool in an [Electron](https://electronjs.org) app.
+The tutorial is short, but it demonstrates some of Neon's power: Rust's [crate ecosystem](https://crates.io/) is growing quickly and full of many useful and unique libraries, often providing low-level capabilities or high-performance data structures that can be hard to find in npm. A library like `num_cpus` could be useful, for example, as a hint for tuning the size of a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) pool in an [Electron](https://electronjs.org) app.
 
 # Creating a New Project
 

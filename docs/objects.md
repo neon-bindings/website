@@ -49,15 +49,34 @@ Here is a simple example of converting a Rust `struct` to a JavaScript object. F
 struct Book {
     pub title: String,
     pub author: String,
-    pub year: u64,
+    pub year: u32,
 }
 ```
 
-To copy a `Book` into a JavaScript object, we'll define a conversion function. Just for fun and to make it a little more idiomatically Rusty, we'll define it as a method of the `Book` type:
+To copy a `Book` into a JavaScript object, we'll define a conversion function. To make it idiomatically Rusty, let's define it as a [_method_](https://doc.rust-lang.org/book/ch05-03-method-syntax.html) of the `Book` type, so that callers of our API can use a pleasant method call syntax:
+
+```rust
+let obj = book.to_object(&mut cx)?;
+```
+
+First let's look at the signature of `Book::to_object()`, which we define as a method using Rust's `impl Book` syntax and a `&self` parameter:
 
 ```rust
 impl Book {
-    fn to_object(&self, mut cx: FunctionContext) -> JsResult<JsObject> {
+    fn to_object<'a>(&self, cx: &mut FunctionContext<'a>) -> JsResult<'a, JsObject> {
+        // ...
+    }
+}
+```
+
+This is our first example using a _[lifetime annotation](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html)_ `'a`. This allows the Rust compiler to ensure that our code never accidentally makes an unsafe reference to JavaScript values managed by the Node runtime. Specifically, this signature tells Neon that the result object returned by this function (which has lifetime `'a`) is managed by the runtime context that was passed in as an argument (which also has that same lifetime `'a`).
+
+If you've never seen lifetimes before or are not yet confident using them, don't worry! For now, you can use this code as a template, and know that the Rust compiler will keep you safe.
+
+Now here is the full implementation:
+
+```rust
+    fn to_object<'a>(&self, cx: &mut FunctionContext<'a>) -> JsResult<'a, JsObject> {
         let obj = cx.empty_object();
 
         let title = cx.string(self.title);
@@ -74,14 +93,31 @@ impl Book {
 }
 ```
 
-Let's walk through the implementation a step at a time. The `to_object` method takes a reference to `self` and a runtime context. Next, it constructs a new empty JavaScript object, which will serve as the result, converts each of the fields to a [primitive type](primitive-types) and sets the relevant property on the object to its value. Finally, the method returns the new object, wrapped in an `Ok` value to signal success.
+Let's walk through the implementation. First, it constructs a new empty JavaScript object, which will serve as the result, converts each of the fields to a [primitive type](primitive-types) and sets the relevant property on the object to its value. Finally, the method returns the new object, wrapped in an `Ok` value to signal success.
 
 One thing worth noticing about this function is that it doesn't use anything specific about the `FunctionContext` type other than the generic methods of the [`Context`](https://docs.rs/neon/latest/neon/context/trait.Context.html) trait. To make our function even more powerful, we can make it _generic_ and accept any implementation of `Context`:
 
 ```rust
 impl Book {
-    fn to_object(&self, mut cx: impl Context) -> JsResult<JsObject> {
+    fn to_object<'a>(&self, cx: &mut impl Context<'a>) -> JsResult<'a, JsObject> {
         // same as before...
     }
+}
+```
+
+This allows us to use our method in more places, such as with a [`ModuleContext`](https://docs.rs/neon/latest/neon/context/struct.ModuleContext.html):
+
+```rust
+#[neon::main]
+pub fn main(mut cx: ModuleContext) -> NeonResult<()> {
+    let book = Book {
+        title: "Chadwick the Crab".to_string(),
+        author: "Priscilla Cummings".to_string(),
+        year: 2009,
+    };
+
+    let obj = book.to_object(&mut cx)?;
+    cx.export_value("chadwick", obj)?;
+    Ok(())
 }
 ```

@@ -22,6 +22,8 @@ let size: usize = std::mem::size_of::<u128>();
 let n = cx.number(size as f64)
 ```
 
+Keep in mind that for some types, explicit casts to `f64` might be lossy, so you'll want to check whether the conversion you're doing is appropriate. Another option is to use the [`TryFrom`](https://doc.rust-lang.org/std/convert/trait.TryFrom.html) API, which can help avoid loss of precision.
+
 ## Strings
 
 The [`Context::string()`](https://docs.rs/neon/latest/neon/context/trait.Context.html#method.string) method constructs a JavaScript string from a reference to a Rust string.

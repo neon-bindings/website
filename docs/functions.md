@@ -8,7 +8,7 @@ Neon's main way of connecting Rust and JavaScript is by allowing you to define *
 
 ## Defining Functions
 
-A Neon function looks and acts to JavaScript like a regular JavaScript function, but its behavior is defined in pure Rust. Defining a Neon function requires first defining a Rust function of type `fn(FunctionContext) -> JsResult<T>` where `T` can be any type that implements the [`Value`](https://docs.rs/neon/latest/neon/types/trait.Value.html) trait:
+A Neon function looks and acts to JavaScript like a regular JavaScript function, but its behavior is written in Rust. Creating a Neon function requires first defining a Rust function of type `fn(FunctionContext) -> JsResult<T>` where `T` can be any type that implements the [`Value`](https://docs.rs/neon/latest/neon/types/trait.Value.html) trait:
 
 ```rust
 fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
@@ -16,7 +16,7 @@ fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
 }
 ```
 
-The `cx` argument is a [`FunctionContext`](https://docs.rs/neon/latest/neon/context/type.FunctionContext.html), which provides the Neon function with access to the JavaScript runtime. The [`JsResult`](https://docs.rs/neon/latest/neon/result/type.JsResult.html) result type indicates that a Neon function may throw a JavaScript exception. In this simple example, we just construct a string and return it, so we immediately wrap the outcome in an `Ok` result.
+The `cx` argument is a [`FunctionContext`](https://docs.rs/neon/latest/neon/context/type.FunctionContext.html), which provides the Neon function with access to the JavaScript runtime. The [`JsResult`](https://docs.rs/neon/latest/neon/result/type.JsResult.html) result type indicates that a Neon function may throw a JavaScript error. In this example, we just construct a string and return it, so we immediately wrap the outcome in an `Ok` result. A more involved Neon function might call other functions or interact with objects in ways that could end up triggering errors.
 
 The most common way to define a Neon function from `hello` is to export it from our module using [`ModuleContext::export_function()`](https://docs.rs/neon/latest/neon/context/struct.ModuleContext.html#method.export_function):
 
@@ -27,6 +27,8 @@ pub fn main(mut cx: ModuleContext) -> NeonResult<()> {
     Ok(())
 }
 ```
+
+Notice that the `main` function also returns a result, because it can trigger JavaScript errors. In this code, calling the `export_function()` method could potentially throw an error since it's interacting with the module object. We use Rust's [`?` operator](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-question-mark-operator) to return early and propagate any errors that get thrown.
 
 A JavaScript module can then call the `hello` function by importing from the Neon module:
 
@@ -126,7 +128,7 @@ You can call a JavaScript function from Rust with [`JsFunction::call()`](https:/
 
 ```rust
 let global = cx.global();
-let func: Handle<JsFunction> = global.get(&mut cx, "parseInt")?;
+let func = global.get(&mut cx, "parseInt")?.downcast_or_throw::<JsFunction>()?;
 let null = cx.null();
 let s = cx.string(s);
 let result = func.call(&mut cx, null, vec![s])?;
@@ -140,7 +142,7 @@ You can call a JavaScript function as a constructor, as if with the [`new`](http
 
 ```rust
 let global = cx.global();
-let ctor: Handle<JsFunction> = global.get(&mut cx, "URL")?;
+let ctor = global.get(&mut cx, "URL")?.downcast_or_throw::<JsFunction>()?;
 let url: Handle<JsString> = cx.string("https://neon-bindings.com");
 let result = ctor.construct(&mut cx, vec![url]);
 ```
