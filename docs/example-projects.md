@@ -4,7 +4,13 @@ title: Who's Using Neon
 sidebar_label: Who's Using Neon
 ---
 
-Here is a list of projects using Neon
+Neon is used to power a large community of applications and libraries—maybe some you use yourself!
+
+## Applications
+
+- [1password: Secure password manager](https://dteare.medium.com/behind-the-scenes-of-1password-for-linux-d59b19143a23)
+- [Signal: Secure, private messaging](https://github.com/signalapp/libsignal-client)
+- [finda: Type stuff, find things. No mousing.](https://keminglabs.com/finda/)
 
 ## Node Libraries
 
@@ -19,16 +25,10 @@ Here is a list of projects using Neon
 - [node-webrender: bindings to webrender](https://github.com/cztomsik/node-webrender)
 - [big_mac: get MAC addresses on the local device](https://github.com/ultamatt/big_mac)
 
-And <a href="https://github.com/search?q=filename%3ACargo.toml+neon" target="_blank">many more!</a>
-
-## Applications
-
-- [1password: Secure password manager](https://dteare.medium.com/behind-the-scenes-of-1password-for-linux-d59b19143a23)
-- [Signal: Secure, private messaging](https://github.com/signalapp/libsignal-client)
-- [finda: Finda finds things — in under 16 milliseconds.](https://keminglabs.com/finda/)
+And <a href="https://github.com/search?q=filename%3Apackage.json+cargo-cp-artifact&type=Code" target="_blank">many more!</a>
 
 ## Rust Libraries
 
 - [neon-serde: Easily convert between Rust and JavaScript datatypes](https://crates.io/crates/neon-serde2)
 
-Want to add a project to this list? Submit a PR!
+Want to add a project to this list? [Submit a PR](https://github.com/neon-bindings/website)!
