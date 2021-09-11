@@ -17,16 +17,18 @@ Here is a list of projects using Neon
 - [node-crypto: rust-crypto bindings for Node](https://github.com/Brooooooklyn/node-crypto)
 - [os-type: Bindings to the os_type Rust library](https://github.com/amilajack/os-type)
 - [node-webrender: bindings to webrender](https://github.com/cztomsik/node-webrender)
+- [big_mac: get MAC addresses on the local device](https://github.com/ultamatt/big_mac)
 
-And <a href="https://www.npmjs.com/browse/depended/neon-cli" target="_blank">many more!</a>
+And <a href="https://github.com/search?q=filename%3ACargo.toml+neon" target="_blank">many more!</a>
 
 ## Applications
 
-- [1password](https://dteare.medium.com/behind-the-scenes-of-1password-for-linux-d59b19143a23)
+- [1password: Secure password manager](https://dteare.medium.com/behind-the-scenes-of-1password-for-linux-d59b19143a23)
+- [Signal: Secure, private messaging](https://github.com/signalapp/libsignal-client)
 - [finda: Finda finds things — in under 16 milliseconds.](https://keminglabs.com/finda/)
 
 ## Rust Libraries
 
-- [neon-serde: Easily convert between `JsHandle` and `serde` structs](https://crates.io/crates/neon-serde2)
+- [neon-serde: Easily convert between Rust and JavaScript datatypes](https://crates.io/crates/neon-serde2)
 
 Want to add a project to this list? Submit a PR!
