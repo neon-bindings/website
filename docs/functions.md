@@ -4,7 +4,7 @@ title: Functions
 sidebar_label: Functions
 ---
 
-Neon's main way of connecting Rust and JavaScript is by allowing you to define [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) that are implemented in Rust.
+Neon's main way of connecting Rust and JavaScript is by allowing you to define **[functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)** that are implemented in Rust.
 
 ## Defining Functions
 
