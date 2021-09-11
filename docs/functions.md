@@ -97,16 +97,16 @@ try {
 The [`FunctionContext::argument_opt()`](https://docs.rs/neon/latest/neon/context/struct.CallContext.html#method.argument_opt) method makes it possible to extract an optional argument. This example creates an entry in a resume's job history, where the end year may not be present (indicating the person's current job):
 
 ```rust
-fn create_entry(mut cx: FunctionContext) -> JsResult<JsObject> {
+fn create_job(mut cx: FunctionContext) -> JsResult<JsObject> {
     let company = cx.argument::<JsString>(0)?;
-    let job = cx.argument::<JsString>(1)?;
+    let title = cx.argument::<JsString>(1)?;
     let start_year = cx.argument::<JsNumber>(2)?;
     let end_year = cx.argument_opt(3);
 
     let obj = cx.empty_object();
 
     obj.set(&mut cx, "company", company)?;
-    obj.set(&mut cx, "job", job)?;
+    obj.set(&mut cx, "title", title)?;
     obj.set(&mut cx, "startYear", start_year)?;
 
     if let Some(end_year) = end_year {
