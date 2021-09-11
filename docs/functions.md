@@ -16,7 +16,7 @@ fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
 }
 ```
 
-The `cx` argument is a [`FunctionContext`](https://docs.rs/neon/latest/neon/context/type.FunctionContext.html), which provides the Neon function with access to the JavaScript runtime. The [`JsResult`](https://docs.rs/neon/latest/neon/result/type.JsResult.html) result type indicates that a Neon function may throw a JavaScript exception. In this simple example, we just construct a simple string and return it, so we immediately wrap the outcome in an `Ok` result.
+The `cx` argument is a [`FunctionContext`](https://docs.rs/neon/latest/neon/context/type.FunctionContext.html), which provides the Neon function with access to the JavaScript runtime. The [`JsResult`](https://docs.rs/neon/latest/neon/result/type.JsResult.html) result type indicates that a Neon function may throw a JavaScript exception. In this simple example, we just construct a string and return it, so we immediately wrap the outcome in an `Ok` result.
 
 The most common way to define a Neon function from `hello` is to export it from our module using [`ModuleContext::export_function()`](https://docs.rs/neon/latest/neon/context/struct.ModuleContext.html#method.export_function):
 
