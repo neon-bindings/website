@@ -4,7 +4,7 @@ title: Who's Using Neon
 sidebar_label: Who's Using Neon
 ---
 
-Neon is used to power a large community of applications and libraries—maybe some you use yourself!
+Neon is used to power a growing community of applications and libraries—maybe some you use yourself!
 
 ## Applications
 
@@ -18,12 +18,9 @@ Neon is used to power a large community of applications and libraries—maybe so
 - **[node-fuzzy-phrase:](https://github.com/mapbox/node-fuzzy-phrase)** Fast fuzzy phrase matching for Node
 - **[snips-nlu-js:](https://github.com/ballwood/snips-nlu-js)** Quick and dirty Node bindings for snips-nlu-rs
 - **[reconfix:](https://github.com/resin-io/reconfix)** (Re)Configuration toolkit
-- **[libsodium-neon:](https://github.com/wireapp/libsodium-neon)** Node bindings to libsodium
 - **[ledb:](https://github.com/katyo/ledb)** Lightweight embedded database
-- **[node-crypto:](https://github.com/Brooooooklyn/node-crypto)** rust-crypto bindings for Node
 - **[os-type:](https://github.com/amilajack/os-type)** Bindings to the os_type Rust library
-- **[node-webrender:](https://github.com/cztomsik/node-webrender)** bindings to webrender
-- **[big_mac:](https://github.com/ultamatt/big_mac)** get MAC addresses on the local device
+- **[big_mac:](https://github.com/ultamatt/big_mac)** Get MAC addresses on the local device
 
 And <a href="https://github.com/search?q=filename%3Apackage.json+cargo-cp-artifact&type=Code" target="_blank">many more!</a>
 
