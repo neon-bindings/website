@@ -10,7 +10,7 @@ Neon is used to power a large community of applications and libraries—maybe so
 
 - [1password: Secure password manager](https://dteare.medium.com/behind-the-scenes-of-1password-for-linux-d59b19143a23)
 - [Signal: Secure, private messaging](https://github.com/signalapp/libsignal-client)
-- [finda: Type stuff, find things. No mousing.](https://keminglabs.com/finda/)
+- [Finda: Type stuff, find things. No mousing.](https://keminglabs.com/finda/)
 
 ## Node Libraries
 
