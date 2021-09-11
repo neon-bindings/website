@@ -125,7 +125,7 @@ function Home() {
                    sm={{ size: 3 }}></Col>
               <Col xs={{ size: "auto" }}>
                 <ButtonGroup>
-                  <a href={useBaseUrl("docs/getting-started")}>
+                  <a href={useBaseUrl("docs/quick-start")}>
                     <Button color="primary">Get Started</Button>
                   </a>
                 </ButtonGroup>

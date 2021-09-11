@@ -30,12 +30,7 @@ module.exports = {
         src: "logo/letter-logo-alpha.png",
       },
       items: [
-        { position: "left", to: "docs/intro", label: "Docs" },
-        {
-          position: "left",
-          label: "Examples",
-          href: "https://github.com/neon-bindings/examples/tree/legacy#table-of-contents",
-        },
+        { position: "left", to: "docs/introduction", label: "Docs" },
         {
           position: "left",
           label: "API Reference",
@@ -46,14 +41,13 @@ module.exports = {
           items: [
             { label: "GitHub", href: CORE_REPO_URL },
             {
-              label: "Help",
+              label: "Slack",
               href: "https://rust-bindings-slackin.herokuapp.com",
             },
             {
               label: "Twitter",
-              to: "https://twitter.com/rustneon",
+              href: "https://twitter.com/rustneon",
             },
-            { label: "Roadmap", to: "docs/roadmap" },
           ],
           label: "Community",
         },
@@ -68,7 +62,7 @@ module.exports = {
           items: [
             {
               label: "Introduction",
-              to: "docs/intro",
+              to: "docs/introduction",
             },
             {
               label: "Examples",

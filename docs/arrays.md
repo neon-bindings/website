@@ -4,91 +4,89 @@ title: Arrays
 sidebar_label: Arrays
 ---
 
-[Examples](https://github.com/neon-bindings/examples/tree/legacy/arrays)
+JavaScript **[arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** are [objects](objects) that support storing properties indexed by integers. Neon exposes access to this class through the [`JsArray`](https://docs.rs/neon/latest/neon/types/struct.JsArray.html) type.
 
-## Converting from `Vec` to `JsArray`
+## Creating Arrays
 
-Here is a simple example of converting a Rust `Vec` to a JS `Array` using `JsArray`:
+The easiest way to create a new array is through the [`Context::empty_array()`](https://docs.rs/neon/latest/neon/context/trait.Context.html#method.empty_array) method:
 
 ```rust
-fn convert_vec_to_array(mut cx: FunctionContext) -> JsResult<JsArray> {
-    let vec: Vec<String> = Vec::with_capacity(100);
+let a: Handle<JsArray> = cx.empty_array();
+```
 
-    // Create the JS array
-    let js_array = JsArray::new(&mut cx, vec.len() as u32);
+This is the equivalent of writing:
+```javascript
+const a = [];
+```
+or
+```javascript
+const a = new Array();
+```
+in JavaScript.
 
-    // Iterate over the Rust Vec and map each value in the Vec to the JS array
-    for (i, obj) in vec.iter().enumerate() {
-        let js_string = cx.string(obj);
-        js_array.set(&mut cx, i as u32, js_string).unwrap();
+## Indexed Properties
+
+You can get and set _indexed properties_ of an array, i.e., properties with integer property keys, with the [`Object::get()`](https://docs.rs/neon/latest/neon/object/trait.Object.html#method.get) and [`Object::set()`](https://docs.rs/neon/latest/neon/object/trait.Object.html#method.set) methods:
+
+```rust
+let a = cx.empty_array();
+
+let s = cx.string("hello!");
+
+a.set(&mut cx, 0, s)?;
+
+let v = a.get(&mut cx, 1)?;
+```
+
+This is equivalent to the JavaScript code:
+
+```javascript
+const a = [];
+
+const s = "hello!";
+
+a[0] = s;
+
+const v = a[1];
+```
+
+## Extending an Array
+
+The length of a JavaScript array is one more than its largest property index, which can be determined by calling the [`JsArray::len()`](https://docs.rs/neon/latest/neon/types/struct.JsArray.html#method.len) method. You can extend the length of array by adding a property at that index:
+
+```rust
+let len = array.len(&mut cx)?;
+array.set(&mut cx, len, value)?;
+```
+
+This is equivalent to the JavaScript code:
+
+```javascript
+const len = array.length;
+array[len] = value;
+```
+
+## Converting a Rust Vector to an Array
+
+An iterable Rust data structure such as `Vec` can be converted to a JavaScript array by looping over the elements. The [`JsArray::new()`](https://docs.rs/neon/latest/neon/types/struct.JsArray.html#method.new) method can be used to preallocate enough capacity for the number of elements.
+
+```rust
+fn vec_to_array<'a, C: Context<'a>>(vec: &Vec<String>, cx: &mut C) -> JsResult<'a, JsArray> {
+    let a = JsArray::new(cx, vec.len());
+
+    for (i, s) in vec.iter().enumerate() {
+        let v = cx.string(s);
+        a.set(&mut cx, i as u32, v)?;
     }
 
-    Ok(js_array)
+    Ok(a)
 }
 ```
 
-## Converting from `JsArray` to `Vec`
+## Converting a JavaScript Array to a Vector
 
-Converting to `JsArray` to `Vec` is pretty straightforward:
+The [`JsArray::to_vec()`](https://docs.rs/neon/latest/neon/types/struct.JsArray.html#method.to_vec) method makes it easy to convert a JavaScript array to a Rust vector:
 
 ```rust
-fn convert_js_array_to_vec(mut cx: FunctionContext) -> JsResult<JsNumber> {
-    // Take the first argument, which must be an array
-    let js_arr_handle: Handle<JsArray> = cx.argument(0)?;
-    // Convert a JsArray to a Rust Vec
-    let vec: Vec<Handle<JsValue>> = js_arr_handle.to_vec(&mut cx)?;
-    // Return the length of the Vec to JS
-    Ok(cx.number(vec.len() as f64))
-}
-```
-
-## Returning an empty element
-
-```rust
-pub fn return_js_array(mut cx: FunctionContext) -> JsResult<JsArray> {
-    Ok(cx.empty_array())
-}
-```
-
-## Adding elements to an array
-
-This is an example of adding a number to a `JsArray`
-
-```rust
-pub fn return_js_array_with_number(mut cx: FunctionContext) -> JsResult<JsArray> {
-    let array: Handle<JsArray> = JsArray::new(&mut cx, 1);
-    let n = cx.number(9000.0);
-    array.set(&mut cx, 0, n)?;
-    Ok(array)
-}
-```
-
-And this is an example of adding a string to a `JsArray`
-
-```rust
-pub fn return_js_array_with_string(mut cx: FunctionContext) -> JsResult<JsArray> {
-    let array: Handle<JsArray> = JsArray::new(&mut cx, 1);
-    let s = cx.string("hello node");
-    array.set(&mut cx, 0, s)?;
-    Ok(array)
-}
-```
-
-## `ArrayBuffer`
-
-Neon also provides support for the ES6 [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) as through the [`JsArrayBuffer`](https://docs.rs/neon/*/neon/prelude/struct.JsArrayBuffer.html) struct. It has the same constructor and methods as `JsArray`
-
-## Node `Buffer`
-
-The Node Buffer type is also supported by Neon through the [`JsBuffer`](https://docs.rs/neon/*/neon/prelude/struct.JsBuffer.html) struct. It as the same constructor and methods as `JsArray`
-
-#### Runnable Example
-
-For a working example of using Node's `Buffer` class with Neon, see the [`sharing-binary-data` example](https://github.com/neon-bindings/examples/tree/legacy/sharing-binary-data). You can get started with it by running the following commands:
-
-```bash
-git clone https://github.com/neon-bindings/examples
-git checkout legacy
-cd sharing-binary-data
-npm install
+let vec: Vec<Handle<JsValue>> = arr.to_vec(&mut cx);
 ```

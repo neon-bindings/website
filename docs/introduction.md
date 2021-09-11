@@ -1,5 +1,5 @@
 ---
-id: intro
+id: introduction
 title: Introduction
 sidebar_label: Introduction
 ---
@@ -16,11 +16,11 @@ With Neon, you can create native Node modules like you might in C or C++, but wi
 
 - Raw performance
 - Threads and parallel programming
-- Access to Rust’s growing package ecosystem
+- Access to Rust’s [package ecosystem](https://crates.io)
 - Access to native OS-specific libraries
 
 Neon also works hard to make creating native modules easy, with a convenient command-line interface and workflow built around sensible project conventions. This eliminates a lot of the usual hassle of building native Node modules.
 
 ## Where Do I Start?
 
-The best place to go next is the [Getting Started guide](getting-started.md), which will help you get Neon installed on your system. From there, try out the [Hello, World! guide](hello-world.md) to write your first native Node module with Neon!
+The best place to go next is the [Quick Start guide](quick-start.md), which will help you get Neon installed on your system. From there, try out the [Hello, World! guide](hello-world.md) to write your first native Node module with Neon!
