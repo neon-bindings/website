@@ -127,8 +127,9 @@ fn create_job(mut cx: FunctionContext) -> JsResult<JsObject> {
 You can call a JavaScript function from Rust with [`JsFunction::call()`](https://docs.rs/neon/latest/neon/types/struct.JsFunction.html#method.call). This example extracts the [`parseInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) function and calls it on a string:
 
 ```rust
-let global = cx.global();
-let func = global.get(&mut cx, "parseInt")?.downcast_or_throw::<JsFunction>()?;
+let func = cx.global()
+    .get(&mut cx, "parseInt")?
+    .downcast_or_throw::<JsFunction, _>(&mut cx)?;
 let null = cx.null();
 let s = cx.string(s);
 let result = func.call(&mut cx, null, vec![s])?;
@@ -141,8 +142,9 @@ Notice that `func.call()` takes a runtime context, a value for the `this` bindin
 You can call a JavaScript function as a constructor, as if with the [`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) operator, with [`JsFunction::construct()`](https://docs.rs/neon/latest/neon/types/struct.JsFunction.html#method.construct). This example extracts the [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL) constructor and invokes it with a URL string:
 
 ```rust
-let global = cx.global();
-let ctor = global.get(&mut cx, "URL")?.downcast_or_throw::<JsFunction>()?;
+let global = cx.global()
+    .get(&mut cx, "URL")?
+    .downcast_or_throw::<JsFunction, _>(&mut cx)?;
 let url: Handle<JsString> = cx.string("https://neon-bindings.com");
 let result = ctor.construct(&mut cx, vec![url]);
 ```
