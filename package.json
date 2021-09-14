@@ -30,9 +30,9 @@
     ]
   },
   "devDependencies": {
-    "bootstrap": "^5.1.0",
     "@docusaurus/core": "^2.0.0-alpha.72",
     "@docusaurus/preset-classic": "^2.0.0-alpha.72",
+    "bootstrap": "^5.1.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-bliss": "^5.0.0",
