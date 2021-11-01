@@ -40,7 +40,7 @@ Similar to how [Babel](https://babeljs.io/) can be adjusted to target a minimum 
 features = ["napi-6"]
 ```
 
-See the [Node-API version matrix](https://nodejs.org/api/n-api.html#n_api_node_api_version_matrix) for more details.
+See the [Node-API version matrix](https://nodejs.org/api/n-api.html#node-api-version-matrix) for more details.
 
 ## Building and Running
 
