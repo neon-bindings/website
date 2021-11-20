@@ -72,11 +72,11 @@ An iterable Rust data structure such as `Vec` can be converted to a JavaScript a
 
 ```rust
 fn vec_to_array<'a, C: Context<'a>>(vec: &Vec<String>, cx: &mut C) -> JsResult<'a, JsArray> {
-    let a = JsArray::new(cx, vec.len());
+    let a = JsArray::new(cx, vec.len() as u32);
 
     for (i, s) in vec.iter().enumerate() {
         let v = cx.string(s);
-        a.set(&mut cx, i as u32, v)?;
+        a.set(cx, i as u32, v)?;
     }
 
     Ok(a)
