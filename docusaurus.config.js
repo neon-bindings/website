@@ -66,7 +66,7 @@ module.exports = {
             },
             {
               label: "Examples",
-              to: "https://github.com/neon-bindings/examples/tree/legacy#table-of-contents",
+              to: "https://github.com/neon-bindings/examples/tree/main#table-of-contents",
             },
             {
               label: "API Reference",
