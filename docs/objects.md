@@ -79,14 +79,14 @@ Now here is the full implementation:
     fn to_object<'a>(&self, cx: &mut FunctionContext<'a>) -> JsResult<'a, JsObject> {
         let obj = cx.empty_object();
 
-        let title = cx.string(self.title);
-        obj.set(&mut cx, "title", title)?;
+        let title = cx.string(&self.title);
+        obj.set(cx, "title", title)?;
 
-        let author = cx.string(self.author);
-        obj.set(&mut cx, "author", author)?;
+        let author = cx.string(&self.author);
+        obj.set(cx, "author", author)?;
 
         let year = cx.number(self.year);
-        obj.set(&mut cx, "year", year)?;
+        obj.set(cx, "year", year)?;
 
         Ok(obj)
     }
