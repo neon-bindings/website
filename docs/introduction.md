@@ -12,7 +12,7 @@ Neon is a library and toolchain for embedding [Rust](https://www.rust-lang.org/e
 
 ## Why Neon?
 
-With Neon, you can create native Node modules like you might in C or C++, but with none of the fear and headaches associated with unsafe systems programming. Embedding Rust in Node can be useful for many reasons:
+With Neon, you can create native Node modules like you might in C or C++, but with none of the headaches and anxiety associated with unsafe systems programming. Embedding Rust in Node can be useful for many reasons:
 
 - Raw performance
 - Threads and parallel programming

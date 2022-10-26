@@ -124,27 +124,32 @@ fn create_job(mut cx: FunctionContext) -> JsResult<JsObject> {
 
 ## Calling Functions
 
-You can call a JavaScript function from Rust with [`JsFunction::call()`](https://docs.rs/neon/latest/neon/types/struct.JsFunction.html#method.call). This example extracts the [`parseInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) function and calls it on a string:
+You can call a JavaScript function from Rust with [`JsFunction::call_with()`](https://docs.rs/neon/latest/neon/types/struct.JsFunction.html#method.call_with). This example extracts the [`parseInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) function and calls it on a string:
 
 ```rust
-let func = cx.global()
-    .get(&mut cx, "parseInt")?
-    .downcast_or_throw::<JsFunction, _>(&mut cx)?;
-let null = cx.null();
-let s = cx.string(s);
-let result = func.call(&mut cx, null, vec![s])?;
+// Extract the parseInt function from the global object
+let parse_int: Handle<JsFunction> = cx.global().get(&mut cx, "parseInt")?;
+
+// Call parseInt("42")
+let x: Handle<JsNumber> = parse_int
+    .call_with(&mut cx)
+    .arg(cx.string("42"))
+    .apply(&mut cx)?;
 ```
 
-Notice that `func.call()` takes a runtime context, a value for the `this` binding, and a sequence of arguments. In this case, `parseInt` ignores its `this` value, so we just pass `null`.
+The `parse_int.call_with()` takes a runtime context and produces a [`CallOptions`](https://docs.rs/neon/latest/neon/types/function/struct.CallOptions.html) struct that can be used to specify the arguments to the function. In this case, we specify just one argument: a JavaScript string constructed from the Rust string `"42"`.
 
 ## Calling Constructor Functions
 
-You can call a JavaScript function as a constructor, as if with the [`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) operator, with [`JsFunction::construct()`](https://docs.rs/neon/latest/neon/types/struct.JsFunction.html#method.construct). This example extracts the [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL) constructor and invokes it with a URL string:
+You can call a JavaScript function as a constructor, as if with the [`new`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new) operator, with [`JsFunction::construct_with()`](https://docs.rs/neon/latest/neon/types/struct.JsFunction.html#method.construct_with). This example extracts the [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL) constructor and invokes it with a URL string:
 
 ```rust
-let global = cx.global()
-    .get(&mut cx, "URL")?
-    .downcast_or_throw::<JsFunction, _>(&mut cx)?;
-let url: Handle<JsString> = cx.string("https://neon-bindings.com");
-let result = ctor.construct(&mut cx, vec![url]);
+// Extract the URL constructor from the global object
+let url: Handle<JsFunction> = cx.global().get(&mut cx, "URL")?;
+
+// Call new URL("https://neon-bindings.com")
+let obj = url
+    .construct_with(&mut cx)
+    .arg(cx.string("https://neon-bindings.com"))
+    .apply(&mut cx)?;
 ```
