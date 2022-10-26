@@ -137,7 +137,7 @@ let x: Handle<JsNumber> = parse_int
     .apply(&mut cx)?;
 ```
 
-The `parse_int.call_with()` takes a runtime context and produces a [`CallOptions`](https://docs.rs/neon/latest/neon/types/function/struct.CallOptions.html) struct that can be used to specify the arguments to the function. In this case, we specify just one argument: a JavaScript string constructed from the Rust string `"42"`.
+The `parse_int.call_with()` method takes a runtime context and produces a [`CallOptions`](https://docs.rs/neon/latest/neon/types/function/struct.CallOptions.html) struct that can be used to specify the arguments to the function. In this case, we specify just one argument: a JavaScript string constructed from the Rust string `"42"`.
 
 ## Calling Constructor Functions
 
@@ -153,3 +153,5 @@ let obj = url
     .arg(cx.string("https://neon-bindings.com"))
     .apply(&mut cx)?;
 ```
+
+Similar to `call_with()` above, the `url.construct_with()` method takes a runtime context and produces a [`ConstructOptions`](https://docs.rs/neon/latest/neon/types/function/struct.ConstructOptions.html) struct that can be used to specify the arguments to the constructor call. In this case, we specify just one argument: a JavaScript string constructed from the Rust string `"https://neon-bindings.com"`.
