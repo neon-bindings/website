@@ -42,7 +42,7 @@ module.exports = {
             { label: "GitHub", href: CORE_REPO_URL },
             {
               label: "Slack",
-              href: "https://rust-bindings-slackin.herokuapp.com",
+              href: "https://join.slack.com/t/rust-bindings/shared_invite/zt-1pl5s83xe-ZvXyrzL8vuUmijU~7yiEcg",
             },
             {
               label: "Twitter",
@@ -88,7 +88,7 @@ module.exports = {
             },
             {
               label: "Help",
-              to: "https://rust-bindings-slackin.herokuapp.com",
+              to: "https://join.slack.com/t/rust-bindings/shared_invite/zt-1pl5s83xe-ZvXyrzL8vuUmijU~7yiEcg",
             },
             {
               label: "Twitter",
