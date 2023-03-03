@@ -12,6 +12,7 @@ Neon is used to power a growing community of applications and libraries—maybe 
 - **[Signal:](https://github.com/signalapp/libsignal-client)** Secure, private messaging
 - **[Finda:](https://keminglabs.com/finda/)** Type stuff, find things. No mousing.
 - **[Parsify Desktop:](https://parsify.app)** Extendable notepad calculator for the 21st Century.
+- **[Dashlane:](https://www.dashlane.com/)** Secure password manager
 
 ## Node Libraries
 
