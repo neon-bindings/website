@@ -23,7 +23,7 @@ Neon is used to power a growing community of applications and libraries—maybe 
 - **[os-type:](https://github.com/amilajack/os-type)** Bindings to the os_type Rust library
 - **[big_mac:](https://github.com/ultamatt/big_mac)** Get MAC addresses on the local device
 
-And <a href="https://github.com/search?q=filename%3Apackage.json+cargo-cp-artifact&type=Code" target="_blank">many more!</a>
+And <a href="https://github.com/search?q=path%3Apackage.json+cargo-cp-artifact&type=code" target="_blank">many more!</a>
 
 ## Rust Libraries
 
