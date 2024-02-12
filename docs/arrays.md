@@ -35,7 +35,7 @@ let s = cx.string("hello!");
 
 a.set(&mut cx, 0, s)?;
 
-let v = a.get(&mut cx, 1)?;
+let v: Handle<JsValue> = a.get(&mut cx, 1)?;
 ```
 
 This is equivalent to the JavaScript code:
@@ -71,8 +71,8 @@ array[len] = value;
 An iterable Rust data structure such as `Vec` can be converted to a JavaScript array by looping over the elements. The [`JsArray::new()`](https://docs.rs/neon/latest/neon/types/struct.JsArray.html#method.new) method can be used to preallocate enough capacity for the number of elements.
 
 ```rust
-fn vec_to_array<'a, C: Context<'a>>(vec: &Vec<String>, cx: &mut C) -> JsResult<'a, JsArray> {
-    let a = JsArray::new(cx, vec.len() as u32);
+fn vec_to_array<'cx, C: Context<'cx>>(vec: &Vec<String>, cx: &mut C) -> JsResult<'cx, JsArray> {
+    let a = JsArray::new(cx, vec.len());
 
     for (i, s) in vec.iter().enumerate() {
         let v = cx.string(s);

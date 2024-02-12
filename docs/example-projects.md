@@ -8,7 +8,7 @@ Neon is used to power a growing community of applications and libraries—maybe 
 
 ## Applications
 
-- **[1password:](https://dteare.medium.com/behind-the-scenes-of-1password-for-linux-d59b19143a23)** Secure password manager
+- **[1Password:](https://dteare.medium.com/behind-the-scenes-of-1password-for-linux-d59b19143a23)** Secure password manager
 - **[Signal:](https://github.com/signalapp/libsignal-client)** Secure, private messaging
 - **[Finda:](https://keminglabs.com/finda/)** Type stuff, find things. No mousing.
 - **[Parsify Desktop:](https://parsify.app)** Extendable notepad calculator for the 21st Century.
@@ -24,9 +24,5 @@ Neon is used to power a growing community of applications and libraries—maybe 
 - **[big_mac:](https://github.com/ultamatt/big_mac)** Get MAC addresses on the local device
 
 And <a href="https://github.com/search?q=path%3Apackage.json+cargo-cp-artifact&type=code" target="_blank">many more!</a>
-
-## Rust Libraries
-
-- **[neon-serde:](https://crates.io/crates/neon-serde2)** Easily convert between Rust and JavaScript datatypes
 
 Want to add a project to this list? [Submit a PR](https://github.com/neon-bindings/website)!
