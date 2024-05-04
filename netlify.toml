@@ -8,11 +8,19 @@
 [[redirects]]
   from = "https://neon-bindings.com/docs/intro"
   to = "https://neon-rs.dev/docs/introduction"
+  status = 301
   force = true
 
 [[redirects]]
   from = "https://neon-bindings.com/*"
   to = "https://neon-rs.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.neon-bindings.com/*"
+  to = "https://neon-rs.dev/:splat"
+  status = 301
   force = true
 
 [[redirects]]
