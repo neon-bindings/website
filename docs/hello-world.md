@@ -33,10 +33,11 @@ The first thing to notice about this layout is that **a Neon project is both a N
 
 The Rust source lives in `src/`, but JavaScript that augments Rust can live side-by-side.
 
-Similar to how [Babel](https://babeljs.io/) can be adjusted to target a minimum JavaScript version, Neon can target a Node version by adjusting the `napi` feature in the `Cargo.toml`. By default, `npm init neon` will use the currently installed Node version.
+Similar to how [Babel](https://babeljs.io/) can be adjusted to target a minimum JavaScript version, Neon can target a Node version by adjusting the `napi` feature in the `Cargo.toml`. By default, `npm init neon` will use the latest stable Node-API version. Overriding:
 
 ```toml
 [dependencies.neon]
+default-features = false
 features = ["napi-6"]
 ```
 

@@ -63,20 +63,20 @@ First let's look at the signature of `Book::to_object()`, which we define as a m
 
 ```rust
 impl Book {
-    fn to_object<'a>(&self, cx: &mut FunctionContext<'a>) -> JsResult<'a, JsObject> {
+    fn to_object<'cx>(&self, cx: &mut FunctionContext<'cx>) -> JsResult<'cx, JsObject> {
         // ...
     }
 }
 ```
 
-This is our first example using a _[lifetime annotation](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html)_ `'a`. This allows the Rust compiler to ensure that our code never accidentally makes an unsafe reference to JavaScript values managed by the Node runtime. Specifically, this signature tells Neon that the result object returned by this function (which has lifetime `'a`) is managed by the runtime context that was passed in as an argument (which also has that same lifetime `'a`).
+This is our first example using a _[lifetime annotation](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html)_ `'cx`. This allows the Rust compiler to ensure that our code never accidentally makes an unsafe reference to JavaScript values managed by the Node runtime. Specifically, this signature tells Neon that the result object returned by this function (which has lifetime `'cx`) is managed by the runtime context that was passed in as an argument (which also has that same lifetime `'cx`).
 
 If you've never seen lifetimes before or are not yet confident using them, don't worry! For now, you can use this code as a template, and know that the Rust compiler will keep you safe.
 
 Now here is the full implementation:
 
 ```rust
-    fn to_object<'a>(&self, cx: &mut FunctionContext<'a>) -> JsResult<'a, JsObject> {
+    fn to_object<'cx>(&self, cx: &mut FunctionContext<'cx>) -> JsResult<'cx, JsObject> {
         let obj = cx.empty_object();
 
         let title = cx.string(&self.title);
@@ -99,7 +99,7 @@ One thing worth noticing about this function is that it doesn't use anything spe
 
 ```rust
 impl Book {
-    fn to_object<'a>(&self, cx: &mut impl Context<'a>) -> JsResult<'a, JsObject> {
+    fn to_object<'cx>(&self, cx: &mut impl Context<'cx>) -> JsResult<'cx, JsObject> {
         // same as before...
     }
 }

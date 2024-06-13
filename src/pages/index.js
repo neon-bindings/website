@@ -15,7 +15,7 @@ import "../css/bootstrap.css";
 const jsExample = `
 // JavaScript
 function hello() {
-  let result = fibonacci(10000);
+  let result = fibonacci(75);
   console.log(result);
   return result;
 }
@@ -24,8 +24,8 @@ function hello() {
 const neonExample = `
 // Neon
 fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
-  let result = fibonacci(10000);
-  println!("{}", result);
+  let result = fibonacci(75);
+  println!("{result}");
   Ok(cx.number(result))
 }`.trim();
 
