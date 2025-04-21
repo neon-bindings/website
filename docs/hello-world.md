@@ -49,6 +49,7 @@ We haven't yet implemented anything, but just to see that `npm init neon` produc
 ```shell
 cd cpu-count
 npm install
+npm run cargo-build -- --release
 ```
 
 The build process generates a handful of files:
