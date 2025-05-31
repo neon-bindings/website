@@ -27,7 +27,7 @@ const neonExample = `
 const URL: &str = "https://jsonplaceholder.typicode.com/todos";
 
 #[neon::export(json)]
-async fn todos() -> Result<Value, Error> {
+async fn todos() -> Result<serde_json::Value, Error> {
     Ok(reqwest::get(URL).await?.json().await?)
 }
 `.trim();
