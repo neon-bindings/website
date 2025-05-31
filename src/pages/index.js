@@ -17,9 +17,9 @@ const jsExample = `
 const URL = "https://jsonplaceholder.typicode.com/todos";
 
 async function todos() {
-  const response = await fetch(URL);
-  return response.json();
+  return (await fetch(URL)).json();
 }
+module.exports = todos;
 `.trim();
 
 const neonExample = `
