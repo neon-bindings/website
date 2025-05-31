@@ -14,17 +14,24 @@ import "../css/bootstrap.css";
 
 const jsExample = `
 // JavaScript
+const URL = "https://jsonplaceholder.typicode.com/todos";
+
 async function todos() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const response = await fetch(URL);
   return response.json();
 }
 `.trim();
 
 const neonExample = `
 // Neon
+use neon::types::extract::Error;
+use serde_json::Value;
+
+const URL: &'static str = "https://jsonplaceholder.typicode.com/todos";
+
 #[neon::export(json)]
-async fn todos() -> Result<serde_json::Value, neon::types::extract::Error> {
-    Ok(reqwest::get("https://jsonplaceholder.typicode.com/todos").await?.json().await?)
+async fn todos() -> Result<Value, Error> {
+    Ok(reqwest::get(URL).await?.json().await?)
 }
 `.trim();
 
