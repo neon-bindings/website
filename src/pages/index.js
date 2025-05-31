@@ -14,20 +14,23 @@ import "../css/bootstrap.css";
 
 const jsExample = `
 // JavaScript
-function hello() {
-  let result = fibonacci(10000);
-  console.log(result);
-  return result;
+const URL = "https://jsonplaceholder.typicode.com/todos";
+
+async function todos() {
+  return (await fetch(URL)).json();
 }
+module.exports = todos;
 `.trim();
 
 const neonExample = `
 // Neon
-fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
-  let result = fibonacci(10000);
-  println!("{}", result);
-  Ok(cx.number(result))
-}`.trim();
+const URL: &str = "https://jsonplaceholder.typicode.com/todos";
+
+#[neon::export(json)]
+async fn todos() -> Result<serde_json::Value, Error> {
+    Ok(reqwest::get(URL).await?.json().await?)
+}
+`.trim();
 
 const Logo = (props) => (
   <div className="neonProjectLogo">
