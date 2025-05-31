@@ -24,10 +24,7 @@ async function todos() {
 
 const neonExample = `
 // Neon
-use neon::types::extract::Error;
-use serde_json::Value;
-
-const URL: &'static str = "https://jsonplaceholder.typicode.com/todos";
+const URL: &str = "https://jsonplaceholder.typicode.com/todos";
 
 #[neon::export(json)]
 async fn todos() -> Result<Value, Error> {
