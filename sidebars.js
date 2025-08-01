@@ -6,6 +6,7 @@ module.exports = {
       "objects",
       "arrays",
       "functions",
+      "electron",
     ],
     Community: ["example-projects"],
   },
