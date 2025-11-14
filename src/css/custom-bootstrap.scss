@@ -14,9 +14,13 @@ $enable-shadows: false;
 
 $headings-font-family: 'Roboto', sans-serif;
 
+// Import Bootstrap functions and variables first
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
 @import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/maps";
+// Import grid system
 @import "../../node_modules/bootstrap/scss/grid";
 @import "../../node_modules/bootstrap/scss/buttons";
 @import "../../node_modules/bootstrap/scss/button-group";

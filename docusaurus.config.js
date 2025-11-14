@@ -116,15 +116,10 @@ module.exports = {
       additionalLanguages: ["rust", "toml"],
     },
     algolia: {
+      appId: "BH4D9OD16A",
       // "Search only api key". Safe to keep this public
       apiKey: "bfa6bb4b57d4fa853c0358ee9b195146",
       indexName: "amilajack_neon",
-    },
-    googleAnalytics: {
-      trackingID: "UA-130626950-1",
-    },
-    gtag: {
-      trackingID: "UA-130626950-1",
     },
   },
   presets: [
@@ -133,6 +128,9 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+        },
+        gtag: {
+          trackingID: "UA-130626950-1",
         },
       },
     ],

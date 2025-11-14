@@ -91,6 +91,29 @@ CustomSyntaxHighlighter.defaultProps = {
 // Concatenate a given array of styles
 const cStyles = (_styles) => _styles.join(" ");
 
+const FeatureCard = ({ imageUrl, title, description, idx }) => (
+  <div
+    className={classnames("col col--4", styles.feature)}
+  >
+    <h3
+      className={classnames(
+        styles.featureSubHeader,
+        styles[`featureSubHeader${idx}`]
+      )}
+    >
+      <span>
+        <img
+          className={styles.featureImage}
+          src={useBaseUrl(imageUrl)}
+          alt={title}
+        />
+      </span>
+      {title}
+    </h3>
+    <p className={styles.featureDescription}>{description}</p>
+  </div>
+);
+
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
@@ -148,28 +171,14 @@ function Home() {
             <section>
               <Container>
                 <Row>
-                  {features.map(({ imageUrl, title, description }, idx) => (
-                    <div
-                      key={styles.featuresContainer}
-                      className={classnames("col col--4", styles.feature)}
-                    >
-                      <h3
-                        className={classnames(
-                          styles.featureSubHeader,
-                          styles[`featureSubHeader${idx}`]
-                        )}
-                      >
-                        <span>
-                          <img
-                            className={styles.featureImage}
-                            src={useBaseUrl(imageUrl)}
-                            alt={title}
-                          />
-                        </span>
-                        {title}
-                      </h3>
-                      <p className={styles.featureDescription}>{description}</p>
-                    </div>
+                {features.map(({ imageUrl, title, description }, idx) => (
+                    <FeatureCard
+                      key={idx}
+                      imageUrl={imageUrl}
+                      title={title}
+                      description={description}
+                      idx={idx}
+                    />
                   ))}
                 </Row>
               </Container>
