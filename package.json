@@ -30,22 +30,27 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.72",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.72",
-    "bootstrap": "^5.1.0",
-    "eslint": "^7.23.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-bliss": "^5.0.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.2",
-    "lint-staged": "^10.5.4",
-    "prismjs": "^1.23.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-syntax-highlighter": "^15.4.3",
-    "reactstrap": "^8.9.0",
-    "sass": "^1.32.8",
-    "yarn": "^1.22.10"
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "@eslint/js": "^8.2.0",
+    "@mdx-js/react": "^3.1.1",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
+    "classnames": "^2.5.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-bliss": "^6.0.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "lint-staged": "^16.2.6",
+    "prismjs": "^1.30.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-syntax-highlighter": "^16.1.0",
+    "reactstrap": "^9.2.3",
+    "sass": "^1.94.0",
+    "yarn": "^1.22.22"
   },
   "engines": {
     "yarn": ">=1.10.1"
@@ -54,33 +59,5 @@
     "*.js": [
       "eslint --fix"
     ]
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true
-    },
-    "extends": [
-      "airbnb",
-      "bliss"
-    ],
-    "rules": {
-      "class-methods-use-this": "off",
-      "import/no-dynamic-require": "off",
-      "import/no-extraneous-dependencies": "off",
-      "import/no-unresolved": "off",
-      "flowtype-errors/show-errors": "off",
-      "jsx-a11y/anchor-is-valid": "off",
-      "jsx-a11y/iframe-has-title": "off",
-      "react/jsx-filename-extension": "off",
-      "no-unused-vars": "off",
-      "react/destructuring-assignment": "off",
-      "react/jsx-one-expression-per-line": "off",
-      "react/jsx-no-target-blank": "off",
-      "react/no-multi-comp": "off",
-      "react/no-unescaped-entities": "off",
-      "react/jsx-props-no-spreading": "off",
-      "react/prefer-stateless-function": "off",
-      "react/prop-types": "off"
-    }
   }
 }
