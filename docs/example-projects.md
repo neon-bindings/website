@@ -22,6 +22,7 @@ Neon is used to power a growing community of applications and libraries—maybe 
 - **[ledb:](https://github.com/katyo/ledb)** Lightweight embedded database
 - **[os-type:](https://github.com/amilajack/os-type)** Bindings to the os_type Rust library
 - **[big_mac:](https://github.com/ultamatt/big_mac)** Get MAC addresses on the local device
+- **[node-cpal:](https://github.com/saeta-eth/node-cpal)** Cross-platform audio playback, recording, and device access for Node.js
 
 And <a href="https://github.com/search?q=path%3Apackage.json+cargo-cp-artifact&type=code" target="_blank">many more!</a>
 
